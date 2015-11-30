@@ -1,0 +1,101 @@
+\documentclass{bakalarka}
+\usepackage[utf8]{inputenc} 
+\usepackage[czech]{babel}
+\usepackage{ae}
+\usepackage{fancyhdr}
+%\usepackage[pdftex]{graphicx}
+\usepackage{eurosym}
+\usepackage{longtable}
+\usepackage[colorlinks=true]{hyperref}
+
+\author{Jaroslav Klaus}
+\title{Využití nástrojů pro testování grafického uživatelského rozhraní}
+\titlet{}
+\titlett{}
+\university{Západočeská univerzita v Plzni}
+\faculty{Fakulta aplikovaných věd}
+\department{Katedra informatiky a výpočetní techniky}
+\subject{Projekt 5}
+\town{Plzeň}
+\begin{document}
+\pagestyle{fancy}
+\renewcommand{\chaptermark}[1]{\markboth{\textit{#1}}{}}
+\renewcommand{\sectionmark}[1]{\markright{\textit{#1}}{}}
+\cfoot{\thepage}
+\lhead{\leftmark}
+\rhead{\rightmark}
+\maketitle
+\chapter*{Prohlášení}
+\thispagestyle{empty}
+Prohlašuji, že jsem práci vypracoval samostatně a výhradně s~použitím citovaných pramenů.
+\vskip 1.5em
+V Plzni dne \today
+\vskip 0.7em
+\hskip 9cm Jaroslav Klaus
+\chapter*{Abstract}
+\thispagestyle{empty}
+This paper deals with the use of software tools for testing graphical user interface. It compares some of the tools and describes the use of one of them in a~way that fits into the subject KIV/OKS.
+\chapter*{Abstrakt}
+\thispagestyle{empty}
+Tato práce se zabývá využitím nástrojů k~testování grafického uživatelského rozhraní aplikací. Srovnává některé nástroje k tomu určené a popisuje použití jednoho z nich tak, aby svou filosofií zapadal do předmětu KIV/OKS.
+\tableofcontents
+\pagestyle{fancy}
+\renewcommand{\chaptermark}[1]{\markboth{\textit{#1}}{}}
+\renewcommand{\sectionmark}[1]{\markright{\textit{#1}}{}}
+\cfoot{\thepage}
+\lhead{\leftmark}
+\rhead{\rightmark}
+\parskip 1em
+\chapter{Úvod}
+Testování aplikací je nedílnou součástí jejich vývoje a~v~dnešní době se tomuto oddílu tvorby aplikací věnuje čím dál více pozornosti. Dá se rozdělit do různých skupin, např. podle toho, kdy se testování provádí, nebo podle toho, jakým způsobem se provádí, nebo jak se k~testované aplikaci přistupuje, či jaká část aplikace se podrobuje testům.
+
+Jednou z~důležitých součástí je testování grafického uživatelského rozhraní\footnote{Označované jako GUI - Graphical User Interface}. Zde se testeři soustředí na to, zda daná aplikace vypadá tak, jak to požaduje návrh a~vývojáři, zda grafické prvky správně fungují, nebo zda je aplikace přívětivá k~uživateli a~práce s~ní není příliš komplikovaná.
+
+Při testování grafického uživatelského rozhraní se může spousta testů mnohokrát opakovat, a~proto je snaha tyto testy nějak automatizovat. K~tomu se může využít některý z~nástrojů k~tomu určený. Cílem této práce je seznámit se s~některými z~těchto nástrojů, jeden z~nich vybrat a~pomocí něj vytvořit sadu ukázkových testů svou filosofií zapadajících do předmětu KIV/OKS\footnote{\url{https://portal.zcu.cz/portal/studium/courseware/kiv/oks}}.
+
+\chapter{Přehled nástrojů}
+V~této kapitole následuje přehled nástrojů a~některých jejich vlastností. V tabulce \ref{PrehledNastroju} je uveden název nástroje, jeho licence resp. cena, jazyk, ve kterém se testy píší, platforma, na které nástroj funguje a~která GUI je nástroj schopen testovat. Z~bezplatných multiplatformních nástrojů bylo mým úkolem vybrat tři a~ty podrobněji prozkoumat a~porovnat, viz následující kapitola.
+\begin{longtable}{|l|l|l|l|l|l|}
+		\hline
+		\textbf{Název}&\textbf{Licence/Cena}&\textbf{Skriptovací jazyk}&\textbf{Platforma}&\textbf{\shortstack{\\Jazykové\\omezení}}\\\hline
+		AutoIt\footnote{\url{https://www.autoitscript.com/site/}}&Freeware&BASIC-like&Windows&-\\\hline
+		AutoHotKey\footnote{\url{http://www.autohotkey.com/}}&GNU GPLv2&AutoHotKey&Windows&-\\\hline
+		AutoKey\footnote{\url{https://code.google.com/p/autokey/}}&GNU GPLv3&Python&Linux&-\\\hline
+		SikuliX\footnote{\url{http://www.sikuli.org/}}&MIT License&Python, Ruby&\shortstack{\\Windows,\\Linux, Mac}&-\\\hline
+		Jubula\footnote{\url{http://www.eclipse.org/jubula/}}&EPL 1.0&\shortstack{\\Drag \& Drop,\\Java}&\shortstack{\\Windows,\\Linux, Mac}&\shortstack{\\Java, HTML,\\.NET, iOS} \\\hline
+		\shortstack{Robot\\Framework}\footnote{\url{http://robotframework.org/}}&\shortstack{Apache\\License 2.0}&Natural-like&\shortstack{\\Windows,\\Linux, Mac}&\shortstack{\\Podle!addonů\\(Java, web,\\Android, iOS,\\\dots)}\\\hline
+		Squish\footnote{\url{http://www.froglogic.com/squish/gui-testing/index.php}}&\shortstack{\\cca\\\EUR{2400}/osoba}&\shortstack{\\Python, JavaScript,\\Ruby, Perl, Tcl}&\shortstack{\\Windows,\\Linux, Mac}&-\\\hline
+		eggPlant\footnote{\url{http://www.testplant.com/eggplant/testing-tools/eggplant-developer/}}&\shortstack{\\nedostupná,\\vázaná na stroj}&\shortstack{\\SmartTalk,\\Drag \& Drop,\\pomocí rozhraní\\eggDrive např.\\Java, C\#, Ruby}&\shortstack{\\Windows,\\Linux, Mac}&-\\\hline
+		UFT\footnote{\url{http://www8.hp.com/cz/cs/software-solutions/unified-functional-automated-testing/}}&nedostupná&\shortstack{\\VBScript,\\Drag \& Drop}&\shortstack{\\Windows,\\Linux, Mac}&-\\\hline
+\newpage\hline
+		\textbf{Název}&\textbf{Licence/Cena}&\textbf{Skriptovací jazyk}&\textbf{Platforma}&\textbf{\shortstack{\\Jazykové\\omezení}}\\\hline
+		\shortstack{\\Rational\\Functional\\Tester}\footnote{\url{http://www-03.ibm.com/software/products/cs/functional}}&3300 \$/osoba&Nahrávání akcí&\shortstack{\\Windows,\\Linux}&-\\\hline
+		Ranorex\footnote{\url{www.ranorex.com}}&\EUR{690}&\shortstack{\\C\#, VisualBasic,\\nahrávání akcí}&Windows&-\\\hline
+		SilkTest\footnote{\url{http://www.borland.com/Products/Software-Testing/Automated-Testing/Silk-Test}}&nedostupná&\shortstack{\\C\#, VisualBasic,\\Java}&Windows&-\\\hline
+		TestComplete\footnote{\url{http://smartbear.com/product/testcomplete/overview/}}&\EUR{889 }/stroj&\shortstack{\\Python, VBScript,\\JScript, C\#Script,\\DelphiScript,\\C++Script,\\nahrávání akcí}&Windows&-\\\hline
+		
+\caption{Přehled nástrojů}
+\label{PrehledNastroju}
+\end{longtable}
+
+\chapter{Zvolené nástroje}
+Vzhledem k~požadavkům na nástroje jako bezplatnost, schopnost fungování nezávisle na OS\footnote{operační systém} nebo podpora testování programů vytvořených technologií Java\footnote{\url{https://www.oracle.com/java/index.html}} a~webových aplikací jsem z~výše zmíněných vybral nástroje Jubula, SikuliX a~Robot Framework. Každý z~nástrojů bude podrobněji popsán v~následujících sekcích.
+	\section{Jubula}
+	Jubula je nástroj, který vznikl a~je vyvíjen v~rámci IDE\footnote{Integrated Development Environment - integrované vývojové prostředí} Eclipse\footnote{\url{http://www.eclipse.org/jubula/}} a~do projektu přispívá také firma BREDEX GmbH\footnote{\url{http://www.bredex.de/guidancer_jubula_en.html}}, která vytváří také tzv. standalone verzi, což je program, který je možné používat samostatně bez IDE Eclipse, obsahuje navíc některé nespecifikované funkce a~nemusí být licencována pod EPL 1.0\footnote{\url{https://www.eclipse.org/legal/epl-v10.html}} jako je tomu u~verze pro IDE Eclipse.
+	
+	Pro tvorbu testovacích skriptů byla používána metoda Drag \& Drop, popř. se akce určovaly klikáním na různé nabídky, avšak v~jedné z posledních verzí bylo vydáno Java API\footnote{Application Programming Interface - rozhraní pro programování} a~skripty je tak možné psát pomocí jazyka Java. Mezi podporovaná testovaná rozhraní patří Java Swing, SWT, JavaFX, HTML a~iOS. Výhodou této aplikace je také možnost její integrace pro ostatních programů pro organizaci testování.
+	
+	\section{SikuliX}
+	Sikuli (nověji SikuliX) je nástroj, který vznikl jako projekt skupiny User Interface Design Group na MIT\footnote{Massachusetts Institute of Technology}, což odpovídá i~jeho licenci - MIT License\footnote{\url{https://opensource.org/licenses/MIT}} a~nyní jeho vývoj převzal Raimund Hock (aka RaiMan) společně s open-source komunitou\footnote{skupina lidí, která sdílí záměr a~vytváří aplikace s~open-source licencí}.
+	
+	Pro tvorbu skriptů je možné využít pro SikuliX vlastní jazyk podobný přirozené angličtině, nebo některý ze zavedených, jako je Python, Ruby, Java, Jython, JRuby, Scala, Groovy, Clojure a~dalších. Nástroj není omezený na určitá testovaná rozhraní, protože k identifikaci GUI používá rozpoznání obrazu podle vzoru\footnote{pomocí OpenCV, \url{http://opencv.org/}}, dokáže simulovat ovládání myši a~klávesnice nebo rozpoznávat text v~obrázcích\footnote{pomocí Tesseract OCR, \url{https://github.com/tesseract-ocr}}. Výhodou této aplikace je tak její nezávislost vůči testovanému rozhraní.
+	
+	\section{Robot Framework}
+	Robot Framework je nástroj založený na pluginech\footnote{knihovny, resp. volitelné části, které je možné přidat}, vývoj je podporován společností Nokia Networks\footnote{\url{https://networks.nokia.com/}} a~projekt je open-source.
+	
+	Základ nástroje, tzv. core framework, je vytvořený v~jazyce Python a~knihovny je možné psát také v~jazyce Python nebo Java a~samotné skripty pak v jazyce podobném přirozené angličtině, které dodržují jisté formátování, a~tím jsou pro člověka velmi přehledné. Mezi podporovaná testovaná rozhraní patří např. Android, iOS, Java Swing, webové aplikace, databáze a~aplikace vytvořené pro OS Windows. Výhodou této aplikace je přehledná zpráva v~HTML o~průběhu testů, která je automaticky generována po skončení.
+
+\appendix
+\bibliographystyle{csplainnat}
+\bibliography{bakalarka}
+\end{document}

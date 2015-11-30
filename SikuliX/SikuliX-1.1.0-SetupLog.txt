@@ -1,0 +1,222 @@
+[debug (10/19/15 4:16:14 PM)] Debug: setLogFile: /media/GamesEtc/School/5Semestr/BPINI/SikuliX/SikuliX-1.1.0-SetupLog.txt
+[debug (10/19/15 4:16:14 PM)] RunSetup: ... starting with no args given
+[debug (10/19/15 4:16:14 PM)] RunSetup: Setup: 1.1.0 2015-10-06_17:22 in folder:
+/media/GamesEtc/School/5Semestr/BPINI/SikuliX
+[debug (10/19/15 4:16:15 PM)] RunSetup: RunningSystem: Linux 3.13.0-52-generic (0 Ubuntu 14.04)
+[debug (10/19/15 4:16:15 PM)] RunSetup: parent of jar/classes: /media/GamesEtc/School/5Semestr/BPINI/SikuliX
+[debug (10/19/15 4:16:15 PM)] RunSetup: RunningJava: Java 8 (amd64) 1.8.0_60-b27
+[debug (10/19/15 4:16:15 PM)] init user preferences
+[debug (10/19/15 4:16:23 PM)] RunSetup: 
+popAsk: --------------------
+The following file(s) will be downloaded to
+/media/GamesEtc/School/5Semestr/BPINI/SikuliX
+--- Native support libraries for Linux (sikulixlibs...)
+--- Package 1 ---
+sikulixsetupIDE-1.1.0-forsetup.jar (IDE/Scripting)
+sikulixsetupAPI-1.1.0-forsetup.jar (Java API)
+ - with Jython
+--- Package 2 ---
+sikulixsetupAPI-1.1.0-forsetup.jar (done in package 1)
+--- Additions ---
+tessdata-eng (Tesseract)
+Only click NO, if you want to terminate setup now!
+Click YES even if you want to use local copies in Downloads!
+--------------------
+[debug (10/19/15 4:16:31 PM)] RunSetup: 
+popAsk: --------------------
+You have for Linux native libs
+/home/buzzcz/.Sikulix/SikulixDownloads_201510061722/sikulixlibslux-1.1.0.jar
+Click YES, if you want to use this for setup processing
+... or click NO, to ignore it and download a fresh copy
+--------------------
+[debug (10/19/15 4:16:39 PM)] FileManager: Downloading sikulixlibslux-1.1.0.jar having 1288 KB
+[debug (10/19/15 4:16:43 PM)] FileManager: downloaded 1288 KB to:
+/home/buzzcz/.Sikulix/SikulixDownloads_201510061722/sikulixlibslux-1.1.0.jar
+[debug (10/19/15 4:16:43 PM)] FileManager: download time: 0
+[debug (10/19/15 4:16:46 PM)] RunSetup: Copied from Downloads: sikulixlibslux
+[debug (10/19/15 4:16:46 PM)] RunTimeSETUP: addToClasspath:
+file:/media/GamesEtc/School/5Semestr/BPINI/SikuliX/sikulixlibslux.jar
+*** classpath dump sikulix
+  0: /media/GamesEtc/School/5Semestr/BPINI/SikuliX/sikulixsetup-1.1.0.jar
+  1: /media/GamesEtc/School/5Semestr/BPINI/SikuliX/sikulixlibslux.jar
+*** classpath dump end
+[debug (10/19/15 4:16:46 PM)] RunSetup: checking usability of bundled/provided libs
+[debug (10/19/15 4:16:46 PM)] RunTimeSETUP: exists libs folder at: /home/buzzcz/.Sikulix/SikulixLibs_201510061722
+[debug (10/19/15 4:16:46 PM)] RunTimeSETUP: libs folder empty or has wrong content
+[debug (10/19/15 4:16:46 PM)] RunTimeSETUP: now exporting libs
+[debug (10/19/15 4:16:46 PM)] RunTimeSETUP: libs to export are at:
+jar:file:/media/GamesEtc/School/5Semestr/BPINI/SikuliX/sikulixlibslux.jar!/sikulixlibs/linux/libs64
+[debug (10/19/15 4:16:46 PM)] RunTimeSETUP: resourceList: enter
+[debug (10/19/15 4:16:46 PM)] RunTimeSETUP: resourceLocation: (class org.sikuli.setup.RunSetup) /sikulixlibs/linux/libs64
+[debug (10/19/15 4:16:46 PM)] RunTimeSETUP: resourceList: having jar: jar:file:/media/GamesEtc/School/5Semestr/BPINI/SikuliX/sikulixlibslux.jar!/sikulixlibs/linux/libs64
+[debug (10/19/15 4:16:46 PM)] RunTimeSETUP: files exported: 3 from: /sikulixlibs/linux/libs64 to:
+ /home/buzzcz/.Sikulix/SikulixLibs_201510061722
+[debug (10/19/15 4:16:46 PM)] RunTimeSETUP: loadLib: libVisionProxy.so
+[debug (10/19/15 4:16:46 PM)] RunSetup: 
+popAsk: --------------------
+You have for Java API package
+/home/buzzcz/.Sikulix/SikulixDownloads_201510061722/sikulixsetupAPI-1.1.0-forsetup.jar
+Click YES, if you want to use this for setup processing
+... or click NO, to ignore it and download a fresh copy
+--------------------
+[debug (10/19/15 4:16:56 PM)] FileManager: Downloading sikulixsetupAPI-1.1.0-forsetup.jar having 2083 KB
+[debug (10/19/15 4:16:56 PM)] FileManager: downloaded 2083 KB to:
+/home/buzzcz/.Sikulix/SikulixDownloads_201510061722/sikulixsetupAPI-1.1.0-forsetup.jar
+[debug (10/19/15 4:16:56 PM)] FileManager: download time: 0
+[debug (10/19/15 4:16:59 PM)] RunSetup: Copied from Downloads: sikulixapi
+[debug (10/19/15 4:16:59 PM)] RunSetup: 
+popAsk: --------------------
+You have for SikuliX IDE package
+/home/buzzcz/.Sikulix/SikulixDownloads_201510061722/sikulixsetupIDE-1.1.0-forsetup.jar
+Click YES, if you want to use this for setup processing
+... or click NO, to ignore it and download a fresh copy
+--------------------
+[debug (10/19/15 4:17:08 PM)] FileManager: Downloading sikulixsetupIDE-1.1.0-forsetup.jar having 3858 KB
+[debug (10/19/15 4:17:09 PM)] FileManager: downloaded 3858 KB to:
+/home/buzzcz/.Sikulix/SikulixDownloads_201510061722/sikulixsetupIDE-1.1.0-forsetup.jar
+[debug (10/19/15 4:17:09 PM)] FileManager: download time: 0
+[debug (10/19/15 4:17:12 PM)] RunSetup: Copied from Downloads: sikulix
+[debug (10/19/15 4:17:12 PM)] RunSetup: 
+popAsk: --------------------
+If you click YES, you will get Jython version 2.7.0 (recommended)
+... but there is an issue with some rare UTF-8/Unicode situations,
+that usually appear on startup with UTF-8 ccharacters
+somewhere in the system environment
+If you encounter such problems with Jython 2.7.0
+run setup again and
+click NO to get Jython 2.5.4rc1
+--------------------
+[debug (10/19/15 4:17:18 PM)] RunSetup: 
+popAsk: --------------------
+You have for Jython 2.7
+/home/buzzcz/.Sikulix/SikulixDownloads/jython-standalone-2.7.0.jar
+Click YES, if you want to use this for setup processing
+... or click NO, to ignore it and download a fresh copy
+--------------------
+[debug (10/19/15 4:17:23 PM)] FileManager: Downloading jython-standalone-2.7.0.jar having 36154 KB
+[debug (10/19/15 4:17:26 PM)] FileManager: downloaded 36154 KB to:
+/home/buzzcz/.Sikulix/SikulixDownloads/jython-standalone-2.7.0.jar
+[debug (10/19/15 4:17:26 PM)] FileManager: download time: 3
+[debug (10/19/15 4:17:29 PM)] RunSetup: Copied from Downloads: Jython
+[debug (10/19/15 4:17:30 PM)] FileManager: Downloading tesseract-ocr-3.02.eng.tar.gz with unknown size
+[debug (10/19/15 4:17:31 PM)] FileManager: downloaded 12344 KB to:
+/home/buzzcz/.Sikulix/SikulixDownloads/tesseract-ocr-3.02.eng.tar.gz
+[debug (10/19/15 4:17:31 PM)] FileManager: download time: 1
+[debug (10/19/15 4:17:34 PM)] RunSetup: downloaded: tessdata-eng
+[debug (10/19/15 4:17:34 PM)] RunSetup: trying to extract from: tesseract-ocr-3.02.eng.tar.gz
+[debug (10/19/15 4:17:35 PM)] RunSetup: preparing the tessdata stuff in:
+/home/buzzcz/.Sikulix/SikulixDownloads/tessdata-eng
+[debug (10/19/15 4:17:35 PM)] FileManager: resetFolder:
+/home/buzzcz/.Sikulix/SikulixDownloads/tessdata-eng
+[debug (10/19/15 4:17:36 PM)] FileManager: deleteFileOrFolder:
+/home/buzzcz/.Sikulix/SikulixDownloads/tesseract-ocr
+[debug (10/19/15 4:17:36 PM)] RunTimeSETUP: resourceList: enter
+[debug (10/19/15 4:17:36 PM)] RunTimeSETUP: resourceLocation: (class org.sikuli.setup.RunSetup) /sikulixtessdata
+[debug (10/19/15 4:17:36 PM)] RunTimeSETUP: resourceList: having jar: jar:file:/media/GamesEtc/School/5Semestr/BPINI/SikuliX/sikulixsetup-1.1.0.jar!/sikulixtessdata
+[debug (10/19/15 4:17:36 PM)] RunTimeSETUP: files exported: 21 from: sikulixtessdata to:
+ /home/buzzcz/.Sikulix/SikulixDownloads/tessdata-eng
+[debug (10/19/15 4:17:36 PM)] RunSetup: finally preparing sikulixtessdata.jar
+[debug (10/19/15 4:17:36 PM)] RunTimeSETUP: addToClasspath:
+file:/home/buzzcz/.Sikulix/SikulixDownloads/
+[debug (10/19/15 4:17:36 PM)] RunTimeSETUP: resourceList: enter
+[debug (10/19/15 4:17:36 PM)] RunTimeSETUP: resourceLocation: (class org.sikuli.setup.RunSetup) /tessdata-eng
+[debug (10/19/15 4:17:36 PM)] RunTimeSETUP: resourceList: having folder: /home/buzzcz/.Sikulix/SikulixDownloads/tessdata-eng
+[debug (10/19/15 4:17:36 PM)] FileManager: buildJar: sikulixtemp.jar
+[debug (10/19/15 4:17:36 PM)] FileManager: buildJar: adding tessdata-eng at sikulixtessdata
+[debug (10/19/15 4:17:38 PM)] FileManager: buildJar: completed
+[debug (10/19/15 4:17:38 PM)] RunSetup: renaming sikulixtemp.jar to target jar: sikulixtessdata.jar
+[debug (10/19/15 4:17:38 PM)] FileManager: deleteFileOrFolder:
+/home/buzzcz/.Sikulix/SikulixDownloads/tessdata-eng
+[debug (10/19/15 4:17:38 PM)] RunSetup: Download ended
+[debug (10/19/15 4:17:38 PM)] RunSetup: Downloads for selected options:
+sikulixlibslux-1.1.0.jar sikulixsetupIDE-1.1.0-forsetup.jar sikulixsetupAPI-1.1.0-forsetup.jar jython-standalone-2.7.0.jar tessdata-eng 
+[debug (10/19/15 4:17:38 PM)] RunSetup: adding needed stuff to sikulixapi.jar
+[debug (10/19/15 4:17:38 PM)] FileManager: buildJar: sikulixtemp.jar
+[debug (10/19/15 4:17:38 PM)] FileManager: buildJar: adding: sikulixapi.jar
+[debug (10/19/15 4:17:39 PM)] FileManager: buildJar: adding: sikulixtessdata.jar
+[debug (10/19/15 4:17:41 PM)] FileManager: buildJar: adding: sikulixlibslux.jar
+[debug (10/19/15 4:17:42 PM)] FileManager: buildJar: completed
+[debug (10/19/15 4:17:42 PM)] RunSetup: renaming sikulixtemp.jar to target jar: sikulixapi.jar
+[debug (10/19/15 4:17:42 PM)] RunSetup: adding needed stuff to sikulix.jar
+[debug (10/19/15 4:17:42 PM)] FileManager: buildJar: sikulixtemp.jar
+[debug (10/19/15 4:17:42 PM)] FileManager: buildJar: adding: sikulix.jar
+[debug (10/19/15 4:17:42 PM)] FileManager: buildJar: adding: sikulixapi.jar
+[debug (10/19/15 4:17:46 PM)] FileManager: buildJar: adding: sikulixjython.jar
+[debug (10/19/15 4:17:56 PM)] FileManager: buildJar: adding: sikulixlibslux.jar
+[debug (10/19/15 4:17:58 PM)] FileManager: buildJar: completed
+[debug (10/19/15 4:17:58 PM)] RunSetup: renaming sikulixtemp.jar to target jar: sikulix.jar
+[debug (10/19/15 4:17:58 PM)] RunSetup: processing commandfiles
+[debug (10/19/15 4:17:58 PM)] RunSetup: Trying to run functional test: JAVA-API
+[debug (10/19/15 4:17:58 PM)] RunTimeSETUP: addToClasspath:
+file:/media/GamesEtc/School/5Semestr/BPINI/SikuliX/sikulixapi.jar
+[debug (10/19/15 4:17:58 PM)] RunSetup: trying to run org.sikuli.script.Sikulix.testSetup()
+[debug (10/19/15 4:17:58 PM)] RunSetup: class found: class org.sikuli.script.Sikulix
+[debug (10/19/15 4:17:58 PM)] RunSetup: getMethod: public static boolean org.sikuli.script.Sikulix.testSetup()
+[debug (10/19/15 4:18:03 PM)] RunSetup: invoke: public static boolean org.sikuli.script.Sikulix.testSetup()
+[debug (10/19/15 4:18:03 PM)] Mouse: init
+[debug (10/19/15 4:18:03 PM)] KeyBoard: init
+[debug (10/19/15 4:18:03 PM)] Image: BufferedImage: (100, 100)
+[debug (10/19/15 4:18:03 PM)] Finder: Image: __BufferedImage__: (100x100)
+[debug (10/19/15 4:18:03 PM)] Sikulix: testSetup: Finder setup with image worked
+[debug (10/19/15 4:18:03 PM)] FileManager: tempfile create:
+/tmp/Sikulix_1785726702/sikuli-461696268810962196.png
+[debug (10/19/15 4:18:03 PM)] Image: loaded: /tmp/Sikulix_1785726702/sikuli-461696268810962196.png (file:/tmp/Sikulix_1785726702/sikuli-461696268810962196.png)
+[debug (10/19/15 4:18:03 PM)] Image: cached: /tmp/Sikulix_1785726702/sikuli-461696268810962196.png (29 KB) (# 1 KB 29 -- 0 % of 64 MB)
+[debug (10/19/15 4:18:03 PM)] Sikulix: testSetup: Finder setup with image file worked
+[debug (10/19/15 4:18:03 PM)] Region: find: waiting 3.0 secs for /tmp/Sikulix_1785726702/sikuli-461696268810962196.png to appear in S(0)[0,0 1920x1080]
+[debug (10/19/15 4:18:03 PM)] Image: reused: /tmp/Sikulix_1785726702/sikuli-461696268810962196.png (file:/tmp/Sikulix_1785726702/sikuli-461696268810962196.png)
+[debug (10/19/15 4:18:04 PM)] Region: find: /tmp/Sikulix_1785726702/sikuli-461696268810962196.png has appeared 
+at M[0,0 100x100]@S(S(0)[0,0 1920x1080]) S:1.00 C:50,50 [711 msec]
+[debug (10/19/15 4:18:04 PM)] Sikulix: testSetup: Screen.find(imagefile) worked
+[debug (10/19/15 4:18:04 PM)] Region: find: waiting 3.0 secs for /tmp/Sikulix_1785726702/sikuli-461696268810962196.png to appear in S(0)[0,0 1920x1080]
+[debug (10/19/15 4:18:04 PM)] Image: reused: /tmp/Sikulix_1785726702/sikuli-461696268810962196.png (file:/tmp/Sikulix_1785726702/sikuli-461696268810962196.png)
+[debug (10/19/15 4:18:04 PM)] Region: checkLastSeen: still there
+[debug (10/19/15 4:18:04 PM)] Region: find: /tmp/Sikulix_1785726702/sikuli-461696268810962196.png has appeared 
+at M[0,0 100x100]@S(S(0)[0,0 1920x1080]) S:1.00 C:50,50 [128 msec]
+[debug (10/19/15 4:18:04 PM)] Sikulix: testSetup: repeated Screen.find(imagefile) worked
+[debug (10/19/15 4:18:07 PM)] Sikulix: testSetup: Finder.find: worked
+[debug (10/19/15 4:18:07 PM)] RunTimeSETUP: addToClasspath:
+file:/media/GamesEtc/School/5Semestr/BPINI/SikuliX/sikulix.jar
+[debug (10/19/15 4:18:07 PM)] RunSetup: Jython: Trying to run functional test: running script statements via SikuliScript
+[debug (10/19/15 4:18:12 PM)] ScriptingSupport: initScriptingSupport: enter
+[debug (10/19/15 4:18:14 PM)] JythonSupport: init: starting
+[debug (10/19/15 4:18:14 PM)] JythonSupport: init: success
+[debug (10/19/15 4:18:14 PM)] JythonSupport: ***** Jython sys.path
+ 0: /media/GamesEtc/School/5Semestr/BPINI/SikuliX/sikulixapi.jar/Lib
+ 1: /media/GamesEtc/School/5Semestr/BPINI/SikuliX/Lib
+ 2: /media/GamesEtc/School/5Semestr/BPINI/SikuliX/sikulix.jar/Lib
+ 3: __classpath__
+ 4: __pyclasspath__/
+[debug (10/19/15 4:18:14 PM)] JythonSupport: ***** Jython sys.path end
+[debug (10/19/15 4:18:15 PM)] Jython: sikuli: Sikuli: starting init
+[debug (10/19/15 4:18:16 PM)] Jython: requested to use as default region: R[0,0 1920x1080]@S(0)
+[debug (10/19/15 4:18:16 PM)] Jython: sikuli: Sikuli: ending init
+[debug (10/19/15 4:18:16 PM)] JythonScriptRunner: running Jython 2.7.0 
+[debug (10/19/15 4:18:16 PM)] ScriptingSupport: initScriptingSupport: added: jython
+[debug (10/19/15 4:18:16 PM)] ScriptingSupport: initScriptingSupport: exit with defaultrunner: jython (py)
+[debug (10/19/15 4:18:16 PM)] Jython: requested to use as default region: R[0,0 1920x1080]@S(0)
+[debug (10/19/15 4:18:16 PM)] JythonScriptRunner: runPython: running statements
+[debug (10/19/15 4:18:16 PM)] Image: BufferedImage: (100, 100)
+[debug (10/19/15 4:18:16 PM)] Finder: Image: __BufferedImage__: (100x100)
+[debug (10/19/15 4:18:16 PM)] Sikulix: testSetup: Finder setup with image worked
+[debug (10/19/15 4:18:16 PM)] FileManager: tempfile create:
+/tmp/Sikulix_1785726702/sikuli-2989397503061344996.png
+[debug (10/19/15 4:18:16 PM)] Image: loaded: /tmp/Sikulix_1785726702/sikuli-2989397503061344996.png (file:/tmp/Sikulix_1785726702/sikuli-2989397503061344996.png)
+[debug (10/19/15 4:18:16 PM)] Image: cached: /tmp/Sikulix_1785726702/sikuli-2989397503061344996.png (29 KB) (# 2 KB 58 -- 0 % of 64 MB)
+[debug (10/19/15 4:18:16 PM)] Sikulix: testSetup: Finder setup with image file worked
+[debug (10/19/15 4:18:16 PM)] Region: find: waiting 3.0 secs for /tmp/Sikulix_1785726702/sikuli-2989397503061344996.png to appear in S(0)[0,0 1920x1080]
+[debug (10/19/15 4:18:16 PM)] Image: reused: /tmp/Sikulix_1785726702/sikuli-2989397503061344996.png (file:/tmp/Sikulix_1785726702/sikuli-2989397503061344996.png)
+[debug (10/19/15 4:18:17 PM)] Region: find: /tmp/Sikulix_1785726702/sikuli-2989397503061344996.png has appeared 
+at M[0,0 100x100]@S(S(0)[0,0 1920x1080]) S:1.00 C:50,50 [637 msec]
+[debug (10/19/15 4:18:17 PM)] Sikulix: testSetup: Screen.find(imagefile) worked
+[debug (10/19/15 4:18:17 PM)] Region: find: waiting 3.0 secs for /tmp/Sikulix_1785726702/sikuli-2989397503061344996.png to appear in S(0)[0,0 1920x1080]
+[debug (10/19/15 4:18:17 PM)] Image: reused: /tmp/Sikulix_1785726702/sikuli-2989397503061344996.png (file:/tmp/Sikulix_1785726702/sikuli-2989397503061344996.png)
+[debug (10/19/15 4:18:17 PM)] Region: checkLastSeen: still there
+[debug (10/19/15 4:18:17 PM)] Region: find: /tmp/Sikulix_1785726702/sikuli-2989397503061344996.png has appeared 
+at M[0,0 100x100]@S(S(0)[0,0 1920x1080]) S:1.00 C:50,50 [258 msec]
+[debug (10/19/15 4:18:17 PM)] Sikulix: testSetup: repeated Screen.find(imagefile) worked
+[debug (10/19/15 4:18:22 PM)] Sikulix: testSetup: Finder.find: worked
+[debug (10/19/15 4:18:27 PM)] RunSetup: ... SikuliX Setup seems to have ended successfully ;-)
+[debug (10/19/15 4:18:27 PM)] RunTimeSETUP: final cleanup
+[debug (10/19/15 4:18:27 PM)] FileManager: deleteFileOrFolder:
+/tmp/Sikulix_1785726702
