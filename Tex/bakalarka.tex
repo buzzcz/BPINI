@@ -26,6 +26,7 @@
 	#2,
 	language=Python,
 	frame=single,
+	basicstyle=\ttfamily,
 	showstringspaces=false,
 	stringstyle=\color{darkRed},
 	commentstyle=\color{gray},
@@ -42,6 +43,7 @@
 	#2,
 	language=Java,
 	frame=single,
+	basicstyle=\ttfamily,
 	showstringspaces=false,
 	commentstyle=\color{darkGreen},
 	keywordstyle=\color{blue},
@@ -80,7 +82,11 @@ V~Plzni dne \today
 \chapter*{Abstract}
 \thispagestyle{empty}
 This paper deals with the use of software tools for testing graphical user interface. It compares some of the tools and describes the use of one of them in a~way that fits into the subject KIV/OKS.
+
+\begingroup
+\let\clearpage\relax
 \chapter*{Abstrakt}
+\endgroup
 \thispagestyle{empty}
 Tato práce se zabývá využitím nástrojů k~testování grafického uživatelského rozhraní aplikací. Srovnává některé nástroje k~tomu určené a~popisuje použití jednoho z~nich tak, aby svou filosofií zapadal do předmětu KIV/OKS.
 \end{comment}
@@ -142,18 +148,24 @@ Vzhledem k~požadavkům na nástroje, které vyplývají z~vazby na předmět KI
 	Základ nástroje, tzv. core framework, je vytvořený v~jazyce Python. Knihovny je možné psát v~jazyce Python nebo Java a~samotné skripty pak v~jazyce podobném přirozené angličtině. Díky dodržování jistého formátování je pro člověka velmi přehledný. Mezi podporovaná testovaná rozhraní patří např. Android, iOS, Java Swing, webové aplikace, databáze a~aplikace vytvořené pro OS Windows. Výhodou této aplikace je možnost si chybějící modul pro testování určitého rozhraní vytvořit a~používat.
 	
 \chapter{Srovnání nástrojů}
-Pro srovnání nástrojů jsem vytvořil návrh multikriteriálního hodnocení, který se snaží nástroje hodnotit z~různých úhlů a~vytvořit tak komplexní klasifikaci. Každé z~hodnocených částí je možné přiřadit vlastní váhu. Ta určuje důležitost hodnotícího kritéria pro každého jedince a~tím napomáhá výběru vhodného nástroje. V~obrázku \ref{MKHodn} je návrh ukázán a~je vidět výsledek pro mnou zvolené váhy. Jako nejvhodnější se jeví použití nástroje SikuliX. Dále se budu věnovat jednotlivým hodnotícím kritériím.
+Pro srovnání nástrojů jsem vytvořil návrh multikriteriálního hodnocení, který se snaží nástroje hodnotit z~různých úhlů a~vytvořit tak komplexní klasifikaci. Každé z~hodnocených částí je možné přiřadit vlastní váhu. Ta určuje důležitost hodnotícího kritéria pro každého jedince a~tím napomáhá výběru vhodného nástroje. V~obrázku \ref{MKHodn} je návrh ukázán a~je vidět výsledek pro mnou zvolené váhy, viz obrázek \ref{MKVysl}. Jako nejvhodnější se jeví použití nástroje SikuliX. Dále se budu věnovat jednotlivým hodnotícím kritériím.
 
 Možnost vytváření skriptů je jedno z~nejdůležitějších kritérií vzhledem k~vazbě na předmět KIV/OKS. Hlavním požadavkem bylo, aby bylo možné skripty tvořit v~jazyce Java. Dále jsem vybral několik skriptovacích jazyků a~metod.
 
 Podpora testovaných rozhraní byla dalším z~rozhodujících kritérií. Hlavními platformami měly být aplikace vytvořené pomocí jazyka Java a~webové aplikace. Opět jsem přidal některé další běžné platformy. Nástroj by měl být též multiplatformní, proto je jedním z~kritérií podpora operačních systémů.
 
-Reportování výsledků testů, složitost jejich tvorby a~jejich přehlednost může napomoci vývojáři diagnostikovat případnou chybu. Také je přínosné vědět stav obrazovky a~to zajistí screenshot. Díky tomu se stává vývoj jednodušší, a~proto jsem toto kritérium také zařadil do hodnocení.
+Reportování výsledků testů, složitost jejich tvorby a~jejich přehlednost může napomoci vývojáři diagnostikovat případnou chybu. Také je přínosné znát stav obrazovky a~to zajistí screenshot. Díky tomu se stává vývoj jednodušší, a~proto jsem toto kritérium také zařadil do hodnocení.
 
-Dále jsem poněkud individuálně přidal kritérium univerzálnosti nástroje. To je zde myšleno tak, co obecně nástroj dokáže, ale co není podstatné z~pohledu předmětu KIV/OKS.
+Dále jsem přidal kritérium univerzálnosti nástroje s~poněkud individuálním ohodnocením. To je zde myšleno tak, co obecně nástroj dokáže, ale co není podstatné z~pohledu předmětu KIV/OKS. Například Jubula je čistě testovací nástroj, ale SikuliX se dá použít navíc pro automatizaci pracovních postupů.
 
 Posledním kritériem je vhodnost nástroje pro účely předmětu KIV/OKS. Jedná se hlavně o~to, jak zapadá do konceptu výuky, jak je práce s~ním složitá a~jaké má nároky na studentovy znalosti.
-\begin{figure}[ht]
+
+Vysvětlivky termínů z~dále použitých tabulek:
+\begin{itemize}
+	\item Natural-like -- víceméně okleštěný přirozený jazyk založený na angličtině,
+	\item Složitost tvorby -- míní se tím složitost přípravy reportu a~v~tabulce vyšší počet bodů znamená jednodušší tvorbu pro tvůrce skriptů
+\end{itemize}
+\begin{figure}[ht!]
 	\begin{subfigure}{\textwidth}
 		\centering
 		\caption{Multikriteriální hodnocení}
@@ -162,25 +174,28 @@ Posledním kritériem je vhodnost nástroje pro účely předmětu KIV/OKS. Jedn
 		\includegraphics[width=14cm]{img/Kriteria/Kriteria2.png}
 	\end{subfigure}
 \end{figure}
-\begin{figure}[ht]
+\begin{figure}[ht!]
 	\ContinuedFloat
 	\begin{subfigure}{\textwidth}
 		\centering
 		\caption{Výsledek multikriteriálního hodnocení}
+		\label{MKVysl}
 		\includegraphics[width=14cm]{img/Kriteria/Kriteria3.png}
 	\end{subfigure}
 \end{figure}
 
+Z~uvedeného multikriteriálního hodnocení je zřejmé, že vybrané nástroje jsou v~podstatě vyrovnané. To ostatně potvrzuje i~jejich poměrné zastoupení mezi uživateli. SikuliX byl zvolen též po diskuzích s~vedoucím práce a~to pro jeho vlastnost naprosté nezávislosti na testovaném rozhraní. Tato vlastnost se významně hodí v~předmětu KIV/OKS, protože je možné dát nástroj do kontrastu s~nástrojem Selenium. Jinými slovy řečeno SikuliX je principiálně odlišný nástroj, což není možné říci o~např. Jubule.
+
 \chapter{SikuliX}
 	\section{Instalace}
-	Po stažení balíčku započne instalace jeho spuštěním\footnote{Je potřeba instalace JRE nebo JDK 6 a~vyšší, v~linuxové distribuci balíky \emph{libopencv-core2.4, libopencv-imgproc2.4, libopencv-highgui2.4, libtesseract3} a~\emph{wmctrl} \cite{SikuliX}}. V~průběhu máme na výběr různé možnosti, jak chceme nástroj používat, viz obrázek \ref{Instal}. Např. zda chceme používat SikuliX-IDE a~Python nebo Ruby, jestli budeme používat jiné IDE a~Javu a~zda chceme používat OCR funkce. Zaškrtneme všechna políčka kromě \emph{Ruby (JRuby)} a~klikneme na \emph{Setup Now}. Jsme dotázáni, zda chceme balíčky stáhnout, nebo ukončit instalaci. Zvolíme \emph{Yes}. Další dotaz je na verzi Jythonu, kterou chceme použít, s~upozorněním, že může nastat problém se znaky v~kódování UTF-8. Opět zvolíme \emph{Yes}. Začne vytváření souborů a~měla by se otevřít dvě okna jako na obrázu \ref{InstalOK}, obě potvrdíme tlačítkem \emph{OK}. Pokud vše proběhne v~pořádku, vzniknou v~adresáři soubory podobné těmto\footnote{Může se lišit na různých OS} \emph{runsikulix, SetupStuff, SikuliX-1.1.0-SetupLog.txt, sikulixapi.jar, sikulix.jar}.
-	\begin{figure}[ht]
+	Po stažení balíčku započne instalace jeho spuštěním\footnote{Je potřeba instalace JRE nebo JDK 6 a~vyšší, v~linuxové distribuci balíky \emph{libopencv-core2.4, libopencv-imgproc2.4, libopencv-highgui2.4, libtesseract3} a~\emph{wmctrl} \cite{SikuliX}}. Je ukázána instalace v~Linuxu, avšak instalace ve Windows je obdobná. V~průběhu máme na výběr různé možnosti, jak chceme nástroj používat, viz obrázek \ref{Instal}. Např. zda chceme používat SikuliX-IDE a~Python nebo Ruby, jestli budeme používat jiné IDE a~Javu a~zda chceme používat OCR funkce. Zaškrtneme všechna políčka kromě \emph{Ruby (JRuby)} a~klikneme na \emph{Setup Now}. Jsme dotázáni, zda chceme balíčky stáhnout, nebo ukončit instalaci. Zvolíme \emph{Yes}. Další dotaz je na verzi Jythonu, kterou chceme použít, s~upozorněním, že může nastat problém se znaky v~kódování UTF-8. Opět zvolíme \emph{Yes}. Začne vytváření souborů a~měla by se otevřít dvě okna jako na obrázu \ref{InstalOK}, obě potvrdíme tlačítkem \emph{OK}. Pokud vše proběhne v~pořádku, vzniknou v~adresáři soubory podobné těmto\footnote{Může se lišit na různých OS} \emph{runsikulix, SetupStuff, SikuliX-1.1.0-SetupLog.txt, sikulixapi.jar, sikulix.jar}.
+	\begin{figure}[ht!]
 		\centering
 		\caption{Instalace SikuliX}
 		\label{Instal}
 		\includegraphics[width=14cm]{img/Instalace/Instalace.png}
 	\end{figure}
-	\begin{figure}[ht]
+	\begin{figure}[ht!]
 		\centering
 		\caption{Test instalace}
 		\label{InstalOK}
@@ -195,57 +210,117 @@ Posledním kritériem je vhodnost nástroje pro účely předmětu KIV/OKS. Jedn
 		\item dvojklikem na soubor runsikulix (Linux) nebo runsikulix.cmd (Windows),
 		\item z~příkazové řádky příkazem \texttt{java -jar cesta/k/sikulix.jar [volitelne parametry]}.
 	\end{enumerate}
-	Po spuštění vypadá IDE jako na obrázku \ref{SikuliXIDE}. Jako parametry se v~metodách, ve kterých je to možné, ukazují obrázky vzorů, podle který se na obrazovce nástroj orientuje.
-	\begin{figure}[ht]
+	Po spuštění vypadá IDE jako na obrázku \ref{SikuliXIDE}. Jako parametry se v~metodách, ve kterých je to možné, ukazují obrázky vzorů, podle kterých se na obrazovce nástroj orientuje.
+	\begin{figure}[ht!]
+		\centering
 		\caption{SikuliX-IDE}
 		\label{SikuliXIDE}
 		\includegraphics[width=14cm]{img/IDE/SikuliXIDE.png}
 	\end{figure}
 	
 		\subsection{První skript}
-		První skript, který jsem v~SikuliX-IDE napsal, demonstruje základní možnost použití nástroje, viz kód \ref{PrvniSkript}. Otevře se prohlížeč, který přejde na adresu \url{http://oks.kiv.zcu.cz/Prevodnik}. Klikne na odkaz \emph{Převodník}, do vstupního pole vloží \emph{1} a~stiskne \emph{Převeď}. Z~pole s~výsledkem přečte text a~porovná jej s~předpokládanou hodnotou \emph{2,54}. Pokud si odpovídají, objeví se vyskakovací okno s~potvrzením, jestliže ne, zobrazí se chybová hláška. Obdobně je tomu následovně, kdy se pouze kontroluje existence obrázku.
+		Skript se připravuje v~SikuliX-IDE, které je vidět na obrázku \ref{SikuliXIDE}. Kód, který je vidět v~\ref{PrvniSkript}, není v~IDE identický, ale cesta k~obrázku je vždy nahrazena jeho náhledem. K~tvorbě jsou v~IDE užitečné pomůcky, které se nacházejí v~levém a~v~horním panelu.
+		
+		Skript pracuje tak, že se otevře prohlížeč, který přejde na adresu \url{http://oks.kiv.zcu.cz/Prevodnik}. Klikne na odkaz \emph{Převodník}, do vstupního pole vloží \emph{1} a~stiskne \emph{Převeď}. Z~pole s~výsledkem přečte text a~porovná jej s~předpokládanou hodnotou \emph{2,54}. Pokud si odpovídají, objeví se vyskakovací okno s~potvrzením, jestliže ne, zobrazí se chybová hláška. Obdobně je tomu v~následující části, kde se pouze kontroluje existence obrázku.\newpage
 		\begin{lstpython}{caption={První skript}, label={PrvniSkript}}
-chrome = App("google-chrome")
-chrome.open()	#otevre aplikaci definovanou vyse
-chrome.focus()	#vybere do popredi jeji okno
+prohlizec = App("google-chrome")
+prohlizec.open()	#otevre aplikaci definovanou
+				#vyse
+prohlizec.focus()	#vybere do popredi jeji okno
 #ceka, dokud na obrazovce nenajde obrazek
 wait("obr1.png")
-#najde na obrazovce obrazek a~vlozi do neho text
+#najde na obrazovce obrazek a vlozi do neho text
 paste("obr2.png", "http://oks.kiv.zcu.cz/Prevodnik")
-type(Key.ENTER)#simuluje stisk klavesy ENTER
-#najde na obrazovce obrazek a~klikne na nej
+type(Key.ENTER)	#simuluje stisk klavesy ENTER
+#najde na obrazovce obrazek a klikne na nej
 click("obr3.png")
 wait("obr4.png")
 paste("obr5.png", "1")
-#klikne o~27px vyse a~18px vlevo od nalezeneho obrazku
+#klikne o 27px vyse a 18px vlevo od nalezeneho
+#obrazku
 click(Pattern("obr6.png").targetOffset(-27,-18))
 click("obr7.png")
-click("obr8.png")
-#precte text z~casti, ktera je 100px vpravo od
+click("obr4.png")
+#precte text z casti, ktera je 100px vpravo od
 #nalezeneho obrazku
-T = find("obr9.png").right(100).text()
+T = find("obr8.png").right(100).text()
 if T == "2.54":
 	#pokud rozpoznany text souhlasi se zadanym,
 	#otevre se vyskakovaci okno
     popup("Ok textove")
 else:
-    popError("Chyba")    #jinak se zobrazi chybove okno
+    popError("Chyba")    #jinak se zobrazi chybove
+    			 #okno
 
-if exists("obr10.png"):
-	#pokud na obrazovce existuje obrazek, otevre se
-	#vyskakovaci okno
+if exists("obr9.png"):
+	#pokud na obrazovce existuje obrazek, otevre
+	#se vyskakovaci okno
     popup("Ok obrazove")
 else:
     popError("Chyba")
-chrome.close()    #ukonci aplikaci
+prohlizec.close()    #ukonci aplikaci
 		\end{lstpython}
 		
 	\section{Java API}
-	Dále jsem se zaměřil na Java API, které SikuliX poskytuje. Pro použití Java API od SikuliX je potřeba mít při překladu a~spuštění nastavený v~classpath \emph{sikulixapi.jar}. Toho docílíme např. tak, že použijeme v~příkazové řádce \texttt{javac -cp sikulixapi.jar:. Test01.java} a~\texttt{java -cp sikulixapi.jar:. Test01}. Syntaxe, kterou SikuliX v~Java API využívá, je velmi podobná té v~Sikuli-IDE, proto ji není třeba vysvětlovat.
+	Dále bylo zkoumáno Java API, které SikuliX poskytuje. Pro jeho použití je potřeba mít při překladu a~spuštění nastavený v~classpath \emph{sikulixapi.jar}. Toho docílíme např. tak, že použijeme v~příkazové řádce dvou příkazů\\\texttt{javac -cp sikulixapi.jar:. Test01.java}\\\texttt{java -cp sikulixapi.jar:. Test01}\\ Syntaxe, kterou SikuliX v~Java API využívá, je velmi podobná té v~SikuliX-IDE.
 	
-		\subsection{První testy}
-		S~využitím knihoven \emph{JUnit} a~\emph{Log4j} jsem vytvořil čtyři testy, viz kód \ref{PrvniJavaAPI}.
-		\begin{lstjava}{caption={První testy Java API}, label={PrvniJavaAPI}}
+		\subsection{První test}
+		První test s~použitím Java API, viz kód \ref{PrvniJavaAPI}, je identický s~tím, který byl vytvořen pomocí SikuliX-IDE.
+		\begin{lstjava}{caption={První test Java API}, label={PrvniJavaAPI}}
+import org.sikuli.basics.Settings;
+import org.sikuli.script.*;
+import javax.swing.*;
+
+public class Test01 {
+
+  static Screen s;
+  static App prohlizec;
+  
+  public static void main(String [] args) {
+    Settings.OcrTextSearch = true;
+    Settings.OcrTextRead = true;
+
+    s= new Screen();
+    prohlizec = new App("google-chrome");
+    prohlizec.open();
+    prohlizec.focus();
+    
+    try {
+      s.wait("obr1.png");
+      s.paste("obr2.png");
+      s.type(Key.ENTER);
+      s.click("obr3.png");
+      s.wait("obr4.png");
+      s.paste("obr5.png", "1");
+      s.click(new Pattern("obr6.png").targetOffset(
+        -27,-18));
+      s.click("obr7.png");
+      s.click("obr4.png");
+      String t = s.find("obr8.png").right(
+        100).text();
+      if (Double.parseDouble(t) == 2.54) {
+        JOptionPane.showMessageDialog(null, "Ok" +
+          " textove");
+      } else {
+        JOptionPane.showMessageDialog(null, "Chyba");
+      }
+      if (s.exists("obr9.png") != null) {
+        JOptionPane.showMessageDialog(null, "Ok" +
+          " obrazove");
+      } else {
+        JOptionPane.showMessageDialog(null, "Chyba");
+      }
+      prohlizec.close();
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
+  }
+}
+		\end{lstjava}
+	
+		\subsection{Sofistikovanější testy}
+		S~využitím knihoven \emph{JUnit} a~\emph{Log4j} (ani jedna z~těchto knihoven není pro běh SikuliX bezprostředně nutná) byly vytvořeny čtyři testy, viz kód \ref{DalsiJavaAPI}. První test skončí negativně, druhý pozitivně, třetí pozitivně a~čtvrtý negativně.
+		\begin{lstjava}{caption={Další testy Java API}, label={DalsiJavaAPI}}
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.AfterClass;
@@ -260,15 +335,12 @@ import javax.swing.*;
 import java.time.LocalDateTime;
 import static org.junit.Assert.*;
 
-/**
- * @author Jaroslav Klaus
- */
 public class Test01 {
 
   static Logger logger;
   static ErrorCollector collector;
   static Screen s;
-  static App chrome;
+  static App prohlizec;
   static boolean run;
 
   static {
@@ -295,10 +367,10 @@ public class Test01 {
     Debug.setLoggerAll("info");
 
     collector = new ErrorCollector();
-    s~= new Screen();
-    chrome = new App("google-chrome");
-    chrome.open();
-    chrome.focus();
+    s = new Screen();
+    prohlizec = new App("google-chrome");
+    prohlizec.open();
+    prohlizec.focus();
     run = true;
     }
 
@@ -306,7 +378,7 @@ public class Test01 {
   public static void tearDownAfterClass() {
     JOptionPane.showMessageDialog(null, "Script" +
       " dokoncen");
-    chrome.close();
+    prohlizec.close();
   }
 
   @Before
@@ -331,7 +403,7 @@ public class Test01 {
       try {
         s.click("png/zalozkaPrevodnik.png");
         s.wait("png/tlacitkoPreved.png", 5);
-        s.paste("png/vstup", "1");
+        s.paste("png/vstup.png", "1");
         Match m = s.find("png/jednotky.png");
         m.setTargetOffset(-27, -18);
         m.click();
@@ -340,11 +412,13 @@ public class Test01 {
           targetOffset(-27, 18));
         s.find("png/dm.png").click();
         s.click("png/tlacitkoPreved.png");
-        String t = s.find("png/vystup.png").right(100).
-          text();
-        assertEquals(10, Double.parseDouble(t), 0.01);
+        String t = s.find("png/vystup.png").right(
+          100).text();
+        assertEquals(10, Double.parseDouble(t),
+          0.01);
       } catch (FindFailed | AssertionError e) {
-        s.capture().save("errors", nazevScreenshotu());
+        s.capture().save("errors",
+          nazevScreenshotu());
         logger.error(e.getMessage());
         fail(e.getMessage());
       }
@@ -361,14 +435,16 @@ public class Test01 {
       try {
         s.click("png/zalozkaPrevodnik.png");
         s.wait("png/tlacitkoPreved.png", 5);
-        s.paste("png/vstup", "1");
+        s.paste("png/vstup.png", "1");
         s.click(new Pattern("png/jednotky.png").
           targetOffset(-27, -18));
         s.click("png/inch.png");
         s.click("png/tlacitkoPreved.png");
-        assertTrue(s.exists("png/vysledek") != null);
+        assertTrue(s.exists("png/vysledek.png") !=
+          null);
       } catch (FindFailed | AssertionError e) {
-        s.capture().save("errors", nazevScreenshotu());
+        s.capture().save("errors",
+          nazevScreenshotu());
         logger.error(e.getMessage());
         fail(e.getMessage());
       }
@@ -387,7 +463,8 @@ public class Test01 {
         assertTrue(s.exists("png/zahlaviKiv.png") !=
           null);
       } catch (FindFailed | AssertionError e) {
-        s.capture().save("errors", nazevScreenshotu());
+        s.capture().save("errors",
+          nazevScreenshotu());
         logger.error(e.getMessage());
         fail(e.getMessage());
       }
@@ -403,16 +480,18 @@ public class Test01 {
     if (run) {
       try {
         s.wait("png/tlacitkoPreved.png", 5);
-        s.paste("png/vstup", "1");
+        s.paste("png/vstup.png", "1");
         s.click(new Pattern("png/jednotky.png").
           targetOffset(-27, -18));
         s.findText("(metr)").click();
         s.click("png/tlacitkoPreved.png");
-        String t = s.find("png/vystup.png").right(100).
-          text();
-        assertEquals(100, Double.parseDouble(t), 0.01);
+        String t = s.find("png/vystup.png").right(
+          100).text();
+        assertEquals(100, Double.parseDouble(t),
+          0.01);
       } catch (FindFailed | AssertionError e) {
-        s.capture().save("errors", nazevScreenshotu());
+        s.capture().save("errors",
+          nazevScreenshotu());
         logger.error(e.getMessage());
         fail(e.getMessage());
       }
@@ -428,11 +507,11 @@ public class Test01 {
 \chapter{Závěr}
 Seznámil jsem se s~některými metodami testování grafického uživatelského rozhraní a~zjistil jsem některé důvody používání těchto metod. Dále jsem prozkoumal, které nástroje je k~testování možné využít.
 
-Vybral jsem tři programy, které jsem stručně popsal. Navrhl jsem multikriteriální hodnocení a~provedl jejich podrobné porovnání. Výsledkem byl jeden program, který použiji jako hlavní nástroj v~této práci.
+Vybral jsem tři programy, které jsem stručně popsal. Navrhl jsem multikriteriální hodnocení a~provedl jejich podrobné porovnání. Výsledkem byl výběr jednoho programu, který použiji jako hlavní nástroj v~této práci.
 
 S~aplikací SikuliX, kterou jsem zvolil předchozí činností, jsem se zběžně seznámil a~vytvořil jeden test v~prostředí SikuliX-IDE za použití vlastního jazyka SikuliX. Další čtyři testy jsem zhotovil pomocí Java API, které SikuliX nabízí a~které budu využívat z~důvodu vazby na předmět KIV/OKS.
 
-Jako další se hodlám zaměřit na podrobnější zkoumání používání nástroje. Také připravím sadu ukázkových testů a~funkční scénáře.
+Dále se hodlám zaměřit na podrobnější zkoumání používání nástroje. Také připravím sadu ukázkových testů a~funkční scénáře.
 		
 \appendix
 \bibliographystyle{csplainnat}

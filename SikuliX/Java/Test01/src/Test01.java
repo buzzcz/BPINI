@@ -84,7 +84,7 @@ public class Test01 {
 			try {
 				s.click("png/zalozkaPrevodnik.png");
 				s.wait("png/tlacitkoPreved.png", 5);
-				s.paste("png/vstup", "1");
+				s.paste("png/vstup.png", "1");
 				Match m = s.find("png/jednotky.png");
 				m.setTargetOffset(-27, -18);
 				m.click();
@@ -112,11 +112,11 @@ public class Test01 {
 			try {
 				s.click("png/zalozkaPrevodnik.png");
 				s.wait("png/tlacitkoPreved.png", 5);
-				s.paste("png/vstup", "1");
+				s.paste("png/vstup.png", "1");
 				s.click(new Pattern("png/jednotky.png").targetOffset(-27, -18));
 				s.click("png/inch.png");
 				s.click("png/tlacitkoPreved.png");
-				assertTrue(s.exists("png/vysledek") != null);
+				assertTrue(s.exists("png/vysledek.png") != null);
 			} catch (FindFailed | AssertionError e) {
 				s.capture().save("errors", screenshotName());
 				logger.error(e.getMessage());
@@ -152,7 +152,7 @@ public class Test01 {
 		if (run) {
 			try {
 				s.wait("png/tlacitkoPreved.png", 5);
-				s.paste("png/vstup", "1");
+				s.paste("png/vstup.png", "1");
 				s.click(new Pattern("png/jednotky.png").targetOffset(-27, -18));
 				s.findText("(metr)").click();
 				s.click("png/tlacitkoPreved.png");
