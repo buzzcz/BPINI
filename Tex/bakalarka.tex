@@ -50,10 +50,6 @@
 	stringstyle=\color{red}
 }}{}
 
-
-
-\usepackage{verbatim}
-
 \author{Jaroslav Klaus}
 \title{Využití nástrojů pro testování grafického uživatelského rozhraní}
 \titlet{}
@@ -61,7 +57,7 @@
 \university{Západočeská univerzita v~Plzni}
 \faculty{Fakulta aplikovaných věd}
 \department{Katedra informatiky a~výpočetní techniky}
-\subject{Projekt 5}
+\subject{Bakalářská práce}
 \town{Plzeň}
 \begin{document}
 \pagestyle{fancy}
@@ -71,7 +67,6 @@
 \lhead{\leftmark}
 \rhead{\rightmark}
 \maketitle
-\begin{comment}
 \chapter*{Prohlášení}
 \thispagestyle{empty}
 Prohlašuji, že jsem práci vypracoval samostatně a~výhradně s~použitím citovaných pramenů.
@@ -89,7 +84,6 @@ This paper deals with the use of software tools for testing graphical user inter
 \endgroup
 \thispagestyle{empty}
 Tato práce se zabývá využitím nástrojů k~testování grafického uživatelského rozhraní aplikací. Srovnává některé nástroje k~tomu určené a~popisuje použití jednoho z~nich tak, aby svou filosofií zapadal do předmětu KIV/OKS.
-\end{comment}
 \tableofcontents
 \pagestyle{fancy}
 \renewcommand{\chaptermark}[1]{\markboth{\textit{#1}}{}}
@@ -208,7 +202,8 @@ Z~uvedeného multikriteriálního hodnocení je zřejmé, že vybrané nástroje
 	\begin{enumerate}[leftmargin=*, topsep=-3.5mm, itemsep=-1.5mm]
 		\item Spuštěním souboru SikuliX.app (Mac) nebo SikuliX.exe (Windows),
 		\item dvojklikem na soubor runsikulix (Linux) nebo runsikulix.cmd (Windows),
-		\item z~příkazové řádky příkazem \texttt{java -jar cesta/k/sikulix.jar [volitelne parametry]}.
+		\item z~příkazové řádky příkazem\\
+		\texttt{java -jar cesta/k/sikulix.jar [volitelne parametry]}\\
 	\end{enumerate}
 	Po spuštění vypadá IDE jako na obrázku \ref{SikuliXIDE}. Jako parametry se v~metodách, ve kterých je to možné, ukazují obrázky vzorů, podle kterých se na obrazovce nástroj orientuje.
 	\begin{figure}[ht!]

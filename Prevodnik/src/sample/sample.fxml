@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" spacing="5.0"
+      xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+	<padding>
+		<Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+	</padding>
+	<HBox alignment="CENTER_LEFT" minHeight="45.0"
+	      style="-fx-background-color: rgb(235, 235, 235); -fx-background-image: url(sample/img/prechod2.png); -fx-background-radius: 5px; -fx-background-repeat: repeat-x; -fx-background-position: center center;">
+		<padding>
+			<Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+		</padding>
+		<Label style="-fx-font-size: 14pt; -fx-font-weight: bold;" text="Převodník jednotek délky"
+		       textFill="#0a5100">
+		</Label>
+	</HBox>
+	<HBox/>
+	<HBox/>
+</VBox>
