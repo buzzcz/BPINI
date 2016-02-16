@@ -1,4 +1,4 @@
-package sample;
+package prevodnik;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -10,9 +10,9 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
-        primaryStage.setTitle("Převodník");
-        primaryStage.setScene(new Scene(root, 300, 275));
+        Parent root = FXMLLoader.load(getClass().getResource("Prevodnik.fxml"));
+        primaryStage.setTitle("PřeVODNÍK");
+        primaryStage.setScene(new Scene(root, 630, 382));
         primaryStage.show();
     }
 

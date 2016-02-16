@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.collections.FXCollections?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import java.lang.*?>
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+      spacing="5.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="prevodnik.PrevodnikController">
+	<HBox id="nadpis" alignment="CENTER_LEFT" minHeight="32.0">
+		<padding>
+			<Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+		</padding>
+		<VBox.margin>
+			<Insets bottom="30.0"/>
+		</VBox.margin>
+		<Label text="Převodník jednotek délky" textFill="#0a5100"/>
+	</HBox>
+	<HBox id="vstup" alignment="CENTER" spacing="5.0">
+		<Label text="Vstup:">
+			<padding>
+				<Insets right="18.0"/>
+			</padding>
+		</Label>
+		<TextField fx:id="vstupTextField" minWidth="250.0"/>
+		<ComboBox fx:id="vstupComboBox" minWidth="146.0" value="cm (centimetr)">
+		   <items>
+			   <FXCollections fx:factory="observableArrayList">
+				   <String fx:value="cm (centimetr)"/>
+				   <String fx:value="dm (decimetr)"/>
+				   <String fx:value="ft (stopa)"/>
+				   <String fx:value="in (palec)"/>
+				   <String fx:value="m (metr)"/>
+				   <String fx:value="mm (milimetr)"/>
+				   <String fx:value="yd (yard)"/>
+			   </FXCollections>
+		   </items>
+	   </ComboBox>
+	</HBox>
+	<HBox id="vystup" alignment="CENTER" spacing="5.0">
+		<Label text="Výstup:">
+			<padding>
+				<Insets right="5.0"/>
+			</padding>
+		</Label>
+		<TextField fx:id="vystupTextField" editable="false" focusTraversable="false" minWidth="250.0"/>
+		<ComboBox fx:id="vystupComboBox" minWidth="146.0" value="cm (centimetr)">
+		   <items>
+			   <FXCollections fx:factory="observableArrayList">
+				   <String fx:value="cm (centimetr)"/>
+				   <String fx:value="dm (decimetr)"/>
+				   <String fx:value="ft (stopa)"/>
+				   <String fx:value="in (palec)"/>
+				   <String fx:value="m (metr)"/>
+				   <String fx:value="mm (milimetr)"/>
+				   <String fx:value="yd (yard)"/>
+			   </FXCollections>
+		   </items>
+	   </ComboBox>
+	</HBox>
+	<Button fx:id="prevedButton" text="Převeď">
+		<padding>
+			<Insets bottom="15" left="50" right="50" top="15"/>
+		</padding>
+		<VBox.margin>
+			<Insets bottom="10.0" top="20.0"/>
+		</VBox.margin>
+	</Button>
+	<Button id="vymaz" fx:id="vymazButton" text="Vymaž">
+		<padding>
+			<Insets bottom="10" left="25" right="25" top="10"/>
+		</padding>
+		<VBox.margin>
+			<Insets bottom="25.0"/>
+		</VBox.margin>
+	</Button>
+	<ImageView>
+		<Image url="@img/zaba.png"/>
+	</ImageView>
+</VBox>

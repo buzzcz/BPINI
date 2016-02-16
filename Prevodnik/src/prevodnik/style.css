@@ -1,0 +1,69 @@
+#nadpis {
+	-fx-background-color: rgb(235, 235, 235);
+	-fx-background-image: url(img/prechod2.png);
+	-fx-background-radius: 5px;
+	-fx-background-repeat: repeat-x;
+	-fx-background-position: center center;
+}
+
+#nadpis Label {
+	-fx-font-size: 14pt;
+	-fx-font-weight: bold;
+}
+
+#vstup Label {
+	-fx-font-size: 12pt;
+	-fx-font-weight: bold;
+}
+
+#vstup TextField {
+	-fx-border-radius: 5px;
+	-fx-border-color: gray;
+	-fx-border-style: solid;
+	-fx-border-width: 2px;
+}
+
+#vstup TextField:focused {
+    -fx-border-color: #33FF00;
+}
+
+#vstup ComboBox:focused {
+	-fx-border-color: #33FF00;
+}
+
+#vystup Label {
+	-fx-font-size: 12pt;
+	-fx-font-weight: bold;
+}
+
+#vystup TextField {
+	-fx-background-color: #DDDDDD;
+	-fx-border-radius: 5px;
+	-fx-border-color: gray;
+	-fx-border-style: solid;
+	-fx-border-width: 2px;
+}
+
+#vystup ComboBox:focused {
+	-fx-border-color: #33FF00;
+}
+
+.root Button {
+	-fx-font-size: 14pt;
+	-fx-font-weight: bold;
+	-fx-text-fill: white;
+	-fx-background-color: #52844C;
+	-fx-background-image: url(img/prechod2.png);
+	-fx-background-radius: 5px;
+	-fx-background-repeat: repeat-x;
+	-fx-background-position: center center;
+	-fx-border-insets: -1;
+	-fx-border-radius: 5px;
+	-fx-border-color: black;
+	-fx-border-style: solid;
+	-fx-border-width: 1px;
+}
+
+#vymaz {
+	-fx-font-size: 10pt;
+}
