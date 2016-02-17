@@ -4,13 +4,19 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.VBox;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class PrevodnikController implements Initializable {
 
+	@FXML
+	private VBox chybyVBox;
+	@FXML
+	private Label chybaLabel;
 	@FXML
 	private TextField vstupTextField;
 	@FXML
@@ -27,12 +33,19 @@ public class PrevodnikController implements Initializable {
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		prevedButton.setOnAction(e -> {
+			chybyVBox.setVisible(false);
+			chybyVBox.setManaged(false);
 			if (kontrolaVstupu()) {
 				preved();
+			} else {
+				chybyVBox.setManaged(true);
+				chybyVBox.setVisible(true);
 			}
 		});
 
 		vymazButton.setOnAction(e -> {
+			chybyVBox.setVisible(false);
+			chybyVBox.setManaged(false);
 			vstupTextField.setText("");
 			vystupTextField.setText("");
 		});
@@ -42,14 +55,16 @@ public class PrevodnikController implements Initializable {
 		String s = vstupTextField.getText();
 		s = s.replaceAll(",", ".");
 		if (s.trim().isEmpty()) {
-//			TODO prazdy
+			chybaLabel.setText("Nebylo zadáno žádné číslo pro převod");
+
 			return false;
 		}
 		try {
 			Double.parseDouble(s);
-//			TODO NaN
 			return true;
 		} catch (NumberFormatException e) {
+			chybaLabel.setText("Vstupní číslo není validní (není zapsáno v podporovaném formátu nebo obsahuje " +
+					"nepovolené znaky - viz nápověda).");
 			return false;
 		}
 	}
@@ -117,8 +132,8 @@ public class PrevodnikController implements Initializable {
 				vystupTextField.setText(vysledek + "");
 				break;
 			case 2:
-			vystupTextField.setText(vysledek / 12 + "");
-			break;
+				vystupTextField.setText(vysledek / 12 + "");
+				break;
 			case 4:
 				vystupTextField.setText(vysledek * 0.0254 + "");
 				break;
