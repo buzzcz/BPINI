@@ -1,3 +1,15 @@
+@font-face {
+	src: url("OpenSans/OpenSans-Regular.ttf");
+}
+
+@font-face {
+	src: url("OpenSans/OpenSans-Bold.ttf");
+}
+
+.root {
+	-fx-font-family: "Open Sans";
+}
+
 #nadpis {
 	-fx-background-color: rgb(235, 235, 235);
 	-fx-background-image: url(img/prechod2.png);

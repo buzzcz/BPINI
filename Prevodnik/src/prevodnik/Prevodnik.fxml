@@ -29,8 +29,8 @@
 		</VBox.margin>
 		<Label id="nazevChybyLabel" text="Nelze převést"/>
 		<GridPane alignment="CENTER_LEFT" hgap="10">
-			<HBox alignment="TOP_LEFT" GridPane.columnIndex="0" GridPane.rowIndex="0">
-				<Label id="chybaKostkaLabel" text="&#10;■"/>
+			<HBox fx:id="chybaKostkaHBox" alignment="TOP_LEFT" GridPane.columnIndex="0" GridPane.rowIndex="0">
+				<Label fx:id="chybaKostkaLabel" id="chybaKostkaLabel"/>
 			</HBox>
 			<AnchorPane GridPane.columnIndex="1" GridPane.rowIndex="0">
 				<Label fx:id="chybaLabel" id="chybaLabel" wrapText="true" maxWidth="565"/>

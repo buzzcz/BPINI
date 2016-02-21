@@ -2,10 +2,12 @@ package prevodnik;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 
 import java.net.URL;
@@ -15,6 +17,10 @@ public class PrevodnikController implements Initializable {
 
 	@FXML
 	private VBox chybyVBox;
+	@FXML
+	private HBox chybaKostkaHBox;
+	@FXML
+	private Label chybaKostkaLabel;
 	@FXML
 	private Label chybaLabel;
 	@FXML
@@ -55,14 +61,17 @@ public class PrevodnikController implements Initializable {
 		String s = vstupTextField.getText();
 		s = s.replaceAll(",", ".");
 		if (s.trim().isEmpty()) {
+			chybaKostkaHBox.setAlignment(Pos.CENTER_LEFT);
+			chybaKostkaLabel.setText("■");
 			chybaLabel.setText("Nebylo zadáno žádné číslo pro převod");
-
 			return false;
 		}
 		try {
 			Double.parseDouble(s);
 			return true;
 		} catch (NumberFormatException e) {
+			chybaKostkaHBox.setAlignment(Pos.TOP_LEFT);
+			chybaKostkaLabel.setText("\n■");
 			chybaLabel.setText("Vstupní číslo není validní (není zapsáno v podporovaném formátu nebo obsahuje " +
 					"nepovolené znaky - viz nápověda).");
 			return false;
