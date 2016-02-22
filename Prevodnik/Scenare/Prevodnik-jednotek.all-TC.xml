@@ -1,0 +1,3928 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite id="" name="" >
+<node_order><![CDATA[]]></node_order>
+<details><![CDATA[]]></details> 
+<testsuite id="624" name="TS.01-Záložky" >
+<node_order><![CDATA[1]]></node_order>
+<details><![CDATA[<p>
+	V aplikaci otestuje funkčnost horizontálních záložek</p>
+<p>
+	URL aplikace je: <a href="http://oks.kiv.zcu.cz/Prevodnik">http://oks.kiv.zcu.cz/Prevodnik</a></p>
+]]></details> 
+
+<testcase internalid="625" name="TC.01.01-Záložka Převodník">
+	<node_order><![CDATA[0]]></node_order>
+	<externalid><![CDATA[2]]></externalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Vybere záložku (a stránku) Převodník</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	Je zvoleno URL <a href="http://oks.kiv.zcu.cz/Prevodnik">http://oks.kiv.zcu.cz/Prevodnik</a></p>
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration>1.00</estimated_exec_duration>
+	<status>7</status>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	Klik na záložku Převodník</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	Titulek stránky je <span>PřeVODNíK</span></p>
+<p>
+	URL je http://oks.kiv.zcu.cz/Prevodnik/Prevodnik</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+	<requirements>
+		<requirement>
+			<req_spec_title><![CDATA[Obecné]]></req_spec_title>
+			<doc_id><![CDATA[RQM.01.02]]></doc_id>
+			<title><![CDATA[Záložka Převodník]]></title>
+		</requirement>
+	</requirements>
+</testcase>
+
+<testcase internalid="628" name="TC.01.02-Záložka Nápověda">
+	<node_order><![CDATA[1]]></node_order>
+	<externalid><![CDATA[3]]></externalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Vybere záložku (a stránku) Nápověda</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	Je zvoleno URL<a href="http://http://oks.kiv.zcu.cz/Prevodnik/Prevodnik"> </a><a href="http://oks.kiv.zcu.cz/Prevodnik">http://oks.kiv.zcu.cz</a><a href="http://oks.kiv.zcu.cz/Prevodnik">/Prevodnik</a><a href="http://oks.kiv.zcu.cz/Prevodnik">/Prevodnik</a></p>
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration>1.00</estimated_exec_duration>
+	<status>7</status>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	Klik na záložku Nápověda</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	Titulek stránky je <span>PřeVODNíK</span></p>
+<p>
+	URL je http://oks.kiv.zcu.cz/Prevodnik/Napoveda</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+	<requirements>
+		<requirement>
+			<req_spec_title><![CDATA[Obecné]]></req_spec_title>
+			<doc_id><![CDATA[RQM.01.03]]></doc_id>
+			<title><![CDATA[Záložka Nápověda]]></title>
+		</requirement>
+	</requirements>
+</testcase>
+
+<testcase internalid="631" name="TC.01.03-Záložka Úvod">
+	<node_order><![CDATA[2]]></node_order>
+	<externalid><![CDATA[1]]></externalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Vybere záložku (a stránku) úvod</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	Je zvoleno URL <a href="http://oks.kiv.zcu.cz/Prevodnik/Napoveda">http://oks.kiv.zcu.cz/Prevodnik/Napoveda</a></p>
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration>1.00</estimated_exec_duration>
+	<status>7</status>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	Klik na záložku úvod</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	Titulek stránky je <span>PřeVODNíK</span></p>
+<p>
+	URL je http://oks.kiv.zcu.cz/Prevodnik/Uvod</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+	<requirements>
+		<requirement>
+			<req_spec_title><![CDATA[Obecné]]></req_spec_title>
+			<doc_id><![CDATA[RQM.01.01]]></doc_id>
+			<title><![CDATA[Záložka Úvod]]></title>
+		</requirement>
+	</requirements>
+</testcase>
+</testsuite><testsuite id="634" name="TS.02-Odkazy ze stránky Úvod" >
+<node_order><![CDATA[2]]></node_order>
+<details><![CDATA[<p>
+	Otestuje odkazy ze stránky úvod</p>
+<p>
+	URL je: <a href="http://oks.kiv.zcu.cz/Prevodnik/Uvod">http://oks.kiv.zcu.cz/Prevodnik/Uvod</a></p>
+]]></details> 
+
+<testcase internalid="635" name="TC.02.01-Odkaz Reklama">
+	<node_order><![CDATA[0]]></node_order>
+	<externalid><![CDATA[4]]></externalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Funkčnost odkazu na reklamu vlevo</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	Je zvoleno URL <a href="http://oks.kiv.zcu.cz/Prevodnik/Uvod">http://oks.kiv.zcu.cz/Prevodnik/Uvod</a></p>
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration>1.00</estimated_exec_duration>
+	<status>7</status>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	Klik na logo &lt;KIV&gt; ve frame Reklama</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	Skok na domácí stránku KIV</p>
+<p>
+	Titulek stránky je Domů</p>
+<p>
+	URL je http://www.kiv.zcu.cz</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+	<requirements>
+		<requirement>
+			<req_spec_title><![CDATA[Úvod]]></req_spec_title>
+			<doc_id><![CDATA[RQM.01.01.01]]></doc_id>
+			<title><![CDATA[Reklama]]></title>
+		</requirement>
+	</requirements>
+</testcase>
+
+<testcase internalid="638" name="TC.02.02-Odkaz KIV/OKS">
+	<node_order><![CDATA[1]]></node_order>
+	<externalid><![CDATA[7]]></externalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Funkčnost odkazu na předmět KIV/OKS</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	Je zvoleno URL <a href="http://oks.kiv.zcu.cz/Prevodnik/Uvod">http://oks.kiv.zcu.cz/Prevodnik/Uvod</a></p>
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration>1.00</estimated_exec_duration>
+	<status>7</status>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	Klik na link &quot;<a href="https://portal.zcu.cz/stag?urlid=prohlizeni-predmet-sylabus&amp;predmetZkrPrac=KIV&amp;predmetZkrPred=OKS&amp;predmetRok=2013&amp;predmetSemestr=XX&amp;formRozvrhZobrazeni=20" title="popis předmětu KIV/OKS">Ověřování kvality software (KIV/OKS)</a>&quot; v textu frame Vítej</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	Skok na informace o předmětu KIV/OKS na Portále</p>
+<p>
+	Titulek stránky je <span>&quot;Portál ZČU - Prohlížení</span>&quot;</p>
+<p>
+	URL je https://portal.zcu.cz/portal/prohlizeni.html</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+	<requirements>
+		<requirement>
+			<req_spec_title><![CDATA[Úvod]]></req_spec_title>
+			<doc_id><![CDATA[RQM.01.01.02]]></doc_id>
+			<title><![CDATA[Stránka KIV/OKS]]></title>
+		</requirement>
+	</requirements>
+</testcase>
+
+<testcase internalid="641" name="TC.03.03-Odkaz KIV">
+	<node_order><![CDATA[2]]></node_order>
+	<externalid><![CDATA[8]]></externalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Funkčnost odkazu na KIV</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	Je zvoleno URL <a href="http://oks.kiv.zcu.cz/Prevodnik/Uvod">http://oks.kiv.zcu.cz/Prevodnik/Uvod</a></p>
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration>1.00</estimated_exec_duration>
+	<status>7</status>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	Klik na link &quot;<a href="http://www.kiv.zcu.cz/" title="webové stránky KIV">Katedře informatiky a výpočetní techniky</a>&quot; ve frame Vítej</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	Skok na domácí stránku KIV</p>
+<p>
+	Titulek stránky je Domů</p>
+<p>
+	URL je http://www.kiv.zcu.cz</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+	<requirements>
+		<requirement>
+			<req_spec_title><![CDATA[Úvod]]></req_spec_title>
+			<doc_id><![CDATA[RQM.01.01.03]]></doc_id>
+			<title><![CDATA[Stránka KIV]]></title>
+		</requirement>
+	</requirements>
+</testcase>
+
+<testcase internalid="644" name="TC.03.04-Odkaz ZČU">
+	<node_order><![CDATA[3]]></node_order>
+	<externalid><![CDATA[9]]></externalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Funkčnost odkazu na ZČU</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	Je zvoleno URL <a href="http://oks.kiv.zcu.cz/Prevodnik/Uvod">http://oks.kiv.zcu.cz/Prevodnik/Uvod</a></p>
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration>1.00</estimated_exec_duration>
+	<status>7</status>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	Klik na link &quot;<a href="http://www.kiv.zcu.cz/" title="webové stránky ZČU">Západočeské univerzitě v Plzni</a>&quot; ve frame Vítej</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	Skok na domácí stránku ZČU</p>
+<p>
+	Titulek stránky je &quot;<span>Západočeská univerzita</span>&quot;</p>
+<p>
+	URL je http://www.zcu.cz</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+	<requirements>
+		<requirement>
+			<req_spec_title><![CDATA[Úvod]]></req_spec_title>
+			<doc_id><![CDATA[RQM.01.01.04]]></doc_id>
+			<title><![CDATA[Stránka ZČU]]></title>
+		</requirement>
+	</requirements>
+</testcase>
+</testsuite><testsuite id="647" name="TS.03-Odkazy ze stránky Převodník" >
+<node_order><![CDATA[3]]></node_order>
+<details><![CDATA[<p>
+	Otestuje odkazy ze stránky Převodník</p>
+<p>
+	URL je: <a href="http://oks.kiv.zcu.cz/Prevodnik/Uvod">http://oks.kiv.zcu.cz/Prevodnik/</a><a href="http://oks.kiv.zcu.cz/Prevodnik/Uvod">Prevodnik</a></p>
+]]></details> 
+
+<testcase internalid="648" name="TC.03.01-Odkaz Reklama">
+	<node_order><![CDATA[0]]></node_order>
+	<externalid><![CDATA[5]]></externalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Funkčnost odkazu na reklamu vlevo</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	Je zvoleno URL <a href="http://oks.kiv.zcu.cz/Prevodnik">http://oks.kiv.zcu.cz</a><a href="http://oks.kiv.zcu.cz/Prevodnik">/Prevodnik</a><a href="http://oks.kiv.zcu.cz/Prevodnik">/Prevodnik</a></p>
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration>1.00</estimated_exec_duration>
+	<status>7</status>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	Klik na logo &lt;KIV&gt; ve frame Reklama</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	Skok na domácí stránku KIV</p>
+<p>
+	Titulek stránky je Domů</p>
+<p>
+	URL je http://www.kiv.zcu.cz</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+	<requirements>
+		<requirement>
+			<req_spec_title><![CDATA[Převodník]]></req_spec_title>
+			<doc_id><![CDATA[RQM.01.02.01]]></doc_id>
+			<title><![CDATA[Reklama]]></title>
+		</requirement>
+	</requirements>
+</testcase>
+</testsuite><testsuite id="651" name="TS.04-Odkazy ze stránky Nápověda" >
+<node_order><![CDATA[4]]></node_order>
+<details><![CDATA[<p>
+	Otestuje odkazy ze stránky Nápověda</p>
+<p>
+	URL je: <a href="http://oks.kiv.zcu.cz/Prevodnik/Napoveda">oks.kiv.zcu.cz/Prevodnik/Napoveda</a></p>
+]]></details> 
+
+<testcase internalid="652" name="TC.04.01-Odkaz Reklama">
+	<node_order><![CDATA[0]]></node_order>
+	<externalid><![CDATA[6]]></externalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Funkčnost odkazu na reklamu vlevo</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	Je zvoleno URL <a href="http://oks.kiv.zcu.cz/Prevodnik/Napoveda">http://oks.kiv.zcu.cz/Prevodnik/Napoveda</a></p>
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration>1.00</estimated_exec_duration>
+	<status>7</status>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	Klik na logo &lt;KIV&gt; ve frame Reklama</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	Skok na domácí stránku KIV</p>
+<p>
+	Titulek stránky je Domů</p>
+<p>
+	URL je http://www.kiv.zcu.cz</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+	<requirements>
+		<requirement>
+			<req_spec_title><![CDATA[Nápověda]]></req_spec_title>
+			<doc_id><![CDATA[RQM.01.03.01]]></doc_id>
+			<title><![CDATA[Reklama]]></title>
+		</requirement>
+	</requirements>
+</testcase>
+
+<testcase internalid="655" name="TC.04.02-Odkaz na Převodník">
+	<node_order><![CDATA[2]]></node_order>
+	<externalid><![CDATA[10]]></externalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Funkčnost odkazu na stránku Převodník</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	Je zvoleno URL <a href="http://oks.kiv.zcu.cz/Prevodnik/Napoveda">http://oks.kiv.zcu.cz/Prevodnik/Napoveda</a></p>
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration>1.00</estimated_exec_duration>
+	<status>7</status>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	Klik na link &quot;<a href="http://oks.kiv.zcu.cz/Prevodnik/Prevodnik" title="Převodník">stránce s převodníkem</a>&quot; v textu frame <strong>Obsluha aplikace</strong></p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	Skok na stránku Převodníku</p>
+<p>
+	Titulek stránky je <span>&quot;PřeVODNíK</span>&quot;</p>
+<p>
+	URL je http://oks.kiv.zcu.cz/Prevodnik/Prevodnik</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+	<requirements>
+		<requirement>
+			<req_spec_title><![CDATA[Nápověda]]></req_spec_title>
+			<doc_id><![CDATA[RQM.01.03.02]]></doc_id>
+			<title><![CDATA[Stránka Převodník]]></title>
+		</requirement>
+	</requirements>
+</testcase>
+</testsuite><testsuite id="658" name="TS.05-Převody" >
+<node_order><![CDATA[5]]></node_order>
+<details><![CDATA[<p>
+	Otestuje převody</p>
+<p>
+	URL je: <a href="http://oks.kiv.zcu.cz/Prevodnik/Uvod">http://oks.kiv.zcu.cz/Prevodnik/</a><a href="http://oks.kiv.zcu.cz/Prevodnik/Uvod">Prevodnik</a></p>
+<p>
+	Definuje epsilon jako double EPS = 0.00001;</p>
+]]></details> 
+<testsuite id="659" name="TS.05.01-Happy Day Scenario" >
+<node_order><![CDATA[0]]></node_order>
+<details><![CDATA[<p>
+	Otestuje převody při běžném používání</p>
+]]></details> 
+
+<testcase internalid="660" name="TC.05.01.01-Převod palce na mm">
+	<node_order><![CDATA[0]]></node_order>
+	<externalid><![CDATA[11]]></externalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Funkčnost převodu z palců (in) na milimetry (mm)</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	Je zvoleno URL <a href="http://oks.kiv.zcu.cz/Prevodnik/Prevodnik">http://oks.kiv.zcu.cz/Prevodnik/Prevodnik</a></p>
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[3]]></importance>
+	<estimated_exec_duration>1.00</estimated_exec_duration>
+	<status>7</status>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	Kliknutí do pole <strong>Vstup</strong></p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	Pole <strong>Vstup </strong>je zeleně orámováno</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[2]]></step_number>
+	<actions><![CDATA[<p>
+	 Zápis hodnoty 1 do textového pole <strong>Vstup</strong></p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	V poli <strong>Vstup</strong> je hodnota 1</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[3]]></step_number>
+	<actions><![CDATA[<p>
+	Rozbalení výběrového seznamu v řádce <strong>Vstup</strong></p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	Výběrový seznam v řádce <strong>Vstup</strong> je zeleně orámován</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[4]]></step_number>
+	<actions><![CDATA[<p>
+	Výběr možnosti &quot;<span><a class="attribute-value">in (palec)</a></span>&quot;</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	Ve výběrovém seznamu v zeleném rámečku je text &quot;<span><a class="attribute-value">in (palec)</a></span>&quot;</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[5]]></step_number>
+	<actions><![CDATA[<p>
+	Rozbalení výběrového seznamu v řádce <strong>Výstup</strong></p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	Výběrový seznam v řádce <strong>Výstup</strong> je zeleně orámován</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+
+<step>
+	<step_number><![CDATA[6]]></step_number>
+	<actions><![CDATA[<p>
+	Výběr možnosti &quot;<span><a class="attribute-value">mm (milimetr)&quot;</a></span></p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	Ve výběrovém seznamu v zeleném rámečku je text &quot;<span><a class="attribute-value">mm (milimetr)&quot;</a></span></p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[7]]></step_number>
+	<actions><![CDATA[<p>
+	Klik na tlačítko <strong>Převeď</strong></p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	V textovém poli <strong>Výstup</strong> se objeví hodnota 25.4</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+	<requirements>
+		<requirement>
+			<req_spec_title><![CDATA[Převodník]]></req_spec_title>
+			<doc_id><![CDATA[RQM.01.02.02]]></doc_id>
+			<title><![CDATA[Textové pole Vstup]]></title>
+		</requirement>
+		<requirement>
+			<req_spec_title><![CDATA[Převodník]]></req_spec_title>
+			<doc_id><![CDATA[RQM.01.02.03]]></doc_id>
+			<title><![CDATA[Výběrový seznam pro vstupní hodnotu]]></title>
+		</requirement>
+		<requirement>
+			<req_spec_title><![CDATA[Převodník]]></req_spec_title>
+			<doc_id><![CDATA[RQM.01.02.04]]></doc_id>
+			<title><![CDATA[Výběrový seznam pro výstupní hodnotu]]></title>
+		</requirement>
+		<requirement>
+			<req_spec_title><![CDATA[Převodník]]></req_spec_title>
+			<doc_id><![CDATA[RQM.01.02.05]]></doc_id>
+			<title><![CDATA[Převod hodnot]]></title>
+		</requirement>
+		<requirement>
+			<req_spec_title><![CDATA[Převodník]]></req_spec_title>
+			<doc_id><![CDATA[RQM.01.02.07]]></doc_id>
+			<title><![CDATA[Textové pole Výstup]]></title>
+		</requirement>
+	</requirements>
+</testcase>
+
+<testcase internalid="667" name="TC.05.01.02-Převod metru na yard">
+	<node_order><![CDATA[1]]></node_order>
+	<externalid><![CDATA[12]]></externalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Funkčnost převodu z metrů (m) na yardy (yd)</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	Je zvoleno URL <a href="http://oks.kiv.zcu.cz/Prevodnik/Prevodnik">http://oks.kiv.zcu.cz/Prevodnik/Prevodnik</a></p>
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[3]]></importance>
+	<estimated_exec_duration>1.00</estimated_exec_duration>
+	<status>7</status>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	Kliknutí do pole <strong>Vstup</strong></p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	Pole <strong>Vstup </strong>je zeleně orámováno</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[2]]></step_number>
+	<actions><![CDATA[<p>
+	 Zápis hodnoty 1 do textového pole <strong>Vstup</strong></p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	V poli <strong>Vstup</strong> je hodnota 1</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[3]]></step_number>
+	<actions><![CDATA[<p>
+	Klik na výběrový seznam v řádce <strong>Vstup</strong> a výběr možnosti &quot;m<span><a class="attribute-value"> (metr)</a></span>&quot;</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	Ve výběrovém seznamu v zeleném rámečku je text &quot;m<span><a class="attribute-value"> (metr)</a></span>&quot;</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[4]]></step_number>
+	<actions><![CDATA[<p>
+	Klik na výběrový seznam v řádce <strong>Výstup</strong> a výběr možnosti &quot;<span><a class="attribute-value">yd (yard)&quot;</a></span></p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	Ve výběrovém seznamu v zeleném rámečku je text &quot;<span><a class="attribute-value">yd (yard)&quot;</a></span></p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[5]]></step_number>
+	<actions><![CDATA[<p>
+	Klik na tlačítko <strong>Převeď</strong></p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	V textovém poli <strong>Výstup</strong> se objeví hodnota 1.0936132983377078</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+	<requirements>
+		<requirement>
+			<req_spec_title><![CDATA[Převodník]]></req_spec_title>
+			<doc_id><![CDATA[RQM.01.02.02]]></doc_id>
+			<title><![CDATA[Textové pole Vstup]]></title>
+		</requirement>
+		<requirement>
+			<req_spec_title><![CDATA[Převodník]]></req_spec_title>
+			<doc_id><![CDATA[RQM.01.02.03]]></doc_id>
+			<title><![CDATA[Výběrový seznam pro vstupní hodnotu]]></title>
+		</requirement>
+		<requirement>
+			<req_spec_title><![CDATA[Převodník]]></req_spec_title>
+			<doc_id><![CDATA[RQM.01.02.04]]></doc_id>
+			<title><![CDATA[Výběrový seznam pro výstupní hodnotu]]></title>
+		</requirement>
+		<requirement>
+			<req_spec_title><![CDATA[Převodník]]></req_spec_title>
+			<doc_id><![CDATA[RQM.01.02.05]]></doc_id>
+			<title><![CDATA[Převod hodnot]]></title>
+		</requirement>
+		<requirement>
+			<req_spec_title><![CDATA[Převodník]]></req_spec_title>
+			<doc_id><![CDATA[RQM.01.02.07]]></doc_id>
+			<title><![CDATA[Textové pole Výstup]]></title>
+		</requirement>
+	</requirements>
+</testcase>
+</testsuite><testsuite id="674" name="TS.05.02-Stejné jednotky" >
+<node_order><![CDATA[1]]></node_order>
+<details><![CDATA[<p>
+	Testuje při stejných vstupních a výstupních jednotkách</p>
+]]></details> 
+
+<testcase internalid="675" name="TC.05.02.01-Převod cm na cm">
+	<node_order><![CDATA[1]]></node_order>
+	<externalid><![CDATA[13]]></externalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Funkčnost převodu z centimetrů (cm) na centimetry (cm)</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	Je zvoleno URL <a href="http://oks.kiv.zcu.cz/Prevodnik/Prevodnik">http://oks.kiv.zcu.cz/Prevodnik/Prevodnik</a></p>
+<p>
+	Ve vstupním poli <strong>Vstup</strong> je hodnota 3</p>
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[3]]></importance>
+	<estimated_exec_duration>1.00</estimated_exec_duration>
+	<status>7</status>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	Klik na výběrový seznam v řádce <strong>Vstup</strong> a výběr možnosti &quot;<span><a class="attribute-value">cm (centimetr)</a></span>&quot;</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	Ve výběrovém seznamu v zeleném rámečku je text &quot;<span><a class="attribute-value">cm (centimetr)</a></span>&quot;</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[2]]></step_number>
+	<actions><![CDATA[<p>
+	Klik na výběrový seznam v řádce <strong>Výstup</strong> a výběr<br />
+	možnosti &quot;<span><a class="attribute-value">cm (centimetr)</a></span>&quot;</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	Ve výběrovém seznamu v zeleném rámečku je text &quot;<span><a class="attribute-value">cm (centimetr)</a></span>&quot;</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[3]]></step_number>
+	<actions><![CDATA[<p>
+	Klik na tlačítko <strong>Převeď</strong></p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	V textovém poli <strong>Výstup</strong> se objeví hodnota 3</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+	<requirements>
+		<requirement>
+			<req_spec_title><![CDATA[Převodník]]></req_spec_title>
+			<doc_id><![CDATA[RQM.01.02.02]]></doc_id>
+			<title><![CDATA[Textové pole Vstup]]></title>
+		</requirement>
+		<requirement>
+			<req_spec_title><![CDATA[Převodník]]></req_spec_title>
+			<doc_id><![CDATA[RQM.01.02.03]]></doc_id>
+			<title><![CDATA[Výběrový seznam pro vstupní hodnotu]]></title>
+		</requirement>
+		<requirement>
+			<req_spec_title><![CDATA[Převodník]]></req_spec_title>
+			<doc_id><![CDATA[RQM.01.02.04]]></doc_id>
+			<title><![CDATA[Výběrový seznam pro výstupní hodnotu]]></title>
+		</requirement>
+		<requirement>
+			<req_spec_title><![CDATA[Převodník]]></req_spec_title>
+			<doc_id><![CDATA[RQM.01.02.05]]></doc_id>
+			<title><![CDATA[Převod hodnot]]></title>
+		</requirement>
+	</requirements>
+</testcase>
+
+<testcase internalid="680" name="TC.05.02.02-Převod dm na dm">
+	<node_order><![CDATA[2]]></node_order>
+	<externalid><![CDATA[14]]></externalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Funkčnost převodu z <span><a class="attribute-value">decimetrů</a></span> (dm) na decimetry (dm)</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	Je zvoleno URL <a href="http://oks.kiv.zcu.cz/Prevodnik/Prevodnik">http://oks.kiv.zcu.cz/Prevodnik/Prevodnik</a></p>
+<p>
+	Ve vstupním poli <strong>Vstup</strong> je hodnota 3</p>
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[3]]></importance>
+	<estimated_exec_duration>1.00</estimated_exec_duration>
+	<status>7</status>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	Klik na výběrový seznam v řádce <strong>Vstup</strong> a výběr možnosti <span>&quot;<a class="attribute-value">dm (decimetr)</a>&quot;</span></p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	Ve výběrovém seznamu v zeleném rámečku je text <span>&quot;<a class="attribute-value">dm (decimetr)</a>&quot;</span></p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[2]]></step_number>
+	<actions><![CDATA[<p>
+	Klik na výběrový seznam v řádce <strong>Výstup</strong> a výběr možnosti <span>&quot;<a class="attribute-value">dm (decimetr)</a>&quot;</span></p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	Ve výběrovém seznamu v zeleném rámečku je text <span>&quot;<a class="attribute-value">dm (decimetr)</a>&quot;</span></p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[3]]></step_number>
+	<actions><![CDATA[<p>
+	Klik na tlačítko <strong>Převeď</strong></p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	V textovém poli <strong>Výstup</strong> se objeví hodnota 3</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+	<requirements>
+		<requirement>
+			<req_spec_title><![CDATA[Převodník]]></req_spec_title>
+			<doc_id><![CDATA[RQM.01.02.02]]></doc_id>
+			<title><![CDATA[Textové pole Vstup]]></title>
+		</requirement>
+		<requirement>
+			<req_spec_title><![CDATA[Převodník]]></req_spec_title>
+			<doc_id><![CDATA[RQM.01.02.03]]></doc_id>
+			<title><![CDATA[Výběrový seznam pro vstupní hodnotu]]></title>
+		</requirement>
+		<requirement>
+			<req_spec_title><![CDATA[Převodník]]></req_spec_title>
+			<doc_id><![CDATA[RQM.01.02.04]]></doc_id>
+			<title><![CDATA[Výběrový seznam pro výstupní hodnotu]]></title>
+		</requirement>
+		<requirement>
+			<req_spec_title><![CDATA[Převodník]]></req_spec_title>
+			<doc_id><![CDATA[RQM.01.02.05]]></doc_id>
+			<title><![CDATA[Převod hodnot]]></title>
+		</requirement>
+	</requirements>
+</testcase>
+
+<testcase internalid="685" name="TC.05.02.03-Převod ft na ft">
+	<node_order><![CDATA[3]]></node_order>
+	<externalid><![CDATA[15]]></externalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Funkčnost převodu ze stop (<span><a class="attribute-value">ft</a></span>) na stopy (<span><a class="attribute-value">ft</a></span>)</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	Je zvoleno URL <a href="http://oks.kiv.zcu.cz/Prevodnik/Prevodnik">http://oks.kiv.zcu.cz/Prevodnik/Prevodnik</a></p>
+<p>
+	Ve vstupním poli <strong>Vstup</strong> je hodnota 3</p>
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[3]]></importance>
+	<estimated_exec_duration>1.00</estimated_exec_duration>
+	<status>7</status>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	Klik na výběrový seznam v řádce <strong>Vstup</strong> a výběr možnosti <span>&quot;<a class="attribute-value">ft (stopa)</a>&quot;</span></p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	Ve výběrovém seznamu v zeleném rámečku je text <span>&quot;<a class="attribute-value">ft (stopa)</a>&quot;</span></p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[2]]></step_number>
+	<actions><![CDATA[<p>
+	Klik na výběrový seznam v řádce <strong>Výstup</strong> a výběr možnosti <span>&quot;<a class="attribute-value">ft (stopa)</a>&quot;</span></p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	Ve výběrovém seznamu v zeleném rámečku je text <span>&quot;<a class="attribute-value">ft (stopa)</a>&quot;</span></p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[3]]></step_number>
+	<actions><![CDATA[<p>
+	Klik na tlačítko <strong>Převeď</strong></p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	V textovém poli <strong>Výstup</strong> se objeví hodnota 3</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+	<requirements>
+		<requirement>
+			<req_spec_title><![CDATA[Převodník]]></req_spec_title>
+			<doc_id><![CDATA[RQM.01.02.02]]></doc_id>
+			<title><![CDATA[Textové pole Vstup]]></title>
+		</requirement>
+		<requirement>
+			<req_spec_title><![CDATA[Převodník]]></req_spec_title>
+			<doc_id><![CDATA[RQM.01.02.03]]></doc_id>
+			<title><![CDATA[Výběrový seznam pro vstupní hodnotu]]></title>
+		</requirement>
+		<requirement>
+			<req_spec_title><![CDATA[Převodník]]></req_spec_title>
+			<doc_id><![CDATA[RQM.01.02.04]]></doc_id>
+			<title><![CDATA[Výběrový seznam pro výstupní hodnotu]]></title>
+		</requirement>
+		<requirement>
+			<req_spec_title><![CDATA[Převodník]]></req_spec_title>
+			<doc_id><![CDATA[RQM.01.02.05]]></doc_id>
+			<title><![CDATA[Převod hodnot]]></title>
+		</requirement>
+	</requirements>
+</testcase>
+
+<testcase internalid="690" name="TC.05.02.04-Převod in na in">
+	<node_order><![CDATA[4]]></node_order>
+	<externalid><![CDATA[16]]></externalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Funkčnost převodu z palců (in) na palce (in)</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	Je zvoleno URL <a href="http://oks.kiv.zcu.cz/Prevodnik/Prevodnik">http://oks.kiv.zcu.cz/Prevodnik/Prevodnik</a></p>
+<p>
+	Ve vstupním poli <strong>Vstup</strong> je hodnota 3</p>
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[3]]></importance>
+	<estimated_exec_duration>1.00</estimated_exec_duration>
+	<status>7</status>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	Klik na výběrový seznam v řádce <strong>Vstup</strong> a výběr možnosti <span>&quot;<a class="attribute-value">in (palec)</a>&quot;</span></p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	Ve výběrovém seznamu v zeleném rámečku je text <span>&quot;<a class="attribute-value">in (palec)</a>&quot;</span></p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[2]]></step_number>
+	<actions><![CDATA[<p>
+	Klik na výběrový seznam v řádce <strong>Výstup</strong> a výběr možnosti <span>&quot;<a class="attribute-value">in (palec)</a>&quot;</span></p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	Ve výběrovém seznamu v zeleném rámečku je text <span>&quot;<a class="attribute-value">in (palec)</a>&quot;</span></p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[3]]></step_number>
+	<actions><![CDATA[<p>
+	Klik na tlačítko <strong>Převeď</strong></p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	V textovém poli <strong>Výstup</strong> se objeví hodnota 3</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+	<requirements>
+		<requirement>
+			<req_spec_title><![CDATA[Převodník]]></req_spec_title>
+			<doc_id><![CDATA[RQM.01.02.02]]></doc_id>
+			<title><![CDATA[Textové pole Vstup]]></title>
+		</requirement>
+		<requirement>
+			<req_spec_title><![CDATA[Převodník]]></req_spec_title>
+			<doc_id><![CDATA[RQM.01.02.03]]></doc_id>
+			<title><![CDATA[Výběrový seznam pro vstupní hodnotu]]></title>
+		</requirement>
+		<requirement>
+			<req_spec_title><![CDATA[Převodník]]></req_spec_title>
+			<doc_id><![CDATA[RQM.01.02.04]]></doc_id>
+			<title><![CDATA[Výběrový seznam pro výstupní hodnotu]]></title>
+		</requirement>
+		<requirement>
+			<req_spec_title><![CDATA[Převodník]]></req_spec_title>
+			<doc_id><![CDATA[RQM.01.02.05]]></doc_id>
+			<title><![CDATA[Převod hodnot]]></title>
+		</requirement>
+	</requirements>
+</testcase>
+
+<testcase internalid="695" name="TC.05.02.05-Převod m na m">
+	<node_order><![CDATA[5]]></node_order>
+	<externalid><![CDATA[17]]></externalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Funkčnost převodu z metrů (m) na metry (m)</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	Je zvoleno URL <a href="http://oks.kiv.zcu.cz/Prevodnik/Prevodnik">http://oks.kiv.zcu.cz/Prevodnik/Prevodnik</a></p>
+<p>
+	Ve vstupním poli <strong>Vstup</strong> je hodnota 3</p>
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[3]]></importance>
+	<estimated_exec_duration>1.00</estimated_exec_duration>
+	<status>7</status>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	Klik na výběrový seznam v řádce <strong>Vstup</strong> a výběr možnosti <span>&quot;<a class="attribute-value">m (metr)</a>&quot;</span></p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	Ve výběrovém seznamu v zeleném rámečku je text <span>&quot;<a class="attribute-value">m (metr)</a>&quot;</span></p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[2]]></step_number>
+	<actions><![CDATA[<p>
+	Klik na výběrový seznam v řádce <strong>Výstup</strong> a výběr možnosti <span>&quot;<a class="attribute-value">m (metr)</a>&quot;</span></p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	Ve výběrovém seznamu v zeleném rámečku je text <span>&quot;<a class="attribute-value">m (metr)</a>&quot;</span></p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[3]]></step_number>
+	<actions><![CDATA[<p>
+	Klik na tlačítko <strong>Převeď</strong></p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	V textovém poli <strong>Výstup</strong> se objeví hodnota 3</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+	<requirements>
+		<requirement>
+			<req_spec_title><![CDATA[Převodník]]></req_spec_title>
+			<doc_id><![CDATA[RQM.01.02.02]]></doc_id>
+			<title><![CDATA[Textové pole Vstup]]></title>
+		</requirement>
+		<requirement>
+			<req_spec_title><![CDATA[Převodník]]></req_spec_title>
+			<doc_id><![CDATA[RQM.01.02.03]]></doc_id>
+			<title><![CDATA[Výběrový seznam pro vstupní hodnotu]]></title>
+		</requirement>
+		<requirement>
+			<req_spec_title><![CDATA[Převodník]]></req_spec_title>
+			<doc_id><![CDATA[RQM.01.02.04]]></doc_id>
+			<title><![CDATA[Výběrový seznam pro výstupní hodnotu]]></title>
+		</requirement>
+		<requirement>
+			<req_spec_title><![CDATA[Převodník]]></req_spec_title>
+			<doc_id><![CDATA[RQM.01.02.05]]></doc_id>
+			<title><![CDATA[Převod hodnot]]></title>
+		</requirement>
+	</requirements>
+</testcase>
+
+<testcase internalid="700" name="TC.05.02.06-Převod mm na mm">
+	<node_order><![CDATA[6]]></node_order>
+	<externalid><![CDATA[18]]></externalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Funkčnost převodu z milimetrů (mm) na milimetry (mm)</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	Je zvoleno URL <a href="http://oks.kiv.zcu.cz/Prevodnik/Prevodnik">http://oks.kiv.zcu.cz/Prevodnik/Prevodnik</a></p>
+<p>
+	Ve vstupním poli <strong>Vstup</strong> je hodnota 3</p>
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[3]]></importance>
+	<estimated_exec_duration>1.00</estimated_exec_duration>
+	<status>7</status>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	Klik na výběrový seznam v řádce <strong>Vstup</strong> a výběr možnosti <span>&quot;<a class="attribute-value">mm (milimetr)</a>&quot;</span></p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	Ve výběrovém seznamu v zeleném rámečku je text <span>&quot;<a class="attribute-value">mm (milimetr)</a>&quot;</span></p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[2]]></step_number>
+	<actions><![CDATA[<p>
+	Klik na výběrový seznam v řádce <strong>Výstup</strong> a výběr možnosti <span>&quot;<a class="attribute-value">mm (milimetr)</a>&quot;</span></p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	Ve výběrovém seznamu v zeleném rámečku je text <span>&quot;<a class="attribute-value">mm (milimetr)</a>&quot;</span></p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[3]]></step_number>
+	<actions><![CDATA[<p>
+	Klik na tlačítko <strong>Převeď</strong></p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	V textovém poli <strong>Výstup</strong> se objeví hodnota 3</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+	<requirements>
+		<requirement>
+			<req_spec_title><![CDATA[Převodník]]></req_spec_title>
+			<doc_id><![CDATA[RQM.01.02.02]]></doc_id>
+			<title><![CDATA[Textové pole Vstup]]></title>
+		</requirement>
+		<requirement>
+			<req_spec_title><![CDATA[Převodník]]></req_spec_title>
+			<doc_id><![CDATA[RQM.01.02.03]]></doc_id>
+			<title><![CDATA[Výběrový seznam pro vstupní hodnotu]]></title>
+		</requirement>
+		<requirement>
+			<req_spec_title><![CDATA[Převodník]]></req_spec_title>
+			<doc_id><![CDATA[RQM.01.02.04]]></doc_id>
+			<title><![CDATA[Výběrový seznam pro výstupní hodnotu]]></title>
+		</requirement>
+		<requirement>
+			<req_spec_title><![CDATA[Převodník]]></req_spec_title>
+			<doc_id><![CDATA[RQM.01.02.05]]></doc_id>
+			<title><![CDATA[Převod hodnot]]></title>
+		</requirement>
+	</requirements>
+</testcase>
+
+<testcase internalid="705" name="TC.05.02.07-Převod yd na yd">
+	<node_order><![CDATA[7]]></node_order>
+	<externalid><![CDATA[19]]></externalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Funkčnost převodu z yardů (yd) na yardy (yd)</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	Je zvoleno URL <a href="http://oks.kiv.zcu.cz/Prevodnik/Prevodnik">http://oks.kiv.zcu.cz/Prevodnik/Prevodnik</a></p>
+<p>
+	Ve vstupním poli <strong>Vstup</strong> je hodnota 3</p>
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[3]]></importance>
+	<estimated_exec_duration>1.00</estimated_exec_duration>
+	<status>7</status>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	Klik na výběrový seznam v řádce <strong>Vstup</strong> a výběr možnosti <span>&quot;<a class="attribute-value">yd (yard)</a>&quot;</span></p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	Ve výběrovém seznamu v zeleném rámečku je text <span>&quot;<a class="attribute-value">yd (yard)</a>&quot;</span></p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[2]]></step_number>
+	<actions><![CDATA[<p>
+	Klik na výběrový seznam v řádce <strong>Výstup</strong> a výběr možnosti <span>&quot;<a class="attribute-value">yd (yard)</a>&quot;</span></p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	Ve výběrovém seznamu v zeleném rámečku je text <span>&quot;<a class="attribute-value">yd (yard)</a>&quot;</span></p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[3]]></step_number>
+	<actions><![CDATA[<p>
+	Klik na tlačítko <strong>Převeď</strong></p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	V textovém poli <strong>Výstup</strong> se objeví hodnota 3</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+	<requirements>
+		<requirement>
+			<req_spec_title><![CDATA[Převodník]]></req_spec_title>
+			<doc_id><![CDATA[RQM.01.02.02]]></doc_id>
+			<title><![CDATA[Textové pole Vstup]]></title>
+		</requirement>
+		<requirement>
+			<req_spec_title><![CDATA[Převodník]]></req_spec_title>
+			<doc_id><![CDATA[RQM.01.02.03]]></doc_id>
+			<title><![CDATA[Výběrový seznam pro vstupní hodnotu]]></title>
+		</requirement>
+		<requirement>
+			<req_spec_title><![CDATA[Převodník]]></req_spec_title>
+			<doc_id><![CDATA[RQM.01.02.04]]></doc_id>
+			<title><![CDATA[Výběrový seznam pro výstupní hodnotu]]></title>
+		</requirement>
+		<requirement>
+			<req_spec_title><![CDATA[Převodník]]></req_spec_title>
+			<doc_id><![CDATA[RQM.01.02.05]]></doc_id>
+			<title><![CDATA[Převod hodnot]]></title>
+		</requirement>
+	</requirements>
+</testcase>
+</testsuite><testsuite id="710" name="TS.05.03-Varianty Vstup OK" >
+<node_order><![CDATA[2]]></node_order>
+<details><![CDATA[<p>
+	Testuje všechny správné varianty pole Vstup</p>
+]]></details> 
+
+<testcase internalid="711" name="TC.05.03.01-Celé číslo">
+	<node_order><![CDATA[0]]></node_order>
+	<externalid><![CDATA[20]]></externalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Test celého čísla</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	Je zvoleno URL <a href="http://oks.kiv.zcu.cz/Prevodnik/Prevodnik">http://oks.kiv.zcu.cz/Prevodnik/Prevodnik</a></p>
+<p>
+	V obou výběrových seznamech jsou zvoleny jednotky &quot;m (metr)&quot;</p>
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[3]]></importance>
+	<estimated_exec_duration>1.00</estimated_exec_duration>
+	<status>7</status>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	Klik do textového pole <strong>Vstup</strong> a zápis hodnoty 5</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	V poli <strong>Vstup</strong> je hodnota 5</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[2]]></step_number>
+	<actions><![CDATA[<p>
+	Klik na tlačítko <strong>Převeď</strong></p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	V textovém poli <strong>Výstup</strong> se objeví hodnota 5</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+	<requirements>
+		<requirement>
+			<req_spec_title><![CDATA[Převodník]]></req_spec_title>
+			<doc_id><![CDATA[RQM.01.02.02]]></doc_id>
+			<title><![CDATA[Textové pole Vstup]]></title>
+		</requirement>
+		<requirement>
+			<req_spec_title><![CDATA[Převodník]]></req_spec_title>
+			<doc_id><![CDATA[RQM.01.02.05]]></doc_id>
+			<title><![CDATA[Převod hodnot]]></title>
+		</requirement>
+	</requirements>
+</testcase>
+
+<testcase internalid="715" name="TC.05.03.02-Desetinné číslo - tečka">
+	<node_order><![CDATA[1]]></node_order>
+	<externalid><![CDATA[21]]></externalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Test desetinného čísla - oddělovač je tečka</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	Je zvoleno URL <a href="http://oks.kiv.zcu.cz/Prevodnik/Prevodnik">http://oks.kiv.zcu.cz/Prevodnik/Prevodnik</a></p>
+<p>
+	V obou výběrových seznamech jsou zvoleny jednotky &quot;m (metr)&quot;</p>
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[3]]></importance>
+	<estimated_exec_duration>1.00</estimated_exec_duration>
+	<status>7</status>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	Klik do textového pole <strong>Vstup</strong> a zápis hodnoty 5.1</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	V poli <strong>Vstup</strong> je hodnota 5.1</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[2]]></step_number>
+	<actions><![CDATA[<p>
+	Klik na tlačítko <strong>Převeď</strong></p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	V textovém poli <strong>Výstup</strong> se objeví hodnota 5.1</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+	<requirements>
+		<requirement>
+			<req_spec_title><![CDATA[Převodník]]></req_spec_title>
+			<doc_id><![CDATA[RQM.01.02.02]]></doc_id>
+			<title><![CDATA[Textové pole Vstup]]></title>
+		</requirement>
+		<requirement>
+			<req_spec_title><![CDATA[Převodník]]></req_spec_title>
+			<doc_id><![CDATA[RQM.01.02.05]]></doc_id>
+			<title><![CDATA[Převod hodnot]]></title>
+		</requirement>
+	</requirements>
+</testcase>
+
+<testcase internalid="719" name="TC.05.03.03-Desetinné číslo - čárka">
+	<node_order><![CDATA[2]]></node_order>
+	<externalid><![CDATA[22]]></externalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Test desetinného čísla - oddělovač je čárka</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	Je zvoleno URL <a href="http://oks.kiv.zcu.cz/Prevodnik/Prevodnik">http://oks.kiv.zcu.cz/Prevodnik/Prevodnik</a></p>
+<p>
+	V obou výběrových seznamech jsou zvoleny jednotky &quot;m (metr)&quot;</p>
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[3]]></importance>
+	<estimated_exec_duration>1.00</estimated_exec_duration>
+	<status>7</status>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	Klik do textového pole <strong>Vstup</strong> a zápis hodnoty 5,1</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	V poli <strong>Vstup</strong> je hodnota 5,1</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[2]]></step_number>
+	<actions><![CDATA[<p>
+	Klik na tlačítko <strong>Převeď</strong></p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	V textovém poli <strong>Výstup</strong> se objeví hodnota 5.1</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+</testcase>
+
+<testcase internalid="723" name="TC.05.03.04-Desetinné číslo a znaménko +">
+	<node_order><![CDATA[3]]></node_order>
+	<externalid><![CDATA[23]]></externalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Test desetinného čísla a znaménka +</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	Je zvoleno URL <a href="http://oks.kiv.zcu.cz/Prevodnik/Prevodnik">http://oks.kiv.zcu.cz/Prevodnik/Prevodnik</a></p>
+<p>
+	V obou výběrových seznamech jsou zvoleny jednotky &quot;m (metr)&quot;</p>
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[3]]></importance>
+	<estimated_exec_duration>1.00</estimated_exec_duration>
+	<status>7</status>
+<steps>
+<step>
+	<step_number><![CDATA[2]]></step_number>
+	<actions><![CDATA[<p>
+	Klik do textového pole <strong>Vstup</strong> a zápis hodnoty +5.1</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	V poli <strong>Vstup</strong> je hodnota +5.1</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[8]]></step_number>
+	<actions><![CDATA[<p>
+	Klik na tlačítko <strong>Převeď</strong></p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	V textovém poli <strong>Výstup</strong> se objeví hodnota 5.1</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+	<requirements>
+		<requirement>
+			<req_spec_title><![CDATA[Převodník]]></req_spec_title>
+			<doc_id><![CDATA[RQM.01.02.02]]></doc_id>
+			<title><![CDATA[Textové pole Vstup]]></title>
+		</requirement>
+		<requirement>
+			<req_spec_title><![CDATA[Převodník]]></req_spec_title>
+			<doc_id><![CDATA[RQM.01.02.05]]></doc_id>
+			<title><![CDATA[Převod hodnot]]></title>
+		</requirement>
+	</requirements>
+</testcase>
+
+<testcase internalid="727" name="TC.05.03.05-Vědecký formát - tečka a E">
+	<node_order><![CDATA[4]]></node_order>
+	<externalid><![CDATA[24]]></externalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Test desetinného čísla ve vědecké formátu - oddělovač je tečka a E</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	Je zvoleno URL <a href="http://oks.kiv.zcu.cz/Prevodnik/Prevodnik">http://oks.kiv.zcu.cz/Prevodnik/Prevodnik</a></p>
+<p>
+	V obou výběrových seznamech jsou zvoleny jednotky &quot;m (metr)&quot;</p>
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[3]]></importance>
+	<estimated_exec_duration>1.00</estimated_exec_duration>
+	<status>7</status>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	Klik do textového pole <strong>Vstup</strong> a zápis hodnoty <code class="code">0.51E1</code></p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	V poli <strong>Vstup</strong> je hodnota <code class="code">0.51E1</code></p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[2]]></step_number>
+	<actions><![CDATA[<p>
+	Klik na tlačítko <strong>Převeď</strong></p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	V textovém poli <strong>Výstup</strong> se objeví hodnota 5.1</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+	<requirements>
+		<requirement>
+			<req_spec_title><![CDATA[Převodník]]></req_spec_title>
+			<doc_id><![CDATA[RQM.01.02.02]]></doc_id>
+			<title><![CDATA[Textové pole Vstup]]></title>
+		</requirement>
+		<requirement>
+			<req_spec_title><![CDATA[Převodník]]></req_spec_title>
+			<doc_id><![CDATA[RQM.01.02.05]]></doc_id>
+			<title><![CDATA[Převod hodnot]]></title>
+		</requirement>
+	</requirements>
+</testcase>
+
+<testcase internalid="731" name="TC.05.03.06-Vědecký formát - čárka a e">
+	<node_order><![CDATA[5]]></node_order>
+	<externalid><![CDATA[25]]></externalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Test desetinného čísla ve vědecké formátu - oddělovač je čárka a e</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	Je zvoleno URL <a href="http://oks.kiv.zcu.cz/Prevodnik/Prevodnik">http://oks.kiv.zcu.cz/Prevodnik/Prevodnik</a></p>
+<p>
+	V obou výběrových seznamech jsou zvoleny jednotky &quot;m (metr)&quot;</p>
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[3]]></importance>
+	<estimated_exec_duration>1.00</estimated_exec_duration>
+	<status>7</status>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	Klik do textového pole <strong>Vstup</strong> a zápis hodnoty <code class="code">0,51e1</code></p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	V poli <strong>Vstup</strong> je hodnota <code class="code">0,51e1</code></p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[2]]></step_number>
+	<actions><![CDATA[<p>
+	Klik na tlačítko <strong>Převeď</strong></p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	V textovém poli <strong>Výstup</strong> se objeví hodnota 5.1</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+	<requirements>
+		<requirement>
+			<req_spec_title><![CDATA[Převodník]]></req_spec_title>
+			<doc_id><![CDATA[RQM.01.02.02]]></doc_id>
+			<title><![CDATA[Textové pole Vstup]]></title>
+		</requirement>
+		<requirement>
+			<req_spec_title><![CDATA[Převodník]]></req_spec_title>
+			<doc_id><![CDATA[RQM.01.02.05]]></doc_id>
+			<title><![CDATA[Převod hodnot]]></title>
+		</requirement>
+	</requirements>
+</testcase>
+
+<testcase internalid="735" name="TC.05.03.07-Vědecký formát - exponent kladný">
+	<node_order><![CDATA[6]]></node_order>
+	<externalid><![CDATA[26]]></externalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Test desetinného čísla ve vědecké formátu - exponent je kladný</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	Je zvoleno URL <a href="http://oks.kiv.zcu.cz/Prevodnik/Prevodnik">http://oks.kiv.zcu.cz/Prevodnik/Prevodnik</a></p>
+<p>
+	V obou výběrových seznamech jsou zvoleny jednotky &quot;m (metr)&quot;</p>
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[3]]></importance>
+	<estimated_exec_duration>1.00</estimated_exec_duration>
+	<status>7</status>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	Klik do textového pole <strong>Vstup</strong> a zápis hodnoty <code class="code"><code class="code">0.51E+1</code></code></p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	V poli <strong>Vstup</strong> je hodnota <code class="code"><code class="code">0.51E+1</code></code></p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[2]]></step_number>
+	<actions><![CDATA[<p>
+	Klik na tlačítko <strong>Převeď</strong></p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	V textovém poli <strong>Výstup</strong> se objeví hodnota 5.1</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+	<requirements>
+		<requirement>
+			<req_spec_title><![CDATA[Převodník]]></req_spec_title>
+			<doc_id><![CDATA[RQM.01.02.02]]></doc_id>
+			<title><![CDATA[Textové pole Vstup]]></title>
+		</requirement>
+		<requirement>
+			<req_spec_title><![CDATA[Převodník]]></req_spec_title>
+			<doc_id><![CDATA[RQM.01.02.05]]></doc_id>
+			<title><![CDATA[Převod hodnot]]></title>
+		</requirement>
+	</requirements>
+</testcase>
+
+<testcase internalid="739" name="TC.05.03.08-Vědecký formát - exponent záporný">
+	<node_order><![CDATA[7]]></node_order>
+	<externalid><![CDATA[27]]></externalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Test desetinného čísla ve vědecké formátu - exponent je záporný</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	Je zvoleno URL <a href="http://oks.kiv.zcu.cz/Prevodnik/Prevodnik">http://oks.kiv.zcu.cz/Prevodnik/Prevodnik</a></p>
+<p>
+	V obou výběrových seznamech jsou zvoleny jednotky &quot;m (metr)&quot;</p>
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[3]]></importance>
+	<estimated_exec_duration>1.00</estimated_exec_duration>
+	<status>7</status>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	Klik do textového pole <strong>Vstup</strong> a zápis hodnoty <code class="code">51.0e-1</code></p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	V poli <strong>Vstup</strong> je hodnota <code class="code">51.0e-1</code></p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[2]]></step_number>
+	<actions><![CDATA[<p>
+	Klik na tlačítko <strong>Převeď</strong></p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	V textovém poli <strong>Výstup</strong> se objeví hodnota 5.1</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+	<requirements>
+		<requirement>
+			<req_spec_title><![CDATA[Převodník]]></req_spec_title>
+			<doc_id><![CDATA[RQM.01.02.02]]></doc_id>
+			<title><![CDATA[Textové pole Vstup]]></title>
+		</requirement>
+		<requirement>
+			<req_spec_title><![CDATA[Převodník]]></req_spec_title>
+			<doc_id><![CDATA[RQM.01.02.05]]></doc_id>
+			<title><![CDATA[Převod hodnot]]></title>
+		</requirement>
+	</requirements>
+</testcase>
+
+<testcase internalid="743" name="TC.05.03.09-Vědecký formát - exponent záporný, znaménko kladné">
+	<node_order><![CDATA[8]]></node_order>
+	<externalid><![CDATA[28]]></externalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Test desetinného čísla ve vědecké formátu - exponent je záporný, znaménko kladné</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	Je zvoleno URL <a href="http://oks.kiv.zcu.cz/Prevodnik/Prevodnik">http://oks.kiv.zcu.cz/Prevodnik/Prevodnik</a></p>
+<p>
+	V obou výběrových seznamech jsou zvoleny jednotky &quot;m (metr)&quot;</p>
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[3]]></importance>
+	<estimated_exec_duration>1.00</estimated_exec_duration>
+	<status>7</status>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	Klik do textového pole <strong>Vstup</strong> a zápis hodnoty <code class="code">+51.0e-1</code></p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	V poli <strong>Vstup</strong> je hodnota <code class="code">+51.0e-1</code></p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[2]]></step_number>
+	<actions><![CDATA[<p>
+	Klik na tlačítko <strong>Převeď</strong></p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	V textovém poli <strong>Výstup</strong> se objeví hodnota 5.1</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+	<requirements>
+		<requirement>
+			<req_spec_title><![CDATA[Převodník]]></req_spec_title>
+			<doc_id><![CDATA[RQM.01.02.02]]></doc_id>
+			<title><![CDATA[Textové pole Vstup]]></title>
+		</requirement>
+		<requirement>
+			<req_spec_title><![CDATA[Převodník]]></req_spec_title>
+			<doc_id><![CDATA[RQM.01.02.05]]></doc_id>
+			<title><![CDATA[Převod hodnot]]></title>
+		</requirement>
+	</requirements>
+</testcase>
+</testsuite><testsuite id="747" name="TS.05.04-Vše na metr" >
+<node_order><![CDATA[3]]></node_order>
+<details><![CDATA[<p>
+	Testuje převody všech jednotek na výstupní metr</p>
+<p>
+	Vstupní hodnota je vždy 1.</p>
+]]></details> 
+
+<testcase internalid="748" name="TC.05.04.01-Převod cm na m">
+	<node_order><![CDATA[0]]></node_order>
+	<externalid><![CDATA[29]]></externalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Funkčnost převodu z centimetrů (cm) na metry (m)</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	Je zvoleno URL <a href="http://oks.kiv.zcu.cz/Prevodnik/Prevodnik">http://oks.kiv.zcu.cz/Prevodnik/Prevodnik</a></p>
+<p>
+	Ve vstupním poli <strong>Vstup</strong> je hodnota 1</p>
+<p>
+	Výstupní jednotka je nastavena na &quot;m (metr)&quot;</p>
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[3]]></importance>
+	<estimated_exec_duration>1.00</estimated_exec_duration>
+	<status>7</status>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	Výběr možnosti<span> &quot;<a class="attribute-value">cm (centimetr)</a>&quot; ze vstupního výběrového seznamu</span></p>
+<p>
+	&nbsp;</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	Ve výběrovém seznamu v zeleném rámečku je text <span>&quot;<a class="attribute-value">cm (centimetr)</a>&quot;</span></p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[2]]></step_number>
+	<actions><![CDATA[<p>
+	Klik na tlačítko <strong>Převeď</strong></p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	V textovém poli <strong>Výstup</strong> se objeví hodnota 0.01</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+	<requirements>
+		<requirement>
+			<req_spec_title><![CDATA[Převodník]]></req_spec_title>
+			<doc_id><![CDATA[RQM.01.02.03]]></doc_id>
+			<title><![CDATA[Výběrový seznam pro vstupní hodnotu]]></title>
+		</requirement>
+		<requirement>
+			<req_spec_title><![CDATA[Převodník]]></req_spec_title>
+			<doc_id><![CDATA[RQM.01.02.05]]></doc_id>
+			<title><![CDATA[Převod hodnot]]></title>
+		</requirement>
+	</requirements>
+</testcase>
+
+<testcase internalid="752" name="TC.05.04.02-Převod dm na m">
+	<node_order><![CDATA[1]]></node_order>
+	<externalid><![CDATA[30]]></externalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Funkčnost převodu z decimetrů (dm) na metry (m)</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	Je zvoleno URL <a href="http://oks.kiv.zcu.cz/Prevodnik/Prevodnik">http://oks.kiv.zcu.cz/Prevodnik/Prevodnik</a></p>
+<p>
+	Ve vstupním poli <strong>Vstup</strong> je hodnota 1</p>
+<p>
+	Výstupní jednotka je nastavena na &quot;m (metr)&quot;</p>
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[3]]></importance>
+	<estimated_exec_duration>1.00</estimated_exec_duration>
+	<status>7</status>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	Výběr možnosti<span> </span><span>&quot;<a class="attribute-value">dm (decimetr)</a>&quot;<span> ze vstupního výběrového seznamu</span></span></p>
+<p>
+	&nbsp;</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	Ve výběrovém seznamu v zeleném rámečku je text <span>&quot;<a class="attribute-value">dm (decimetr)</a>&quot;</span></p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[2]]></step_number>
+	<actions><![CDATA[<p>
+	Klik na tlačítko <strong>Převeď</strong></p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	V textovém poli <strong>Výstup</strong> se objeví hodnota 0.1</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+	<requirements>
+		<requirement>
+			<req_spec_title><![CDATA[Převodník]]></req_spec_title>
+			<doc_id><![CDATA[RQM.01.02.03]]></doc_id>
+			<title><![CDATA[Výběrový seznam pro vstupní hodnotu]]></title>
+		</requirement>
+		<requirement>
+			<req_spec_title><![CDATA[Převodník]]></req_spec_title>
+			<doc_id><![CDATA[RQM.01.02.05]]></doc_id>
+			<title><![CDATA[Převod hodnot]]></title>
+		</requirement>
+	</requirements>
+</testcase>
+
+<testcase internalid="756" name="TC.05.04.03-Převod ft na m">
+	<node_order><![CDATA[2]]></node_order>
+	<externalid><![CDATA[31]]></externalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Funkčnost převodu ze stopy (ft) na metry (m)</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	Je zvoleno URL <a href="http://oks.kiv.zcu.cz/Prevodnik/Prevodnik">http://oks.kiv.zcu.cz/Prevodnik/Prevodnik</a></p>
+<p>
+	Ve vstupním poli <strong>Vstup</strong> je hodnota 1</p>
+<p>
+	Výstupní jednotka je nastavena na &quot;m (metr)&quot;</p>
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[3]]></importance>
+	<estimated_exec_duration>1.00</estimated_exec_duration>
+	<status>7</status>
+<steps>
+<step>
+	<step_number><![CDATA[4]]></step_number>
+	<actions><![CDATA[<p>
+	Výběr možnosti<span> </span><span>&quot;<a class="attribute-value">ft (stopa)</a>&quot; <span><span>ze vstupního výběrového seznamu</span></span></span></p>
+<p>
+	&nbsp;</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	Ve výběrovém seznamu v zeleném rámečku je text <span>&quot;<a class="attribute-value">ft (stopa)</a>&quot;</span></p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[8]]></step_number>
+	<actions><![CDATA[<p>
+	Klik na tlačítko <strong>Převeď</strong></p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	V textovém poli <strong>Výstup</strong> se objeví hodnota 0.3048</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+	<requirements>
+		<requirement>
+			<req_spec_title><![CDATA[Převodník]]></req_spec_title>
+			<doc_id><![CDATA[RQM.01.02.03]]></doc_id>
+			<title><![CDATA[Výběrový seznam pro vstupní hodnotu]]></title>
+		</requirement>
+		<requirement>
+			<req_spec_title><![CDATA[Převodník]]></req_spec_title>
+			<doc_id><![CDATA[RQM.01.02.05]]></doc_id>
+			<title><![CDATA[Převod hodnot]]></title>
+		</requirement>
+	</requirements>
+</testcase>
+
+<testcase internalid="760" name="TC.05.04.04-Převod in na m">
+	<node_order><![CDATA[3]]></node_order>
+	<externalid><![CDATA[32]]></externalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Funkčnost převodu z palců (in) na metry (m)</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	Je zvoleno URL <a href="http://oks.kiv.zcu.cz/Prevodnik/Prevodnik">http://oks.kiv.zcu.cz/Prevodnik/Prevodnik</a></p>
+<p>
+	Ve vstupním poli <strong>Vstup</strong> je hodnota 1</p>
+<p>
+	Výstupní jednotka je nastavena na &quot;m (metr)&quot;</p>
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[3]]></importance>
+	<estimated_exec_duration>1.00</estimated_exec_duration>
+	<status>7</status>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	Výběr možnosti<span> </span><span>&quot;<a class="attribute-value">in (palec)</a>&quot; <span><span>ze vstupního výběrového seznamu</span></span></span></p>
+<p>
+	&nbsp;</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	Ve výběrovém seznamu v zeleném rámečku je text <span>&quot;<a class="attribute-value">in (palec)</a>&quot;</span></p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[2]]></step_number>
+	<actions><![CDATA[<p>
+	Klik na tlačítko <strong>Převeď</strong></p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	V textovém poli <strong>Výstup</strong> se objeví hodnota 0.0254</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+	<requirements>
+		<requirement>
+			<req_spec_title><![CDATA[Převodník]]></req_spec_title>
+			<doc_id><![CDATA[RQM.01.02.03]]></doc_id>
+			<title><![CDATA[Výběrový seznam pro vstupní hodnotu]]></title>
+		</requirement>
+		<requirement>
+			<req_spec_title><![CDATA[Převodník]]></req_spec_title>
+			<doc_id><![CDATA[RQM.01.02.05]]></doc_id>
+			<title><![CDATA[Převod hodnot]]></title>
+		</requirement>
+	</requirements>
+</testcase>
+
+<testcase internalid="764" name="TC.05.04.05-Převod m na m">
+	<node_order><![CDATA[4]]></node_order>
+	<externalid><![CDATA[33]]></externalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Funkčnost převodu z metrů (m) na metry (m)</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	Je zvoleno URL <a href="http://oks.kiv.zcu.cz/Prevodnik/Prevodnik">http://oks.kiv.zcu.cz/Prevodnik/Prevodnik</a></p>
+<p>
+	Ve vstupním poli <strong>Vstup</strong> je hodnota 1</p>
+<p>
+	Výstupní jednotka je nastavena na &quot;m (metr)&quot;</p>
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[3]]></importance>
+	<estimated_exec_duration>1.00</estimated_exec_duration>
+	<status>7</status>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	Výběr možnosti<span> </span><span>&quot;<a class="attribute-value">m (metr)</a>&quot; <span><span>ze vstupního výběrového seznamu</span></span></span></p>
+<p>
+	&nbsp;</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	Ve výběrovém seznamu v zeleném rámečku je text <span>&quot;<a class="attribute-value">m (metr)</a>&quot;</span></p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[2]]></step_number>
+	<actions><![CDATA[<p>
+	Klik na tlačítko <strong>Převeď</strong></p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	V textovém poli <strong>Výstup</strong> se objeví hodnota 1</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+	<requirements>
+		<requirement>
+			<req_spec_title><![CDATA[Převodník]]></req_spec_title>
+			<doc_id><![CDATA[RQM.01.02.03]]></doc_id>
+			<title><![CDATA[Výběrový seznam pro vstupní hodnotu]]></title>
+		</requirement>
+		<requirement>
+			<req_spec_title><![CDATA[Převodník]]></req_spec_title>
+			<doc_id><![CDATA[RQM.01.02.05]]></doc_id>
+			<title><![CDATA[Převod hodnot]]></title>
+		</requirement>
+	</requirements>
+</testcase>
+
+<testcase internalid="768" name="TC.05.04.06-Převod mm na m">
+	<node_order><![CDATA[5]]></node_order>
+	<externalid><![CDATA[34]]></externalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Funkčnost převodu z milimetrů (mm) na metry (m)</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	Je zvoleno URL <a href="http://oks.kiv.zcu.cz/Prevodnik/Prevodnik">http://oks.kiv.zcu.cz/Prevodnik/Prevodnik</a></p>
+<p>
+	Ve vstupním poli <strong>Vstup</strong> je hodnota 1</p>
+<p>
+	Výstupní jednotka je nastavena na &quot;m (metr)&quot;</p>
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[3]]></importance>
+	<estimated_exec_duration>1.00</estimated_exec_duration>
+	<status>7</status>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	Výběr možnosti<span> </span><span>&quot;<a class="attribute-value">mm (milimetr)</a>&quot;</span> <span><span>ze vstupního výběrového seznamu</span></span></p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	Ve výběrovém seznamu v zeleném rámečku je text <span>&quot;<a class="attribute-value">mm (milimetr)</a>&quot;</span></p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[2]]></step_number>
+	<actions><![CDATA[<p>
+	Klik na tlačítko <strong>Převeď</strong></p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	V textovém poli <strong>Výstup</strong> se objeví hodnota 0.01</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+	<requirements>
+		<requirement>
+			<req_spec_title><![CDATA[Převodník]]></req_spec_title>
+			<doc_id><![CDATA[RQM.01.02.03]]></doc_id>
+			<title><![CDATA[Výběrový seznam pro vstupní hodnotu]]></title>
+		</requirement>
+		<requirement>
+			<req_spec_title><![CDATA[Převodník]]></req_spec_title>
+			<doc_id><![CDATA[RQM.01.02.05]]></doc_id>
+			<title><![CDATA[Převod hodnot]]></title>
+		</requirement>
+	</requirements>
+</testcase>
+
+<testcase internalid="772" name="TC.05.04.07-Převod yd na m">
+	<node_order><![CDATA[6]]></node_order>
+	<externalid><![CDATA[35]]></externalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Funkčnost převodu z yardů (yd) na metry (m)</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	Je zvoleno URL <a href="http://oks.kiv.zcu.cz/Prevodnik/Prevodnik">http://oks.kiv.zcu.cz/Prevodnik/Prevodnik</a></p>
+<p>
+	Ve vstupním poli <strong>Vstup</strong> je hodnota 1</p>
+<p>
+	Výstupní jednotka je nastavena na &quot;m (metr)&quot;</p>
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[3]]></importance>
+	<estimated_exec_duration>1.00</estimated_exec_duration>
+	<status>7</status>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	Výběr možnosti<span> </span><span>&quot;<a class="attribute-value">yd (yard)</a>&quot; <span><span>ze vstupního výběrového seznamu</span></span></span></p>
+<p>
+	&nbsp;</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	Ve výběrovém seznamu v zeleném rámečku je text <span>&quot;<a class="attribute-value">yd (yard)</a>&quot;</span></p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[2]]></step_number>
+	<actions><![CDATA[<p>
+	Klik na tlačítko <strong>Převeď</strong></p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	V textovém poli <strong>Výstup</strong> se objeví hodnota 0.9144</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+	<requirements>
+		<requirement>
+			<req_spec_title><![CDATA[Převodník]]></req_spec_title>
+			<doc_id><![CDATA[RQM.01.02.03]]></doc_id>
+			<title><![CDATA[Výběrový seznam pro vstupní hodnotu]]></title>
+		</requirement>
+		<requirement>
+			<req_spec_title><![CDATA[Převodník]]></req_spec_title>
+			<doc_id><![CDATA[RQM.01.02.05]]></doc_id>
+			<title><![CDATA[Převod hodnot]]></title>
+		</requirement>
+	</requirements>
+</testcase>
+</testsuite><testsuite id="776" name="TS.05.05-Vše z metru" >
+<node_order><![CDATA[4]]></node_order>
+<details><![CDATA[<p>
+	Testuje převody z metru do všech výstupních jednotek</p>
+<p>
+	Vstupní hodnota je vždy 1.</p>
+]]></details> 
+
+<testcase internalid="777" name="TC.05.05.01-Převod m na cm">
+	<node_order><![CDATA[0]]></node_order>
+	<externalid><![CDATA[36]]></externalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Funkčnost převodu z metrů (m) na centimetry (cm)</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	Je zvoleno URL <a href="http://oks.kiv.zcu.cz/Prevodnik/Prevodnik">http://oks.kiv.zcu.cz/Prevodnik/Prevodnik</a></p>
+<p>
+	Ve vstupním poli <strong>Vstup</strong> je hodnota 1</p>
+<p>
+	Vstupní jednotka je nastavena na &quot;m (metr)&quot;</p>
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[3]]></importance>
+	<estimated_exec_duration>1.00</estimated_exec_duration>
+	<status>7</status>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	Výběr možnosti<span> &quot;<a class="attribute-value">cm (centimetr)</a>&quot; <span><span>z výstupního výběrového seznamu</span></span></span></p>
+<p>
+	&nbsp;</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	Ve výběrovém seznamu v zeleném rámečku je text <span>&quot;<a class="attribute-value">cm (centimetr)</a>&quot;</span></p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[2]]></step_number>
+	<actions><![CDATA[<p>
+	Klik na tlačítko <strong>Převeď</strong></p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	V textovém poli <strong>Výstup</strong> se objeví hodnota 100</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+	<requirements>
+		<requirement>
+			<req_spec_title><![CDATA[Převodník]]></req_spec_title>
+			<doc_id><![CDATA[RQM.01.02.04]]></doc_id>
+			<title><![CDATA[Výběrový seznam pro výstupní hodnotu]]></title>
+		</requirement>
+		<requirement>
+			<req_spec_title><![CDATA[Převodník]]></req_spec_title>
+			<doc_id><![CDATA[RQM.01.02.05]]></doc_id>
+			<title><![CDATA[Převod hodnot]]></title>
+		</requirement>
+	</requirements>
+</testcase>
+
+<testcase internalid="781" name="TC.05.05.02-Převod m na dm">
+	<node_order><![CDATA[1]]></node_order>
+	<externalid><![CDATA[37]]></externalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Funkčnost převodu z metrů (m) na decimetry (dm)</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	Je zvoleno URL <a href="http://oks.kiv.zcu.cz/Prevodnik/Prevodnik">http://oks.kiv.zcu.cz/Prevodnik/Prevodnik</a></p>
+<p>
+	Ve vstupním poli <strong>Vstup</strong> je hodnota 1</p>
+<p>
+	Vstupní jednotka je nastavena na &quot;m (metr)&quot;</p>
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[3]]></importance>
+	<estimated_exec_duration>1.00</estimated_exec_duration>
+	<status>7</status>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	Výběr možnosti<span> </span><span>&quot;<a class="attribute-value">dm (decimetr)</a>&quot; <span><span><span>z výstupního výběrového seznamu</span></span></span></span></p>
+<p>
+	&nbsp;</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	Ve výběrovém seznamu v zeleném rámečku je text <span>&quot;<a class="attribute-value">dm (decimetr)</a>&quot;</span></p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[2]]></step_number>
+	<actions><![CDATA[<p>
+	Klik na tlačítko <strong>Převeď</strong></p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	V textovém poli <strong>Výstup</strong> se objeví hodnota 10</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+	<requirements>
+		<requirement>
+			<req_spec_title><![CDATA[Převodník]]></req_spec_title>
+			<doc_id><![CDATA[RQM.01.02.04]]></doc_id>
+			<title><![CDATA[Výběrový seznam pro výstupní hodnotu]]></title>
+		</requirement>
+		<requirement>
+			<req_spec_title><![CDATA[Převodník]]></req_spec_title>
+			<doc_id><![CDATA[RQM.01.02.05]]></doc_id>
+			<title><![CDATA[Převod hodnot]]></title>
+		</requirement>
+	</requirements>
+</testcase>
+
+<testcase internalid="785" name="TC.05.05.03-Převod m na ft">
+	<node_order><![CDATA[2]]></node_order>
+	<externalid><![CDATA[38]]></externalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Funkčnost převodu z metrů (m) na stopy (ft)</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	Je zvoleno URL <a href="http://oks.kiv.zcu.cz/Prevodnik/Prevodnik">http://oks.kiv.zcu.cz/Prevodnik/Prevodnik</a></p>
+<p>
+	Ve vstupním poli <strong>Vstup</strong> je hodnota 1</p>
+<p>
+	Vstupní jednotka je nastavena na &quot;m (metr)&quot;</p>
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[3]]></importance>
+	<estimated_exec_duration>1.00</estimated_exec_duration>
+	<status>7</status>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	Výběr možnosti<span> </span><span>&quot;<a class="attribute-value">ft (stopa)</a>&quot; <span><span><span>z výstupního výběrového seznamu</span></span></span></span></p>
+<p>
+	&nbsp;</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	Ve výběrovém seznamu v zeleném rámečku je text <span>&quot;<a class="attribute-value">ft (stopa)</a>&quot;</span></p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[2]]></step_number>
+	<actions><![CDATA[<p>
+	Klik na tlačítko <strong>Převeď</strong></p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	V textovém poli <strong>Výstup</strong> se objeví hodnota 3.280839895013123</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+	<requirements>
+		<requirement>
+			<req_spec_title><![CDATA[Převodník]]></req_spec_title>
+			<doc_id><![CDATA[RQM.01.02.04]]></doc_id>
+			<title><![CDATA[Výběrový seznam pro výstupní hodnotu]]></title>
+		</requirement>
+		<requirement>
+			<req_spec_title><![CDATA[Převodník]]></req_spec_title>
+			<doc_id><![CDATA[RQM.01.02.05]]></doc_id>
+			<title><![CDATA[Převod hodnot]]></title>
+		</requirement>
+	</requirements>
+</testcase>
+
+<testcase internalid="789" name="TC.05.05.04-Převod m na in">
+	<node_order><![CDATA[3]]></node_order>
+	<externalid><![CDATA[39]]></externalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Funkčnost převodu z metrů (m) na palce (in)</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	Je zvoleno URL <a href="http://oks.kiv.zcu.cz/Prevodnik/Prevodnik">http://oks.kiv.zcu.cz/Prevodnik/Prevodnik</a></p>
+<p>
+	Ve vstupním poli <strong>Vstup</strong> je hodnota 1</p>
+<p>
+	Vstupní jednotka je nastavena na &quot;m (metr)&quot;</p>
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[3]]></importance>
+	<estimated_exec_duration>1.00</estimated_exec_duration>
+	<status>7</status>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	Výběr možnosti<span> </span><span>&quot;<a class="attribute-value">in (palec)</a>&quot; <span><span><span>z výstupního výběrového seznamu</span></span></span></span></p>
+<p>
+	&nbsp;</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	Ve výběrovém seznamu v zeleném rámečku je text <span>&quot;<a class="attribute-value">in (palec)</a>&quot;</span></p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[2]]></step_number>
+	<actions><![CDATA[<p>
+	Klik na tlačítko <strong>Převeď</strong></p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	V textovém poli <strong>Výstup</strong> se objeví hodnota 39.37007874015748</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+	<requirements>
+		<requirement>
+			<req_spec_title><![CDATA[Převodník]]></req_spec_title>
+			<doc_id><![CDATA[RQM.01.02.04]]></doc_id>
+			<title><![CDATA[Výběrový seznam pro výstupní hodnotu]]></title>
+		</requirement>
+		<requirement>
+			<req_spec_title><![CDATA[Převodník]]></req_spec_title>
+			<doc_id><![CDATA[RQM.01.02.05]]></doc_id>
+			<title><![CDATA[Převod hodnot]]></title>
+		</requirement>
+	</requirements>
+</testcase>
+
+<testcase internalid="793" name="TC.05.05.05-Převod m na m">
+	<node_order><![CDATA[4]]></node_order>
+	<externalid><![CDATA[40]]></externalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Funkčnost převodu z metrů (m) na metry (m)</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	Je zvoleno URL <a href="http://oks.kiv.zcu.cz/Prevodnik/Prevodnik">http://oks.kiv.zcu.cz/Prevodnik/Prevodnik</a></p>
+<p>
+	Ve vstupním poli <strong>Vstup</strong> je hodnota 1</p>
+<p>
+	Vstupní jednotka je nastavena na &quot;m (metr)&quot;</p>
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[3]]></importance>
+	<estimated_exec_duration>1.00</estimated_exec_duration>
+	<status>7</status>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	Výběr možnosti<span> </span><span>&quot;<a class="attribute-value">m (metr)</a>&quot; <span><span><span>z výstupního výběrového seznamu</span></span></span></span></p>
+<p>
+	&nbsp;</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	Ve výběrovém seznamu v zeleném rámečku je text <span>&quot;<a class="attribute-value">m (metr)</a>&quot;</span></p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[2]]></step_number>
+	<actions><![CDATA[<p>
+	Klik na tlačítko <strong>Převeď</strong></p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	V textovém poli <strong>Výstup</strong> se objeví hodnota 1</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+	<requirements>
+		<requirement>
+			<req_spec_title><![CDATA[Převodník]]></req_spec_title>
+			<doc_id><![CDATA[RQM.01.02.04]]></doc_id>
+			<title><![CDATA[Výběrový seznam pro výstupní hodnotu]]></title>
+		</requirement>
+		<requirement>
+			<req_spec_title><![CDATA[Převodník]]></req_spec_title>
+			<doc_id><![CDATA[RQM.01.02.05]]></doc_id>
+			<title><![CDATA[Převod hodnot]]></title>
+		</requirement>
+	</requirements>
+</testcase>
+
+<testcase internalid="797" name="TC.05.05.06-Převod m na mm">
+	<node_order><![CDATA[5]]></node_order>
+	<externalid><![CDATA[41]]></externalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Funkčnost převodu z metrů (m) na milimetry (mm)</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	Je zvoleno URL <a href="http://oks.kiv.zcu.cz/Prevodnik/Prevodnik">http://oks.kiv.zcu.cz/Prevodnik/Prevodnik</a></p>
+<p>
+	Ve vstupním poli <strong>Vstup</strong> je hodnota 1</p>
+<p>
+	Vstupní jednotka je nastavena na &quot;m (metr)&quot;</p>
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[3]]></importance>
+	<estimated_exec_duration>1.00</estimated_exec_duration>
+	<status>7</status>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	Výběr možnosti<span> </span><span>&quot;<a class="attribute-value">mm (milimetr)</a>&quot; <span><span><span>z výstupního výběrového seznamu</span></span></span></span></p>
+<p>
+	&nbsp;</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	Ve výběrovém seznamu v zeleném rámečku je text <span>&quot;<a class="attribute-value">mm (milimetr)</a>&quot;</span></p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[2]]></step_number>
+	<actions><![CDATA[<p>
+	Klik na tlačítko <strong>Převeď</strong></p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	V textovém poli <strong>Výstup</strong> se objeví hodnota 1000</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+	<requirements>
+		<requirement>
+			<req_spec_title><![CDATA[Převodník]]></req_spec_title>
+			<doc_id><![CDATA[RQM.01.02.04]]></doc_id>
+			<title><![CDATA[Výběrový seznam pro výstupní hodnotu]]></title>
+		</requirement>
+		<requirement>
+			<req_spec_title><![CDATA[Převodník]]></req_spec_title>
+			<doc_id><![CDATA[RQM.01.02.05]]></doc_id>
+			<title><![CDATA[Převod hodnot]]></title>
+		</requirement>
+	</requirements>
+</testcase>
+
+<testcase internalid="801" name="TC.05.05.07-Převod m na yd">
+	<node_order><![CDATA[6]]></node_order>
+	<externalid><![CDATA[42]]></externalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Funkčnost převodu z metrů (m) na yardy (yd)</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	Je zvoleno URL <a href="http://oks.kiv.zcu.cz/Prevodnik/Prevodnik">http://oks.kiv.zcu.cz/Prevodnik/Prevodnik</a></p>
+<p>
+	Ve vstupním poli <strong>Vstup</strong> je hodnota 1</p>
+<p>
+	Vstupní jednotka je nastavena na &quot;m (metr)&quot;</p>
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[3]]></importance>
+	<estimated_exec_duration>1.00</estimated_exec_duration>
+	<status>7</status>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	Výběr možnosti<span> </span><span>&quot;<a class="attribute-value">yd (yard)</a>&quot; <span><span><span>z výstupního výběrového seznamu</span></span></span></span></p>
+<p>
+	&nbsp;</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	Ve výběrovém seznamu v zeleném rámečku je text <span>&quot;<a class="attribute-value">yd (yard)</a>&quot;</span></p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[2]]></step_number>
+	<actions><![CDATA[<p>
+	Klik na tlačítko <strong>Převeď</strong></p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	V textovém poli <strong>Výstup</strong> se objeví hodnota 1.093613298337708</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+	<requirements>
+		<requirement>
+			<req_spec_title><![CDATA[Převodník]]></req_spec_title>
+			<doc_id><![CDATA[RQM.01.02.04]]></doc_id>
+			<title><![CDATA[Výběrový seznam pro výstupní hodnotu]]></title>
+		</requirement>
+		<requirement>
+			<req_spec_title><![CDATA[Převodník]]></req_spec_title>
+			<doc_id><![CDATA[RQM.01.02.05]]></doc_id>
+			<title><![CDATA[Převod hodnot]]></title>
+		</requirement>
+	</requirements>
+</testcase>
+</testsuite><testsuite id="805" name="TS.05.06-Varianty Vstup CHYBA" >
+<node_order><![CDATA[5]]></node_order>
+<details><![CDATA[<p>
+	Testuje všechny chybné možnosti Vstup</p>
+]]></details> 
+
+<testcase internalid="806" name="TC.05.06.01-Záporné číslo celé">
+	<node_order><![CDATA[1]]></node_order>
+	<externalid><![CDATA[44]]></externalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Test celého záporného čísla</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	Je zvoleno URL <a href="http://oks.kiv.zcu.cz/Prevodnik/Prevodnik">http://oks.kiv.zcu.cz/Prevodnik/Prevodnik</a></p>
+<p>
+	V obou výběrových seznamech jsou zvoleny jednotky &quot;m (metr)&quot;</p>
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[3]]></importance>
+	<estimated_exec_duration>1.00</estimated_exec_duration>
+	<status>7</status>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	Zápis hodnoty -5 do textového pole <strong>Vstup</strong></p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	V poli <strong>Vstup</strong> je hodnota -5</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[2]]></step_number>
+	<actions><![CDATA[<p>
+	Klik na tlačítko <strong>Převeď</strong></p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	V textovém poli <strong>Výstup</strong> zůstává původní&nbsp; hodnota</p>
+<p>
+	V červeném rámečku nad polem <strong>Vstup</strong> se objeví:</p>
+<ul>
+	<li>
+		globální chybové hlášení (červená barva) &quot;Nelze převést&quot;</li>
+	<li>
+		upřesnění chyby (červená barva) &quot;Zadané číslo je záporné.&quot;</li>
+</ul>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+	<requirements>
+		<requirement>
+			<req_spec_title><![CDATA[Převodník]]></req_spec_title>
+			<doc_id><![CDATA[RQM.01.02.02]]></doc_id>
+			<title><![CDATA[Textové pole Vstup]]></title>
+		</requirement>
+		<requirement>
+			<req_spec_title><![CDATA[Převodník]]></req_spec_title>
+			<doc_id><![CDATA[RQM.01.02.07]]></doc_id>
+			<title><![CDATA[Textové pole Výstup]]></title>
+		</requirement>
+	</requirements>
+</testcase>
+
+<testcase internalid="810" name="TC.05.06.02-Záporné číslo desetinné">
+	<node_order><![CDATA[2]]></node_order>
+	<externalid><![CDATA[45]]></externalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Test desetinného záporného čísla</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	Je zvoleno URL <a href="http://oks.kiv.zcu.cz/Prevodnik/Prevodnik">http://oks.kiv.zcu.cz/Prevodnik/Prevodnik</a></p>
+<p>
+	V obou výběrových seznamech jsou zvoleny jednotky &quot;m (metr)&quot;</p>
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[3]]></importance>
+	<estimated_exec_duration>1.00</estimated_exec_duration>
+	<status>7</status>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	Zápis hodnoty -5.1 do textového pole <strong>Vstup</strong></p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	V poli <strong>Vstup</strong> je hodnota -5.1</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[2]]></step_number>
+	<actions><![CDATA[<p>
+	Klik na tlačítko <strong>Převeď</strong></p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	V textovém poli <strong>Výstup</strong> zůstává původní&nbsp; hodnota</p>
+<p>
+	V červeném rámečku nad polem <strong>Vstup</strong> se objeví:</p>
+<ul>
+	<li>
+		globální chybové hlášení (červená barva) &quot;Nelze převést&quot;</li>
+	<li>
+		upřesnění chyby (červená barva) &quot;Zadané číslo je záporné.&quot;</li>
+</ul>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+	<requirements>
+		<requirement>
+			<req_spec_title><![CDATA[Převodník]]></req_spec_title>
+			<doc_id><![CDATA[RQM.01.02.02]]></doc_id>
+			<title><![CDATA[Textové pole Vstup]]></title>
+		</requirement>
+		<requirement>
+			<req_spec_title><![CDATA[Převodník]]></req_spec_title>
+			<doc_id><![CDATA[RQM.01.02.07]]></doc_id>
+			<title><![CDATA[Textové pole Výstup]]></title>
+		</requirement>
+	</requirements>
+</testcase>
+
+<testcase internalid="814" name="TC.05.06.03-Záporné číslo vědecký formát kladný E">
+	<node_order><![CDATA[3]]></node_order>
+	<externalid><![CDATA[46]]></externalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Test desetinného záporného čísla vědecký formát kladný exponent</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	Je zvoleno URL <a href="http://oks.kiv.zcu.cz/Prevodnik/Prevodnik">http://oks.kiv.zcu.cz/Prevodnik/Prevodnik</a></p>
+<p>
+	V obou výběrových seznamech jsou zvoleny jednotky &quot;m (metr)&quot;</p>
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[3]]></importance>
+	<estimated_exec_duration>1.00</estimated_exec_duration>
+	<status>7</status>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	Zápis hodnoty -5.1E+1 do textového pole <strong>Vstup</strong></p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	V poli <strong>Vstup</strong> je hodnota -5.1E+1</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[2]]></step_number>
+	<actions><![CDATA[<p>
+	Klik na tlačítko <strong>Převeď</strong></p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	V textovém poli <strong>Výstup</strong> zůstává původní&nbsp; hodnota</p>
+<p>
+	V červeném rámečku nad polem <strong>Vstup</strong> se objeví:</p>
+<ul>
+	<li>
+		globální chybové hlášení (červená barva) &quot;Nelze převést&quot;</li>
+	<li>
+		upřesnění chyby (červená barva) &quot;Zadané číslo je záporné.&quot;</li>
+</ul>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+	<requirements>
+		<requirement>
+			<req_spec_title><![CDATA[Převodník]]></req_spec_title>
+			<doc_id><![CDATA[RQM.01.02.02]]></doc_id>
+			<title><![CDATA[Textové pole Vstup]]></title>
+		</requirement>
+		<requirement>
+			<req_spec_title><![CDATA[Převodník]]></req_spec_title>
+			<doc_id><![CDATA[RQM.01.02.07]]></doc_id>
+			<title><![CDATA[Textové pole Výstup]]></title>
+		</requirement>
+	</requirements>
+</testcase>
+
+<testcase internalid="818" name="TC.05.06.04-Záporné číslo vědecký formát záporný e">
+	<node_order><![CDATA[4]]></node_order>
+	<externalid><![CDATA[47]]></externalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Test desetinného záporného čísla vědecký formát záporný exponent</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	Je zvoleno URL <a href="http://oks.kiv.zcu.cz/Prevodnik/Prevodnik">http://oks.kiv.zcu.cz/Prevodnik/Prevodnik</a></p>
+<p>
+	V obou výběrových seznamech jsou zvoleny jednotky &quot;m (metr)&quot;</p>
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[3]]></importance>
+	<estimated_exec_duration>1.00</estimated_exec_duration>
+	<status>7</status>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	Zápis hodnoty -5.1e-1 do textového pole <strong>Vstup</strong></p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	V poli <strong>Vstup</strong> je hodnota -5.1e-1</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[2]]></step_number>
+	<actions><![CDATA[<p>
+	Klik na tlačítko <strong>Převeď</strong></p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	V textovém poli <strong>Výstup</strong> zůstává původní&nbsp; hodnota</p>
+<p>
+	V červeném rámečku nad polem <strong>Vstup</strong> se objeví:</p>
+<ul>
+	<li>
+		globální chybové hlášení (červená barva) &quot;Nelze převést&quot;</li>
+	<li>
+		upřesnění chyby (červená barva) &quot;Zadané číslo je záporné.&quot;</li>
+</ul>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+	<requirements>
+		<requirement>
+			<req_spec_title><![CDATA[Převodník]]></req_spec_title>
+			<doc_id><![CDATA[RQM.01.02.02]]></doc_id>
+			<title><![CDATA[Textové pole Vstup]]></title>
+		</requirement>
+		<requirement>
+			<req_spec_title><![CDATA[Převodník]]></req_spec_title>
+			<doc_id><![CDATA[RQM.01.02.07]]></doc_id>
+			<title><![CDATA[Textové pole Výstup]]></title>
+		</requirement>
+	</requirements>
+</testcase>
+
+<testcase internalid="822" name="TC.05.06.05-Nevyplněné pole">
+	<node_order><![CDATA[5]]></node_order>
+	<externalid><![CDATA[48]]></externalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Vstupní pole není vyplněno</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	Je zvoleno URL <a href="http://oks.kiv.zcu.cz/Prevodnik/Prevodnik">http://oks.kiv.zcu.cz/Prevodnik/Prevodnik</a></p>
+<p>
+	V obou výběrových seznamech jsou zvoleny jednotky &quot;m (metr)&quot;</p>
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[3]]></importance>
+	<estimated_exec_duration>1.00</estimated_exec_duration>
+	<status>7</status>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	Zápis prázdného řetězce do textového pole <strong>Vstup </strong>- vstupní pole je prázdné</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	V poli <strong>Vstup</strong> není žádná hodnota</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[2]]></step_number>
+	<actions><![CDATA[<p>
+	Klik na tlačítko <strong>Převeď</strong></p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	V textovém poli <strong>Výstup</strong> se vymaže původní&nbsp; hodnota - je prázdné</p>
+<p>
+	V červeném rámečku nad polem <strong>Vstup</strong> se objeví:</p>
+<ul>
+	<li>
+		globální chybové hlášení (červená barva) &quot;Nelze převést&quot;</li>
+	<li>
+		upřesnění chyby (červená barva) &quot;Nebylo zadáno žádné číslo pro převod.&quot;</li>
+</ul>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+	<requirements>
+		<requirement>
+			<req_spec_title><![CDATA[Převodník]]></req_spec_title>
+			<doc_id><![CDATA[RQM.01.02.02]]></doc_id>
+			<title><![CDATA[Textové pole Vstup]]></title>
+		</requirement>
+		<requirement>
+			<req_spec_title><![CDATA[Převodník]]></req_spec_title>
+			<doc_id><![CDATA[RQM.01.02.07]]></doc_id>
+			<title><![CDATA[Textové pole Výstup]]></title>
+		</requirement>
+	</requirements>
+</testcase>
+
+<testcase internalid="826" name="TC.05.06.06-Nepovolený znak nebo zápis">
+	<node_order><![CDATA[6]]></node_order>
+	<externalid><![CDATA[49]]></externalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Ve vstupním poli je jeden nebo více nepovolených znaků</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	Je zvoleno URL <a href="http://oks.kiv.zcu.cz/Prevodnik/Prevodnik">http://oks.kiv.zcu.cz/Prevodnik/Prevodnik</a></p>
+<p>
+	V obou výběrových seznamech jsou zvoleny jednotky &quot;m (metr)&quot;</p>
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[3]]></importance>
+	<estimated_exec_duration>1.00</estimated_exec_duration>
+	<status>7</status>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	Zápis hodnoty 12e do textového pole <strong>Vstup</strong></p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	V poli <strong>Vstup</strong> je hodnota 12e</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[2]]></step_number>
+	<actions><![CDATA[<p>
+	Klik na tlačítko <strong>Převeď</strong></p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	V textovém poli <strong>Výstup</strong> se vymaže původní&nbsp; hodnota - je prázdné</p>
+<p>
+	V červeném rámečku nad polem <strong>Vstup</strong> se objeví:</p>
+<ul>
+	<li>
+		globální chybové hlášení (červená barva) &quot;Nelze převést&quot;</li>
+	<li>
+		upřesnění chyby (červená barva) &quot;Vstupní číslo není validní (není zapsáno v podporovaném formátu nebo obsahuje nepovolené znaky - viz nápověda).&quot;</li>
+</ul>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+	<requirements>
+		<requirement>
+			<req_spec_title><![CDATA[Převodník]]></req_spec_title>
+			<doc_id><![CDATA[RQM.01.02.02]]></doc_id>
+			<title><![CDATA[Textové pole Vstup]]></title>
+		</requirement>
+		<requirement>
+			<req_spec_title><![CDATA[Převodník]]></req_spec_title>
+			<doc_id><![CDATA[RQM.01.02.07]]></doc_id>
+			<title><![CDATA[Textové pole Výstup]]></title>
+		</requirement>
+	</requirements>
+</testcase>
+</testsuite><testsuite id="830" name="TS.05.07-Všechny vstupy na všechny výstupy" >
+<node_order><![CDATA[6]]></node_order>
+<details><![CDATA[<p>
+	Testuje všechny kombinace jednotek vstupů a výstupů</p>
+<p>
+	Vstupní hodnota je vždy 1.</p>
+]]></details> 
+
+<testcase internalid="831" name="TC.05.07.01-Kombinace všech převodů">
+	<node_order><![CDATA[100]]></node_order>
+	<externalid><![CDATA[51]]></externalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Lze efektivně pokrýt pouze automatizovaným testem.</p>
+<p>
+	Očekávané výsledky pro Vstup = 1</p>
+<table align="center" border="1" cellpadding="3" cellspacing="1">
+	<thead align="center">
+		<tr>
+			<th scope="row">
+				1 -&gt; ?</th>
+			<th scope="col">
+				cm</th>
+			<th scope="col">
+				dm</th>
+			<th scope="col">
+				ft</th>
+			<th scope="col">
+				in</th>
+			<th scope="col">
+				m</th>
+			<th scope="col">
+				mm</th>
+			<th scope="col">
+				yd</th>
+		</tr>
+	</thead>
+	<tbody align="center">
+		<tr>
+			<th scope="row">
+				cm</th>
+			<td>
+				1</td>
+			<td>
+				0.1</td>
+			<td>
+				0.0328083989501312</td>
+			<td>
+				0.3937007874015748</td>
+			<td>
+				0.01</td>
+			<td>
+				10</td>
+			<td>
+				0.0109361329833771</td>
+		</tr>
+		<tr>
+			<th scope="row">
+				dm</th>
+			<td>
+				10</td>
+			<td>
+				1</td>
+			<td>
+				0.3280839895013123</td>
+			<td>
+				3.937007874015748</td>
+			<td>
+				0.1</td>
+			<td>
+				100</td>
+			<td>
+				0.109361329833771</td>
+		</tr>
+		<tr>
+			<th scope="row">
+				ft</th>
+			<td>
+				30.48</td>
+			<td>
+				3.048</td>
+			<td>
+				1</td>
+			<td>
+				12</td>
+			<td>
+				0.3048</td>
+			<td>
+				304.8</td>
+			<td>
+				0.3333333333333333</td>
+		</tr>
+		<tr>
+			<th scope="row">
+				in</th>
+			<td>
+				2.54</td>
+			<td>
+				0.254</td>
+			<td>
+				0.0833333333333333</td>
+			<td>
+				1</td>
+			<td>
+				0.0254</td>
+			<td>
+				25.4</td>
+			<td>
+				0.0277777777777778</td>
+		</tr>
+		<tr>
+			<th scope="row">
+				m</th>
+			<td>
+				100</td>
+			<td>
+				10</td>
+			<td>
+				3.280839895013123</td>
+			<td>
+				39.37007874015748</td>
+			<td>
+				1</td>
+			<td>
+				1000</td>
+			<td>
+				1.093613298337708</td>
+		</tr>
+		<tr>
+			<th scope="row">
+				mm</th>
+			<td>
+				0.1</td>
+			<td>
+				0.01</td>
+			<td>
+				0.0032808398950131</td>
+			<td>
+				0.0393700787401575</td>
+			<td>
+				0.001</td>
+			<td>
+				1</td>
+			<td>
+				0.0010936132983377</td>
+		</tr>
+		<tr>
+			<th scope="row">
+				yd</th>
+			<td>
+				91.44</td>
+			<td>
+				9.144</td>
+			<td>
+				3</td>
+			<td>
+				36</td>
+			<td>
+				0.9144</td>
+			<td>
+				914.4</td>
+			<td>
+				1</td>
+		</tr>
+	</tbody>
+</table>
+<p>
+	&nbsp;</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	URL je http://oks.kiv.zcu.cz/Prevodnik/Prevodnik</p>
+<p>
+	<strong>Vstup </strong>= 1</p>
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[3]]></importance>
+	<estimated_exec_duration>1.00</estimated_exec_duration>
+	<status>7</status>
+
+	<requirements>
+		<requirement>
+			<req_spec_title><![CDATA[Převodník]]></req_spec_title>
+			<doc_id><![CDATA[RQM.01.02.02]]></doc_id>
+			<title><![CDATA[Textové pole Vstup]]></title>
+		</requirement>
+		<requirement>
+			<req_spec_title><![CDATA[Převodník]]></req_spec_title>
+			<doc_id><![CDATA[RQM.01.02.03]]></doc_id>
+			<title><![CDATA[Výběrový seznam pro vstupní hodnotu]]></title>
+		</requirement>
+		<requirement>
+			<req_spec_title><![CDATA[Převodník]]></req_spec_title>
+			<doc_id><![CDATA[RQM.01.02.04]]></doc_id>
+			<title><![CDATA[Výběrový seznam pro výstupní hodnotu]]></title>
+		</requirement>
+		<requirement>
+			<req_spec_title><![CDATA[Převodník]]></req_spec_title>
+			<doc_id><![CDATA[RQM.01.02.05]]></doc_id>
+			<title><![CDATA[Převod hodnot]]></title>
+		</requirement>
+		<requirement>
+			<req_spec_title><![CDATA[Převodník]]></req_spec_title>
+			<doc_id><![CDATA[RQM.01.02.07]]></doc_id>
+			<title><![CDATA[Textové pole Výstup]]></title>
+		</requirement>
+	</requirements>
+</testcase>
+</testsuite><testsuite id="833" name="TS.05.08-Hraniční hodnoty" >
+<node_order><![CDATA[7]]></node_order>
+<details><![CDATA[<p>
+	Testuje některé hraniční hodnoty</p>
+]]></details> 
+
+<testcase internalid="834" name="TC.05.08.01-Nula">
+	<node_order><![CDATA[1]]></node_order>
+	<externalid><![CDATA[52]]></externalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Test převodu nuly</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	Je zvoleno URL <a href="http://oks.kiv.zcu.cz/Prevodnik/Prevodnik">http://oks.kiv.zcu.cz/Prevodnik/Prevodnik</a></p>
+<p>
+	V obou výběrových seznamech jsou zvoleny jednotky &quot;m (metr)&quot;</p>
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[3]]></importance>
+	<estimated_exec_duration>1.00</estimated_exec_duration>
+	<status>7</status>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	Zápis hodnoty 0 do textového pole <strong>Vstup</strong></p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	V poli <strong>Vstup</strong> je hodnota 0</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[2]]></step_number>
+	<actions><![CDATA[<p>
+	Klik na tlačítko <strong>Převeď</strong></p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	V textovém poli <strong>Výstup</strong> se objeví hodnota 0</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+	<requirements>
+		<requirement>
+			<req_spec_title><![CDATA[Převodník]]></req_spec_title>
+			<doc_id><![CDATA[RQM.01.02.02]]></doc_id>
+			<title><![CDATA[Textové pole Vstup]]></title>
+		</requirement>
+		<requirement>
+			<req_spec_title><![CDATA[Převodník]]></req_spec_title>
+			<doc_id><![CDATA[RQM.01.02.05]]></doc_id>
+			<title><![CDATA[Převod hodnot]]></title>
+		</requirement>
+		<requirement>
+			<req_spec_title><![CDATA[Převodník]]></req_spec_title>
+			<doc_id><![CDATA[RQM.01.02.07]]></doc_id>
+			<title><![CDATA[Textové pole Výstup]]></title>
+		</requirement>
+	</requirements>
+</testcase>
+
+<testcase internalid="838" name="TC.05.08.02-Max. double">
+	<node_order><![CDATA[2]]></node_order>
+	<externalid><![CDATA[53]]></externalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Test převodu maximálního double</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	Je zvoleno URL <a href="http://oks.kiv.zcu.cz/Prevodnik/Prevodnik">http://oks.kiv.zcu.cz/Prevodnik/Prevodnik</a></p>
+<p>
+	V obou výběrových seznamech jsou zvoleny jednotky &quot;m (metr)&quot;</p>
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[3]]></importance>
+	<estimated_exec_duration>1.00</estimated_exec_duration>
+	<status>7</status>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	Zápis hodnoty 1.7e308 do textového pole <strong>Vstup</strong></p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	V poli <strong>Vstup</strong> je hodnota 1.7e308</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[2]]></step_number>
+	<actions><![CDATA[<p>
+	Klik na tlačítko <strong>Převeď</strong></p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	V textovém poli <strong>Výstup</strong> se objeví řetězec &quot;Infinity&quot;</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+	<requirements>
+		<requirement>
+			<req_spec_title><![CDATA[Převodník]]></req_spec_title>
+			<doc_id><![CDATA[RQM.01.02.02]]></doc_id>
+			<title><![CDATA[Textové pole Vstup]]></title>
+		</requirement>
+		<requirement>
+			<req_spec_title><![CDATA[Převodník]]></req_spec_title>
+			<doc_id><![CDATA[RQM.01.02.05]]></doc_id>
+			<title><![CDATA[Převod hodnot]]></title>
+		</requirement>
+		<requirement>
+			<req_spec_title><![CDATA[Převodník]]></req_spec_title>
+			<doc_id><![CDATA[RQM.01.02.07]]></doc_id>
+			<title><![CDATA[Textové pole Výstup]]></title>
+		</requirement>
+	</requirements>
+</testcase>
+</testsuite></testsuite><testsuite id="842" name="TS.06-Vymazání" >
+<node_order><![CDATA[6]]></node_order>
+<details><![CDATA[<p>
+	Testuje tlačítko <strong>Vymaž</strong></p>
+<p>
+	Je zvoleno URL <a href="http://oks.kiv.zcu.cz/Prevodnik/Prevodnik">http://oks.kiv.zcu.cz/Prevodnik/Prevodnik</a></p>
+]]></details> 
+
+<testcase internalid="843" name="TC.06.01-Převod OK">
+	<node_order><![CDATA[1]]></node_order>
+	<externalid><![CDATA[54]]></externalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Funkčnost tlačítka <strong>Vymaž</strong> po správně provedeném převodu</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	Je zvoleno URL <a href="http://oks.kiv.zcu.cz/Prevodnik/Prevodnik">http://oks.kiv.zcu.cz/Prevodnik/Prevodnik</a></p>
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration>1.00</estimated_exec_duration>
+	<status>7</status>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	Kliknutí do pole <strong>Vstup</strong></p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	Pole <strong>Vstup </strong>je zeleně orámováno</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[2]]></step_number>
+	<actions><![CDATA[<p>
+	Zápis hodnoty 1 do textového pole <strong>Vstup</strong></p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	V poli <strong>Vstup</strong> je hodnota 1</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[3]]></step_number>
+	<actions><![CDATA[<p>
+	Rozbalení výběrového seznamu v řádce <strong>Vstup</strong></p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	Výběrový seznam v řádce <strong>Vstup</strong> je zeleně orámován</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[4]]></step_number>
+	<actions><![CDATA[<p>
+	Výběr možnosti &quot;<span><a class="attribute-value">in (palec)</a></span>&quot; z výběrového seznamu v řádce <strong>Vstup</strong></p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	Ve výběrovém seznamu v zeleném rámečku je text &quot;<span><a class="attribute-value">in (palec)</a></span>&quot;</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[5]]></step_number>
+	<actions><![CDATA[<p>
+	<a href="http://localhost/testlink/lib/testcases/tcEdit.php?doAction=editStep&amp;testcase_id=568&amp;tcversion_id=569&amp;goback_url=http%3A%2F%2Flocalhost%2Ftestlink%2Flib%2Ftestcases%2FarchiveData.php%3Ftcase_id%3D568%26show_mode%3Dshow&amp;step_id=622">Rozbalen&iacute; výběrového seznamu v řádce <strong>Výstup</strong></a></p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	<a href="http://localhost/testlink/lib/testcases/tcEdit.php?doAction=editStep&amp;testcase_id=568&amp;tcversion_id=569&amp;goback_url=http%3A%2F%2Flocalhost%2Ftestlink%2Flib%2Ftestcases%2FarchiveData.php%3Ftcase_id%3D568%26show_mode%3Dshow&amp;step_id=622">Výběrový seznam v řádce <strong>Výstup</strong> je zeleně orámován</a></p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[6]]></step_number>
+	<actions><![CDATA[<p>
+	Výběr možnosti &quot;<span><a class="attribute-value">mm (milimetr)&quot; z výběrového seznamu v řádce <strong>Výstup</strong></a></span></p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	Ve výběrovém seznamu v zeleném rámečku je text &quot;<span><a class="attribute-value">mm (milimetr)&quot;</a></span></p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[7]]></step_number>
+	<actions><![CDATA[<p>
+	Klik na tlačítko <strong>Převeď</strong></p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	V textovém poli <strong>Výstup</strong> se objeví hodnota 25.4</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[8]]></step_number>
+	<actions><![CDATA[<p>
+	Klik na tlačítko <strong>Vymaž</strong></p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	Textové pole <strong>Vstup</strong> je vymazáno</p>
+<p>
+	Textové pole <strong>Výstup</strong> je vymazáno</p>
+<p>
+	Hodnoty u obou výběrových seznamů jsou nastaveny na výchozí &quot;cm (centimetr)&quot;</p>
+<p>
+	Zezelená rámeček kolem textového pole <strong>Vstup </strong>a přesune se do něho kurzor na jeho začátek</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+	<requirements>
+		<requirement>
+			<req_spec_title><![CDATA[Převodník]]></req_spec_title>
+			<doc_id><![CDATA[RQM.01.02.06]]></doc_id>
+			<title><![CDATA[Tlačítko Vymaž]]></title>
+		</requirement>
+	</requirements>
+</testcase>
+
+<testcase internalid="853" name="TC.06.02-Převod CHYBA">
+	<node_order><![CDATA[2]]></node_order>
+	<externalid><![CDATA[55]]></externalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Funkčnost tlačítka <strong>Vymaž</strong> po chybném převodu</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	Je zvoleno URL <a href="http://oks.kiv.zcu.cz/Prevodnik/Prevodnik">http://oks.kiv.zcu.cz/Prevodnik/Prevodnik</a></p>
+<p>
+	V obou výběrových seznamech jsou zvoleny jednotky &quot;m (metr)&quot;</p>
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration>1.00</estimated_exec_duration>
+	<status>7</status>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	Kliknutí do pole <strong>Vstup</strong></p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	Pole <strong>Vstup </strong>je zeleně orámováno</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[2]]></step_number>
+	<actions><![CDATA[<p>
+	Zápis hodnoty abc do textového pole <strong>Vstup</strong></p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	V poli <strong>Vstup</strong> je hodnota abc</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[8]]></step_number>
+	<actions><![CDATA[<p>
+	Klik na tlačítko <strong>Převeď</strong></p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	Textové pole <strong>Výstup</strong> je vymazáno</p>
+<p>
+	V červeném rámečku nad polem <strong>Vstup</strong> se objeví:</p>
+<ul>
+	<li>
+		globální chybové hlášení (červená barva) &quot;Nelze převést&quot;</li>
+	<li>
+		upřesnění chyby (červená barva) &quot;Vstupní číslo není validní (není zapsáno v podporovaném formátu nebo obsahuje nepovolené znaky - viz nápověda).&quot;</li>
+</ul>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[9]]></step_number>
+	<actions><![CDATA[<p>
+	Klik na tlačítko <strong>Vymaž</strong></p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	Vymaže se textové pole <strong>Vstup</strong></p>
+<p>
+	Vymaže se textové pole <strong>Výstup</strong></p>
+<p>
+	Hodnoty u obou výběrových seznamů jsou nastaveny na výchozí &quot;cm (centimetr)&quot;</p>
+<p>
+	Vymaže se červený rámeček nad polem <strong>Vstup</strong></p>
+<p>
+	Rámeček vstupního textového pole zezelená a přesune se do něho kurzor</p>
+<p>
+	&nbsp;</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+	<requirements>
+		<requirement>
+			<req_spec_title><![CDATA[Převodník]]></req_spec_title>
+			<doc_id><![CDATA[RQM.01.02.06]]></doc_id>
+			<title><![CDATA[Tlačítko Vymaž]]></title>
+		</requirement>
+	</requirements>
+</testcase>
+</testsuite><testsuite id="859" name="TS.07-Statické prvky stránky Převodník" >
+<node_order><![CDATA[7]]></node_order>
+<details><![CDATA[<p>
+	Testuje, zda:</p>
+<ul>
+	<li>
+		je přítomno 8 statických prvků</li>
+	<li>
+		editovatelnost polí</li>
+	<li>
+		úplnost a pojmenování položek výběrových seznamů</li>
+</ul>
+<p>
+	URL je: <a href="http://oks.kiv.zcu.cz/Prevodnik/Uvod">http://oks.kiv.zcu.cz/Prevodnik/</a><a href="http://oks.kiv.zcu.cz/Prevodnik/Uvod">Prevodnik</a></p>
+]]></details> 
+<testsuite id="860" name="TS.07.01-Přítomnost prvků" >
+<node_order><![CDATA[3]]></node_order>
+<details><![CDATA[<div>
+	<p>
+		Testuje, zda je přítomno 8 statických prvků:</p>
+	<ul>
+		<li>
+			label <strong>Vstup</strong></li>
+		<li>
+			vstupní textové pole</li>
+		<li>
+			vstupní výběrový seznam</li>
+		<li>
+			label <strong>Výstup</strong></li>
+		<li>
+			výstupní textové pole</li>
+		<li>
+			výstupní výběrový seznam</li>
+		<li>
+			tlačítko <strong>Převeď</strong></li>
+		<li>
+			tlačítko <strong>Vymaž</strong></li>
+	</ul>
+</div>
+<p>
+	&nbsp;</p>
+]]></details> 
+
+<testcase internalid="861" name="TC.07.01.01-Label Vstup">
+	<node_order><![CDATA[2]]></node_order>
+	<externalid><![CDATA[56]]></externalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Testuje existenci a pojmenování labelu <strong>Vstup</strong></p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	Je zvoleno URL <a href="http://oks.kiv.zcu.cz/Prevodnik">http://oks.kiv.zcu.cz</a><a href="http://oks.kiv.zcu.cz/Prevodnik">/Prevodnik</a><a href="http://oks.kiv.zcu.cz/Prevodnik">/Prevodnik</a></p>
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[1]]></importance>
+	<estimated_exec_duration>1.00</estimated_exec_duration>
+	<status>7</status>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	Ověření existence a pojmenování labelu <strong>Vstup</strong></p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	Label <strong>Vstup</strong> existuje</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+	<requirements>
+		<requirement>
+			<req_spec_title><![CDATA[Převodník]]></req_spec_title>
+			<doc_id><![CDATA[RQM.01.02.02]]></doc_id>
+			<title><![CDATA[Textové pole Vstup]]></title>
+		</requirement>
+	</requirements>
+</testcase>
+
+<testcase internalid="864" name="TC.07.01.02-Vstupní textové pole">
+	<node_order><![CDATA[3]]></node_order>
+	<externalid><![CDATA[57]]></externalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Testuje existenci vstupního textového pole</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	Je zvoleno URL <a href="http://oks.kiv.zcu.cz/Prevodnik">http://oks.kiv.zcu.cz</a><a href="http://oks.kiv.zcu.cz/Prevodnik">/Prevodnik</a><a href="http://oks.kiv.zcu.cz/Prevodnik">/Prevodnik</a></p>
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[1]]></importance>
+	<estimated_exec_duration>1.00</estimated_exec_duration>
+	<status>7</status>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	Ověření existence vstupního textového pole</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	Vstupní textové pole existuje</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+	<requirements>
+		<requirement>
+			<req_spec_title><![CDATA[Převodník]]></req_spec_title>
+			<doc_id><![CDATA[RQM.01.02.02]]></doc_id>
+			<title><![CDATA[Textové pole Vstup]]></title>
+		</requirement>
+	</requirements>
+</testcase>
+
+<testcase internalid="867" name="TC.07.01.03-Vstupní výběrový seznam">
+	<node_order><![CDATA[4]]></node_order>
+	<externalid><![CDATA[58]]></externalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Testuje existenci vstupního výběrového seznamu</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	Je zvoleno URL <a href="http://oks.kiv.zcu.cz/Prevodnik">http://oks.kiv.zcu.cz</a><a href="http://oks.kiv.zcu.cz/Prevodnik">/Prevodnik</a><a href="http://oks.kiv.zcu.cz/Prevodnik">/Prevodnik</a></p>
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[1]]></importance>
+	<estimated_exec_duration>1.00</estimated_exec_duration>
+	<status>7</status>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	Ověření existence vstupního výběrového seznamu</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	Vstupní výběrový seznam existuje</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+	<requirements>
+		<requirement>
+			<req_spec_title><![CDATA[Převodník]]></req_spec_title>
+			<doc_id><![CDATA[RQM.01.02.03]]></doc_id>
+			<title><![CDATA[Výběrový seznam pro vstupní hodnotu]]></title>
+		</requirement>
+	</requirements>
+</testcase>
+
+<testcase internalid="870" name="TC.07.01.04-Label Výstup">
+	<node_order><![CDATA[5]]></node_order>
+	<externalid><![CDATA[59]]></externalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Testuje existenci a pojmenování labelu <strong>Výstup</strong></p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	Je zvoleno URL <a href="http://oks.kiv.zcu.cz/Prevodnik">http://oks.kiv.zcu.cz</a><a href="http://oks.kiv.zcu.cz/Prevodnik">/Prevodnik</a><a href="http://oks.kiv.zcu.cz/Prevodnik">/Prevodnik</a></p>
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[1]]></importance>
+	<estimated_exec_duration>1.00</estimated_exec_duration>
+	<status>7</status>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	Ověření existence a pojmenování labelu <strong>Výstup</strong></p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	Label <strong>Výstup</strong> existuje</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+	<requirements>
+		<requirement>
+			<req_spec_title><![CDATA[Převodník]]></req_spec_title>
+			<doc_id><![CDATA[RQM.01.02.07]]></doc_id>
+			<title><![CDATA[Textové pole Výstup]]></title>
+		</requirement>
+	</requirements>
+</testcase>
+
+<testcase internalid="873" name="TC.07.01.05-Výstupní textové pole">
+	<node_order><![CDATA[6]]></node_order>
+	<externalid><![CDATA[60]]></externalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Testuje existenci výstupního textového pole</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	Je zvoleno URL <a href="http://oks.kiv.zcu.cz/Prevodnik">http://oks.kiv.zcu.cz</a><a href="http://oks.kiv.zcu.cz/Prevodnik">/Prevodnik</a><a href="http://oks.kiv.zcu.cz/Prevodnik">/Prevodnik</a></p>
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[1]]></importance>
+	<estimated_exec_duration>1.00</estimated_exec_duration>
+	<status>7</status>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	Ověření existence výstupního textového pole</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	Výstupní textové pole existuje</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+	<requirements>
+		<requirement>
+			<req_spec_title><![CDATA[Převodník]]></req_spec_title>
+			<doc_id><![CDATA[RQM.01.02.07]]></doc_id>
+			<title><![CDATA[Textové pole Výstup]]></title>
+		</requirement>
+	</requirements>
+</testcase>
+
+<testcase internalid="876" name="TC.07.01.06-Výstupní výběrový seznam">
+	<node_order><![CDATA[7]]></node_order>
+	<externalid><![CDATA[61]]></externalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Testuje existenci výstupního výběrového seznamu</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	Je zvoleno URL <a href="http://oks.kiv.zcu.cz/Prevodnik">http://oks.kiv.zcu.cz</a><a href="http://oks.kiv.zcu.cz/Prevodnik">/Prevodnik</a><a href="http://oks.kiv.zcu.cz/Prevodnik">/Prevodnik</a></p>
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[1]]></importance>
+	<estimated_exec_duration>1.00</estimated_exec_duration>
+	<status>7</status>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	Ověření existence výstupního výběrového seznamu</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	Výstupní výběrový seznam existuje</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+	<requirements>
+		<requirement>
+			<req_spec_title><![CDATA[Převodník]]></req_spec_title>
+			<doc_id><![CDATA[RQM.01.02.04]]></doc_id>
+			<title><![CDATA[Výběrový seznam pro výstupní hodnotu]]></title>
+		</requirement>
+	</requirements>
+</testcase>
+
+<testcase internalid="879" name="TC.07.01.07-Tlačítko Převeď">
+	<node_order><![CDATA[8]]></node_order>
+	<externalid><![CDATA[62]]></externalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Testuje existenci a pojmenování tlačítka <strong>Převeď</strong></p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	Je zvoleno URL <a href="http://oks.kiv.zcu.cz/Prevodnik">http://oks.kiv.zcu.cz</a><a href="http://oks.kiv.zcu.cz/Prevodnik">/Prevodnik</a><a href="http://oks.kiv.zcu.cz/Prevodnik">/Prevodnik</a></p>
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[1]]></importance>
+	<estimated_exec_duration>1.00</estimated_exec_duration>
+	<status>7</status>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	Ověření existence a pojmenování tlačítka <strong>Převeď</strong></p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	Tlačítko <strong>Převeď</strong> existuje</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+	<requirements>
+		<requirement>
+			<req_spec_title><![CDATA[Převodník]]></req_spec_title>
+			<doc_id><![CDATA[RQM.01.02.05]]></doc_id>
+			<title><![CDATA[Převod hodnot]]></title>
+		</requirement>
+	</requirements>
+</testcase>
+
+<testcase internalid="882" name="TC.07.01.08-Tlačítko Vymaž">
+	<node_order><![CDATA[9]]></node_order>
+	<externalid><![CDATA[63]]></externalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Testuje existenci a pojmenování tlačítka <strong>Vymaž</strong></p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	Je zvoleno URL <a href="http://oks.kiv.zcu.cz/Prevodnik">http://oks.kiv.zcu.cz</a><a href="http://oks.kiv.zcu.cz/Prevodnik">/Prevodnik</a><a href="http://oks.kiv.zcu.cz/Prevodnik">/Prevodnik</a></p>
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[1]]></importance>
+	<estimated_exec_duration>1.00</estimated_exec_duration>
+	<status>7</status>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	Ověření existence a pojmenování tlačítka <strong>Vymaž</strong></p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	Tlačítko <strong>Vymaž</strong> existuje</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+	<requirements>
+		<requirement>
+			<req_spec_title><![CDATA[Převodník]]></req_spec_title>
+			<doc_id><![CDATA[RQM.01.02.06]]></doc_id>
+			<title><![CDATA[Tlačítko Vymaž]]></title>
+		</requirement>
+	</requirements>
+</testcase>
+</testsuite><testsuite id="885" name="TS.07.02-Editovatelnost polí" >
+<node_order><![CDATA[4]]></node_order>
+<details><![CDATA[<div>
+	<p>
+		Testuje editovatelnost polí:</p>
+	<ul>
+		<li>
+			vstupní - ano</li>
+		<li>
+			výstupní - ne</li>
+	</ul>
+</div>
+<p>
+	&nbsp;</p>
+]]></details> 
+
+<testcase internalid="886" name="TC.07.02.01-Vstupní textové pole">
+	<node_order><![CDATA[4]]></node_order>
+	<externalid><![CDATA[64]]></externalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Testuje editovatelnost vstupního textového pole - ANO</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	Je zvoleno URL <a href="http://oks.kiv.zcu.cz/Prevodnik">http://oks.kiv.zcu.cz</a><a href="http://oks.kiv.zcu.cz/Prevodnik">/Prevodnik</a><a href="http://oks.kiv.zcu.cz/Prevodnik">/Prevodnik</a></p>
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[1]]></importance>
+	<estimated_exec_duration>1.00</estimated_exec_duration>
+	<status>7</status>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	Ověření editovatelnosti vstupního textového pole</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	Vstupní textové pole <strong>je</strong> editovatelné</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+	<requirements>
+		<requirement>
+			<req_spec_title><![CDATA[Převodník]]></req_spec_title>
+			<doc_id><![CDATA[RQM.01.02.02]]></doc_id>
+			<title><![CDATA[Textové pole Vstup]]></title>
+		</requirement>
+	</requirements>
+</testcase>
+
+<testcase internalid="889" name="TC.07.02.02-Výstupní textové pole">
+	<node_order><![CDATA[5]]></node_order>
+	<externalid><![CDATA[65]]></externalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Testuje editovatelnost výstupního textového pole - NE</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	Je zvoleno URL <a href="http://oks.kiv.zcu.cz/Prevodnik">http://oks.kiv.zcu.cz</a><a href="http://oks.kiv.zcu.cz/Prevodnik">/Prevodnik</a><a href="http://oks.kiv.zcu.cz/Prevodnik">/Prevodnik</a></p>
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[1]]></importance>
+	<estimated_exec_duration>1.00</estimated_exec_duration>
+	<status>7</status>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	Ověření editovatelnosti výstupního textového pole</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	Výstupní textové pole <strong>není</strong> editovatelné</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+	<requirements>
+		<requirement>
+			<req_spec_title><![CDATA[Převodník]]></req_spec_title>
+			<doc_id><![CDATA[RQM.01.02.07]]></doc_id>
+			<title><![CDATA[Textové pole Výstup]]></title>
+		</requirement>
+	</requirements>
+</testcase>
+</testsuite><testsuite id="892" name="TS.07.03-Úplnost výběrových seznamů" >
+<node_order><![CDATA[5]]></node_order>
+<details><![CDATA[<div>
+	<p>
+		Testuje úplnost a pojmenování položek výběrových seznamů:</p>
+	<ul>
+		<li>
+			položky vstupního výběrového seznamu
+			<ul>
+				<li>
+					cm (centimetr)</li>
+				<li>
+					dm (decimetr)</li>
+				<li>
+					ft (stopa)</li>
+				<li>
+					in (palec)</li>
+				<li>
+					m (metr)</li>
+				<li>
+					mm (milimetr)</li>
+				<li>
+					yd (yard)</li>
+			</ul>
+		</li>
+		<li>
+			položky výstupního výběrového seznamu
+			<ul>
+				<li>
+					cm (centimetr)</li>
+				<li>
+					dm (decimetr)</li>
+				<li>
+					ft (stopa)</li>
+				<li>
+					in (palec)</li>
+				<li>
+					m (metr)</li>
+				<li>
+					mm (milimetr)</li>
+				<li>
+					yd (yard)</li>
+			</ul>
+		</li>
+	</ul>
+</div>
+<p>
+	&nbsp;</p>
+]]></details> 
+
+<testcase internalid="893" name="TC.07.03.01-Vstupní výběrový seznam">
+	<node_order><![CDATA[5]]></node_order>
+	<externalid><![CDATA[66]]></externalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Testuje úplnost a pojmenování položek vstupního výběrového seznamu</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	Je zvoleno URL <a href="http://oks.kiv.zcu.cz/Prevodnik">http://oks.kiv.zcu.cz</a><a href="http://oks.kiv.zcu.cz/Prevodnik">/Prevodnik</a><a href="http://oks.kiv.zcu.cz/Prevodnik">/Prevodnik</a></p>
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[1]]></importance>
+	<estimated_exec_duration>1.00</estimated_exec_duration>
+	<status>7</status>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	Ověření úplnosti a pojmenování položek vstupního výběrového seznamu</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	Vstupní výběrový seznam má tyto položky:</p>
+<ul>
+	<li>
+		cm (centimetr)</li>
+	<li>
+		dm (decimetr)</li>
+	<li>
+		ft (stopa)</li>
+	<li>
+		in (palec)</li>
+	<li>
+		m (metr)</li>
+	<li>
+		mm (milimetr)</li>
+	<li>
+		yd (yard)<br />
+		&nbsp;</li>
+</ul>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+	<requirements>
+		<requirement>
+			<req_spec_title><![CDATA[Převodník]]></req_spec_title>
+			<doc_id><![CDATA[RQM.01.02.03]]></doc_id>
+			<title><![CDATA[Výběrový seznam pro vstupní hodnotu]]></title>
+		</requirement>
+	</requirements>
+</testcase>
+
+<testcase internalid="896" name="TC.07.03.02-Výstupní výběrový seznam">
+	<node_order><![CDATA[6]]></node_order>
+	<externalid><![CDATA[67]]></externalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Testuje úplnost a pojmenování položek výstupního výběrového seznamu</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	Je zvoleno URL <a href="http://oks.kiv.zcu.cz/Prevodnik">http://oks.kiv.zcu.cz</a><a href="http://oks.kiv.zcu.cz/Prevodnik">/Prevodnik</a><a href="http://oks.kiv.zcu.cz/Prevodnik">/Prevodnik</a></p>
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[1]]></importance>
+	<estimated_exec_duration>1.00</estimated_exec_duration>
+	<status>7</status>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	Ověření úplnosti a pojmenování položek výstupního výběrového seznamu</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	Výstupní výběrový seznam má tyto položky:</p>
+<ul>
+	<li>
+		cm (centimetr)</li>
+	<li>
+		dm (decimetr)</li>
+	<li>
+		ft (stopa)</li>
+	<li>
+		in (palec)</li>
+	<li>
+		m (metr)</li>
+	<li>
+		mm (milimetr)</li>
+	<li>
+		yd (yard)<br />
+		&nbsp;</li>
+</ul>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+	<requirements>
+		<requirement>
+			<req_spec_title><![CDATA[Převodník]]></req_spec_title>
+			<doc_id><![CDATA[RQM.01.02.04]]></doc_id>
+			<title><![CDATA[Výběrový seznam pro výstupní hodnotu]]></title>
+		</requirement>
+	</requirements>
+</testcase>
+</testsuite></testsuite></testsuite>

@@ -1,0 +1,549 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<requirement-specification>
+<req_spec title="Obecné"  doc_id="RQS.01"  >
+<revision><![CDATA[1]]></revision>
+
+<type><![CDATA[1]]></type>
+
+<node_order><![CDATA[0]]></node_order>
+
+<total_req><![CDATA[0]]></total_req>
+<scope>
+<![CDATA[
+<p>
+	Aplikace slouží k převodům vybraných délkových jednotek.</p>
+<p>
+	Pro navigaci využívá tři horizontální záložky:</p>
+<ul>
+	<li>
+		úvod</li>
+	<li>
+		Převodník</li>
+	<li>
+		Nápověda</li>
+</ul>
+]]>
+</scope>
+<req_spec title="Úvod"  doc_id="RQS.01.01"  >
+<revision><![CDATA[1]]></revision>
+
+<type><![CDATA[1]]></type>
+
+<node_order><![CDATA[0]]></node_order>
+
+<total_req><![CDATA[0]]></total_req>
+<scope>
+<![CDATA[
+<p>
+	Stránka obsahuje stručné informace o aplikaci a odkazy na:</p>
+<ul>
+	<li>
+		reklamu KIV</li>
+	<li>
+		webovou stránku s informacemi o předmětu KIV/OKS (na univerzitním Portálu)</li>
+	<li>
+		web KIV</li>
+	<li>
+		web ZČU</li>
+</ul>
+]]>
+</scope>
+	<requirement>
+		<docid><![CDATA[RQM.01.01.01]]></docid>
+		<title><![CDATA[Reklama]]></title>
+		<version>1</version>
+		<revision>1</revision>
+		<node_order>1</node_order>
+		<description><![CDATA[
+
+<p>
+	Odkazuje na reklamu - stránka KIV</p>
+
+]]></description>
+		<status><![CDATA[F]]></status>
+		<type><![CDATA[3]]></type>
+		<expected_coverage><![CDATA[2]]></expected_coverage>
+		
+	</requirement>
+	<requirement>
+		<docid><![CDATA[RQM.01.01.02]]></docid>
+		<title><![CDATA[Stránka KIV/OKS]]></title>
+		<version>1</version>
+		<revision>1</revision>
+		<node_order>2</node_order>
+		<description><![CDATA[
+
+<p>
+	Odkazuje na stránku KIV/OKS</p>
+
+]]></description>
+		<status><![CDATA[D]]></status>
+		<type><![CDATA[3]]></type>
+		<expected_coverage><![CDATA[1]]></expected_coverage>
+		
+	</requirement>
+	<requirement>
+		<docid><![CDATA[RQM.01.01.03]]></docid>
+		<title><![CDATA[Stránka KIV]]></title>
+		<version>1</version>
+		<revision>1</revision>
+		<node_order>3</node_order>
+		<description><![CDATA[
+
+<p>
+	Odkazuje na stránku KIV</p>
+
+]]></description>
+		<status><![CDATA[D]]></status>
+		<type><![CDATA[3]]></type>
+		<expected_coverage><![CDATA[1]]></expected_coverage>
+		
+	</requirement>
+	<requirement>
+		<docid><![CDATA[RQM.01.01.04]]></docid>
+		<title><![CDATA[Stránka ZČU]]></title>
+		<version>1</version>
+		<revision>1</revision>
+		<node_order>4</node_order>
+		<description><![CDATA[
+
+<p>
+	Odkazuje na stránku ZČU</p>
+
+]]></description>
+		<status><![CDATA[D]]></status>
+		<type><![CDATA[3]]></type>
+		<expected_coverage><![CDATA[1]]></expected_coverage>
+		
+	</requirement>
+</req_spec><req_spec title="Převodník"  doc_id="RQS.01.02"  >
+<revision><![CDATA[1]]></revision>
+
+<type><![CDATA[1]]></type>
+
+<node_order><![CDATA[1]]></node_order>
+
+<total_req><![CDATA[0]]></total_req>
+<scope>
+<![CDATA[
+<p>
+	Realizace vlastního převodu. Má:</p>
+<ul>
+	<li>
+		odkaz na Reklamu</li>
+	<li>
+		vstupní textové pole - <strong>Vstup</strong></li>
+	<li>
+		výběrový seznam pro nastavení vstupní převáděné jednotky</li>
+	<li>
+		výběrový seznam pro nastavení výstupní převáděné jednotky</li>
+	<li>
+		výstupní textové pole - <strong>Výstup</strong></li>
+	<li>
+		tlačítko <strong>Převeď</strong> - provede převod jednotek dle nastavení</li>
+	<li>
+		tlačítko <strong>Vymaž</strong> - vymaže vstupní i výstupní pole</li>
+</ul>
+]]>
+</scope>
+	<requirement>
+		<docid><![CDATA[RQM.01.02.01]]></docid>
+		<title><![CDATA[Reklama]]></title>
+		<version>1</version>
+		<revision>1</revision>
+		<node_order>0</node_order>
+		<description><![CDATA[
+
+<p>
+	Odkaz na reklamu - stránka KIV</p>
+
+]]></description>
+		<status><![CDATA[D]]></status>
+		<type><![CDATA[3]]></type>
+		<expected_coverage><![CDATA[1]]></expected_coverage>
+		
+	</requirement>
+	<requirement>
+		<docid><![CDATA[RQM.01.02.02]]></docid>
+		<title><![CDATA[Textové pole Vstup]]></title>
+		<version>1</version>
+		<revision>1</revision>
+		<node_order>1</node_order>
+		<description><![CDATA[
+
+<p>
+	Editovatelné textové pole s označením <strong>Vstup</strong></p>
+<ul>
+	<li>
+		<p>
+			pole musí být vyplněno</p>
+		<ul>
+			<li>
+				<p>
+					není-li:</p>
+				<ul>
+					<li>
+						<p>
+							vypisuje globální chybové hlášení (červená barva) &quot;Nelze převést&quot;</p>
+					</li>
+					<li>
+						<p>
+							vypisuje upřesnění chyby (červená barva) &quot;Nebylo zadáno žádné číslo pro převod.&quot;</p>
+					</li>
+					<li>
+						<p>
+							zvýrazní textové pole červeným rámečkem</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+<p>
+	Slouží pro zadání reálného číslo - hodnoty k převodu &ndash; očekávané vstupy:</p>
+<div class="itemizedlist">
+	<ul type="disc">
+		<li>
+			<p>
+				kladné číslo - bez znaménka nebo se znaménkem &lsquo;+&rsquo;</p>
+			<ul>
+				<li>
+					<p>
+						je-li záporné:</p>
+					<ul>
+						<li>
+							<p>
+								vypisuje globální chybové hlášení (červená barva) &quot;Nelze převést&quot;</p>
+						</li>
+						<li>
+							<p>
+								vypisuje upřesnění chyby (červená barva) &quot;Zadané číslo je záporné.&quot;</p>
+						</li>
+						<li>
+							<p>
+								zvýrazní textové pole červeným rámečkem</p>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</li>
+		<li>
+			<p>
+				celé číslo (např. <code class="code">5</code>)</p>
+			<ul>
+				<li>
+					<p>
+						maximální počet řádů není omezen</p>
+				</li>
+			</ul>
+		</li>
+		<li>
+			<p>
+				desetinné číslo ve standardním formátu</p>
+			<div class="itemizedlist">
+				<ul type="circle">
+					<li>
+						<p>
+							jako oddělovač desetinné části lze použít znak &lsquo;<code class="code">.</code>&rsquo; (tečka) nebo &lsquo;<code class="code">,</code>&rsquo; (čárka) - např. <code class="code">5.1</code> nebo <code class="code">5,1</code></p>
+					</li>
+				</ul>
+			</div>
+		</li>
+		<li>
+			<p>
+				desetinné číslo ve vědeckém formátu</p>
+			<div class="itemizedlist">
+				<ul type="circle">
+					<li>
+						<p>
+							jako oddělovač desetinné části lze použít znak &lsquo;<code class="code">.</code>&rsquo; (tečka) nebo &lsquo;<code class="code">,</code>&rsquo; (čárka) - např. <code class="code">0.51E1</code> nebo <code class="code">0,51E1</code></p>
+					</li>
+					<li>
+						<p>
+							jako znak exponentu lze použít znak &lsquo;<code class="code">E</code>&rsquo; nebo &lsquo;<code class="code">e</code>&rsquo; - např. <code class="code"><code class="code">0.51E1</code></code> nebo <code class="code"><code class="code"><code class="code"><code class="code">0.51e1</code></code></code></code></p>
+					</li>
+					<li>
+						<p>
+							jako znaménko exponentu lze použít znak &lsquo;+&rsquo; nebo &lsquo;<code class="code">-</code>&rsquo; - např. <code class="code"><code class="code">0.51E+1</code></code> nebo <code class="code">5.1E-1</code></p>
+					</li>
+					<li>
+						<p>
+							maximální rozsah není omezen</p>
+					</li>
+				</ul>
+			</div>
+		</li>
+		<li>
+			ostatní znaky nebo jiné kombinace se nesmějí vyskytnout
+			<ul>
+				<li>
+					vyskytnou-li se:
+					<ul>
+						<li>
+							vypisuje globální chybové hlášení (červená barva) &quot;Nelze převést&quot;</li>
+						<li>
+							vypisuje upřesnění chyby (červená barva) &quot;Vstupní číslo není validní (není zapsáno v podporovaném formátu nebo obsahuje nepovolené znaky - viz nápověda).&quot;</li>
+						<li>
+							zvýrazní textové pole červeným rámečkem</li>
+					</ul>
+				</li>
+			</ul>
+		</li>
+	</ul>
+</div>
+<p>
+	&nbsp;</p>
+
+]]></description>
+		<status><![CDATA[D]]></status>
+		<type><![CDATA[3]]></type>
+		<expected_coverage><![CDATA[8]]></expected_coverage>
+		
+	</requirement>
+	<requirement>
+		<docid><![CDATA[RQM.01.02.03]]></docid>
+		<title><![CDATA[Výběrový seznam pro vstupní hodnotu]]></title>
+		<version>1</version>
+		<revision>1</revision>
+		<node_order>2</node_order>
+		<description><![CDATA[
+
+<p>
+	Dovoluje vybrat z těchto jednotek:</p>
+<ul>
+	<li>
+		cm (centimetr)</li>
+	<li>
+		dm (decimetr)</li>
+	<li>
+		ft (stopa)</li>
+	<li>
+		in (palec)</li>
+	<li>
+		m (metr)</li>
+	<li>
+		mm (milimetr)</li>
+	<li>
+		yd (yard)</li>
+</ul>
+
+]]></description>
+		<status><![CDATA[D]]></status>
+		<type><![CDATA[3]]></type>
+		<expected_coverage><![CDATA[1]]></expected_coverage>
+		
+	</requirement>
+	<requirement>
+		<docid><![CDATA[RQM.01.02.07]]></docid>
+		<title><![CDATA[Textové pole Výstup]]></title>
+		<version>1</version>
+		<revision>1</revision>
+		<node_order>3</node_order>
+		<description><![CDATA[
+
+<p>
+	Needitovatelné textové pole s označením <strong>Výstup</strong></p>
+<ul>
+	<li>
+		<p>
+			pole je vyplněno výstupní hodnotou po stisku tlačítka <strong>Převeď</strong></p>
+	</li>
+	<li>
+		<p>
+			pole je vymazáno</p>
+		<ul>
+			<li>
+				po stisku tlačítka <strong>Vymaž</strong></li>
+			<li>
+				při zadání chybné hodnoty do pole <strong>Vstup</strong> a následném stisku tlačítka <strong>Převeď</strong></li>
+		</ul>
+	</li>
+</ul>
+<p>
+	&nbsp;</p>
+
+]]></description>
+		<status><![CDATA[D]]></status>
+		<type><![CDATA[3]]></type>
+		<expected_coverage><![CDATA[2]]></expected_coverage>
+		
+	</requirement>
+	<requirement>
+		<docid><![CDATA[RQM.01.02.04]]></docid>
+		<title><![CDATA[Výběrový seznam pro výstupní hodnotu]]></title>
+		<version>1</version>
+		<revision>1</revision>
+		<node_order>4</node_order>
+		<description><![CDATA[
+
+<p>
+	Dovoluje vybrat z těchto jednotek:</p>
+<ul>
+	<li>
+		cm (centimetr)</li>
+	<li>
+		dm (decimetr)</li>
+	<li>
+		ft (stopa)</li>
+	<li>
+		in (palec)</li>
+	<li>
+		m (metr)</li>
+	<li>
+		mm (milimetr)</li>
+	<li>
+		yd (yard)</li>
+</ul>
+
+]]></description>
+		<status><![CDATA[D]]></status>
+		<type><![CDATA[3]]></type>
+		<expected_coverage><![CDATA[1]]></expected_coverage>
+		
+	</requirement>
+	<requirement>
+		<docid><![CDATA[RQM.01.02.05]]></docid>
+		<title><![CDATA[Převod hodnot]]></title>
+		<version>1</version>
+		<revision>1</revision>
+		<node_order>5</node_order>
+		<description><![CDATA[
+
+<p>
+	Tlačítko <strong>Převeď</strong> převede vstupní hodnotu na výstupní</p>
+<p>
+	Toto je základní funkcionalita aplikace</p>
+
+]]></description>
+		<status><![CDATA[D]]></status>
+		<type><![CDATA[3]]></type>
+		<expected_coverage><![CDATA[1]]></expected_coverage>
+		
+	</requirement>
+	<requirement>
+		<docid><![CDATA[RQM.01.02.06]]></docid>
+		<title><![CDATA[Tlačítko Vymaž]]></title>
+		<version>1</version>
+		<revision>1</revision>
+		<node_order>6</node_order>
+		<description><![CDATA[
+
+<p>
+	Vymaže vstupní i výstupní textové pole</p>
+<p>
+	Nastavení vstupních i výstupních jednotek ponechá</p>
+
+]]></description>
+		<status><![CDATA[D]]></status>
+		<type><![CDATA[3]]></type>
+		<expected_coverage><![CDATA[1]]></expected_coverage>
+		
+	</requirement>
+</req_spec><req_spec title="Nápověda"  doc_id="RQS.01.03"  >
+<revision><![CDATA[1]]></revision>
+
+<type><![CDATA[1]]></type>
+
+<node_order><![CDATA[2]]></node_order>
+
+<total_req><![CDATA[0]]></total_req>
+<scope>
+<![CDATA[
+<p>
+	Stránka obsahuje stručnou nápovědu k použití aplikace.</p>
+<p>
+	Obsahuje odkazy na:</p>
+<ul>
+	<li>
+		reklamu KIV</li>
+	<li>
+		stránku Převodník</li>
+</ul>
+]]>
+</scope>
+	<requirement>
+		<docid><![CDATA[RQM.01.03.01]]></docid>
+		<title><![CDATA[Reklama]]></title>
+		<version>1</version>
+		<revision>1</revision>
+		<node_order>1</node_order>
+		<description><![CDATA[
+
+<p>
+	Odkazuje na reklamu - stránku KIV</p>
+
+]]></description>
+		<status><![CDATA[D]]></status>
+		<type><![CDATA[3]]></type>
+		<expected_coverage><![CDATA[1]]></expected_coverage>
+		
+	</requirement>
+	<requirement>
+		<docid><![CDATA[RQM.01.03.02]]></docid>
+		<title><![CDATA[Stránka Převodník]]></title>
+		<version>1</version>
+		<revision>1</revision>
+		<node_order>2</node_order>
+		<description><![CDATA[
+
+<p>
+	Odkazuje na stránku Převodník</p>
+
+]]></description>
+		<status><![CDATA[D]]></status>
+		<type><![CDATA[3]]></type>
+		<expected_coverage><![CDATA[1]]></expected_coverage>
+		
+	</requirement>
+</req_spec>	<requirement>
+		<docid><![CDATA[RQM.01.01]]></docid>
+		<title><![CDATA[Záložka Úvod]]></title>
+		<version>1</version>
+		<revision>1</revision>
+		<node_order>3</node_order>
+		<description><![CDATA[
+
+<p>
+	Odkazuje na stránku úvod</p>
+
+]]></description>
+		<status><![CDATA[D]]></status>
+		<type><![CDATA[3]]></type>
+		<expected_coverage><![CDATA[1]]></expected_coverage>
+		
+	</requirement>
+	<requirement>
+		<docid><![CDATA[RQM.01.02]]></docid>
+		<title><![CDATA[Záložka Převodník]]></title>
+		<version>1</version>
+		<revision>1</revision>
+		<node_order>4</node_order>
+		<description><![CDATA[
+
+<p>
+	Odkazuje na stránku Převodník</p>
+
+]]></description>
+		<status><![CDATA[D]]></status>
+		<type><![CDATA[3]]></type>
+		<expected_coverage><![CDATA[1]]></expected_coverage>
+		
+	</requirement>
+	<requirement>
+		<docid><![CDATA[RQM.01.03]]></docid>
+		<title><![CDATA[Záložka Nápověda]]></title>
+		<version>1</version>
+		<revision>1</revision>
+		<node_order>5</node_order>
+		<description><![CDATA[
+
+<p>
+	Odkazuje na stránku Nápověda</p>
+
+]]></description>
+		<status><![CDATA[D]]></status>
+		<type><![CDATA[3]]></type>
+		<expected_coverage><![CDATA[1]]></expected_coverage>
+		
+	</requirement>
+</req_spec></requirement-specification>
