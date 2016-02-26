@@ -7,7 +7,7 @@
 }
 
 .root {
-	-fx-font-family: "Open Sans";
+	-fx-font-family: Verdana, Arial, Helvetica, sans-serif, "Open Sans";
 }
 
 #nadpis {
