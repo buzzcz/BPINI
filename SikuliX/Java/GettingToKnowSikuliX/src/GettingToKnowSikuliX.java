@@ -18,13 +18,13 @@ import static org.junit.Assert.*;
 /**
  * @author Jaroslav Klaus
  */
-public class Test01 {
+public class GettingToKnowSikuliX {
 
 	static Logger logger;
 	static ErrorCollector collector;
 	static Screen s;
 	//static Region r;  //Prozatim k nicemu nepotrebne
-	static App chrome;
+	static App browser;
 	static boolean run;
 
 	static {
@@ -50,16 +50,16 @@ public class Test01 {
 		collector = new ErrorCollector();
 		s = new Screen();
 		new App("google-chrome").open();
-		chrome = new App("Chrome"); //V Linuxu se nejspise aplikace spousti pres skript a pak se jmenuje jinak
-		//r = chrome.waitForWindow(10);   //V Linuxu zatim nefunkcni
-		chrome.focus();
+		browser = new App("Chrome"); //V Linuxu se nejspise aplikace spousti pres skript a pak se jmenuje jinak
+		//r = browser.waitForWindow(10);   //V Linuxu zatim nefunkcni
+		browser.focus();
 		run = true;
 	}
 
 	@AfterClass
 	public static void tearDownAfterClass() {
 		JOptionPane.showMessageDialog(null, "Script dokončen");
-		//chrome.close(); //V Linuxu zatim nefunkcni, nejspise chyba v LinuxUtils
+		//browser.close(); //V Linuxu zatim nefunkcni, nejspise chyba v LinuxUtils
 	}
 
 	@Before
