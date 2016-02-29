@@ -3,10 +3,8 @@ package TS01StatickePrvky;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.AfterClass;
-import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import org.junit.rules.ErrorCollector;
 import org.sikuli.basics.Debug;
 import org.sikuli.basics.Settings;
 import org.sikuli.script.*;
@@ -14,7 +12,6 @@ import org.sikuli.script.*;
 import javax.swing.*;
 import java.time.LocalDateTime;
 
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
 
 /**
@@ -23,9 +20,8 @@ import static org.junit.Assert.fail;
 public class TS01_01PritomnostPrvkuWeb {
 
 	static Logger logger;
-	static ErrorCollector collector;
 	static Screen s;
-	static App chrome;
+	static App browser;
 	static boolean run;
 
 	static {
@@ -49,19 +45,17 @@ public class TS01_01PritomnostPrvkuWeb {
 		Debug.setLogger(logger);
 		Debug.setLoggerAll("info");
 
-		collector = new ErrorCollector();
 		s = new Screen();
-
 		try {
 			new App("google-chrome").open();
-			chrome = new App("Chrome");
-			chrome.focus();
+			browser = new App("Chrome");
+			browser.focus();
 			run = true;
 			s.wait("png/web/addressBar.png", 10);
 			s.click(new Pattern("png/web/addressBar.png").targetOffset(100, 0));
-			s.paste("http://oks.kiv.zcu.cz/Prevodnik");
+			s.paste("http://oks.kiv.zcu.cz/Prevodnik/Prevodnik");
 			s.type(Key.ENTER);
-			s.wait("png/web/zalozkaPrevodnik.png", 5);
+			s.wait("png/web/tlacitkoPreved.png", 5);
 		} catch (Exception e) {
 			run = false;
 			s.capture().save("errors", screenshotName());
@@ -72,18 +66,6 @@ public class TS01_01PritomnostPrvkuWeb {
 	@AfterClass
 	public static void tearDownAfterClass() {
 		JOptionPane.showMessageDialog(null, "Test Suite dokončen");
-	}
-
-	@Before
-	public void setUp() {
-		try {
-			s.click("png/web/zalozkaPrevodnik.png");
-			s.wait("png/web/tlacitkoPreved.png", 5);
-		} catch (Exception e) {
-			run = false;
-			s.capture().save("errors", screenshotName());
-			logger.error(e.getMessage());
-		}
 	}
 
 	@Test
@@ -97,7 +79,6 @@ public class TS01_01PritomnostPrvkuWeb {
 				fail(e.getMessage());
 			}
 		} else {
-			run = true;
 			logger.error("Setup failed");
 			fail("Setup failed");
 		}
@@ -107,6 +88,38 @@ public class TS01_01PritomnostPrvkuWeb {
 	public void TC01_01_02VstupniTextovePole() {
 		if (run) {
 			try {
+				s.find("png/web/vstupLabel.png").right().grow(0, 20).find("png/web/vstupniTextovePole.png");
+			} catch (FindFailed | AssertionError e) {
+				s.capture().save("errors", screenshotName());
+				logger.error(e.getMessage());
+				fail(e.getMessage());
+			}
+		} else {
+			logger.error("Setup failed");
+			fail("Setup failed");
+		}
+	}
+
+	@Test
+	public void TC01_01_03VstupniVyberovySeznam() {
+		if (run) {
+			try {
+				s.find("png/web/vstupLabel.png").grow(0, 20).right().find("png/web/vstupniVyberovySeznam.png");
+			} catch (FindFailed | AssertionError e) {
+				s.capture().save("errors", screenshotName());
+				logger.error(e.getMessage());
+				fail(e.getMessage());
+			}
+		} else {
+			logger.error("Setup failed");
+			fail("Setup failed");
+		}
+	}
+
+	@Test
+	public void TC01_01_04LabelVystup() {
+		if (run) {
+			try {
 				s.find("png/web/vystupLabel.png");
 			} catch (FindFailed | AssertionError e) {
 				s.capture().save("errors", screenshotName());
@@ -114,7 +127,70 @@ public class TS01_01PritomnostPrvkuWeb {
 				fail(e.getMessage());
 			}
 		} else {
-			run = true;
+			logger.error("Setup failed");
+			fail("Setup failed");
+		}
+	}
+
+	@Test
+	public void TC01_01_05VystupniTextovePole() {
+		if (run) {
+			try {
+				s.find("png/web/vystupLabel.png").right().grow(0, 20).find("png/web/vystupniTextovePole.png");
+			} catch (FindFailed | AssertionError e) {
+				s.capture().save("errors", screenshotName());
+				logger.error(e.getMessage());
+				fail(e.getMessage());
+			}
+		} else {
+			logger.error("Setup failed");
+			fail("Setup failed");
+		}
+	}
+
+	@Test
+	public void TC01_01_06VystupniVyberovySeznam() {
+		if (run) {
+			try {
+				s.find("png/web/vystupLabel.png").grow(0, 20).right().find("png/web/vystupniVyberovySeznam.png");
+			} catch (FindFailed | AssertionError e) {
+				s.capture().save("errors", screenshotName());
+				logger.error(e.getMessage());
+				fail(e.getMessage());
+			}
+		} else {
+			logger.error("Setup failed");
+			fail("Setup failed");
+		}
+	}
+
+	@Test
+	public void TC01_01_07TlacitkoPreved() {
+		if (run) {
+			try {
+				s.find("png/web/tlacitkoPreved.png");
+			} catch (FindFailed | AssertionError e) {
+				s.capture().save("errors", screenshotName());
+				logger.error(e.getMessage());
+				fail(e.getMessage());
+			}
+		} else {
+			logger.error("Setup failed");
+			fail("Setup failed");
+		}
+	}
+
+	@Test
+	public void TC01_01_08TlacitkoVymaz() {
+		if (run) {
+			try {
+				s.find("png/web/tlacitkoVymaz.png");
+			} catch (FindFailed | AssertionError e) {
+				s.capture().save("errors", screenshotName());
+				logger.error(e.getMessage());
+				fail(e.getMessage());
+			}
+		} else {
 			logger.error("Setup failed");
 			fail("Setup failed");
 		}
