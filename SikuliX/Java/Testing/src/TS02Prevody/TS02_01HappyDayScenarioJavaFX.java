@@ -100,7 +100,7 @@ public class TS02_01HappyDayScenarioJavaFX {
 
 				Region oblast = s.find("png/java/vystupLabel.png").right(150).grow(0, 20);
 				double vystup = Double.parseDouble(oblast.text());
-				assertEquals("Očekávano: " + 25.4 + ", zjištěno: " + vystup, vystup, 25.4, 0.001);
+				assertEquals("Očekávano: " + 25.4 + ", zjištěno: " + vystup, 25.4, vystup, 0.001);
 			} catch (FindFailed | AssertionError e) {
 				s.capture().save("errors", screenshotName());
 				logger.error(e.getMessage());
@@ -129,9 +129,9 @@ public class TS02_01HappyDayScenarioJavaFX {
 				s.click("png/java/tlacitkoPreved.png");
 				s.wait("png/java/tlacitkoPreved.png", 5);
 
-				Region oblast = s.find("png/java/vystupLabel.png").right(150).grow(0, 20);
+				Region oblast = s.find("png/java/vystupLabel.png").right(200).grow(0, 20);
 				double vystup = Double.parseDouble(oblast.text());
-				assertEquals("Očekávano: " + 1.0936132983377078 + ", zjištěno: " + vystup, vystup, 1.0936132983377078,
+				assertEquals("Očekávano: " + 1.0936132983377078 + ", zjištěno: " + vystup, 1.0936132983377078, vystup,
 						0.00000000000000001);
 			} catch (FindFailed | AssertionError e) {
 				s.capture().save("errors", screenshotName());

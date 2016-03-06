@@ -69,7 +69,7 @@ public class TS01_03UplnostVyberovychSeznamuJavaFX {
 	}
 
 	@Test
-	public void TC01_02_01VstupniVyberovySeznam() {
+	public void TC01_03_01VstupniVyberovySeznam() {
 		if (run) {
 			try {
 				s.find("png/java/vstupLabel.png").right().grow(0, 20).click("png/java/vstupniVyberovySeznam.png");
@@ -86,7 +86,7 @@ public class TS01_03UplnostVyberovychSeznamuJavaFX {
 	}
 
 	@Test
-	public void TC01_02_02VystupniVyberovySeznam() {
+	public void TC01_03_02VystupniVyberovySeznam() {
 		if (run) {
 			try {
 				s.find("png/java/vystupLabel.png").right().grow(0, 20).click("png/java/vystupniVyberovySeznam.png");
