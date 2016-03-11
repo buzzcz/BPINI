@@ -5,12 +5,16 @@ import org.apache.logging.log4j.Logger;
 import org.junit.*;
 import org.sikuli.basics.Debug;
 import org.sikuli.basics.Settings;
-import org.sikuli.script.*;
+import org.sikuli.script.App;
+import org.sikuli.script.FindFailed;
+import org.sikuli.script.Match;
+import org.sikuli.script.Screen;
 
 import javax.swing.*;
 import java.time.LocalDateTime;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 
 /**
  * @author Jaroslav Klaus
@@ -97,9 +101,8 @@ public class TS02_08HranicniHodnotyJavaFX {
 				s.click("png/java/tlacitkoPreved.png");
 				s.wait("png/java/tlacitkoPreved.png", 5);
 
-				Region oblast = s.find("png/java/vystupLabel.png").right(200).grow(0, 10);
-				double vystup = Double.parseDouble(oblast.text());
-				assertEquals("Očekávano: " + 0 + ", zjištěno: " + vystup, 0, vystup, 0);
+				assertTrue("Očekáváno: 0, zjištěno něco jiného", s.find("png/java/vystupLabel.png").right(200).grow(0,
+						10).exists("png/java/vystup0.png") != null);
 			} catch (FindFailed | AssertionError e) {
 				s.capture().save("errors", screenshotName());
 				logger.error(e.getMessage());
@@ -128,9 +131,8 @@ public class TS02_08HranicniHodnotyJavaFX {
 				s.click("png/java/tlacitkoPreved.png");
 				s.wait("png/java/tlacitkoPreved.png", 5);
 
-				Region oblast = s.find("png/java/vystupLabel.png").right(200).grow(0, 10);
-				String vystup = oblast.text();
-				assertTrue("Očekávano: \"Infinity\", zjištěno: " + vystup, vystup.equals("Infinity"));
+				assertTrue("Očekáváno: Infinity, zjištěno něco jiného", s.find("png/java/vystupLabel.png").right(200)
+						.grow(0, 10).exists("png/java/vystupInf.png") != null);
 			} catch (FindFailed | AssertionError e) {
 				s.capture().save("errors", screenshotName());
 				logger.error(e.getMessage());

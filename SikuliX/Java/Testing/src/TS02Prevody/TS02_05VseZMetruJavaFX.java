@@ -5,12 +5,15 @@ import org.apache.logging.log4j.Logger;
 import org.junit.*;
 import org.sikuli.basics.Debug;
 import org.sikuli.basics.Settings;
-import org.sikuli.script.*;
+import org.sikuli.script.App;
+import org.sikuli.script.FindFailed;
+import org.sikuli.script.Match;
+import org.sikuli.script.Screen;
 
 import javax.swing.*;
 import java.time.LocalDateTime;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
 /**
@@ -98,9 +101,8 @@ public class TS02_05VseZMetruJavaFX {
 				s.click("png/java/tlacitkoPreved.png");
 				s.wait("png/java/tlacitkoPreved.png", 5);
 
-				Region oblast = s.find("png/java/vystupLabel.png").right(200).grow(0, 10);
-				double vystup = Double.parseDouble(oblast.text());
-				assertEquals("Očekávano: " + 100 + ", zjištěno: " + vystup, 100, vystup, 0);
+				assertTrue("Očekáváno: 100, zjištěno něco jiného", s.find("png/java/vystupLabel.png").right(200).grow
+						(0, 10).exists("png/java/vystup100.png") != null);
 			} catch (FindFailed | AssertionError e) {
 				s.capture().save("errors", screenshotName());
 				logger.error(e.getMessage());
@@ -129,9 +131,8 @@ public class TS02_05VseZMetruJavaFX {
 				s.click("png/java/tlacitkoPreved.png");
 				s.wait("png/java/tlacitkoPreved.png", 5);
 
-				Region oblast = s.find("png/java/vystupLabel.png").right(200).grow(0, 10);
-				double vystup = Double.parseDouble(oblast.text());
-				assertEquals("Očekávano: " + 10 + ", zjištěno: " + vystup, 10, vystup, 0);
+				assertTrue("Očekáváno: 10, zjištěno něco jiného", s.find("png/java/vystupLabel.png").right(200).grow
+						(0, 10).exists("png/java/vystup10.png") != null);
 			} catch (FindFailed | AssertionError e) {
 				s.capture().save("errors", screenshotName());
 				logger.error(e.getMessage());
@@ -160,10 +161,8 @@ public class TS02_05VseZMetruJavaFX {
 				s.click("png/java/tlacitkoPreved.png");
 				s.wait("png/java/tlacitkoPreved.png", 5);
 
-				Region oblast = s.find("png/java/vystupLabel.png").right(200).grow(0, 10);
-				double vystup = Double.parseDouble(oblast.text());
-				assertEquals("Očekávano: " + 3.2808398950131235 + ", zjištěno: " + vystup, 3.2808398950131235, vystup,
-						0);
+				assertTrue("Očekáváno: 3.2808398950131235, zjištěno něco jiného", s.find("png/java/vystupLabel.png")
+						.right(200).grow(0, 10).exists("png/java/vystup3_280839.png") != null);
 			} catch (FindFailed | AssertionError e) {
 				s.capture().save("errors", screenshotName());
 				logger.error(e.getMessage());
@@ -192,10 +191,8 @@ public class TS02_05VseZMetruJavaFX {
 				s.click("png/java/tlacitkoPreved.png");
 				s.wait("png/java/tlacitkoPreved.png", 5);
 
-				Region oblast = s.find("png/java/vystupLabel.png").right(200).grow(0, 10);
-				double vystup = Double.parseDouble(oblast.text());
-				assertEquals("Očekávano: " + 39.37007874015748 + ", zjištěno: " + vystup, 39.37007874015748, vystup,
-						0);
+				assertTrue("Očekáváno: 39.37007874015748, zjištěno něco jiného", s.find("png/java/vystupLabel.png")
+						.right(200).grow(0, 10).exists("png/java/vystup39_370078.png") != null);
 			} catch (FindFailed | AssertionError e) {
 				s.capture().save("errors", screenshotName());
 				logger.error(e.getMessage());
@@ -224,9 +221,8 @@ public class TS02_05VseZMetruJavaFX {
 				s.click("png/java/tlacitkoPreved.png");
 				s.wait("png/java/tlacitkoPreved.png", 5);
 
-				Region oblast = s.find("png/java/vystupLabel.png").right(200).grow(0, 10);
-				double vystup = Double.parseDouble(oblast.text());
-				assertEquals("Očekávano: " + 1 + ", zjištěno: " + vystup, 1, vystup, 0);
+				assertTrue("Očekáváno: 1, zjištěno něco jiného", s.find("png/java/vystupLabel.png").right(200).grow(0,
+						10).exists("png/java/vystup1.png") != null);
 			} catch (FindFailed | AssertionError e) {
 				s.capture().save("errors", screenshotName());
 				logger.error(e.getMessage());
@@ -255,9 +251,8 @@ public class TS02_05VseZMetruJavaFX {
 				s.click("png/java/tlacitkoPreved.png");
 				s.wait("png/java/tlacitkoPreved.png", 5);
 
-				Region oblast = s.find("png/java/vystupLabel.png").right(200).grow(0, 10);
-				double vystup = Double.parseDouble(oblast.text());
-				assertEquals("Očekávano: " + 1000 + ", zjištěno: " + vystup, 1000, vystup, 0);
+				assertTrue("Očekáváno: 1000, zjištěno něco jiného", s.find("png/java/vystupLabel.png").right(200).grow
+						(0, 10).exists("png/java/vystup1000.png") != null);
 			} catch (FindFailed | AssertionError e) {
 				s.capture().save("errors", screenshotName());
 				logger.error(e.getMessage());
@@ -286,10 +281,8 @@ public class TS02_05VseZMetruJavaFX {
 				s.click("png/java/tlacitkoPreved.png");
 				s.wait("png/java/tlacitkoPreved.png", 5);
 
-				Region oblast = s.find("png/java/vystupLabel.png").right(200).grow(0, 10);
-				double vystup = Double.parseDouble(oblast.text());
-				assertEquals("Očekávano: " + 1.0936132983377078 + ", zjištěno: " + vystup, 1.0936132983377078, vystup,
-						0);
+				assertTrue("Očekáváno: 1.0936132983377078, zjištěno něco jiného", s.find("png/java/vystupLabel.png")
+						.right(200).grow(0, 10).exists("png/java/vystup1_093613.png") != null);
 			} catch (FindFailed | AssertionError e) {
 				s.capture().save("errors", screenshotName());
 				logger.error(e.getMessage());

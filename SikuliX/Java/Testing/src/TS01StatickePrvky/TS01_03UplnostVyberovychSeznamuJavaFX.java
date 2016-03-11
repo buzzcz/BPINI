@@ -9,11 +9,13 @@ import org.sikuli.basics.Debug;
 import org.sikuli.basics.Settings;
 import org.sikuli.script.App;
 import org.sikuli.script.FindFailed;
+import org.sikuli.script.Key;
 import org.sikuli.script.Screen;
 
 import javax.swing.*;
 import java.time.LocalDateTime;
 
+import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
 /**
@@ -73,10 +75,13 @@ public class TS01_03UplnostVyberovychSeznamuJavaFX {
 		if (run) {
 			try {
 				s.find("png/java/vstupLabel.png").right().grow(0, 20).click("png/java/vstupniVyberovySeznam.png");
-				s.find("png/java/uplnyVstupniVyberovySeznam.png");
+				assertTrue("Vstupní výběrový seznam není úplný", s.exists("png/java/uplnyVstupniVyberovySeznam.png")
+						!= null);
+				s.type(Key.ESC);
 			} catch (FindFailed | AssertionError e) {
 				s.capture().save("errors", screenshotName());
 				logger.error(e.getMessage());
+				s.type(Key.ESC);
 				fail(e.getMessage());
 			}
 		} else {
@@ -90,10 +95,13 @@ public class TS01_03UplnostVyberovychSeznamuJavaFX {
 		if (run) {
 			try {
 				s.find("png/java/vystupLabel.png").right().grow(0, 20).click("png/java/vystupniVyberovySeznam.png");
-				s.find("png/java/uplnyVystupniVyberovySeznam.png");
+				assertTrue("Výstupní výběrový seznam není úplný", s.exists("png/java/uplnyVystupniVyberovySeznam.png")
+						!= null);
+				s.type(Key.ESC);
 			} catch (FindFailed | AssertionError e) {
 				s.capture().save("errors", screenshotName());
 				logger.error(e.getMessage());
+				s.type(Key.ESC);
 				fail(e.getMessage());
 			}
 		} else {

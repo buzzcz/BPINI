@@ -13,7 +13,7 @@ import org.sikuli.script.*;
 import javax.swing.*;
 import java.time.LocalDateTime;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
 /**
@@ -92,7 +92,7 @@ public class TS02_02StejneJednotkyWeb {
 		if (run) {
 			try {
 				s.find("png/web/vstupLabel.png").right().grow(0, 20).click("png/web/vstupniTextovePole.png");
-				s.paste("20");
+				s.paste("3");
 				Match hledani = s.find("png/web/vstupLabel.png").right().grow(0, 20).find
 						("png/web/vstupniVyberovySeznam.png");
 				hledani.click();
@@ -104,9 +104,8 @@ public class TS02_02StejneJednotkyWeb {
 				s.click("png/web/tlacitkoPreved.png");
 				s.wait("png/web/tlacitkoPreved.png", 5);
 
-				Region oblast = s.find("png/web/vystupLabel.png").right(200).grow(0, 10);
-				double vystup = Double.parseDouble(oblast.text());
-				assertEquals("Očekávano: " + 20 + ", zjištěno: " + vystup, 20, vystup, 0);
+				assertTrue("Očekáváno: 3, zjištěno něco jiného", s.find("png/web/vystupLabel.png").right(200).grow(0,
+						10).exists("png/web/vystup3.png") != null);
 			} catch (FindFailed | AssertionError e) {
 				s.capture().save("errors", screenshotName());
 				logger.error(e.getMessage());
@@ -123,7 +122,7 @@ public class TS02_02StejneJednotkyWeb {
 		if (run) {
 			try {
 				s.find("png/web/vstupLabel.png").right().grow(0, 20).click("png/web/vstupniTextovePole.png");
-				s.paste("20");
+				s.paste("3");
 				Match hledani = s.find("png/web/vstupLabel.png").right().grow(0, 20).find
 						("png/web/vstupniVyberovySeznam.png");
 				hledani.click();
@@ -135,9 +134,8 @@ public class TS02_02StejneJednotkyWeb {
 				s.click("png/web/tlacitkoPreved.png");
 				s.wait("png/web/tlacitkoPreved.png", 5);
 
-				Region oblast = s.find("png/web/vystupLabel.png").right(200).grow(0, 10);
-				double vystup = Double.parseDouble(oblast.text());
-				assertEquals("Očekávano: " + 20 + ", zjištěno: " + vystup, 20, vystup, 0);
+				assertTrue("Očekáváno: 3, zjištěno něco jiného", s.find("png/web/vystupLabel.png").right(200).grow(0,
+						10).exists("png/web/vystup3.png") != null);
 			} catch (FindFailed | AssertionError e) {
 				s.capture().save("errors", screenshotName());
 				logger.error(e.getMessage());
@@ -154,7 +152,7 @@ public class TS02_02StejneJednotkyWeb {
 		if (run) {
 			try {
 				s.find("png/web/vstupLabel.png").right().grow(0, 20).click("png/web/vstupniTextovePole.png");
-				s.paste("20");
+				s.paste("3");
 				Match hledani = s.find("png/web/vstupLabel.png").right().grow(0, 20).find
 						("png/web/vstupniVyberovySeznam.png");
 				hledani.click();
@@ -166,9 +164,8 @@ public class TS02_02StejneJednotkyWeb {
 				s.click("png/web/tlacitkoPreved.png");
 				s.wait("png/web/tlacitkoPreved.png", 5);
 
-				Region oblast = s.find("png/web/vystupLabel.png").right(200).grow(0, 10);
-				double vystup = Double.parseDouble(oblast.text());
-				assertEquals("Očekávano: " + 20 + ", zjištěno: " + vystup, 20, vystup, 0);
+				assertTrue("Očekáváno: 3, zjištěno něco jiného", s.find("png/web/vystupLabel.png").right(200).grow(0,
+						10).exists("png/web/vystup3.png") != null);
 			} catch (FindFailed | AssertionError e) {
 				s.capture().save("errors", screenshotName());
 				logger.error(e.getMessage());
@@ -185,7 +182,7 @@ public class TS02_02StejneJednotkyWeb {
 		if (run) {
 			try {
 				s.find("png/web/vstupLabel.png").right().grow(0, 20).click("png/web/vstupniTextovePole.png");
-				s.paste("20");
+				s.paste("3");
 				Match hledani = s.find("png/web/vstupLabel.png").right().grow(0, 20).find
 						("png/web/vstupniVyberovySeznam.png");
 				hledani.click();
@@ -197,9 +194,8 @@ public class TS02_02StejneJednotkyWeb {
 				s.click("png/web/tlacitkoPreved.png");
 				s.wait("png/web/tlacitkoPreved.png", 5);
 
-				Region oblast = s.find("png/web/vystupLabel.png").right(200).grow(0, 10);
-				double vystup = Double.parseDouble(oblast.text());
-				assertEquals("Očekávano: " + 20 + ", zjištěno: " + vystup, 20, vystup, 0);
+				assertTrue("Očekáváno: 3, zjištěno něco jiného", s.find("png/web/vystupLabel.png").right(200).grow(0,
+						10).exists("png/web/vystup3.png") != null);
 			} catch (FindFailed | AssertionError e) {
 				s.capture().save("errors", screenshotName());
 				logger.error(e.getMessage());
@@ -216,7 +212,7 @@ public class TS02_02StejneJednotkyWeb {
 		if (run) {
 			try {
 				s.find("png/web/vstupLabel.png").right().grow(0, 20).click("png/web/vstupniTextovePole.png");
-				s.paste("20");
+				s.paste("3");
 				Match hledani = s.find("png/web/vstupLabel.png").right().grow(0, 20).find
 						("png/web/vstupniVyberovySeznam.png");
 				hledani.click();
@@ -228,9 +224,8 @@ public class TS02_02StejneJednotkyWeb {
 				s.click("png/web/tlacitkoPreved.png");
 				s.wait("png/web/tlacitkoPreved.png", 5);
 
-				Region oblast = s.find("png/web/vystupLabel.png").right(200).grow(0, 10);
-				double vystup = Double.parseDouble(oblast.text());
-				assertEquals("Očekávano: " + 20 + ", zjištěno: " + vystup, 20, vystup, 0);
+				assertTrue("Očekáváno: 3, zjištěno něco jiného", s.find("png/web/vystupLabel.png").right(200).grow(0,
+						10).exists("png/web/vystup3.png") != null);
 			} catch (FindFailed | AssertionError e) {
 				s.capture().save("errors", screenshotName());
 				logger.error(e.getMessage());
@@ -247,7 +242,7 @@ public class TS02_02StejneJednotkyWeb {
 		if (run) {
 			try {
 				s.find("png/web/vstupLabel.png").right().grow(0, 20).click("png/web/vstupniTextovePole.png");
-				s.paste("20");
+				s.paste("3");
 				Match hledani = s.find("png/web/vstupLabel.png").right().grow(0, 20).find
 						("png/web/vstupniVyberovySeznam.png");
 				hledani.click();
@@ -259,9 +254,8 @@ public class TS02_02StejneJednotkyWeb {
 				s.click("png/web/tlacitkoPreved.png");
 				s.wait("png/web/tlacitkoPreved.png", 5);
 
-				Region oblast = s.find("png/web/vystupLabel.png").right(200).grow(0, 10);
-				double vystup = Double.parseDouble(oblast.text());
-				assertEquals("Očekávano: " + 20 + ", zjištěno: " + vystup, 20, vystup, 0);
+				assertTrue("Očekáváno: 3, zjištěno něco jiného", s.find("png/web/vystupLabel.png").right(200).grow(0,
+						10).exists("png/web/vystup3.png") != null);
 			} catch (FindFailed | AssertionError e) {
 				s.capture().save("errors", screenshotName());
 				logger.error(e.getMessage());
@@ -278,7 +272,7 @@ public class TS02_02StejneJednotkyWeb {
 		if (run) {
 			try {
 				s.find("png/web/vstupLabel.png").right().grow(0, 20).click("png/web/vstupniTextovePole.png");
-				s.paste("20");
+				s.paste("3");
 				Match hledani = s.find("png/web/vstupLabel.png").right().grow(0, 20).find
 						("png/web/vstupniVyberovySeznam.png");
 				hledani.click();
@@ -290,9 +284,8 @@ public class TS02_02StejneJednotkyWeb {
 				s.click("png/web/tlacitkoPreved.png");
 				s.wait("png/web/tlacitkoPreved.png", 5);
 
-				Region oblast = s.find("png/web/vystupLabel.png").right(200).grow(0, 10);
-				double vystup = Double.parseDouble(oblast.text());
-				assertEquals("Očekávano: " + 20 + ", zjištěno: " + vystup, 20, vystup, 0);
+				assertTrue("Očekáváno: 3, zjištěno něco jiného", s.find("png/web/vystupLabel.png").right(200).grow(0,
+						10).exists("png/web/vystup3.png") != null);
 			} catch (FindFailed | AssertionError e) {
 				s.capture().save("errors", screenshotName());
 				logger.error(e.getMessage());

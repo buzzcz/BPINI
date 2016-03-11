@@ -5,12 +5,16 @@ import org.apache.logging.log4j.Logger;
 import org.junit.*;
 import org.sikuli.basics.Debug;
 import org.sikuli.basics.Settings;
-import org.sikuli.script.*;
+import org.sikuli.script.App;
+import org.sikuli.script.FindFailed;
+import org.sikuli.script.Match;
+import org.sikuli.script.Screen;
 
 import javax.swing.*;
 import java.time.LocalDateTime;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 
 /**
  * @author Jaroslav Klaus
@@ -97,10 +101,9 @@ public class TS02_06VariantyVstupChybaJavaFX {
 				s.click("png/java/tlacitkoPreved.png");
 				s.wait("png/java/tlacitkoPreved.png", 5);
 
-				Region oblast = s.find("png/java/vystupLabel.png").right(200).grow(0, 10);
-				double vystup = Double.parseDouble(oblast.text());
-				assertEquals("Očekávano: " + -5 + ", zjištěno: " + vystup, -5, vystup, 0);
-				s.find("png/java/chybaZaporneCislo.png");
+				assertTrue("Očekáváno: -5, zjištěno něco jiného", s.find("png/java/vystupLabel.png").right(200).grow
+						(0, 10).exists("png/java/vystupMinus5.png") != null);
+				assertTrue("Nenalezeno upozornění o chybě", s.exists("png/java/chybaZaporneCislo.png") != null);
 			} catch (FindFailed | AssertionError e) {
 				s.capture().save("errors", screenshotName());
 				logger.error(e.getMessage());
@@ -129,10 +132,9 @@ public class TS02_06VariantyVstupChybaJavaFX {
 				s.click("png/java/tlacitkoPreved.png");
 				s.wait("png/java/tlacitkoPreved.png", 5);
 
-				Region oblast = s.find("png/java/vystupLabel.png").right(200).grow(0, 10);
-				double vystup = Double.parseDouble(oblast.text());
-				assertEquals("Očekávano: " + -5.1 + ", zjištěno: " + vystup, -5.1, vystup, 0);
-				s.find("png/java/chybaZaporneCislo.png");
+				assertTrue("Očekáváno: -5.1, zjištěno něco jiného", s.find("png/java/vystupLabel.png").right(200).grow
+						(0, 10).exists("png/java/vystupMinus5_1.png") != null);
+				assertTrue("Nenalezeno upozornění o chybě", s.exists("png/java/chybaZaporneCislo.png") != null);
 			} catch (FindFailed | AssertionError e) {
 				s.capture().save("errors", screenshotName());
 				logger.error(e.getMessage());
@@ -161,10 +163,9 @@ public class TS02_06VariantyVstupChybaJavaFX {
 				s.click("png/java/tlacitkoPreved.png");
 				s.wait("png/java/tlacitkoPreved.png", 5);
 
-				Region oblast = s.find("png/java/vystupLabel.png").right(200).grow(0, 10);
-				double vystup = Double.parseDouble(oblast.text());
-				assertEquals("Očekávano: " + -5.1E+1 + ", zjištěno: " + vystup, -5.1E+1, vystup, 0);
-				s.find("png/java/chybaZaporneCislo.png");
+				assertTrue("Očekáváno: -51, zjištěno něco jiného", s.find("png/java/vystupLabel.png").right(200).grow
+						(0, 10).exists("png/java/vystupMinus51.png") != null);
+				assertTrue("Nenalezeno upozornění o chybě", s.exists("png/java/chybaZaporneCislo.png") != null);
 			} catch (FindFailed | AssertionError e) {
 				s.capture().save("errors", screenshotName());
 				logger.error(e.getMessage());
@@ -193,10 +194,9 @@ public class TS02_06VariantyVstupChybaJavaFX {
 				s.click("png/java/tlacitkoPreved.png");
 				s.wait("png/java/tlacitkoPreved.png", 5);
 
-				Region oblast = s.find("png/java/vystupLabel.png").right(200).grow(0, 10);
-				double vystup = Double.parseDouble(oblast.text());
-				assertEquals("Očekávano: " + -5.1e-1 + ", zjištěno: " + vystup, -5.1e-1, vystup, 0);
-				s.find("png/java/chybaZaporneCislo.png");
+				assertTrue("Očekáváno: -0.51, zjištěno něco jiného", s.find("png/java/vystupLabel.png").right(200)
+						.grow(0, 10).exists("png/java/vystupMinus0_51.png") != null);
+				assertTrue("Nenalezeno upozornění o chybě", s.exists("png/java/chybaZaporneCislo.png") != null);
 			} catch (FindFailed | AssertionError e) {
 				s.capture().save("errors", screenshotName());
 				logger.error(e.getMessage());
@@ -223,10 +223,9 @@ public class TS02_06VariantyVstupChybaJavaFX {
 				s.click("png/java/tlacitkoPreved.png");
 				s.wait("png/java/tlacitkoPreved.png", 5);
 
-				Region oblast = s.find("png/java/vystupLabel.png").right(200).grow(0, 10);
-				String vystup = oblast.text();
-				assertTrue("Očekáváno: \"\", zjištěno \"" + vystup + "\"", vystup.equals(""));
-				s.find("png/java/chybaPrazdnePole.png");
+				assertTrue("Očekáváno: \"\", zjištěno něco jiného", s.find("png/java/vystupLabel.png").right().grow(0,
+						10).exists("png/java/vystupniTextovePole.png") != null);
+				assertTrue("Nenalezeno upozornění o chybě", s.exists("png/java/chybaPrazdnePole.png") != null);
 			} catch (FindFailed | AssertionError e) {
 				s.capture().save("errors", screenshotName());
 				logger.error(e.getMessage());
@@ -255,10 +254,9 @@ public class TS02_06VariantyVstupChybaJavaFX {
 				s.click("png/java/tlacitkoPreved.png");
 				s.wait("png/java/tlacitkoPreved.png", 5);
 
-				Region oblast = s.find("png/java/vystupLabel.png").right(200).grow(0, 10);
-				String vystup = oblast.text();
-				assertTrue("Očekáváno: \"\", zjištěno \"" + vystup + "\"", vystup.equals(""));
-				s.find("png/java/chybaNeplatneCislo.png");
+				assertTrue("Očekáváno: \"\", zjištěno něco jiného", s.find("png/java/vystupLabel.png").right().grow(0,
+						10).exists("png/java/vystupniTextovePole.png") != null);
+				assertTrue("Nenalezeno upozornění o chybě", s.exists("png/java/chybaNeplatneCislo.png") != null);
 			} catch (FindFailed | AssertionError e) {
 				s.capture().save("errors", screenshotName());
 				logger.error(e.getMessage());

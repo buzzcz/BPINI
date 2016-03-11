@@ -14,6 +14,7 @@ import org.sikuli.script.Screen;
 import javax.swing.*;
 import java.time.LocalDateTime;
 
+import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
 /**
@@ -72,8 +73,8 @@ public class TS01_01PritomnostPrvkuJavaFX {
 	public void TC01_01_01LabelVstup() {
 		if (run) {
 			try {
-				s.find("png/java/vstupLabel.png");
-			} catch (FindFailed | AssertionError e) {
+				assertTrue("Label vstup neexistuje", s.exists("png/java/vstupLabel.png") != null);
+			} catch (AssertionError e) {
 				s.capture().save("errors", screenshotName());
 				logger.error(e.getMessage());
 				fail(e.getMessage());
@@ -88,7 +89,8 @@ public class TS01_01PritomnostPrvkuJavaFX {
 	public void TC01_01_02VstupniTextovePole() {
 		if (run) {
 			try {
-				s.find("png/java/vstupLabel.png").right().grow(0, 20).find("png/java/vstupniTextovePole.png");
+				assertTrue("Vstupní textové pole neexistuje", s.find("png/java/vstupLabel.png").right().grow(0, 20)
+						.exists("png/java/vstupniTextovePole.png") != null);
 			} catch (FindFailed | AssertionError e) {
 				s.capture().save("errors", screenshotName());
 				logger.error(e.getMessage());
@@ -104,7 +106,8 @@ public class TS01_01PritomnostPrvkuJavaFX {
 	public void TC01_01_03VstupniVyberovySeznam() {
 		if (run) {
 			try {
-				s.find("png/java/vstupLabel.png").grow(0, 20).right().find("png/java/vstupniVyberovySeznam.png");
+				assertTrue("Vstupní výběrový seznam neexistuje", s.find("png/java/vstupLabel.png").grow(0, 20).right()
+						.exists("png/java/vstupniVyberovySeznam.png") != null);
 			} catch (FindFailed | AssertionError e) {
 				s.capture().save("errors", screenshotName());
 				logger.error(e.getMessage());
@@ -120,8 +123,8 @@ public class TS01_01PritomnostPrvkuJavaFX {
 	public void TC01_01_04LabelVystup() {
 		if (run) {
 			try {
-				s.find("png/java/vystupLabel.png");
-			} catch (FindFailed | AssertionError e) {
+				assertTrue("Label výstup neexistuje", s.exists("png/java/vystupLabel.png") != null);
+			} catch (AssertionError e) {
 				s.capture().save("errors", screenshotName());
 				logger.error(e.getMessage());
 				fail(e.getMessage());
@@ -136,7 +139,8 @@ public class TS01_01PritomnostPrvkuJavaFX {
 	public void TC01_01_05VystupniTextovePole() {
 		if (run) {
 			try {
-				s.find("png/java/vystupLabel.png").right().grow(0, 20).find("png/java/vystupniTextovePole.png");
+				assertTrue("Výstupní textové pole neexistuje", s.find("png/java/vystupLabel.png").right().grow(0, 20)
+						.exists("png/java/vystupniTextovePole.png") != null);
 			} catch (FindFailed | AssertionError e) {
 				s.capture().save("errors", screenshotName());
 				logger.error(e.getMessage());
@@ -152,7 +156,8 @@ public class TS01_01PritomnostPrvkuJavaFX {
 	public void TC01_01_06VystupniVyberovySeznam() {
 		if (run) {
 			try {
-				s.find("png/java/vystupLabel.png").grow(0, 20).right().find("png/java/vystupniVyberovySeznam.png");
+				assertTrue("Výstupní výběrový seznam neexistuje", s.find("png/java/vystupLabel.png").grow(0, 20).right
+						().exists("png/java/vystupniVyberovySeznam.png") != null);
 			} catch (FindFailed | AssertionError e) {
 				s.capture().save("errors", screenshotName());
 				logger.error(e.getMessage());
@@ -168,8 +173,8 @@ public class TS01_01PritomnostPrvkuJavaFX {
 	public void TC01_01_07TlacitkoPreved() {
 		if (run) {
 			try {
-				s.find("png/java/tlacitkoPreved.png");
-			} catch (FindFailed | AssertionError e) {
+				assertTrue("Tlačítko převeď neexistuje", s.exists("png/java/tlacitkoPreved.png") != null);
+			} catch (AssertionError e) {
 				s.capture().save("errors", screenshotName());
 				logger.error(e.getMessage());
 				fail(e.getMessage());
@@ -184,8 +189,8 @@ public class TS01_01PritomnostPrvkuJavaFX {
 	public void TC01_01_08TlacitkoVymaz() {
 		if (run) {
 			try {
-				s.find("png/java/tlacitkoVymaz.png");
-			} catch (FindFailed | AssertionError e) {
+				assertTrue("Tlačítko vymaž neexistuje", s.exists("png/java/tlacitkoVymaz.png") != null);
+			} catch (AssertionError e) {
 				s.capture().save("errors", screenshotName());
 				logger.error(e.getMessage());
 				fail(e.getMessage());

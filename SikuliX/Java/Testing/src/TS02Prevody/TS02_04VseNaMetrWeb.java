@@ -13,7 +13,7 @@ import org.sikuli.script.*;
 import javax.swing.*;
 import java.time.LocalDateTime;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
 /**
@@ -104,9 +104,8 @@ public class TS02_04VseNaMetrWeb {
 				s.click("png/web/tlacitkoPreved.png");
 				s.wait("png/web/tlacitkoPreved.png", 5);
 
-				Region oblast = s.find("png/web/vystupLabel.png").right(200).grow(0, 10);
-				double vystup = Double.parseDouble(oblast.text());
-				assertEquals("Očekávano: " + 0.01 + ", zjištěno: " + vystup, 0.01, vystup, 0);
+				assertTrue("Očekáváno: 0.01, zjištěno něco jiného", s.find("png/web/vystupLabel.png").right(200).grow
+						(0, 10).exists("png/web/vystup0_01.png") != null);
 			} catch (FindFailed | AssertionError e) {
 				s.capture().save("errors", screenshotName());
 				logger.error(e.getMessage());
@@ -135,9 +134,8 @@ public class TS02_04VseNaMetrWeb {
 				s.click("png/web/tlacitkoPreved.png");
 				s.wait("png/web/tlacitkoPreved.png", 5);
 
-				Region oblast = s.find("png/web/vystupLabel.png").right(200).grow(0, 10);
-				double vystup = Double.parseDouble(oblast.text());
-				assertEquals("Očekávano: " + 0.1 + ", zjištěno: " + vystup, 0.1, vystup, 0);
+				assertTrue("Očekáváno: 0.01, zjištěno něco jiného", s.find("png/web/vystupLabel.png").right(200).grow
+						(0, 10).exists("png/web/vystup0_01.png") != null);
 			} catch (FindFailed | AssertionError e) {
 				s.capture().save("errors", screenshotName());
 				logger.error(e.getMessage());
@@ -166,9 +164,8 @@ public class TS02_04VseNaMetrWeb {
 				s.click("png/web/tlacitkoPreved.png");
 				s.wait("png/web/tlacitkoPreved.png", 5);
 
-				Region oblast = s.find("png/web/vystupLabel.png").right(200).grow(0, 10);
-				double vystup = Double.parseDouble(oblast.text());
-				assertEquals("Očekávano: " + 0.3048 + ", zjištěno: " + vystup, 0.3048, vystup, 0);
+				assertTrue("Očekáváno: 0.3048, zjištěno něco jiného", s.find("png/web/vystupLabel.png").right(200)
+						.grow(0, 10).exists("png/web/vystup0_3048.png") != null);
 			} catch (FindFailed | AssertionError e) {
 				s.capture().save("errors", screenshotName());
 				logger.error(e.getMessage());
@@ -197,9 +194,8 @@ public class TS02_04VseNaMetrWeb {
 				s.click("png/web/tlacitkoPreved.png");
 				s.wait("png/web/tlacitkoPreved.png", 5);
 
-				Region oblast = s.find("png/web/vystupLabel.png").right(200).grow(0, 10);
-				double vystup = Double.parseDouble(oblast.text());
-				assertEquals("Očekávano: " + 0.0254 + ", zjištěno: " + vystup, 0.0254, vystup, 0);
+				assertTrue("Očekáváno: 0.0254, zjištěno něco jiného", s.find("png/web/vystupLabel.png").right(200)
+						.grow(0, 10).exists("png/web/vystup0_0254.png") != null);
 			} catch (FindFailed | AssertionError e) {
 				s.capture().save("errors", screenshotName());
 				logger.error(e.getMessage());
@@ -228,9 +224,8 @@ public class TS02_04VseNaMetrWeb {
 				s.click("png/web/tlacitkoPreved.png");
 				s.wait("png/web/tlacitkoPreved.png", 5);
 
-				Region oblast = s.find("png/web/vystupLabel.png").right(200).grow(0, 10);
-				double vystup = Double.parseDouble(oblast.text());
-				assertEquals("Očekávano: " + 1 + ", zjištěno: " + vystup, 1, vystup, 0);
+				assertTrue("Očekáváno: 1, zjištěno něco jiného", s.find("png/web/vystupLabel.png").right(200).grow(0,
+						10).exists("png/web/vystup1.png") != null);
 			} catch (FindFailed | AssertionError e) {
 				s.capture().save("errors", screenshotName());
 				logger.error(e.getMessage());
@@ -259,9 +254,8 @@ public class TS02_04VseNaMetrWeb {
 				s.click("png/web/tlacitkoPreved.png");
 				s.wait("png/web/tlacitkoPreved.png", 5);
 
-				Region oblast = s.find("png/web/vystupLabel.png").right(200).grow(0, 10);
-				double vystup = Double.parseDouble(oblast.text());
-				assertEquals("Očekávano: " + 0.001 + ", zjištěno: " + vystup, 0.001, vystup, 0);
+				assertTrue("Očekáváno: 0.001, zjištěno něco jiného", s.find("png/web/vystupLabel.png").right(200).grow
+						(0, 10).exists("png/web/vystup0_001.png") != null);
 			} catch (FindFailed | AssertionError e) {
 				s.capture().save("errors", screenshotName());
 				logger.error(e.getMessage());
@@ -290,9 +284,8 @@ public class TS02_04VseNaMetrWeb {
 				s.click("png/web/tlacitkoPreved.png");
 				s.wait("png/web/tlacitkoPreved.png", 5);
 
-				Region oblast = s.find("png/web/vystupLabel.png").right(200).grow(0, 10);
-				double vystup = Double.parseDouble(oblast.text());
-				assertEquals("Očekávano: " + 0.9144 + ", zjištěno: " + vystup, 0.9144, vystup, 0);
+				assertTrue("Očekáváno: 0.9144, zjištěno něco jiného", s.find("png/web/vystupLabel.png").right(200)
+						.grow(0, 10).exists("png/web/vystup0_9144.png") != null);
 			} catch (FindFailed | AssertionError e) {
 				s.capture().save("errors", screenshotName());
 				logger.error(e.getMessage());

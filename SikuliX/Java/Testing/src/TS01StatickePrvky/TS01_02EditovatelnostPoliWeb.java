@@ -12,6 +12,7 @@ import org.sikuli.script.*;
 import javax.swing.*;
 import java.time.LocalDateTime;
 
+import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
 /**
@@ -74,6 +75,8 @@ public class TS01_02EditovatelnostPoliWeb {
 			try {
 				s.find("png/web/vstupLabel.png").right().grow(0, 20).paste("png/web/vstupniTextovePole.png", "vstup");
 				s.find("png/web/vstupLabel.png").right().grow(0, 20).find("png/web/editovatelnostVstupnihoPole.png");
+				assertTrue("Vstupní textové pole není editovatelné", s.find("png/web/vstupLabel.png").right().grow(0,
+						20).exists("png/web/vstupVstup.png") != null);
 			} catch (FindFailed | AssertionError e) {
 				s.capture().save("errors", screenshotName());
 				logger.error(e.getMessage());
@@ -91,7 +94,8 @@ public class TS01_02EditovatelnostPoliWeb {
 			try {
 				s.find("png/web/vystupLabel.png").right().grow(0, 20).paste("png/web/vystupniTextovePole.png",
 						"vstup");
-				s.find("png/web/vystupLabel.png").right().grow(0, 20).find("png/web/vystupniTextovePole.png");
+				assertTrue("Výstupní textové pole je editovatelné", s.find("png/web/vystupLabel.png").right().grow(0,
+						20).exists("png/web/vystupniTextovePole.png") != null);
 			} catch (FindFailed | AssertionError e) {
 				s.capture().save("errors", screenshotName());
 				logger.error(e.getMessage());
