@@ -1,0 +1,17 @@
+Problém s velikostí stránky - zvětšení fontu...
+Problém s OCR není přesné, nemusí najít text (např. pouze jedno číslo ve webové aplikaci nebylo rozpoznáno, nebo O místo 0)
+Sirsi screenshot nez kde hledam
+Pozor na mys ve screenshotu
+Lepsi napsat si vlastni test nebo ho "naklikat" v IDE??
+Srovnání testů pro web a JavaFX - stejné testy, jiné screenshoty
+Popsat záměrné chyby v Převodníku
+
+Začít pomalu psát - přidat po úvodu kapitolu o základech testování
+
+Testy pripravit pro Win i pro Linux - statická konstanta OS + screeny z Win7
+
+Pri chybe v JavaFX, pockat na zavreni aplikace (na zmizeni tlacitka napr.)
+
+Ukazku pouziti ne testovani ale na automatizaci cinnosti např. spusteni TestLinku
+
+Do budoucna např. na kalkulačce vyzkoušet primitivní monkey testy
