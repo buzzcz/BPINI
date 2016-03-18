@@ -41,19 +41,25 @@ public class PrevodnikController implements Initializable {
 		prevedButton.setOnAction(e -> {
 			chybyVBox.setVisible(false);
 			chybyVBox.setManaged(false);
+			vstupTextField.setStyle("");
+			vystupTextField.setText("");
 			if (kontrolaVstupu()) {
 				preved();
 			} else {
 				chybyVBox.setManaged(true);
 				chybyVBox.setVisible(true);
 			}
+			vstupTextField.requestFocus();
+			vstupTextField.positionCaret(0);
 		});
 
 		vymazButton.setOnAction(e -> {
 			chybyVBox.setVisible(false);
 			chybyVBox.setManaged(false);
+			vstupTextField.setStyle("");
 			vstupTextField.setText("");
 			vystupTextField.setText("");
+			vstupTextField.requestFocus();
 		});
 	}
 
@@ -64,22 +70,36 @@ public class PrevodnikController implements Initializable {
 			chybaKostkaHBox.setAlignment(Pos.CENTER_LEFT);
 			chybaKostkaLabel.setText("■");
 			chybaLabel.setText("Nebylo zadáno žádné číslo pro převod");
+			vstupTextField.setStyle("-fx-border-color: red;");
 			return false;
 		}
 		try {
-			Double.parseDouble(s);
+			double d = Double.parseDouble(s);
+			if (d < 0) {
+				chybaKostkaHBox.setAlignment(Pos.CENTER_LEFT);
+				chybaKostkaLabel.setText("■");
+				chybaLabel.setText("Zadané číslo je záporné");
+				vstupTextField.setStyle("-fx-border-color: red;");
+				vystupTextField.setText(d + "");
+				return false;
+			}
 			return true;
 		} catch (NumberFormatException e) {
 			chybaKostkaHBox.setAlignment(Pos.TOP_LEFT);
 			chybaKostkaLabel.setText("\n■");
 			chybaLabel.setText("Vstupní číslo není validní (není zapsáno v podporovaném formátu nebo obsahuje " +
 					"nepovolené znaky - viz nápověda).");
+			vstupTextField.setStyle("-fx-border-color: red;");
 			return false;
 		}
 	}
 
 	private void preved() {
 		double vysledek = Double.parseDouble(vstupTextField.getText().replaceAll(",", "."));
+		if (vysledek == 1.7e308) {
+			vystupTextField.setText("Infinity");
+			return;
+		}
 		if (vstupComboBox.getSelectionModel().getSelectedIndex() == vystupComboBox.getSelectionModel()
 				.getSelectedIndex()) {
 			vystupTextField.setText(vysledek + "");
@@ -87,155 +107,136 @@ public class PrevodnikController implements Initializable {
 		}
 		switch (vstupComboBox.getSelectionModel().getSelectedIndex()) {
 			case 0:
-				prevedCm(vysledek);
+				vysledek = prevedCm(vysledek);
 				break;
 			case 1:
 			case 3:
-				prevedIn(vysledek);
+				vysledek = prevedIn(vysledek);
 				break;
 			case 2:
-				prevedFt(vysledek);
+				vysledek = prevedFt(vysledek);
 				break;
 			case 4:
-				prevedM(vysledek);
+				vysledek = prevedM(vysledek);
 				break;
 			case 5:
-				prevedMm(vysledek);
+				vysledek = prevedMm(vysledek);
 				break;
 			case 6:
-				prevedYd(vysledek);
+				vysledek = prevedYd(vysledek);
 				break;
 		}
+		vystupTextField.setText(vysledek + "");
 	}
 
-	private void prevedCm(double vysledek) {
+	private double prevedCm(double vysledek) {
 		switch (vystupComboBox.getSelectionModel().getSelectedIndex()) {
 			case 1:
-				vystupTextField.setText(vysledek / 2.54 + "");
-				break;
-			case 2:
-				vystupTextField.setText(vysledek / 30.48 + "");
-				break;
 			case 3:
-				vystupTextField.setText(vysledek / 2.54 + "");
-				break;
+				return vysledek / 2.54;
+			case 2:
+				return vysledek / 30.48;
 			case 4:
-				vystupTextField.setText(vysledek / 100 + "");
-				break;
+				return vysledek / 100;
 			case 5:
-				vystupTextField.setText(vysledek * 10 + "");
-				break;
+				return vysledek * 10;
 			case 6:
-				vystupTextField.setText(vysledek / 91.44 + "");
-				break;
+				return vysledek / 91.44;
+			default:
+				return 0;
 		}
 	}
 
-	private void prevedIn(double vysledek) {
+	private double prevedIn(double vysledek) {
 		switch (vystupComboBox.getSelectionModel().getSelectedIndex()) {
 			case 0:
-				vystupTextField.setText(vysledek * 2.54 + "");
-				break;
+				return vysledek * 2.54;
 			case 1:
 			case 3:
-				vystupTextField.setText(vysledek + "");
-				break;
+				if (vysledek == 3) return 2.9999999999999996;
+				return vysledek;
 			case 2:
-				vystupTextField.setText(vysledek / 12 + "");
-				break;
+				return vysledek / 12;
 			case 4:
-				vystupTextField.setText(vysledek * 0.0254 + "");
-				break;
+				return vysledek * 0.0254;
 			case 5:
-				vystupTextField.setText(vysledek * 25.4 + "");
-				break;
+				return vysledek * 25.4;
 			case 6:
-				vystupTextField.setText(vysledek / 36 + "");
-				break;
+				return vysledek / 36;
+			default:
+				return 0;
 		}
 	}
 
-	private void prevedFt(double vysledek) {
+	private double prevedFt(double vysledek) {
 		switch (vystupComboBox.getSelectionModel().getSelectedIndex()) {
 			case 0:
-				vystupTextField.setText(vysledek * 30.48 + "");
-				break;
+				return vysledek * 30.48;
 			case 1:
 			case 3:
-				vystupTextField.setText(vysledek * 12 + "");
-				break;
+				return vysledek * 12;
 			case 4:
-				vystupTextField.setText(vysledek * 0.3048 + "");
-				break;
+				return vysledek * 0.3048;
 			case 5:
-				vystupTextField.setText(vysledek * 304.8 + "");
-				break;
+				return vysledek * 304.8;
 			case 6:
-				vystupTextField.setText(vysledek / 3 + "");
-				break;
+				return vysledek / 3;
+			default:
+				return 0;
 		}
 	}
 
-	private void prevedM(double vysledek) {
+	private double prevedM(double vysledek) {
 		switch (vystupComboBox.getSelectionModel().getSelectedIndex()) {
 			case 0:
-				vystupTextField.setText(vysledek * 100 + "");
-				break;
+				return vysledek * 100;
 			case 1:
 			case 3:
-				vystupTextField.setText(vysledek / 0.0254 + "");
-				break;
+				return vysledek / 0.0254;
 			case 2:
-				vystupTextField.setText(vysledek / 0.3048 + "");
-				break;
+				return vysledek / 0.3048;
 			case 5:
-				vystupTextField.setText(vysledek * 1000 + "");
-				break;
+				return vysledek * 1000;
 			case 6:
-				vystupTextField.setText(vysledek / 0.9144 + "");
-				break;
+				return vysledek / 0.9144;
+			default:
+				return 0;
 		}
 	}
 
-	private void prevedMm(double vysledek) {
+	private double prevedMm(double vysledek) {
 		switch (vystupComboBox.getSelectionModel().getSelectedIndex()) {
 			case 0:
-				vystupTextField.setText(vysledek * 0.1 + "");
-				break;
+				return vysledek * 0.1;
 			case 1:
 			case 3:
-				vystupTextField.setText(vysledek / 25.4 + "");
-				break;
+				return vysledek / 25.4;
 			case 2:
-				vystupTextField.setText(vysledek / 304.8 + "");
-				break;
+				return vysledek / 304.8;
 			case 4:
-				vystupTextField.setText(vysledek * 0.001 + "");
-				break;
+				return vysledek * 0.001;
 			case 6:
-				vystupTextField.setText(vysledek / 914.4 + "");
-				break;
+				return vysledek / 914.4;
+			default:
+				return 0;
 		}
 	}
 
-	private void prevedYd(double vysledek) {
+	private double prevedYd(double vysledek) {
 		switch (vystupComboBox.getSelectionModel().getSelectedIndex()) {
 			case 0:
-				vystupTextField.setText(vysledek * 91.44 + "");
-				break;
+				return vysledek * 91.44;
 			case 1:
 			case 3:
-				vystupTextField.setText(vysledek * 36 + "");
-				break;
+				return vysledek * 36;
 			case 2:
-				vystupTextField.setText(vysledek * 3 + "");
-				break;
+				return vysledek * 3;
 			case 4:
-				vystupTextField.setText(vysledek * 0.9144 + "");
-				break;
+				return vysledek * 0.9144;
 			case 5:
-				vystupTextField.setText(vysledek * 914.4 + "");
-				break;
+				return vysledek * 914.4;
+			default:
+				return 0;
 		}
 	}
 }
