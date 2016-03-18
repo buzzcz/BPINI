@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+	<Properties>
+		<Property name="zprava">%d{dd.MM.YYYY HH:mm:ss} [%level - %logger{1}.%method()] - %msg%n</Property>
+		<Property name="souborLog">log.txt</Property>
+	</Properties>
+	<Appenders>
+		<Console name="obrazovka" target="SYSTEM_OUT">
+			<PatternLayout pattern="${zprava}"/>
+		</Console>
+		<File name="toSouborLog" fileName="${souborLog}" append="true" immediateFlush="true">
+			<PatternLayout pattern="${zprava}"/>
+		</File>
+	</Appenders>
+	<Loggers>
+		<Root level="INFO">
+			<AppenderRef ref="toSouborLog"/>
+		</Root>
+	</Loggers>
+</Configuration>
