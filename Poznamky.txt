@@ -10,6 +10,4 @@ Začít pomalu psát - přidat po úvodu kapitolu o základech testování
 
 Testy pripravit pro Win i pro Linux - statická konstanta OS + screeny z Win7
 
-Pri chybe v JavaFX, pockat na zavreni aplikace (na zmizeni tlacitka napr.)
-
 Ukazku pouziti ne testovani ale na automatizaci cinnosti např. spusteni TestLinku
