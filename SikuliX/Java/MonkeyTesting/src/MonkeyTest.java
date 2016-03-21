@@ -1,4 +1,3 @@
-import javafx.scene.input.KeyCode;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.AfterClass;
@@ -9,21 +8,18 @@ import org.sikuli.basics.Settings;
 import org.sikuli.script.*;
 
 import javax.swing.*;
-
 import java.util.Random;
-
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.fail;
 
 /**
  * @author Jaroslav Klaus
  */
 public class MonkeyTest {
 
-	static Logger logger;
-	static Screen s;
-	static App application;
-	static Region window;
+	private static Logger logger;
+	private static Screen s;
+	private static App application;
+	private static Region window;
+	private static String title;
 
 	static {
 		System.setProperty("log4j.configurationFile", "log-konfigurace.xml");
@@ -40,8 +36,15 @@ public class MonkeyTest {
 		Debug.setLoggerAll("info");
 
 		s = new Screen();
-		new App("gnome-calculator").open();
-		new Screen().wait("png/title.png", 5);
+		if (System.getProperty("os.name").equals("Linux")) {
+			new App("gnome-calculator").open();
+			title = "png/title.png";
+			new Screen().wait(title, 5);
+		} else {
+			new App("C:\\Windows\\system32\\calc.exe").open();
+			title = "png/winTitle.png";
+			new Screen().wait(title, 5);
+		}
 		application = new App("Calculator");
 		application.focus();
 		window = App.focusedWindow();
@@ -64,9 +67,9 @@ public class MonkeyTest {
 	@Test
 	public void MonkeyTest01() throws FindFailed {
 		Random gen = new Random();
-		Location minCoord = window.getTopLeft();
-		Location maxCoord = window.getBottomRight();
-		while (s.exists("png/title.png") != null) {
+		while (s.exists(title) != null) {
+			Location minCoord = window.getTopLeft();
+			Location maxCoord = window.getBottomRight();
 			int random = gen.nextInt(5);
 			int x = gen.nextInt(maxCoord.getX()), y = gen.nextInt(maxCoord.getY());
 			while (x < minCoord.getX()) x = gen.nextInt(maxCoord.getX());
