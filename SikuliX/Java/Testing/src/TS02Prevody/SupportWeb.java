@@ -51,8 +51,7 @@ public class SupportWeb {
 		s = new Screen();
 		try {
 			if (System.getProperty("os.name").equals("Linux")) new App("google-chrome").open();
-			else new App("C:\\Users\\" + System.getProperty("user.name") +
-					"\\AppData\\Local\\Google\\Chrome\\Application\\chrome.exe");
+			else new App("C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe").open();
 			browser = new App("Chrome");
 			browser.focus();
 			runSetup = true;
