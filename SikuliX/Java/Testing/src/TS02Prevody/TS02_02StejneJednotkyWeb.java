@@ -1,17 +1,8 @@
 package TS02Prevody;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
-import org.sikuli.basics.Debug;
-import org.sikuli.basics.Settings;
-import org.sikuli.script.*;
-
-import javax.swing.*;
-import java.time.LocalDateTime;
+import org.sikuli.script.FindFailed;
+import org.sikuli.script.Match;
 
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
@@ -19,93 +10,28 @@ import static org.junit.Assert.fail;
 /**
  * @author Jaroslav Klaus
  */
-public class TS02_02StejneJednotkyWeb {
-
-	static Logger logger;
-	static Screen s;
-	static App browser;
-	static boolean run, runSetup;
-
-	static {
-		System.setProperty("log4j.configurationFile", "log-konfigurace.xml");
-	}
-
-
-	private static String screenshotName() {
-		LocalDateTime l = LocalDateTime.now();
-		return l.getYear() + "" + l.getMonthValue() + "" + l.getDayOfMonth() + "" + l.getHour() + "" + (l.getMinute()
-				< 10 ? "0" + l.getMinute() : l.getMinute()) + "" + l.getSecond() + "";
-	}
-
-	@BeforeClass
-	public static void setUpBeforeClass() {
-		logger = LogManager.getLogger();
-
-		Settings.OcrTextSearch = true;
-		Settings.OcrTextRead = true;
-		Settings.MoveMouseDelay = 0;
-		Debug.setLogger(logger);
-		Debug.setLoggerAll("info");
-
-		s = new Screen();
-		try {
-			new App("google-chrome").open();
-			browser = new App("Chrome");
-			browser.focus();
-			runSetup = true;
-			s.wait("png/web/addressBar.png", 10);
-		} catch (Exception e) {
-			runSetup = false;
-			s.capture().save("errors", screenshotName());
-			logger.error(e.getMessage());
-		}
-	}
-
-	@AfterClass
-	public static void tearDownAfterClass() {
-		JOptionPane.showMessageDialog(null, "Test Suite dokončen");
-	}
-
-	@Before
-	public void setUp() {
-		if (runSetup) {
-			try {
-				s.click(new Pattern("png/web/addressBar.png").targetOffset(100, 0));
-				s.paste("http://oks.kiv.zcu.cz/Prevodnik/Prevodnik");
-				s.type(Key.ENTER);
-				s.wait("png/web/tlacitkoPreved.png", 5);
-				run = true;
-			} catch (FindFailed e) {
-				run = false;
-				s.capture().save("errors", screenshotName());
-				logger.error(e.getMessage());
-			}
-		} else {
-			run = false;
-			logger.error("Setup failed");
-			fail("Setup before class failed");
-		}
-	}
+public class TS02_02StejneJednotkyWeb extends SupportWeb {
 
 	@Test
 	public void TC02_02_01PrevodCmNaCm() {
 		if (run) {
 			try {
-				s.find("png/web/vstupLabel.png").right().grow(0, 20).click("png/web/vstupniTextovePole.png");
+				s.find(pngs + "vstupLabel.png").right().grow(0, 20).click(pngs + "vstupniTextovePole.png");
 				s.paste("3");
-				Match hledani = s.find("png/web/vstupLabel.png").right().grow(0, 20).find
-						("png/web/vstupniVyberovySeznam.png");
+				Match hledani = s.find(pngs + "vstupLabel.png").right().grow(0, 20).find(pngs +
+						"vstupniVyberovySeznam" +
+						".png");
 				hledani.click();
-				hledani.below().click("png/web/vstupModryCm.png");
-				hledani = s.find("png/web/vystupLabel.png").right().grow(0, 20).find("png/web/vystupniVyberovySeznam"
-						+ ".png");
+				hledani.below().click(pngs + "vstupModryCm.png");
+				hledani = s.find(pngs + "vystupLabel.png").right().grow(0, 20).find(pngs + "vystupniVyberovySeznam" +
+						".png");
 				hledani.click();
-				hledani.below().click("png/web/vystupModryCm.png");
-				s.click("png/web/tlacitkoPreved.png");
-				s.wait("png/web/tlacitkoPreved.png", 5);
+				hledani.below().click(pngs + "vystupModryCm.png");
+				s.click(pngs + "tlacitkoPreved.png");
+				s.wait(pngs + "tlacitkoPreved.png", 5);
 
-				assertTrue("Očekáváno: 3, zjištěno něco jiného", s.find("png/web/vystupLabel.png").right(200).grow(0,
-						10).exists("png/web/vystup3.png") != null);
+				assertTrue("Očekáváno: 3, zjištěno něco jiného", s.find(pngs + "vystupLabel.png").right(200).grow(0,
+						10).exists(pngs + "vystup3.png") != null);
 			} catch (FindFailed | AssertionError e) {
 				s.capture().save("errors", screenshotName());
 				logger.error(e.getMessage());
@@ -121,21 +47,22 @@ public class TS02_02StejneJednotkyWeb {
 	public void TC02_02_02PrevodDmNaDm() {
 		if (run) {
 			try {
-				s.find("png/web/vstupLabel.png").right().grow(0, 20).click("png/web/vstupniTextovePole.png");
+				s.find(pngs + "vstupLabel.png").right().grow(0, 20).click(pngs + "vstupniTextovePole.png");
 				s.paste("3");
-				Match hledani = s.find("png/web/vstupLabel.png").right().grow(0, 20).find
-						("png/web/vstupniVyberovySeznam.png");
+				Match hledani = s.find(pngs + "vstupLabel.png").right().grow(0, 20).find(pngs +
+						"vstupniVyberovySeznam" +
+						".png");
 				hledani.click();
-				hledani.below().click("png/web/vstupDm.png");
-				hledani = s.find("png/web/vystupLabel.png").right().grow(0, 20).find("png/web/vystupniVyberovySeznam"
-						+ ".png");
+				hledani.below().click(pngs + "vstupDm.png");
+				hledani = s.find(pngs + "vystupLabel.png").right().grow(0, 20).find(pngs + "vystupniVyberovySeznam" +
+						".png");
 				hledani.click();
-				hledani.below().click("png/web/vystupDm.png");
-				s.click("png/web/tlacitkoPreved.png");
-				s.wait("png/web/tlacitkoPreved.png", 5);
+				hledani.below().click(pngs + "vystupDm.png");
+				s.click(pngs + "tlacitkoPreved.png");
+				s.wait(pngs + "tlacitkoPreved.png", 5);
 
-				assertTrue("Očekáváno: 3, zjištěno něco jiného", s.find("png/web/vystupLabel.png").right(200).grow(0,
-						10).exists("png/web/vystup3.png") != null);
+				assertTrue("Očekáváno: 3, zjištěno něco jiného", s.find(pngs + "vystupLabel.png").right(200).grow(0,
+						10).exists(pngs + "vystup3.png") != null);
 			} catch (FindFailed | AssertionError e) {
 				s.capture().save("errors", screenshotName());
 				logger.error(e.getMessage());
@@ -151,21 +78,22 @@ public class TS02_02StejneJednotkyWeb {
 	public void TC02_02_03PrevodFtNaFt() {
 		if (run) {
 			try {
-				s.find("png/web/vstupLabel.png").right().grow(0, 20).click("png/web/vstupniTextovePole.png");
+				s.find(pngs + "vstupLabel.png").right().grow(0, 20).click(pngs + "vstupniTextovePole.png");
 				s.paste("3");
-				Match hledani = s.find("png/web/vstupLabel.png").right().grow(0, 20).find
-						("png/web/vstupniVyberovySeznam.png");
+				Match hledani = s.find(pngs + "vstupLabel.png").right().grow(0, 20).find(pngs +
+						"vstupniVyberovySeznam" +
+						".png");
 				hledani.click();
-				hledani.below().click("png/web/vstupFt.png");
-				hledani = s.find("png/web/vystupLabel.png").right().grow(0, 20).find("png/web/vystupniVyberovySeznam"
-						+ ".png");
+				hledani.below().click(pngs + "vstupFt.png");
+				hledani = s.find(pngs + "vystupLabel.png").right().grow(0, 20).find(pngs + "vystupniVyberovySeznam" +
+						".png");
 				hledani.click();
-				hledani.below().click("png/web/vystupFt.png");
-				s.click("png/web/tlacitkoPreved.png");
-				s.wait("png/web/tlacitkoPreved.png", 5);
+				hledani.below().click(pngs + "vystupFt.png");
+				s.click(pngs + "tlacitkoPreved.png");
+				s.wait(pngs + "tlacitkoPreved.png", 5);
 
-				assertTrue("Očekáváno: 3, zjištěno něco jiného", s.find("png/web/vystupLabel.png").right(200).grow(0,
-						10).exists("png/web/vystup3.png") != null);
+				assertTrue("Očekáváno: 3, zjištěno něco jiného", s.find(pngs + "vystupLabel.png").right(200).grow(0,
+						10).exists(pngs + "vystup3.png") != null);
 			} catch (FindFailed | AssertionError e) {
 				s.capture().save("errors", screenshotName());
 				logger.error(e.getMessage());
@@ -181,21 +109,21 @@ public class TS02_02StejneJednotkyWeb {
 	public void TC02_02_04PrevodInNaIn() {
 		if (run) {
 			try {
-				s.find("png/web/vstupLabel.png").right().grow(0, 20).click("png/web/vstupniTextovePole.png");
+				s.find(pngs + "vstupLabel.png").right().grow(0, 20).click(pngs + "vstupniTextovePole.png");
 				s.paste("3");
-				Match hledani = s.find("png/web/vstupLabel.png").right().grow(0, 20).find
-						("png/web/vstupniVyberovySeznam.png");
+				Match hledani = s.find(pngs + "vstupLabel.png").right().grow(0, 20).find(pngs + "vstupniVyberovySeznam" +
+						".png");
 				hledani.click();
-				hledani.below().click("png/web/vstupIn.png");
-				hledani = s.find("png/web/vystupLabel.png").right().grow(0, 20).find("png/web/vystupniVyberovySeznam"
-						+ ".png");
+				hledani.below().click(pngs + "vstupIn.png");
+				hledani = s.find(pngs + "vystupLabel.png").right().grow(0, 20).find(pngs + "vystupniVyberovySeznam" +
+						".png");
 				hledani.click();
-				hledani.below().click("png/web/vystupIn.png");
-				s.click("png/web/tlacitkoPreved.png");
-				s.wait("png/web/tlacitkoPreved.png", 5);
+				hledani.below().click(pngs + "vystupIn.png");
+				s.click(pngs + "tlacitkoPreved.png");
+				s.wait(pngs + "tlacitkoPreved.png", 5);
 
-				assertTrue("Očekáváno: 3, zjištěno něco jiného", s.find("png/web/vystupLabel.png").right(200).grow(0,
-						10).exists("png/web/vystup3.png") != null);
+				assertTrue("Očekáváno: 3, zjištěno něco jiného", s.find(pngs + "vystupLabel.png").right(200).grow(0,
+						10).exists(pngs + "vystup3.png") != null);
 			} catch (FindFailed | AssertionError e) {
 				s.capture().save("errors", screenshotName());
 				logger.error(e.getMessage());
@@ -211,21 +139,21 @@ public class TS02_02StejneJednotkyWeb {
 	public void TC02_02_05PrevodMNaM() {
 		if (run) {
 			try {
-				s.find("png/web/vstupLabel.png").right().grow(0, 20).click("png/web/vstupniTextovePole.png");
+				s.find(pngs + "vstupLabel.png").right().grow(0, 20).click(pngs + "vstupniTextovePole.png");
 				s.paste("3");
-				Match hledani = s.find("png/web/vstupLabel.png").right().grow(0, 20).find
-						("png/web/vstupniVyberovySeznam.png");
+				Match hledani = s.find(pngs + "vstupLabel.png").right().grow(0, 20).find(pngs + "vstupniVyberovySeznam" +
+						".png");
 				hledani.click();
-				hledani.below().click("png/web/vstupM.png");
-				hledani = s.find("png/web/vystupLabel.png").right().grow(0, 20).find("png/web/vystupniVyberovySeznam"
-						+ ".png");
+				hledani.below().click(pngs + "vstupM.png");
+				hledani = s.find(pngs + "vystupLabel.png").right().grow(0, 20).find(pngs + "vystupniVyberovySeznam" +
+						".png");
 				hledani.click();
-				hledani.below().click("png/web/vystupM.png");
-				s.click("png/web/tlacitkoPreved.png");
-				s.wait("png/web/tlacitkoPreved.png", 5);
+				hledani.below().click(pngs + "vystupM.png");
+				s.click(pngs + "tlacitkoPreved.png");
+				s.wait(pngs + "tlacitkoPreved.png", 5);
 
-				assertTrue("Očekáváno: 3, zjištěno něco jiného", s.find("png/web/vystupLabel.png").right(200).grow(0,
-						10).exists("png/web/vystup3.png") != null);
+				assertTrue("Očekáváno: 3, zjištěno něco jiného", s.find(pngs + "vystupLabel.png").right(200).grow(0,
+						10).exists(pngs + "vystup3.png") != null);
 			} catch (FindFailed | AssertionError e) {
 				s.capture().save("errors", screenshotName());
 				logger.error(e.getMessage());
@@ -241,21 +169,21 @@ public class TS02_02StejneJednotkyWeb {
 	public void TC02_02_06PrevodMmNaMm() {
 		if (run) {
 			try {
-				s.find("png/web/vstupLabel.png").right().grow(0, 20).click("png/web/vstupniTextovePole.png");
+				s.find(pngs + "vstupLabel.png").right().grow(0, 20).click(pngs + "vstupniTextovePole.png");
 				s.paste("3");
-				Match hledani = s.find("png/web/vstupLabel.png").right().grow(0, 20).find
-						("png/web/vstupniVyberovySeznam.png");
+				Match hledani = s.find(pngs + "vstupLabel.png").right().grow(0, 20).find(pngs + "vstupniVyberovySeznam" +
+						".png");
 				hledani.click();
-				hledani.below().click("png/web/vstupMm.png");
-				hledani = s.find("png/web/vystupLabel.png").right().grow(0, 20).find("png/web/vystupniVyberovySeznam"
-						+ ".png");
+				hledani.below().click(pngs + "vstupMm.png");
+				hledani = s.find(pngs + "vystupLabel.png").right().grow(0, 20).find(pngs + "vystupniVyberovySeznam" +
+						".png");
 				hledani.click();
-				hledani.below().click("png/web/vystupMm.png");
-				s.click("png/web/tlacitkoPreved.png");
-				s.wait("png/web/tlacitkoPreved.png", 5);
+				hledani.below().click(pngs + "vystupMm.png");
+				s.click(pngs + "tlacitkoPreved.png");
+				s.wait(pngs + "tlacitkoPreved.png", 5);
 
-				assertTrue("Očekáváno: 3, zjištěno něco jiného", s.find("png/web/vystupLabel.png").right(200).grow(0,
-						10).exists("png/web/vystup3.png") != null);
+				assertTrue("Očekáváno: 3, zjištěno něco jiného", s.find(pngs + "vystupLabel.png").right(200).grow(0,
+						10).exists(pngs + "vystup3.png") != null);
 			} catch (FindFailed | AssertionError e) {
 				s.capture().save("errors", screenshotName());
 				logger.error(e.getMessage());
@@ -271,21 +199,21 @@ public class TS02_02StejneJednotkyWeb {
 	public void TC02_02_07PrevodYdNaYd() {
 		if (run) {
 			try {
-				s.find("png/web/vstupLabel.png").right().grow(0, 20).click("png/web/vstupniTextovePole.png");
+				s.find(pngs + "vstupLabel.png").right().grow(0, 20).click(pngs + "vstupniTextovePole.png");
 				s.paste("3");
-				Match hledani = s.find("png/web/vstupLabel.png").right().grow(0, 20).find
-						("png/web/vstupniVyberovySeznam.png");
+				Match hledani = s.find(pngs + "vstupLabel.png").right().grow(0, 20).find(pngs + "vstupniVyberovySeznam" +
+						".png");
 				hledani.click();
-				hledani.below().click("png/web/vstupYd.png");
-				hledani = s.find("png/web/vystupLabel.png").right().grow(0, 20).find("png/web/vystupniVyberovySeznam"
-						+ ".png");
+				hledani.below().click(pngs + "vstupYd.png");
+				hledani = s.find(pngs + "vystupLabel.png").right().grow(0, 20).find(pngs + "vystupniVyberovySeznam" +
+						".png");
 				hledani.click();
-				hledani.below().click("png/web/vystupYd.png");
-				s.click("png/web/tlacitkoPreved.png");
-				s.wait("png/web/tlacitkoPreved.png", 5);
+				hledani.below().click(pngs + "vystupYd.png");
+				s.click(pngs + "tlacitkoPreved.png");
+				s.wait(pngs + "tlacitkoPreved.png", 5);
 
-				assertTrue("Očekáváno: 3, zjištěno něco jiného", s.find("png/web/vystupLabel.png").right(200).grow(0,
-						10).exists("png/web/vystup3.png") != null);
+				assertTrue("Očekáváno: 3, zjištěno něco jiného", s.find(pngs + "vystupLabel.png").right(200).grow(0,
+						10).exists(pngs + "vystup3.png") != null);
 			} catch (FindFailed | AssertionError e) {
 				s.capture().save("errors", screenshotName());
 				logger.error(e.getMessage());

@@ -1,17 +1,8 @@
 package TS02Prevody;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
-import org.sikuli.basics.Debug;
-import org.sikuli.basics.Settings;
-import org.sikuli.script.*;
-
-import javax.swing.*;
-import java.time.LocalDateTime;
+import org.sikuli.script.FindFailed;
+import org.sikuli.script.Match;
 
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
@@ -19,94 +10,29 @@ import static org.junit.Assert.fail;
 /**
  * @author Jaroslav Klaus
  */
-public class TS02_06VariantyVstupChybaWeb {
-
-	static Logger logger;
-	static Screen s;
-	static App browser;
-	static boolean run, runSetup;
-
-	static {
-		System.setProperty("log4j.configurationFile", "log-konfigurace.xml");
-	}
-
-
-	private static String screenshotName() {
-		LocalDateTime l = LocalDateTime.now();
-		return l.getYear() + "" + l.getMonthValue() + "" + l.getDayOfMonth() + "" + l.getHour() + "" + (l.getMinute()
-				< 10 ? "0" + l.getMinute() : l.getMinute()) + "" + l.getSecond() + "";
-	}
-
-	@BeforeClass
-	public static void setUpBeforeClass() {
-		logger = LogManager.getLogger();
-
-		Settings.OcrTextSearch = true;
-		Settings.OcrTextRead = true;
-		Settings.MoveMouseDelay = 0;
-		Debug.setLogger(logger);
-		Debug.setLoggerAll("info");
-
-		s = new Screen();
-		try {
-			new App("google-chrome").open();
-			browser = new App("Chrome");
-			browser.focus();
-			runSetup = true;
-			s.wait("png/web/addressBar.png", 10);
-		} catch (Exception e) {
-			runSetup = false;
-			s.capture().save("errors", screenshotName());
-			logger.error(e.getMessage());
-		}
-	}
-
-	@AfterClass
-	public static void tearDownAfterClass() {
-		JOptionPane.showMessageDialog(null, "Test Suite dokončen");
-	}
-
-	@Before
-	public void setUp() {
-		if (runSetup) {
-			try {
-				s.click(new Pattern("png/web/addressBar.png").targetOffset(100, 0));
-				s.paste("http://oks.kiv.zcu.cz/Prevodnik/Prevodnik");
-				s.type(Key.ENTER);
-				s.wait("png/web/tlacitkoPreved.png", 5);
-				run = true;
-			} catch (FindFailed e) {
-				run = false;
-				s.capture().save("errors", screenshotName());
-				logger.error(e.getMessage());
-			}
-		} else {
-			run = false;
-			logger.error("Setup failed");
-			fail("Setup before class failed");
-		}
-	}
+public class TS02_06VariantyVstupChybaWeb extends SupportWeb {
 
 	@Test
 	public void TC02_06_01ZaporneCeleCislo() {
 		if (run) {
 			try {
-				s.find("png/web/vstupLabel.png").right().grow(0, 20).click("png/web/vstupniTextovePole.png");
+				s.find(pngs + "vstupLabel.png").right().grow(0, 20).click(pngs + "vstupniTextovePole.png");
 				s.paste("-5");
-				Match hledani = s.find("png/web/vstupLabel.png").right().grow(0, 20).find
-						("png/web/vstupniVyberovySeznam.png");
+				Match hledani = s.find(pngs + "vstupLabel.png").right().grow(0, 20).find(pngs +
+						"vstupniVyberovySeznam" +
+						".png");
 				hledani.click();
-				hledani.below().click("png/web/vstupM.png");
-				hledani = s.find("png/web/vystupLabel.png").right().grow(0, 20).find("png/web/vystupniVyberovySeznam"
-						+ ".png");
+				hledani.below().click(pngs + "vstupM.png");
+				hledani = s.find(pngs + "vystupLabel.png").right().grow(0, 20).find(pngs + "vystupniVyberovySeznam" +
+						".png");
 				hledani.click();
-				hledani.below().click("png/web/vystupM.png");
-				s.click("png/web/tlacitkoPreved.png");
-				s.wait("png/web/tlacitkoPreved.png", 5);
+				hledani.below().click(pngs + "vystupM.png");
+				s.click(pngs + "tlacitkoPreved.png");
+				s.wait(pngs + "tlacitkoPreved.png", 5);
 
-				assertTrue("Očekáváno: -5, zjištěno něco jiného", s.find("png/web/vystupLabel.png").right(200).grow(0,
-						10).exists("png/web/vystupMinus5.png") != null);
-				assertTrue("Nenalezeno upozornění o chybě", s.exists("png/web/chybaZaporneCislo.png") != null);
+				assertTrue("Očekáváno: -5, zjištěno něco jiného", s.find(pngs + "vystupLabel.png").right(200).grow(0,
+						10).exists(pngs + "vystupMinus5.png") != null);
+				assertTrue("Nenalezeno upozornění o chybě", s.exists(pngs + "chybaZaporneCislo.png") != null);
 			} catch (FindFailed | AssertionError e) {
 				s.capture().save("errors", screenshotName());
 				logger.error(e.getMessage());
@@ -122,22 +48,23 @@ public class TS02_06VariantyVstupChybaWeb {
 	public void TC02_06_02ZaporneDesetinneCislo() {
 		if (run) {
 			try {
-				s.find("png/web/vstupLabel.png").right().grow(0, 20).click("png/web/vstupniTextovePole.png");
+				s.find(pngs + "vstupLabel.png").right().grow(0, 20).click(pngs + "vstupniTextovePole.png");
 				s.paste("-5.1");
-				Match hledani = s.find("png/web/vstupLabel.png").right().grow(0, 20).find
-						("png/web/vstupniVyberovySeznam.png");
+				Match hledani = s.find(pngs + "vstupLabel.png").right().grow(0, 20).find(pngs +
+						"vstupniVyberovySeznam" +
+						".png");
 				hledani.click();
-				hledani.below().click("png/web/vstupM.png");
-				hledani = s.find("png/web/vystupLabel.png").right().grow(0, 20).find("png/web/vystupniVyberovySeznam"
-						+ ".png");
+				hledani.below().click(pngs + "vstupM.png");
+				hledani = s.find(pngs + "vystupLabel.png").right().grow(0, 20).find(pngs + "vystupniVyberovySeznam" +
+						".png");
 				hledani.click();
-				hledani.below().click("png/web/vystupM.png");
-				s.click("png/web/tlacitkoPreved.png");
-				s.wait("png/web/tlacitkoPreved.png", 5);
+				hledani.below().click(pngs + "vystupM.png");
+				s.click(pngs + "tlacitkoPreved.png");
+				s.wait(pngs + "tlacitkoPreved.png", 5);
 
-				assertTrue("Očekáváno: -5.1, zjištěno něco jiného", s.find("png/web/vystupLabel.png").right(200).grow
-						(0, 10).exists("png/web/vystupMinus5_1.png") != null);
-				assertTrue("Nenalezeno upozornění o chybě", s.exists("png/web/chybaZaporneCislo.png") != null);
+				assertTrue("Očekáváno: -5.1, zjištěno něco jiného", s.find(pngs + "vystupLabel.png").right(200).grow
+						(0, 10).exists(pngs + "vystupMinus5_1.png") != null);
+				assertTrue("Nenalezeno upozornění o chybě", s.exists(pngs + "chybaZaporneCislo.png") != null);
 			} catch (FindFailed | AssertionError e) {
 				s.capture().save("errors", screenshotName());
 				logger.error(e.getMessage());
@@ -153,22 +80,23 @@ public class TS02_06VariantyVstupChybaWeb {
 	public void TC02_06_03ZaporneCisloVedeckyFormatKladnyVelkeE() {
 		if (run) {
 			try {
-				s.find("png/web/vstupLabel.png").right().grow(0, 20).click("png/web/vstupniTextovePole.png");
+				s.find(pngs + "vstupLabel.png").right().grow(0, 20).click(pngs + "vstupniTextovePole.png");
 				s.paste("-5.1E+1");
-				Match hledani = s.find("png/web/vstupLabel.png").right().grow(0, 20).find
-						("png/web/vstupniVyberovySeznam.png");
+				Match hledani = s.find(pngs + "vstupLabel.png").right().grow(0, 20).find(pngs +
+						"vstupniVyberovySeznam" +
+						".png");
 				hledani.click();
-				hledani.below().click("png/web/vstupM.png");
-				hledani = s.find("png/web/vystupLabel.png").right().grow(0, 20).find("png/web/vystupniVyberovySeznam"
-						+ ".png");
+				hledani.below().click(pngs + "vstupM.png");
+				hledani = s.find(pngs + "vystupLabel.png").right().grow(0, 20).find(pngs + "vystupniVyberovySeznam" +
+						".png");
 				hledani.click();
-				hledani.below().click("png/web/vystupM.png");
-				s.click("png/web/tlacitkoPreved.png");
-				s.wait("png/web/tlacitkoPreved.png", 5);
+				hledani.below().click(pngs + "vystupM.png");
+				s.click(pngs + "tlacitkoPreved.png");
+				s.wait(pngs + "tlacitkoPreved.png", 5);
 
-				assertTrue("Očekáváno: -51, zjištěno něco jiného", s.find("png/web/vystupLabel.png").right(200).grow
-						(0, 10).exists("png/web/vystupMinus51.png") != null);
-				assertTrue("Nenalezeno upozornění o chybě", s.exists("png/web/chybaZaporneCislo.png") != null);
+				assertTrue("Očekáváno: -51, zjištěno něco jiného", s.find(pngs + "vystupLabel.png").right(200).grow(0,
+						10).exists(pngs + "vystupMinus51.png") != null);
+				assertTrue("Nenalezeno upozornění o chybě", s.exists(pngs + "chybaZaporneCislo.png") != null);
 			} catch (FindFailed | AssertionError e) {
 				s.capture().save("errors", screenshotName());
 				logger.error(e.getMessage());
@@ -184,22 +112,22 @@ public class TS02_06VariantyVstupChybaWeb {
 	public void TC02_06_04ZaporneCisloVedeckyFormatZapornyMaleE() {
 		if (run) {
 			try {
-				s.find("png/web/vstupLabel.png").right().grow(0, 20).click("png/web/vstupniTextovePole.png");
+				s.find(pngs + "vstupLabel.png").right().grow(0, 20).click(pngs + "vstupniTextovePole.png");
 				s.paste("-5.1e-1");
-				Match hledani = s.find("png/web/vstupLabel.png").right().grow(0, 20).find
-						("png/web/vstupniVyberovySeznam.png");
+				Match hledani = s.find(pngs + "vstupLabel.png").right().grow(0, 20).find(pngs + "vstupniVyberovySeznam" +
+						".png");
 				hledani.click();
-				hledani.below().click("png/web/vstupM.png");
-				hledani = s.find("png/web/vystupLabel.png").right().grow(0, 20).find("png/web/vystupniVyberovySeznam"
-						+ ".png");
+				hledani.below().click(pngs + "vstupM.png");
+				hledani = s.find(pngs + "vystupLabel.png").right().grow(0, 20).find(pngs + "vystupniVyberovySeznam" +
+						".png");
 				hledani.click();
-				hledani.below().click("png/web/vystupM.png");
-				s.click("png/web/tlacitkoPreved.png");
-				s.wait("png/web/tlacitkoPreved.png", 5);
+				hledani.below().click(pngs + "vystupM.png");
+				s.click(pngs + "tlacitkoPreved.png");
+				s.wait(pngs + "tlacitkoPreved.png", 5);
 
-				assertTrue("Očekáváno: -0.51, zjištěno něco jiného", s.find("png/web/vystupLabel.png").right(200).grow
-						(0, 10).exists("png/web/vystupMinus0_51.png") != null);
-				assertTrue("Nenalezeno upozornění o chybě", s.exists("png/web/chybaZaporneCislo.png") != null);
+				assertTrue("Očekáváno: -0.51, zjištěno něco jiného", s.find(pngs + "vystupLabel.png").right(200).grow
+						(0, 10).exists(pngs + "vystupMinus0_51.png") != null);
+				assertTrue("Nenalezeno upozornění o chybě", s.exists(pngs + "chybaZaporneCislo.png") != null);
 			} catch (FindFailed | AssertionError e) {
 				s.capture().save("errors", screenshotName());
 				logger.error(e.getMessage());
@@ -215,20 +143,20 @@ public class TS02_06VariantyVstupChybaWeb {
 	public void TC02_06_05NevyplnenePole() {
 		if (run) {
 			try {
-				Match hledani = s.find("png/web/vstupLabel.png").right().grow(0, 20).find
-						("png/web/vstupniVyberovySeznam.png");
+				Match hledani = s.find(pngs + "vstupLabel.png").right().grow(0, 20).find(pngs + "vstupniVyberovySeznam" +
+						".png");
 				hledani.click();
-				hledani.below().click("png/web/vstupM.png");
-				hledani = s.find("png/web/vystupLabel.png").right().grow(0, 20).find("png/web/vystupniVyberovySeznam"
-						+ ".png");
+				hledani.below().click(pngs + "vstupM.png");
+				hledani = s.find(pngs + "vystupLabel.png").right().grow(0, 20).find(pngs + "vystupniVyberovySeznam" +
+						".png");
 				hledani.click();
-				hledani.below().click("png/web/vystupM.png");
-				s.click("png/web/tlacitkoPreved.png");
-				s.wait("png/web/tlacitkoPreved.png", 5);
+				hledani.below().click(pngs + "vystupM.png");
+				s.click(pngs + "tlacitkoPreved.png");
+				s.wait(pngs + "tlacitkoPreved.png", 5);
 
-				assertTrue("Očekáváno: \"\", zjištěno něco jiného", s.find("png/web/vystupLabel.png").right().grow(0,
-						10).exists("png/web/vystupniTextovePole.png") != null);
-				assertTrue("Nenalezeno upozornění o chybě", s.exists("png/web/chybaPrazdnePole.png") != null);
+				assertTrue("Očekáváno: \"\", zjištěno něco jiného", s.find(pngs + "vystupLabel.png").right().grow(0,
+						10).exists(pngs + "vystupniTextovePole.png") != null);
+				assertTrue("Nenalezeno upozornění o chybě", s.exists(pngs + "chybaPrazdnePole.png") != null);
 			} catch (FindFailed | AssertionError e) {
 				s.capture().save("errors", screenshotName());
 				logger.error(e.getMessage());
@@ -244,22 +172,22 @@ public class TS02_06VariantyVstupChybaWeb {
 	public void TC02_06_06NepovolenyZnakNeboZapis() {
 		if (run) {
 			try {
-				s.find("png/web/vstupLabel.png").right().grow(0, 20).click("png/web/vstupniTextovePole.png");
+				s.find(pngs + "vstupLabel.png").right().grow(0, 20).click(pngs + "vstupniTextovePole.png");
 				s.paste("12e");
-				Match hledani = s.find("png/web/vstupLabel.png").right().grow(0, 20).find
-						("png/web/vstupniVyberovySeznam.png");
+				Match hledani = s.find(pngs + "vstupLabel.png").right().grow(0, 20).find(pngs + "vstupniVyberovySeznam" +
+						".png");
 				hledani.click();
-				hledani.below().click("png/web/vstupM.png");
-				hledani = s.find("png/web/vystupLabel.png").right().grow(0, 20).find("png/web/vystupniVyberovySeznam"
-						+ ".png");
+				hledani.below().click(pngs + "vstupM.png");
+				hledani = s.find(pngs + "vystupLabel.png").right().grow(0, 20).find(pngs + "vystupniVyberovySeznam" +
+						".png");
 				hledani.click();
-				hledani.below().click("png/web/vystupM.png");
-				s.click("png/web/tlacitkoPreved.png");
-				s.wait("png/web/tlacitkoPreved.png", 5);
+				hledani.below().click(pngs + "vystupM.png");
+				s.click(pngs + "tlacitkoPreved.png");
+				s.wait(pngs + "tlacitkoPreved.png", 5);
 
-				assertTrue("Očekáváno: \"\", zjištěno něco jiného", s.find("png/web/vystupLabel.png").right().grow(0,
-						10).exists("png/web/vystupniTextovePole.png") != null);
-				assertTrue("Nenalezeno upozornění o chybě", s.exists("png/web/chybaNeplatneCislo.png") != null);
+				assertTrue("Očekáváno: \"\", zjištěno něco jiného", s.find(pngs + "vystupLabel.png").right().grow(0,
+						10).exists(pngs + "vystupniTextovePole.png") != null);
+				assertTrue("Nenalezeno upozornění o chybě", s.exists(pngs + "chybaNeplatneCislo.png") != null);
 			} catch (FindFailed | AssertionError e) {
 				s.capture().save("errors", screenshotName());
 				logger.error(e.getMessage());

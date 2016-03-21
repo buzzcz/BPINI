@@ -10,7 +10,7 @@ import static org.junit.Assert.fail;
 /**
  * @author Jaroslav Klaus
  */
-public class TS01_03UplnostVyberovychSeznamuWeb extends SupportWeb {
+public class TS01_03UplnostVyberovychSeznamuJavaFXTS01 extends SupportJavaFX {
 
 	@Test
 	public void TC01_03_01VstupniVyberovySeznam() {
