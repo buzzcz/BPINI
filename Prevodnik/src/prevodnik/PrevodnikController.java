@@ -43,12 +43,7 @@ public class PrevodnikController implements Initializable {
 			chybyVBox.setManaged(false);
 			vstupTextField.setStyle("");
 			vystupTextField.setText("");
-			if (kontrolaVstupu()) {
-				preved();
-			} else {
-				chybyVBox.setManaged(true);
-				chybyVBox.setVisible(true);
-			}
+			if (kontrolaVstupu()) preved();
 			vstupTextField.requestFocus();
 			vstupTextField.positionCaret(0);
 		});
@@ -58,7 +53,6 @@ public class PrevodnikController implements Initializable {
 			chybyVBox.setManaged(false);
 			vstupTextField.setStyle("");
 			vstupTextField.setText("");
-			vystupTextField.setText("");
 			vstupTextField.requestFocus();
 		});
 	}
@@ -71,6 +65,8 @@ public class PrevodnikController implements Initializable {
 			chybaKostkaLabel.setText("■");
 			chybaLabel.setText("Nebylo zadáno žádné číslo pro převod");
 			vstupTextField.setStyle("-fx-border-color: red;");
+			chybyVBox.setManaged(true);
+			chybyVBox.setVisible(true);
 			return false;
 		}
 		try {
@@ -80,8 +76,9 @@ public class PrevodnikController implements Initializable {
 				chybaKostkaLabel.setText("■");
 				chybaLabel.setText("Zadané číslo je záporné");
 				vstupTextField.setStyle("-fx-border-color: red;");
-				vystupTextField.setText(d + "");
-				return false;
+				chybyVBox.setManaged(true);
+				chybyVBox.setVisible(true);
+				return true;
 			}
 			return true;
 		} catch (NumberFormatException e) {
@@ -90,6 +87,8 @@ public class PrevodnikController implements Initializable {
 			chybaLabel.setText("Vstupní číslo není validní (není zapsáno v podporovaném formátu nebo obsahuje " +
 					"nepovolené znaky - viz nápověda).");
 			vstupTextField.setStyle("-fx-border-color: red;");
+			chybyVBox.setManaged(true);
+			chybyVBox.setVisible(true);
 			return false;
 		}
 	}
@@ -100,11 +99,7 @@ public class PrevodnikController implements Initializable {
 			vystupTextField.setText("Infinity");
 			return;
 		}
-		if (vstupComboBox.getSelectionModel().getSelectedIndex() == vystupComboBox.getSelectionModel()
-				.getSelectedIndex()) {
-			vystupTextField.setText(vysledek + "");
-			return;
-		}
+
 		switch (vstupComboBox.getSelectionModel().getSelectedIndex()) {
 			case 0:
 				vysledek = prevedCm(vysledek);
@@ -131,6 +126,8 @@ public class PrevodnikController implements Initializable {
 
 	private double prevedCm(double vysledek) {
 		switch (vystupComboBox.getSelectionModel().getSelectedIndex()) {
+			case 0:
+				return vysledek;
 			case 1:
 			case 3:
 				return vysledek / 2.54;
@@ -175,6 +172,8 @@ public class PrevodnikController implements Initializable {
 			case 1:
 			case 3:
 				return vysledek * 12;
+			case 2:
+				return vysledek;
 			case 4:
 				return vysledek * 0.3048;
 			case 5:
@@ -195,6 +194,8 @@ public class PrevodnikController implements Initializable {
 				return vysledek / 0.0254;
 			case 2:
 				return vysledek / 0.3048;
+			case 4:
+				return vysledek;
 			case 5:
 				return vysledek * 1000;
 			case 6:
@@ -215,6 +216,8 @@ public class PrevodnikController implements Initializable {
 				return vysledek / 304.8;
 			case 4:
 				return vysledek * 0.001;
+			case 5:
+				return vysledek;
 			case 6:
 				return vysledek / 914.4;
 			default:
@@ -235,6 +238,8 @@ public class PrevodnikController implements Initializable {
 				return vysledek * 0.9144;
 			case 5:
 				return vysledek * 914.4;
+			case 6:
+				return vysledek;
 			default:
 				return 0;
 		}
