@@ -48,9 +48,7 @@ public class SupportJavaFX {
 		else pngs = "png/windows/java/";
 		s = new Screen();
 		try {
-			new App("java -jar /home/buzzcz/School/5Semestr/BPINI/Prevodnik/out/artifacts/Prevodnik_jar/Prevodnik" +
-					"" +
-					".jar").open();
+			new App("java -jar Prevodnik.jar").open();
 			application = new App("PřeVODNÍK");
 			application.focus();
 			run = true;

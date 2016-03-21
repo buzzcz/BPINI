@@ -61,9 +61,7 @@ public class TS03VymazaniJavaFX {
 	@Before
 	public void setUp() {
 		try {
-			new App("java -jar /home/buzzcz/School/5Semestr/BPINI/Prevodnik/out/artifacts/Prevodnik_jar/Prevodnik" +
-					"" +
-					".jar").open();
+			new App("java -jar Prevodnik.jar").open();
 			application = new App("PřeVODNÍK");
 			application.focus();
 			s.wait(pngs + "tlacitkoPreved.png", 10);
