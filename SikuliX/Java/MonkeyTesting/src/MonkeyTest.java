@@ -47,7 +47,6 @@ public class MonkeyTest {
 		}
 		application = new App("Calculator");
 		application.focus();
-		window = App.focusedWindow();
 	}
 
 	@AfterClass
@@ -68,6 +67,7 @@ public class MonkeyTest {
 	public void MonkeyTest01() throws FindFailed {
 		Random gen = new Random();
 		while (s.exists(title) != null) {
+			window = App.focusedWindow();
 			Location minCoord = window.getTopLeft();
 			Location maxCoord = window.getBottomRight();
 			int random = gen.nextInt(5);
@@ -85,13 +85,13 @@ public class MonkeyTest {
 					window.rightClick(new Location(x, y));
 					break;
 				case 3: // Paste
-					if (gen.nextInt(1) == 1) window.click(new Location(x, y));
+					if (gen.nextInt(2) == 1) window.click(new Location(x, y));
 					String s = randomString(gen);
 					window.paste(new Location(x, y), s);
 					logger.info("PASTE \"" + s + "\" on [" + x + ", " + y + "]");
 					break;
 				case 4: // Type
-					if (gen.nextInt(1) == 1) window.click(new Location(x, y));
+					if (gen.nextInt(2) == 1) window.click(new Location(x, y));
 					window.type(new Location(x, y), randomString(gen));
 					break;
 			}
