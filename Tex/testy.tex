@@ -1,0 +1,36 @@
+\chapter{Sada ukázkových testů a~jejich scénářů}
+Pro potřeby práce a~pro názornou ukázku odlišnosti přístupu k~testování webové a~desktopové aplikace byla vytvořena téměř identická aplikace Převodník pomocí technologie JavaFX. Následující sada testů a~jejich scénářů se vztahuje k~aplikaci Převodník dostupné z~url \url{http://oks.kiv.zcu.cz/Prevodnik/Prevodnik} a v přiloženém jar souboru.
+
+	\section{Rozdělení testů}
+	Scénáře byly rozděleny do tří částí a~každá část poté může obsahovat další skupiny, které sjednocují tematicky si blízké testy. Struktura tedy vypadá přibližně takto:
+		{\renewcommand{\labelenumii}{\theenumii}
+		\renewcommand{\theenumii}{\theenumi.\arabic{enumii}.}
+		\begin{enumerate}
+		\item Statické prvky
+			\begin{enumerate}
+			\item Přítomnost prvků
+			\item Editovatelnost polí
+			\item Úplnost výběrových seznamů
+			\end{enumerate}
+		\item Převody
+			\begin{enumerate}
+			\item Happy Day Scenario
+			\item Stejné jednotky
+			\item Varianty Vstup OK
+			\item Vše na metr
+			\item Vše z~metru
+			\item Varianty Vstup CHYBA
+			\item Všechny vstupy na všechny výstupy
+			\item Hraniční hodnoty
+			\end{enumerate}
+		\item Vymazání
+		\end{enumerate}}
+		
+	\section{Statické prvky}
+	Scénáře v~této části pouze zkontrolují, zda testovaná aplikace obsahuje všechny prvky, jako např. tlačítka či vstupní pole. Dále se zkoumá, zda je vstupní pole editovatelné a~výstupní pole nikoli. Poté se zjistí, zda jsou ve výběrových seznamech obsaženy všechny položky.
+	
+	\section{Převody}
+	V~této části jsou zpracované funkční testy konkrétních převodů. Nejprve se provedou testy Happy Day Scenario -- scénář, kdy vše dopadne podle očekávání. Poté se zkontrolují převody mezi stejnými jednotkami, převody s*možnými korektními i~nekorektními vstupy, převody mezi všemi jednotkami a~nakonec převody s~hraničními hodnotami.
+	
+	\section{Vymazání}
+	V~této části se testuje funkčnosti tlačítka Vymazat. Otestuje se případ, kdy se nevyskytla chybová hláška, i~ten, kdy se vyskytla.

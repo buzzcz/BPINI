@@ -1,3 +1,6 @@
 #!/bin/bash
 
-vlna -v KkSsVvZzOoUuAaIi -l -m -n -r bakalarka.tex
+for file in "$@"
+do
+	vlna -v KkSsVvZzOoUuAaIi -l -m -n -r "$file"
+done

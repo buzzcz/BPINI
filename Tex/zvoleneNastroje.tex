@@ -1,0 +1,16 @@
+\chapter{Zvolené nástroje}
+Vzhledem k~požadavkům na nástroje, které vyplývají z~vazby na předmět KIV/OKS, jako je bezplatnost, schopnost fungování nezávisle na OS nebo podpora testování programů vytvořených technologií Java a~webových aplikací, jsem z~výše zmíněných vybral nástroje Jubula, SikuliX a~Robot Framework. Každý z~nástrojů bude stručně charakterizován a~bude následovat podrobnější srovnání.
+	\section{Jubula}
+	Jubula je nástroj, který vznikl a~je vyvíjen v~rámci IDE Eclipse. Do projektu přispívá také firma BREDEX GmbH, která vytváří i~tzv. standalone verzi, což je program, který je možné používat samostatně bez IDE Eclipse. Navíc obsahuje navíc některé nespecifikované funkce a~nemusí být licencována pod EPL 1.0, jako je tomu u~verze pro IDE Eclipse.
+	
+	Pro tvorbu testovacích skriptů byla používána metoda Drag \& Drop, popř. se akce určovaly klikáním na různé nabídky. V~jedné z~posledních verzí bylo vydáno Java API a~skripty je tak možné psát pomocí jazyka Java. Mezi podporovaná testovaná rozhraní patří Java Swing, SWT, JavaFX, HTML a~iOS. Výhodou této aplikace je také možnost její integrace do ostatních programů pro organizaci testování.
+	
+	\section{SikuliX}
+	Sikuli (nověji SikuliX) je nástroj, který vznikl jako projekt skupiny User Interface Design Group na MIT, což odpovídá i~jeho licenci -- MIT License. Nyní jeho vývoj převzal Raimund Hock (aka RaiMan) společně s~open-source komunitou.
+	
+	Při tvorbě skriptů je možné využít pro SikuliX vlastní jazyk podobný přirozené angličtině, nebo některý ze zavedených, jako je Python, Ruby, Java, Jython, JRuby, Scala, Groovy, Clojure a~další. Nástroj není omezený na určitá testovaná rozhraní, protože k~identifikaci GUI používá rozpoznávání obrazu podle vzoru\footnote{Pomocí OpenCV, \url{http://opencv.org/}}, dokáže simulovat ovládání myši a~klávesnice nebo rozpoznávat text v~obrázcích\footnote{Pomocí Tesseract OCR, \url{https://github.com/tesseract-ocr}}. Výhodou této aplikace je proto její nezávislost vůči testovanému rozhraní. Cenou za to je pravděpodobné snížení její rychlosti. Použití SikuliX se neomezuje pouze na testování, ale je možné pomocí něj i~automatizovat činnosti.
+	
+	\section{Robot Framework}
+	Robot Framework je nástroj založený na pluginech a~je open-source. Vývoj podporuje společnost Nokia Networks.
+	
+	Základ nástroje, tzv. core framework, je vytvořený v~jazyce Python. Knihovny je možné psát v~jazyce Python nebo Java a~samotné skripty pak v~jazyce podobném přirozené angličtině. Díky dodržování jistého formátování je pro člověka velmi přehledný. Mezi podporovaná testovaná rozhraní patří např. Android, iOS, Java Swing, webové aplikace, databáze a~aplikace vytvořené pro OS Windows. Výhodou této aplikace je možnost si chybějící modul pro testování určitého rozhraní vytvořit a~používat.

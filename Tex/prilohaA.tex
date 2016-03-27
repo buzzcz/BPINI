@@ -1,0 +1,276 @@
+\setcounter{chapter}{-1}
+\chapter{Příloha A}
+	\begin{lstpython}{caption={První skript}, label={PrvniSkript}}
+prohlizec = App("google-chrome")
+prohlizec.open()	#otevre aplikaci definovanou
+				#vyse
+prohlizec.focus()	#vybere do popredi jeji okno
+#ceka, dokud na obrazovce nenajde obrazek
+wait("obr1.png")
+#najde na obrazovce obrazek a vlozi do neho text
+paste("obr2.png", "http://oks.kiv.zcu.cz/Prevodnik")
+type(Key.ENTER)	#simuluje stisk klavesy ENTER
+#najde na obrazovce obrazek a klikne na nej
+click("obr3.png")
+wait("obr4.png")
+paste("obr5.png", "1")
+#klikne o 27px vyse a 18px vlevo od nalezeneho
+#obrazku
+click(Pattern("obr6.png").targetOffset(-27,-18))
+click("obr7.png")
+click("obr4.png")
+#precte text z casti, ktera je 100px vpravo od
+#nalezeneho obrazku
+T = find("obr8.png").right(100).text()
+if T == "2.54":
+	#pokud rozpoznany text souhlasi se zadanym,
+	#otevre se vyskakovaci okno
+    popup("Ok textove")
+else:
+    popError("Chyba")    #jinak se zobrazi chybove
+    			 #okno
+
+if exists("obr9.png"):
+	#pokud na obrazovce existuje obrazek, otevre
+	#se vyskakovaci okno
+    popup("Ok obrazove")
+else:
+    popError("Chyba")
+prohlizec.close()    #ukonci aplikaci
+	\end{lstpython}
+
+	\begin{lstjava}{caption={První test Java API}, label={PrvniJavaAPI}}
+import org.sikuli.basics.Settings;
+import org.sikuli.script.*;
+import javax.swing.*;
+
+public class Test01 {
+
+  static Screen s;
+  static App prohlizec;
+  
+  public static void main(String [] args) {
+    Settings.OcrTextSearch = true;
+    Settings.OcrTextRead = true;
+
+    s= new Screen();
+    prohlizec = new App("google-chrome");
+    prohlizec.open();
+    prohlizec.focus();
+    
+    try {
+      s.wait("obr1.png");
+      s.paste("obr2.png");
+      s.type(Key.ENTER);
+      s.click("obr3.png");
+      s.wait("obr4.png");
+      s.paste("obr5.png", "1");
+      s.click(new Pattern("obr6.png").targetOffset(
+        -27,-18));
+      s.click("obr7.png");
+      s.click("obr4.png");
+      String t = s.find("obr8.png").right(
+        100).text();
+      if (Double.parseDouble(t) == 2.54) {
+        JOptionPane.showMessageDialog(null, "Ok" +
+          " textove");
+      } else {
+        JOptionPane.showMessageDialog(null, "Chyba");
+      }
+      if (s.exists("obr9.png") != null) {
+        JOptionPane.showMessageDialog(null, "Ok" +
+          " obrazove");
+      } else {
+        JOptionPane.showMessageDialog(null, "Chyba");
+      }
+      prohlizec.close();
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
+  }
+}
+	\end{lstjava}
+	
+	\begin{lstjava}{caption={Další testy Java API}, label={DalsiJavaAPI}}
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import org.junit.rules.ErrorCollector;
+import org.sikuli.basics.Debug;
+import org.sikuli.basics.Settings;
+import org.sikuli.script.*;
+import javax.swing.*;
+import java.time.LocalDateTime;
+import static org.junit.Assert.*;
+
+public class Test01 {
+
+  static Logger logger;
+  static ErrorCollector collector;
+  static Screen s;
+  static App prohlizec;
+  static boolean run;
+
+  static {
+    System.setProperty("log4j.configurationFile",
+      "log-konfigurace.xml");
+  }
+
+  private String nazevScreenshotu() {
+    LocalDateTime l = LocalDateTime.now();
+      return l.getYear() + "" + l.getMonthValue() +
+        "" + l.getDayOfMonth() + "" + l.getHour() +
+        "" + (l.getMinute() < 10 ? "0" + l.
+        getMinute() : l.getMinute()) + "" + l.
+        getSecond() + "";
+  }
+
+  @BeforeClass
+  public static void setUpBeforeClass() {
+    logger = LogManager.getLogger();
+
+    Settings.OcrTextSearch = true;
+    Settings.OcrTextRead = true;
+    Debug.setLogger(logger);
+    Debug.setLoggerAll("info");
+
+    collector = new ErrorCollector();
+    s = new Screen();
+    prohlizec = new App("google-chrome");
+    prohlizec.open();
+    prohlizec.focus();
+    run = true;
+    }
+
+  @AfterClass
+  public static void tearDownAfterClass() {
+    JOptionPane.showMessageDialog(null, "Script" +
+      " dokoncen");
+    prohlizec.close();
+  }
+
+  @Before
+  public void setUp() {
+    try {
+      s.wait("png/addressBar.png", 10);
+      s.click(new Pattern("png/addressBar.png").
+        targetOffset(100, 0));
+      s.paste("http://oks.kiv.zcu.cz/Prevodnik");
+      s.type(Key.ENTER);
+      s.wait("png/zalozkaPrevodnik.png", 5);
+    } catch (Exception e) {
+      run = false;
+      s.capture().save("errors", nazevScreenshotu());
+      logger.error(e.getMessage());
+    }
+  }
+
+  @Test
+  public void testPorovnejText() {
+    if (run) {
+      try {
+        s.click("png/zalozkaPrevodnik.png");
+        s.wait("png/tlacitkoPreved.png", 5);
+        s.paste("png/vstup.png", "1");
+        Match m = s.find("png/jednotky.png");
+        m.setTargetOffset(-27, -18);
+        m.click();
+        s.findText("(metr)").click();
+        s.click(new Pattern("png/jednotky.png").
+          targetOffset(-27, 18));
+        s.find("png/dm.png").click();
+        s.click("png/tlacitkoPreved.png");
+        String t = s.find("png/vystup.png").right(
+          100).text();
+        assertEquals(10, Double.parseDouble(t),
+          0.01);
+      } catch (FindFailed | AssertionError e) {
+        s.capture().save("errors",
+          nazevScreenshotu());
+        logger.error(e.getMessage());
+        fail(e.getMessage());
+      }
+    } else {
+      run = true;
+      logger.error("setUp neuspesny");
+      fail("setUp neuspesny");
+    }
+  }
+
+  @Test
+  public void testPorovnejObraz() {
+    if (run) {
+      try {
+        s.click("png/zalozkaPrevodnik.png");
+        s.wait("png/tlacitkoPreved.png", 5);
+        s.paste("png/vstup.png", "1");
+        s.click(new Pattern("png/jednotky.png").
+          targetOffset(-27, -18));
+        s.click("png/inch.png");
+        s.click("png/tlacitkoPreved.png");
+        assertTrue(s.exists("png/vysledek.png") !=
+          null);
+      } catch (FindFailed | AssertionError e) {
+        s.capture().save("errors",
+          nazevScreenshotu());
+        logger.error(e.getMessage());
+        fail(e.getMessage());
+      }
+    } else {
+      run = true;
+      logger.error("setUp neuspesny");
+      fail("setUp neuspesny");
+    }
+  }
+
+  @Test
+  public void testZkontrolujOdkazObrazekKiv() {
+    if (run) {
+      try {
+        s.click("png/logoKiv.png");
+        assertTrue(s.exists("png/zahlaviKiv.png") !=
+          null);
+      } catch (FindFailed | AssertionError e) {
+        s.capture().save("errors",
+          nazevScreenshotu());
+        logger.error(e.getMessage());
+        fail(e.getMessage());
+      }
+    } else {
+      run = true;
+      logger.error("setUp neuspesny");
+      fail("setUp neuspesny");
+    }
+  }
+
+  @Test
+  public void testChyba() {
+    if (run) {
+      try {
+        s.wait("png/tlacitkoPreved.png", 5);
+        s.paste("png/vstup.png", "1");
+        s.click(new Pattern("png/jednotky.png").
+          targetOffset(-27, -18));
+        s.findText("(metr)").click();
+        s.click("png/tlacitkoPreved.png");
+        String t = s.find("png/vystup.png").right(
+          100).text();
+        assertEquals(100, Double.parseDouble(t),
+          0.01);
+      } catch (FindFailed | AssertionError e) {
+        s.capture().save("errors",
+          nazevScreenshotu());
+        logger.error(e.getMessage());
+        fail(e.getMessage());
+      }
+    } else {
+      run = true;
+      logger.error("setUp neuspesny");
+      fail("setUp neuspesny");
+    }
+  }
+}
+	\end{lstjava}

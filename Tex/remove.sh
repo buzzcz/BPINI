@@ -1,3 +1,3 @@
 #!/bin/bash
 
-rm *.aux *.bbl *.blg *.log *.toc *.out
+rm *.aux *.bbl *.blg *.log *.toc *.out *.gz
