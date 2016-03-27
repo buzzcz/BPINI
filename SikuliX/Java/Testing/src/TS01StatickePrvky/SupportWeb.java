@@ -21,7 +21,7 @@ public class SupportWeb {
 	public static Logger logger;
 	public static Screen s;
 	public static App browser;
-	public static boolean run;
+	public static boolean linux, run;
 	public static String pngs;
 
 	static {
@@ -45,11 +45,13 @@ public class SupportWeb {
 		Debug.setLogger(logger);
 		Debug.setLoggerAll("info");
 
-		if (System.getProperty("os.name").equals("Linux")) pngs = "png/linux/web/";
+		linux = System.getProperty("os.name").equals("Linux");
+
+		if (linux) pngs = "png/linux/web/";
 		else pngs = "png/windows/web/";
 		s = new Screen();
 		try {
-			if (System.getProperty("os.name").equals("Linux")) new App("google-chrome").open();
+			if (linux) new App("google-chrome").open();
 			else new App("C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe").open();
 			browser = new App("Chrome");
 			browser.focus();

@@ -11,6 +11,7 @@ import org.sikuli.script.Match;
 import org.sikuli.script.Screen;
 
 import javax.swing.*;
+import java.io.IOException;
 import java.time.LocalDateTime;
 
 import static org.junit.Assert.assertTrue;
@@ -24,7 +25,7 @@ public class TS03VymazaniJavaFX {
 	private static Logger logger;
 	private static Screen s;
 	private static App application;
-	private static boolean run;
+	private static boolean linux, run;
 	private static String pngs;
 
 	static {
@@ -48,7 +49,9 @@ public class TS03VymazaniJavaFX {
 		Debug.setLogger(logger);
 		Debug.setLoggerAll("info");
 
-		if (System.getProperty("os.name").equals("Linux")) pngs = "png/linux/java/";
+		linux = System.getProperty("os.name").equals("Linux");
+
+		if (linux) pngs = "png/linux/java/";
 		else pngs = "png/windows/java/";
 		s = new Screen();
 	}
@@ -61,12 +64,12 @@ public class TS03VymazaniJavaFX {
 	@Before
 	public void setUp() {
 		try {
-			new App("java -jar Prevodnik.jar").open();
+			Runtime.getRuntime().exec("java -jar Prevodnik.jar");
 			application = new App("PřeVODNÍK");
 			application.focus();
 			s.wait(pngs + "tlacitkoPreved.png", 10);
 			run = true;
-		} catch (FindFailed e) {
+		} catch (IOException | FindFailed e) {
 			run = false;
 			s.capture().save("errors", screenshotName());
 			logger.error(e.getMessage());

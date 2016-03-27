@@ -13,6 +13,7 @@ import org.sikuli.script.FindFailed;
 import org.sikuli.script.Screen;
 
 import javax.swing.*;
+import java.io.IOException;
 import java.time.LocalDateTime;
 
 import static org.junit.Assert.fail;
@@ -24,7 +25,7 @@ public class SupportJavaFX {
 	public static Logger logger;
 	public static Screen s;
 	public static App application;
-	public static boolean run;
+	public static boolean linux, run;
 	public static String pngs;
 
 	static {
@@ -48,7 +49,9 @@ public class SupportJavaFX {
 		Debug.setLogger(logger);
 		Debug.setLoggerAll("info");
 
-		if (System.getProperty("os.name").equals("Linux")) pngs = "png/linux/java/";
+		linux = System.getProperty("os.name").equals("Linux");
+
+		if (linux) pngs = "png/linux/java/";
 		else pngs = "png/windows/java/";
 		s = new Screen();
 	}
@@ -61,12 +64,12 @@ public class SupportJavaFX {
 	@Before
 	public void setUp() {
 		try {
-			new App("java -jar Prevodnik.jar").open();
+			Runtime.getRuntime().exec("java -jar Prevodnik.jar");
 			application = new App("PřeVODNÍK");
 			application.focus();
 			s.wait(pngs + "tlacitkoPreved.png", 10);
 			run = true;
-		} catch (FindFailed e) {
+		} catch (IOException | FindFailed e) {
 			run = false;
 			s.capture().save("errors", screenshotName());
 			logger.error(e.getMessage());
