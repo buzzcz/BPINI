@@ -39,12 +39,11 @@ public class MonkeyTest {
 		if (System.getProperty("os.name").equals("Linux")) {
 			new App("gnome-calculator").open();
 			title = "png/title.png";
-			new Screen().wait(title, 5);
 		} else {
 			new App("C:\\Windows\\system32\\calc.exe").open();
 			title = "png/winTitle.png";
-			new Screen().wait(title, 5);
 		}
+		new Screen().wait(title, 5);
 		application = new App("Calculator");
 		application.focus();
 	}
