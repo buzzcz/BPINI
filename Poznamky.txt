@@ -1,13 +1,17 @@
-Problém s velikostí stránky - zvětšení fontu...
-Problém s OCR není přesné, nemusí najít text (např. pouze jedno číslo ve webové aplikaci nebylo rozpoznáno, nebo O místo 0)
-Sirsi screenshot nez kde hledam
-Pozor na mys ve screenshotu
-Lepsi napsat si vlastni test nebo ho "naklikat" v IDE??
+Rozšířit abstrakt
 Srovnání testů pro web a JavaFX - stejné testy, jiné screenshoty
-Popsat záměrné chyby v Převodníku
-
-Začít pomalu psát - přidat po úvodu kapitolu o základech testování
-
-Testy pripravit pro Win i pro Linux - statická konstanta OS + screeny z Win7
+Monkey testy (nezávisle na SikuliX) jsou závislé na platformě
+Napsat rychlostní rozdíl mezi SikuliX a Seleniem
+V aplikaci jsou záměrně zanesené chyby - do úvodu - odkaz na chyby
+8.1 přidat to, že se doporučuje 100% velikost stránky
+8.5.3 jedná se o spuštění z programově spouštěného testu, místo příkazu vložit 3 řádky kódu
+Do úvodu psát o monkey testech
+Popsat sadu testů - organizace
 
 Ukazku pouziti ne testovani ale na automatizaci cinnosti např. spusteni TestLinku
+
+Moje otázky:
+Není 2 moc obecná??
+Jak správně citovat - používat převzaté "seznamy" apod.
+
+Kam jsem psal:
