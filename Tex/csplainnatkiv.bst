@@ -1,13 +1,20 @@
-%% $Id: csplainnat.bst 26 2007-04-08 21:20:48Z mudrd8mz $
+%% Slight modification of the `csplainnat.bst' style, obtained
+%% 2016/03/07 from http://repo.or.cz/w/csplainnat.git
+%% Changed: format.url outputs the URL using \url command,
+%% and omits angle brackets as they are not required by ISO-690.
+%% (i.e. instead of <www.xxx.com> writes just www.xxx.com)
+%% (changed by Petr Lobaz, lobaz@kiv.zcu.cz, 2016/03/07)
+%%
+%% $Id$
 %% File: `csplainnat.bst' for use with natbib package
-%% This is a modification of `plainnat.bst' for Czech references style 
+%% This is a modification of `plainnat.bst' for Czech references style
 %% (According to "CSN ISO 690: Bibliograficke citace. Obsah, forma a struktura").
 %% Some modifications are commented, look for the keyword 'CHANGE'
 %% For more detailed info use svn repository svn://kraken.pedf.cuni.cz/csplainnat/
 %%
 %% Original plainnat.bst by Patrick W Daly
 %% Modifications by David Mudr{\'{a}}k mudrd8mz@uxit.pedf.cuni.cz
-%% 
+%%
 %% MAJOR MODIFICATIONS
 %% * Added "@ONLINE" item type with added "cited" field.
 %%
@@ -216,7 +223,7 @@ FUNCTION {capitalize}  %  CHANGE mudrd8mz 2005-10-12 adding new function
 {
   duplicate$ empty$
     { pop$ "" }
-    { "u" change.case$ }
+    { "{\sc " swap$ * "}" * } %{ "u" change.case$ }
   if$
 }
 
@@ -229,18 +236,18 @@ FUNCTION {format.names.full}
   s num.names$ 'numnames :=
   numnames 'namesleft :=
     { namesleft #0 > }
-    { s nameptr "{ll}" format.name$ 't1 :=          % CHANGE mudrd8mz 2005-10-12 
-      t1 capitalize 't1 :=                          % CHANGE mudrd8mz 2005-10-12 
+    { s nameptr "{ll}" format.name$ 't1 :=          % CHANGE mudrd8mz 2005-10-12
+      t1 capitalize 't1 :=                          % CHANGE mudrd8mz 2005-10-12
       s nameptr "{, f.}{~j.}" format.name$ 't2 :=   % CHANGE mudrd8mz 2005-10-12
       t1 t2 * 't :=
       nameptr #1 >
         { namesleft #1 >
             { " -- " * t * } % CHANGE mudrd8mz 2005-10-13 : adding "--"
             { numnames #2 >
-                { "" * } % CHANGE mudrd8mz 2005-10-12 
+                { "" * } % CHANGE mudrd8mz 2005-10-12
                 'skip$
               if$
-              t "OTHERS" = % CHANGE mudrd8mz 2005-10-12 because of capitalize 
+              t "OTHERS" = % CHANGE mudrd8mz 2005-10-12 because of capitalize
                 { " et~al." * }
                 { " -- " * t * } % CHANGE mudrd8mz 2005-10-12 : between the last and the one before
               if$
@@ -257,15 +264,15 @@ FUNCTION {format.names.full}
 
 FUNCTION {format.names.short} %  CHANGE mudrd8mz 2005-10-14 adding more authors version
 { 's :=
-  s #1 "{ll}" format.name$ 't1 :=          
-  t1 capitalize 't1 :=                    
-  s #1 "{, f.}{~j.}" format.name$ 't2 := 
+  s #1 "{ll}" format.name$ 't1 :=
+  t1 capitalize 't1 :=
+  s #1 "{, f.}{~j.}" format.name$ 't2 :=
   t1 t2 * " et~al." *
 }
 
 FUNCTION {format.names}
 {   duplicate$
-    num.names$ #3 >             
+    num.names$ #3 >
         {format.names.short} % pokud ma citace vice nez 3 autory, uvadi se pouze PRVNI et al.
         {format.names.full}  % pokud ma citace max 3 autory, uvadi se vsichni
     if$
@@ -314,7 +321,7 @@ FUNCTION {format.issn}
 FUNCTION {format.url}
 { url empty$
     { "" }
-    { new.block "Dostupn{\'{e}} z: \url{" url * "}" * }
+    { new.block "Dostupn{\'{e}}~z: \url{" url * "}" * }
   if$
 }
 
@@ -352,7 +359,7 @@ FUNCTION {format.full.names}
               if$
               t "others" =
                 { " et~al." * }
-                { ", " * t * } %  CHANGE mudrd8mz 2005-10-12 
+                { ", " * t * } %  CHANGE mudrd8mz 2005-10-12
               if$
             }
           if$
@@ -548,8 +555,8 @@ FUNCTION {format.pages}
 { pages empty$
     { "" }
     { pages multi.page.check
-        { "s.~" pages n.dashify tie.or.space.connect }  % CHANGE mudrd8mz 2007-03-15: 'pages' -> 's.'
-        { "s.~" pages tie.or.space.connect }            % CHANGE mudrd8mz 2007-03-15: 'pages' -> 's.'
+        { "s." pages n.dashify tie.or.space.connect }  % CHANGE mudrd8mz 2007-03-15: 'pages' -> 's.'
+        { "s." pages tie.or.space.connect }            % CHANGE mudrd8mz 2007-03-15: 'pages' -> 's.'
       if$
     }
   if$
@@ -608,7 +615,7 @@ FUNCTION {format.chapter.pages}
 { chapter empty$
     'format.pages
     { type empty$
-        { "chapter" }
+        { "" }   % CHANGE mudrd8mz 2008-04-08 removing the word "chapter"
         { type "l" change.case$ }
       if$
       chapter tie.or.space.connect
@@ -625,7 +632,7 @@ FUNCTION {format.in.ed.booktitle}
     { "" }
     { editor empty$
         { "In " booktitle emphasize * }
-        { "In " format.editors * " " * booktitle emphasize * } %  CHANGE mudrd8mz 2005-10-12 
+        { "In " format.editors * " " * booktitle emphasize * } %  CHANGE mudrd8mz 2005-10-12
       if$
     }
   if$
@@ -802,8 +809,9 @@ FUNCTION {book}
       format.bvolume output
       format.number.series output
       new.sentence
-      address "~: " * publisher *   % CHANGE mudrd8mz 2005-10-12 
-      "publisher" output.check      
+      publisher
+      % address "~: " * publisher *   % CHANGE mudrd8mz 2005-10-12
+      "publisher" output.check
     }
     { new.block
       format.book.crossref output.nonnull
@@ -887,14 +895,15 @@ FUNCTION {incollection}
     { format.in.ed.booktitle "booktitle" output.check
       format.bvolume output
       format.number.series output
-      format.chapter.pages output
       new.sentence
       address ": " * publisher *   % CHANGE mudrd8mz 2005-10-12
-      "publisher" output.check      
+      "publisher" output.check
       %publisher "publisher" output.check
       %address output
       format.edition output
       format.date "year" output.check
+      new.sentence
+      format.chapter.pages output
     }
     { format.incoll.inproc.crossref output.nonnull
       format.chapter.pages output

@@ -1,9 +1,60 @@
-\documentclass{bakalarka}
-\usepackage[utf8]{inputenc} 
-\usepackage[czech]{babel}
-\usepackage{ae}
-\usepackage{fancyhdr}
-\usepackage{graphicx}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Vzor pro sazbu kvalifikační práce
+%
+% Západočeská univerzita v Plzni
+% Fakulta aplikovaných věd
+% Katedra informatiky a výpočetní techniky
+%
+% Petr Lobaz, lobaz@kiv.zcu.cz, 2016/03/14
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Možné jazyky práce: czech, english
+% Možné typy práce: BP (bakalářská), DP (diplomová)
+\documentclass[czech,BP]{thesiskiv}
+
+% Definujte údaje pro vstupní strany
+%
+% Jméno a příjmení; kvůli textu prohlášení určete, 
+% zda jde o mužské, nebo ženské jméno.
+\author{Jaroslav Klaus}
+\declarationmale
+
+%alternativa: 
+%\declarationfemale
+
+% Název práce
+\title{Využití nástrojů pro testování grafického uživatelského rozhraní}
+
+% 
+% Texty abstraktů (anglicky, česky)
+%
+\abstracttexten{This paper deals with the use of software tools for testing graphical user interface. It compares some of the tools and describes the use of one of them in a~way that fits into the subject KIV/OKS.}
+
+\abstracttextcz{Tato práce se zabývá využitím nástrojů k~testování grafického uživatelského rozhraní aplikací. Srovnává některé nástroje k~tomu určené a~popisuje použití jednoho z~nich tak, aby svou filosofií zapadal do předmětu KIV/OKS.}
+
+% Na titulní stranu a do textu prohlášení se automaticky vkládá 
+% aktuální rok, resp. datum. Můžete je změnit:
+%\titlepageyear{2016}
+%\declarationdate{1. března 2016}
+
+% Ve zvláštních případech je možné ovlivnit i ostatní texty:
+%
+%\university{Západočeská univerzita v Plzni}
+%\faculty{Fakulta aplikovaných věd}
+%\department{Katedra informatiky a výpočetní techniky}
+%\subject{Bakalářská práce}
+%\titlepagetown{Plzeň}
+%\declarationtown{Plzni}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% DODATEČNÉ BALÍČKY PRO SAZBU
+% Jejich užívání či neužívání záleží na libovůli autora 
+% práce
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{float}
 \usepackage{eurosym}
 \usepackage{longtable}
@@ -11,7 +62,6 @@
 \usepackage{enumitem}
 \usepackage{listings}
 \usepackage{color}
-\usepackage[colorlinks=true]{hyperref}
 
 \definecolor{brown}{rgb}{.33,.28,0}
 \definecolor{gray}{rgb}{.3,.42,.45}
@@ -24,6 +74,7 @@
 \lstnewenvironment{lstpython}[2][]{\lstset{
 	#1,
 	#2,
+	captionpos=b,
 	language=Python,
 	frame=single,
 	basicstyle=\ttfamily,
@@ -41,6 +92,7 @@
 \lstnewenvironment{lstjava}[2][]{\lstset{
 	#1,
 	#2,
+	captionpos=b,
 	language=Java,
 	frame=single,
 	basicstyle=\ttfamily,
@@ -50,52 +102,41 @@
 	stringstyle=\color{red}
 }}{}
 
-\author{Jaroslav Klaus}
-\title{Využití nástrojů pro testování grafického uživatelského rozhraní}
-\titlet{}
-\titlett{}
-\university{Západočeská univerzita v~Plzni}
-\faculty{Fakulta aplikovaných věd}
-\department{Katedra informatiky a~výpočetní techniky}
-\subject{Bakalářská práce}
-\town{Plzeň}
-\begin{document}
-\pagestyle{fancy}
-\renewcommand{\chaptermark}[1]{\markboth{\textit{#1}}{}}
-\renewcommand{\sectionmark}[1]{\markright{\textit{#1}}{}}
-\cfoot{\thepage}
-\lhead{\leftmark}
-\rhead{\rightmark}
-\maketitle
-\chapter*{Prohlášení}
-\thispagestyle{empty}
-Prohlašuji, že jsem práci vypracoval samostatně a~výhradně s~použitím citovaných pramenů.
-\vskip 1.5em
-V~Plzni dne \today
-\vskip 0.7em
-\hskip 9cm Jaroslav Klaus
-\chapter*{Abstract}
-\thispagestyle{empty}
-This paper deals with the use of software tools for testing graphical user interface. It compares some of the tools and describes the use of one of them in a~way that fits into the subject KIV/OKS.
+% Zařadit literaturu do obsahu
+\usepackage[nottoc,notlot,notlof]{tocbibind}
 
-\begingroup
-\let\clearpage\relax
-\chapter*{Abstrakt}
-\endgroup
-\thispagestyle{empty}
-Tato práce se zabývá využitím nástrojů k~testování grafického uživatelského rozhraní aplikací. Srovnává některé nástroje k~tomu určené a~popisuje použití jednoho z~nich tak, aby svou filosofií zapadal do předmětu KIV/OKS.
+% Umožňuje vkládání obrázků
+\usepackage[pdftex]{graphicx}
+
+% Odkazy v PDF jsou aktivní; navíc se automaticky vkládá
+% balíček 'url', který umožňuje např. dělení slov
+% uvnitř URL
+\usepackage[pdftex]{hyperref}
+\hypersetup{colorlinks=true,
+  unicode=true,
+  linkcolor=black,
+  citecolor=black,
+  urlcolor=black,
+  bookmarksopen=true}
+
+% Při používání citačního stylu csplainnatkiv
+% (odvozen z csplainnat, http://repo.or.cz/w/csplainnat.git)
+% lze snadno modifikovat vzhled citací v textu
+\usepackage[square,sort&compress]{natbib}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% VLASTNÍ TEXT PRÁCE
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+%
+\maketitle
 \cleardoublepage
 \pagenumbering{gobble}
 \tableofcontents
 \cleardoublepage
 \pagenumbering{arabic}
-\pagestyle{fancy}
-\renewcommand{\chaptermark}[1]{\markboth{\textit{#1}}{}}
-\renewcommand{\sectionmark}[1]{\markright{\textit{#1}}{}}
-\cfoot{\thepage}
-\lhead{\leftmark}
-\rhead{\rightmark}
-\parskip 1em
 
 \include{uvod}
 
@@ -114,10 +155,15 @@ Tato práce se zabývá využitím nástrojů k~testování grafického uživate
 \include{problemy}
 		
 \include{zaver}
-		
-\appendix
-\bibliographystyle{csplainnat}
-\bibliography{bakalarka}
-\addtocontents{toc}{\setcounter{tocdepth}{-1}}
+ 
+% 
+% PRO ANGLICKOU SAZBU JE NUTNÉ ZMĚNIT
+% CITAČNÍ STYL!
+%
+\bibliographystyle{csplainnatkiv}
+{\raggedright\small
+\bibliography{literatura}
+}
+
 \include{prilohaA}
 \end{document}

@@ -1,5 +1,5 @@
-\chapter{Problémy}
-Během tvorby testů je možné narazit na různé problém. Ty, které byly zjištěny během vytváření této práce, jsou zde uvedeny, popsány a~je k~nim nastíněno možné řešení.
+\chapter{Problémy práce se SikuliX}
+Během tvorby testů je možné narazit na různé problémy. Ty, které byly zjištěny během vytváření této práce, jsou zde uvedeny, popsány a~je k~nim nastíněno možné řešení.
 
 	\section{Rozlišení obrazovky}
 	Jelikož se SikuliX v aplikaci orientuje podle screenshotů, je v~danou chvíli závislé na rozlišení, ve kterém byl snímek pořízen. To je z~důvodu, že ještě není implementována funkce, která by měla tento problém odstranit. Pokud se změní rozlišení, nebude daný prvek nalezen, ačkoli bude možné pouhým okem zjistit, že ve skutečnosti přítomen je. Stejný problém nastává i~pokud se změní např. písmo nebo velikost webové stránky s~aplikací a~podobnými změnami vzhledu.
@@ -7,7 +7,7 @@ Během tvorby testů je možné narazit na různé problém. Ty, které byly zji
 	Jedním z~možných řešení je, že si uděláte screenshoty pro různá rozlišení, písma nebo velikosti stránek, případně budete testovat pouze s~jedním daným rozlišením, písmem nebo velikostí stránky.
 	
 	\section{Rozměry screenshotů}
-	Pokud se v~testu hledá prvek v~závisloti na pozici jiného, je možné, že nebude nalezen. Důvodem mohou být rozdílné rozměry screenshotů v~kombinaci s~použitými metodami hledání -- první prvek nalezneme, ale screenshot druhého je větší, než prohledávaná oblast vymezená rozměry prvního, tudíž nemůže být nalezen.
+	Pokud se v~testu hledá prvek v~závislosti na pozici jiného, je možné, že nebude nalezen. Důvodem mohou být rozdílné rozměry screenshotů v~kombinaci s~použitými metodami hledání -- první prvek nalezneme, ale screenshot druhého je větší, než prohledávaná oblast vymezená rozměry prvního, tudíž nemůže být nalezen.
 	
 	\section{Ukazatel myši}
 	Při pořizování screenshotů je vhodné vyvarovat se umístění ukazatele myši ve snímané oblasti. Ten se totiž v~průběhu testu v~této oblasti vyskytovat nemusí a~hledaný prvek by tak nemusel být rozpoznán.
@@ -20,10 +20,21 @@ Během tvorby testů je možné narazit na různé problém. Ty, které byly zji
 	Možným řešením je tedy nasimulovat korektní výstup, provést screenshot a ten použít pro obrazové rozpoznání správného výsledku.
 	
 	\section{Nefunkčnost některých metod, tříd}
-	Java API SikuliX poskytuje třídy a metody pro práci s aplikacemi a jejich okny. Tyto metody a třídy mají však občas jiné než očekávané chování. Vzhledem k téměř nulové dokumentaci je toto celkem velký problém. Konkrétním příkladem je např. to, pokud bychom chtěli testování omezit pouze na okno aplikace. SikuliX je schopno okno s aplikací najít podle (části) jejího titulku a přenést jej do popředí. Už ale není schopno získat rozměry a pozici tohoto okna, ačkoli metody pro tyto funkce existují.
+	Java API SikuliX poskytuje třídy a metody pro práci s aplikacemi a jejich okny. Tyto metody a třídy mají však občas jiné než očekávané chování. Vzhledem k téměř nulové dokumentaci je toto celkem velký problém.
+
+		\subsection{Pozice a velikost okna}		
+		Konkrétním příkladem je např. to, pokud bychom chtěli testování omezit pouze na okno aplikace. SikuliX je schopno okno s aplikací najít podle (části) jejího titulku a přenést jej do popředí. Už ale není schopno získat rozměry a pozici tohoto okna, ačkoli metody pro tyto funkce existují.
 	
-	Postup, kterým se dá tato funkcionalita nahradit, je následující. Aplikaci najdeme podle jejího titulku a necháme ji přenést do popředí. Poté je SikuliX schopné získat pozici a rozměry okna, které je v popředí (má tzv. focus).
+		Postup, kterým se dá tato funkcionalita nahradit, je následující. Aplikaci najdeme podle jejího titulku a necháme ji přenést do popředí. Poté je SikuliX schopné získat pozici a rozměry okna, které je v popředí (má tzv. focus).
+		
+		\subsection{Stav aplikace}
+		Dále nedokázalo indikovat, že aplikace skončila svůj běh. Pokud jsme tedy použili cyklus "testuj, dokud aplikace běží", testování pokračovalo i v případě, že byla aplikace již ukončena.
 	
-	Dále nedokázalo indikovat, že aplikace ukončila svůj běh. Pokud jsme tedy použili cyklus "testuj, dokud aplikace běží", testování pokračovalo i v případě, že byla aplikace již zavřena.
-	
-	Náhradním řešením tedy bylo vytvořit screenshot některé části aplikace, která se nemění a je vždy v aplikaci přítomna. Cyklus poté vypadá takto "testuj, dokud najdeš tuto část aplikace". To však není řešení absolutní, protože nebude funkční v případech, kdy se objeví např. dialogové okno, které tuto části zakryje, nebo pokud taková část vůbec neexistuje.
+		Náhradním řešením tedy bylo vytvořit screenshot některé části aplikace, která se nemění a je vždy v aplikaci přítomna. Cyklus poté vypadá takto: "testuj, dokud najdeš tuto část aplikace". To však není řešení absolutní, protože nebude funkční v případech, kdy se objeví např. dialogové okno, které tuto části zakryje, nebo pokud taková část vůbec neexistuje.
+		
+		\subsection{Spuštění aplikace}
+		Metody pro spuštění aplikace, které SikuliX poskytuje, fungovaly bez problémů v~OS Linux, avšak v~OS Windows nastal problém. SikuliX nebylo schopné otevřít aplikaci pomocí příkazu\\
+		\texttt{java -jar cesta/k/aplikaci.jar}
+		
+		Tento problém jsem nebyl schopen za pomoci SikuliX vyřešit. Použil jsem proto metodu poskytovanou programovacím jazykem Java, konkrétně\\
+		\texttt{Runtime.getRuntime().exec("java -jar cesta/k/aplikaci.jar");}
