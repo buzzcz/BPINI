@@ -1,7 +1,7 @@
 \chapter{Sada ukázkových testů a~jejich scénářů}
 Pro potřeby práce a~pro názornou ukázku odlišnosti přístupu k~testování webové a~desktopové aplikace byla vytvořena téměř identická aplikace Převodník pomocí technologie JavaFX. Následující sada testů a~jejich scénářů se vztahuje k~této aplikaci a~k~té dostupné z~url \url{http://oks.kiv.zcu.cz/Prevodnik/Prevodnik}.
 
-Ze scénářů i~z~přiloženého zdrojového kódu je patrné, že přístup k~testování obou aplikací je totožný. Testy vypadají stejně jak pro desktopovou aplikaci, tak pro webovou. Jediné rozdíly nastávají ve způsobu spouštění aplikací, zacházení s~nimi a~v~cestě k použitým řídícím screenshotům. Příčinou je to, že se jedná o~téměř identicky vypadající a~chovající se aplikace.
+Ze scénářů i~z~přiloženého zdrojového kódu je patrné, že přístup k~testování obou aplikací je totožný. Testy vypadají stejně jak pro desktopovou aplikaci, tak pro webovou. Jediné rozdíly nastávají ve způsobu spouštění aplikací, zacházení s~nimi a~v~cestě k~použitým řídícím screenshotům. Příčinou je to, že se jedná o~téměř identicky vypadající a~chovající se aplikace.
 
 	\section{Rozdělení testů}
 	Scénáře byly rozděleny do tří částí a~každá část poté může obsahovat další skupiny, které sjednocují tematicky si blízké testy. Struktura tedy vypadá přibližně takto:
@@ -40,8 +40,8 @@ Ze scénářů i~z~přiloženého zdrojového kódu je patrné, že přístup k~
 	\section{Zjištěné chyby}
 	Během testování aplikace bylo zjištěno několik chyb. Tyto chyby jsou v~aplikaci zaneseny záměrně.
 	
-		\subsection{Chybné převody z (na) decimetry}
-		Pokud provádíme převod z (případně na) decimetry, dostaneme nesprávný výsledek. Chování odpovídá převodu z (na) palce. Dále u~jednotek decimetry i~palce v~situaci, kdy jsou použity jak na vstupu, tak na výstupu, je hodnota 3 převedena přibližně na 2.9999996.
+		\subsection{Chybné převody z~(na) decimetry}
+		Pokud provádíme převod z~(případně na) decimetry, dostaneme nesprávný výsledek. Chování odpovídá převodu z~(na) palce. Dále u~jednotek decimetry i~palce v~situaci, kdy jsou použity jak na vstupu, tak na výstupu, je hodnota 3 převedena přibližně na 2.9999996.
 		
 		\subsection{Převod záporné hodnoty}
 		Při zadání záporné hodnoty pro převod se zobrazí chybová hláška o~záporném čísle, avšak převod se i~tak provede.
