@@ -54,7 +54,7 @@ public class SupportJavaFX {
 			application = new App("PřeVODNÍK");
 			application.focus();
 			run = true;
-			s.wait(pngs + "tlacitkoPreved.png", 10);
+			s.wait(pngs + "tlacitka/tlacitkoPreved.png", 10);
 		} catch (Exception e) {
 			run = false;
 			s.capture().save("errors", screenshotName());

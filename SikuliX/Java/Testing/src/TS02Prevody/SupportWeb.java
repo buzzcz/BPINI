@@ -77,7 +77,7 @@ public class SupportWeb {
 				s.click(new Pattern(pngs + "addressBar.png").targetOffset(100, 0));
 				s.paste("http://oks.kiv.zcu.cz/Prevodnik/Prevodnik");
 				s.type(Key.ENTER);
-				s.wait(pngs + "tlacitkoPreved.png", 5);
+				s.wait(pngs + "tlacitka/tlacitkoPreved.png", 5);
 				run = true;
 			} catch (FindFailed e) {
 				run = false;

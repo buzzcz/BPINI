@@ -79,7 +79,7 @@ public class TS03VymazaniWeb {
 				s.click(new Pattern(pngs + "addressBar.png").targetOffset(100, 0));
 				s.paste("http://oks.kiv.zcu.cz/Prevodnik/Prevodnik");
 				s.type(Key.ENTER);
-				s.wait(pngs + "tlacitkoPreved.png", 5);
+				s.wait(pngs + "tlacitka/tlacitkoPreved.png", 5);
 				run = true;
 			} catch (FindFailed e) {
 				run = false;
@@ -97,31 +97,29 @@ public class TS03VymazaniWeb {
 	public void TC03_01_01PrevodOk() {
 		if (run) {
 			try {
-				s.find(pngs + "vstupLabel.png").right().grow(0, 20).click(pngs + "vstupniTextovePole.png");
+				s.find(pngs + "labely/vstupLabel.png").right().grow(0, 20).click(pngs +
+						"textovaPole/vstupniTextovePole.png");
 				s.paste("1");
-				Match hledani = s.find(pngs + "vstupLabel.png").right().grow(0, 20).find(pngs +
-						"vstupniVyberovySeznam" +
-						".png");
+				Match hledani = s.find(pngs + "labely/vstupLabel.png").right().grow(0, 20).find(pngs +
+						"vyberoveSeznamy/vstupniVyberovySeznam.png");
 				hledani.click();
-				hledani.below().click(pngs + "vstupIn.png");
-				hledani = s.find(pngs + "vystupLabel.png").right().grow(0, 20).find(pngs + "vystupniVyberovySeznam" +
-						".png");
+				hledani.below().click(pngs + "vyberoveSeznamy/vstupIn.png");
+				hledani = s.find(pngs + "labely/vystupLabel.png").right().grow(0, 20).find(pngs +
+						"vyberoveSeznamy/vystupniVyberovySeznam.png");
 				hledani.click();
-				hledani.below().click(pngs + "vystupMm.png");
-				s.click(pngs + "tlacitkoPreved.png");
-				s.wait(pngs + "tlacitkoPreved.png", 5);
-
-				s.click(pngs + "tlacitkoVymaz.png");
-				s.wait(pngs + "tlacitkoPreved.png", 5);
-
-				assertTrue("Vstupní pole není prázdné", s.find(pngs + "vstupLabel.png").right().grow(0, 20).exists
-						(pngs + "vstupniTextovePole.png") != null);
-				assertTrue("Výstupní pole není prázdné", s.find(pngs + "vystupLabel.png").right().grow(0, 20).exists
-						(pngs + "vystupniTextovePole.png") != null);
-				assertTrue("Vstupní výběrový seznam nemá defaultní hodnotu", s.find(pngs + "vstupLabel.png").right()
-						.grow(0, 20).exists(pngs + "vstupniVyberovySeznam.png") != null);
-				assertTrue("Výstupní výběrový seznam nemá defaultní hodnotu", s.find(pngs + "vystupLabel.png").right()
-						.grow(0, 20).exists(pngs + "vystupniVyberovySeznam.png") != null);
+				hledani.below().click(pngs + "vyberoveSeznamy/vystupMm.png");
+				s.click(pngs + "tlacitka/tlacitkoPreved.png");
+				s.wait(pngs + "tlacitka/tlacitkoPreved.png", 5);
+				s.click(pngs + "tlacitka/tlacitkoVymaz.png");
+				s.wait(pngs + "tlacitka/tlacitkoPreved.png", 5);
+				assertTrue("Vstupní pole není prázdné", s.find(pngs + "labely/vstupLabel.png").right().grow(0, 20)
+						.exists(pngs + "textovaPole/vstupniTextovePole.png") != null);
+				assertTrue("Výstupní pole není prázdné", s.find(pngs + "labely/vystupLabel.png").right().grow(0, 20)
+						.exists(pngs + "textovaPole/vystupniTextovePole.png") != null);
+				assertTrue("Vstupní výběrový seznam nemá defaultní hodnotu", s.find(pngs + "labely/vstupLabel.png")
+						.right().grow(0, 20).exists(pngs + "vyberoveSeznamy/vstupniVyberovySeznam.png") != null);
+				assertTrue("Výstupní výběrový seznam nemá defaultní hodnotu", s.find(pngs + "labely/vystupLabel.png")
+						.right().grow(0, 20).exists(pngs + "vyberoveSeznamy/vystupniVyberovySeznam.png") != null);
 			} catch (FindFailed | AssertionError e) {
 				s.capture().save("errors", screenshotName());
 				logger.error(e.getMessage());
@@ -137,34 +135,31 @@ public class TS03VymazaniWeb {
 	public void TC03_01_02PrevodChyba() {
 		if (run) {
 			try {
-				s.find(pngs + "vstupLabel.png").right().grow(0, 20).click(pngs + "vstupniTextovePole.png");
+				s.find(pngs + "labely/vstupLabel.png").right().grow(0, 20).click(pngs +
+						"textovaPole/vstupniTextovePole.png");
 				s.paste("abc");
-				Match hledani = s.find(pngs + "vstupLabel.png").right().grow(0, 20).find(pngs +
-						"vstupniVyberovySeznam" +
-						".png");
+				Match hledani = s.find(pngs + "labely/vstupLabel.png").right().grow(0, 20).find(pngs +
+						"vyberoveSeznamy/vstupniVyberovySeznam.png");
 				hledani.click();
-				hledani.below().click(pngs + "vstupM.png");
-				hledani = s.find(pngs + "vystupLabel.png").right().grow(0, 20).find(pngs + "vystupniVyberovySeznam" +
-						".png");
+				hledani.below().click(pngs + "vyberoveSeznamy/vstupM.png");
+				hledani = s.find(pngs + "labely/vystupLabel.png").right().grow(0, 20).find(pngs +
+						"vyberoveSeznamy/vystupniVyberovySeznam.png");
 				hledani.click();
-				hledani.below().click(pngs + "vystupM.png");
-				s.click(pngs + "tlacitkoPreved.png");
-				s.wait(pngs + "tlacitkoPreved.png", 5);
-
-				assertTrue("Nenalezeno upozornění o chybě", s.exists(pngs + "chybaNeplatneCislo") != null);
-
-				s.click(pngs + "tlacitkoVymaz.png");
-				s.wait(pngs + "tlacitkoPreved.png", 5);
-
-				assertTrue("Vstupní pole není prázdné", s.find(pngs + "vstupLabel.png").right().grow(0, 20).exists
-						(pngs + "vstupniTextovePole.png") != null);
-				assertTrue("Výstupní pole není prázdné", s.find(pngs + "vystupLabel.png").right().grow(0, 20).exists
-						(pngs + "vystupniTextovePole.png") != null);
-				assertTrue("Vstupní výběrový seznam nemá defaultní hodnotu", s.find(pngs + "vstupLabel.png").right()
-						.grow(0, 20).exists(pngs + "vstupniVyberovySeznam.png") != null);
-				assertTrue("Výstupní výběrový seznam nemá defaultní hodnotu", s.find(pngs + "vystupLabel.png").right()
-						.grow(0, 20).exists(pngs + "vystupniVyberovySeznam.png") != null);
-				assertTrue("Nalezeno upozornění o chybě", s.exists(pngs + "chybaNeplatneCislo") == null);
+				hledani.below().click(pngs + "vyberoveSeznamy/vystupM.png");
+				s.click(pngs + "tlacitka/tlacitkoPreved.png");
+				s.wait(pngs + "tlacitka/tlacitkoPreved.png", 5);
+				assertTrue("Nenalezeno upozornění o chybě", s.exists(pngs + "chyby/chybaNeplatneCislo") != null);
+				s.click(pngs + "tlacitka/tlacitkoVymaz.png");
+				s.wait(pngs + "tlacitka/tlacitkoPreved.png", 5);
+				assertTrue("Vstupní pole není prázdné", s.find(pngs + "labely/vstupLabel.png").right().grow(0, 20)
+						.exists(pngs + "textovaPole/vstupniTextovePole.png") != null);
+				assertTrue("Výstupní pole není prázdné", s.find(pngs + "labely/vystupLabel.png").right().grow(0, 20)
+						.exists(pngs + "textovaPole/vystupniTextovePole.png") != null);
+				assertTrue("Vstupní výběrový seznam nemá defaultní hodnotu", s.find(pngs + "labely/vstupLabel.png")
+						.right().grow(0, 20).exists(pngs + "vyberoveSeznamy/vstupniVyberovySeznam.png") != null);
+				assertTrue("Výstupní výběrový seznam nemá defaultní hodnotu", s.find(pngs + "labely/vystupLabel.png")
+						.right().grow(0, 20).exists(pngs + "vyberoveSeznamy/vystupniVyberovySeznam.png") != null);
+				assertTrue("Nalezeno upozornění o chybě", s.exists(pngs + "chyby/chybaNeplatneCislo") == null);
 			} catch (FindFailed | AssertionError e) {
 				s.capture().save("errors", screenshotName());
 				logger.error(e.getMessage());

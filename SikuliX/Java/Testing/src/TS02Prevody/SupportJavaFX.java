@@ -67,7 +67,7 @@ public class SupportJavaFX {
 			Runtime.getRuntime().exec("java -jar Prevodnik.jar");
 			application = new App("PřeVODNÍK");
 			application.focus();
-			s.wait(pngs + "tlacitkoPreved.png", 10);
+			s.wait(pngs + "tlacitka/tlacitkoPreved.png", 10);
 			run = true;
 		} catch (IOException | FindFailed e) {
 			run = false;
@@ -79,7 +79,7 @@ public class SupportJavaFX {
 	@After
 	public void tearDown() throws InterruptedException {
 		try {
-			s.click(pngs + "closeButton.png");
+			s.click(pngs + "tlacitka/closeButton.png");
 		} catch (FindFailed e) {
 			s.capture().save("errors", screenshotName());
 			logger.error(e.getMessage());

@@ -16,22 +16,21 @@ public class TS02_08HranicniHodnotyWeb extends SupportWeb {
 	public void TC02_08_01Nula() {
 		if (run) {
 			try {
-				s.find(pngs + "vstupLabel.png").right().grow(0, 20).click(pngs + "vstupniTextovePole.png");
+				s.find(pngs + "labely/vstupLabel.png").right().grow(0, 20).click(pngs +
+						"textovaPole/vstupniTextovePole.png");
 				s.paste("0");
-				Match hledani = s.find(pngs + "vstupLabel.png").right().grow(0, 20).find(pngs +
-						"vstupniVyberovySeznam" +
-						".png");
+				Match hledani = s.find(pngs + "labely/vstupLabel.png").right().grow(0, 20).find(pngs +
+						"vyberoveSeznamy/vstupniVyberovySeznam.png");
 				hledani.click();
-				hledani.below().click(pngs + "vstupM.png");
-				hledani = s.find(pngs + "vystupLabel.png").right().grow(0, 20).find(pngs + "vystupniVyberovySeznam" +
-						".png");
+				hledani.below().click(pngs + "vyberoveSeznamy/vstupM.png");
+				hledani = s.find(pngs + "labely/vystupLabel.png").right().grow(0, 20).find(pngs +
+						"vyberoveSeznamy/vystupniVyberovySeznam.png");
 				hledani.click();
-				hledani.below().click(pngs + "vystupM.png");
-				s.click(pngs + "tlacitkoPreved.png");
-				s.wait(pngs + "tlacitkoPreved.png", 5);
-
-				assertTrue("Očekáváno: 0, zjištěno něco jiného", s.find(pngs + "vystupLabel.png").right(200).grow(0,
-						10).exists(pngs + "vystup0.png") != null);
+				hledani.below().click(pngs + "vyberoveSeznamy/vystupM.png");
+				s.click(pngs + "tlacitka/tlacitkoPreved.png");
+				s.wait(pngs + "tlacitka/tlacitkoPreved.png", 5);
+				assertTrue("Očekáváno: 0, zjištěno něco jiného", s.find(pngs + "labely/vystupLabel.png").right(200)
+						.grow(0, 10).exists(pngs + "vystupy/vystup0.png") != null);
 			} catch (FindFailed | AssertionError e) {
 				s.capture().save("errors", screenshotName());
 				logger.error(e.getMessage());
@@ -47,22 +46,21 @@ public class TS02_08HranicniHodnotyWeb extends SupportWeb {
 	public void TC02_08_02MaxDouble() {
 		if (run) {
 			try {
-				s.find(pngs + "vstupLabel.png").right().grow(0, 20).click(pngs + "vstupniTextovePole.png");
+				s.find(pngs + "labely/vstupLabel.png").right().grow(0, 20).click(pngs +
+						"textovaPole/vstupniTextovePole.png");
 				s.paste("1.7e308");
-				Match hledani = s.find(pngs + "vstupLabel.png").right().grow(0, 20).find(pngs +
-						"vstupniVyberovySeznam" +
-						".png");
+				Match hledani = s.find(pngs + "labely/vstupLabel.png").right().grow(0, 20).find(pngs +
+						"vyberoveSeznamy/vstupniVyberovySeznam.png");
 				hledani.click();
-				hledani.below().click(pngs + "vstupM.png");
-				hledani = s.find(pngs + "vystupLabel.png").right().grow(0, 20).find(pngs + "vystupniVyberovySeznam" +
-						".png");
+				hledani.below().click(pngs + "vyberoveSeznamy/vstupM.png");
+				hledani = s.find(pngs + "labely/vystupLabel.png").right().grow(0, 20).find(pngs +
+						"vyberoveSeznamy/vystupniVyberovySeznam.png");
 				hledani.click();
-				hledani.below().click(pngs + "vystupM.png");
-				s.click(pngs + "tlacitkoPreved.png");
-				s.wait(pngs + "tlacitkoPreved.png", 5);
-
-				assertTrue("Očekáváno: Infinity, zjištěno něco jiného", s.find(pngs + "vystupLabel.png").right(200)
-						.grow(0, 10).exists(pngs + "vystupInf.png") != null);
+				hledani.below().click(pngs + "vyberoveSeznamy/vystupM.png");
+				s.click(pngs + "tlacitka/tlacitkoPreved.png");
+				s.wait(pngs + "tlacitka/tlacitkoPreved.png", 5);
+				assertTrue("Očekáváno: Infinity, zjištěno něco jiného", s.find(pngs + "labely/vystupLabel.png").right
+						(200).grow(0, 10).exists(pngs + "vystupy/vystupInf.png") != null);
 			} catch (FindFailed | AssertionError e) {
 				s.capture().save("errors", screenshotName());
 				logger.error(e.getMessage());
