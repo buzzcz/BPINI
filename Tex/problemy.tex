@@ -28,9 +28,9 @@ Během tvorby testů je možné narazit na různé problémy. Ty, které byly zj
 		Postup, kterým se dá tato funkcionalita nahradit, je následující. Aplikaci najdeme podle jejího titulku a~necháme ji přenést do popředí. Poté je SikuliX schopné získat pozici a~rozměry okna, které je v~popředí (má tzv. focus).
 		
 		\subsection{Stav aplikace}
-		Dále nedokázalo indikovat, že aplikace skončila svůj běh. Pokud jsme tedy použili cyklus "testuj, dokud aplikace běží", testování pokračovalo i~v~případě, že byla aplikace již ukončena.
+		Dále nedokázalo indikovat, že aplikace skončila svůj běh. Pokud jsme tedy použili cyklus \uv{testuj, dokud aplikace běží}, testování pokračovalo i~v~případě, že byla aplikace již ukončena.
 	
-		Náhradním řešením tedy bylo vytvořit screenshot některé části aplikace, která se nemění a~je vždy v~aplikaci přítomna. Cyklus poté vypadá takto: "testuj, dokud najdeš tuto část aplikace". To však není řešení absolutní, protože nebude funkční v~případech, kdy se objeví např. dialogové okno, které tuto části zakryje, nebo pokud taková část vůbec neexistuje.
+		Náhradním řešením tedy bylo vytvořit screenshot některé části aplikace, která se nemění a~je vždy v~aplikaci přítomna. Cyklus poté vypadá takto: \uv{testuj, dokud najdeš tuto část aplikace}. To však není řešení absolutní, protože nebude funkční v~případech, kdy se objeví např. dialogové okno, které tuto části zakryje, nebo pokud taková část vůbec neexistuje.
 		
 		\subsection{Spuštění aplikace}
 		Metody pro spuštění aplikace, které SikuliX poskytuje, fungovaly bez problémů v~OS Linux, avšak v~OS Windows nastal problém. SikuliX nebylo schopné otevřít aplikaci pomocí příkazu\\

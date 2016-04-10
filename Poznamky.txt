@@ -10,8 +10,7 @@ Popsat sadu testů - organizace
 
 Ukazku pouziti ne testovani ale na automatizaci cinnosti např. spusteni TestLinku
 
-Moje otázky:
-Není 2 moc obecná??
-Jak správně citovat - používat převzaté "seznamy" apod.
+Tlačítka apod. bezpatkovým písmem (tučně), v seznamech
 
-Kam jsem psal:
+Moje otázky:
+Ft to In jak převádí??
