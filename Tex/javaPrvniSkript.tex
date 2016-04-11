@@ -1,0 +1,51 @@
+\begin{lstjava}{caption={První test Java API}, label={PrvniJavaAPI}}
+import org.sikuli.basics.Settings;
+import org.sikuli.script.*;
+import javax.swing.*;
+
+public class Test01 {
+
+  static Screen s;
+  static App prohlizec;
+  
+  public static void main(String [] args) {
+    Settings.OcrTextSearch = true;
+    Settings.OcrTextRead = true;
+
+    s= new Screen();
+    prohlizec = new App("google-chrome");
+    prohlizec.open();
+    prohlizec.focus();
+    
+    try {
+      s.wait("obr1.png");
+      s.paste("obr2.png");
+      s.type(Key.ENTER);
+      s.click("obr3.png");
+      s.wait("obr4.png");
+      s.paste("obr5.png", "1");
+      s.click(new Pattern("obr6.png").targetOffset(
+        -27,-18));
+      s.click("obr7.png");
+      s.click("obr4.png");
+      String t = s.find("obr8.png").right(
+        100).text();
+      if (Double.parseDouble(t) == 2.54) {
+        JOptionPane.showMessageDialog(null, "Ok" +
+          " textove");
+      } else {
+        JOptionPane.showMessageDialog(null, "Chyba");
+      }
+      if (s.exists("obr9.png") != null) {
+        JOptionPane.showMessageDialog(null, "Ok" +
+          " obrazove");
+      } else {
+        JOptionPane.showMessageDialog(null, "Chyba");
+      }
+      prohlizec.close();
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
+  }
+}
+\end{lstjava}

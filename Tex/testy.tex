@@ -1,5 +1,18 @@
 \chapter{Sada ukázkových testů a~jejich scénářů}
-Pro potřeby práce a~pro názornou ukázku odlišnosti přístupu k~testování webové a~desktopové aplikace byla vytvořena téměř identická aplikace Převodník pomocí technologie JavaFX. Následující sada testů a~jejich scénářů se vztahuje k~této aplikaci a~k~té dostupné z~url \url{http://oks.kiv.zcu.cz/Prevodnik/Prevodnik}.
+Existuje webová aplikace \emph{Převodík} dostupná z~url \url{http://oks.kiv.zcu.cz/Prevodnik/Prevodnik} se záměrnými chybami. Pro potřeby práce a~pro názornou ukázku odlišnosti přístupu k~testování webové a~desktopové aplikace byla vytvořena téměř identická aplikace Převodník pomocí technologie JavaFX, jejích kód se nachází na přiloženém CD. Následující sada testů a~jejich scénářů se vztahuje k~těmto aplikacím, jejichž vzhled je ukázán na obrázcích \ref{PrevodnikWeb} a~\ref{PrevodnikJavaFX}.
+
+	\begin{figure}[ht!]
+		\centering
+		\caption{Webová aplikace Převodník}
+		\label{PrevodnikWeb}
+		\includegraphics[width=13.5cm]{img/PrevodnikWeb.png}
+	\end{figure}
+	\begin{figure}[ht!]
+		\centering
+		\caption{Aplikace Převodník vytvořená pomocí JavaFX}
+		\label{PrevodnikJavaFX}
+		\includegraphics[width=13.5cm]{img/PrevodnikJavaFX.png}
+	\end{figure}
 
 Ze scénářů i~z~přiloženého zdrojového kódu je patrné, že přístup k~testování obou aplikací je totožný. Testy vypadají stejně jak pro desktopovou aplikaci, tak pro webovou. Jediné rozdíly nastávají ve způsobu spouštění aplikací, zacházení s~nimi a~v~cestě k~použitým řídícím screenshotům. Příčinou je to, že se jedná o~téměř identicky vypadající a~chovající se aplikace. Dále budou uvedeny vždy jen stručné ukázky testů s~vyznačenými případnými odlišnostmi.
 
@@ -28,6 +41,8 @@ Ze scénářů i~z~přiloženého zdrojového kódu je patrné, že přístup k~
 		\item Vymazání
 		\end{enumerate}}
 		
+	Testovací případy mají předponu \emph{TC} za níž nasleduje číslo testovacího případu a~jeho název. Pokud tedy např. testujeme úplnost výstupního výběrového seznamu, název bude \emph{TC01\_03\_02VystupniVyberovySeznam}. Číslo testovacího případu se tvoří dle jeho příslušnosti do části (TestSuite) ve výčtu výše. Patří do \emph{Úplnost výběrových seznamů} a tomu odpovídá první část čísla, \emph{01\_03}. Označení \emph{02} je pořadové číslo testu v~rámci dané kategorie.
+		
 	\section{Statické prvky}
 	Scénáře v~této části pouze zkontrolují, zda testovaná aplikace obsahuje všechny prvky, jako např. tlačítka či vstupní pole. Dále se zkoumá, zda je vstupní pole editovatelné a~výstupní pole nikoli. Poté se zjistí, zda jsou ve výběrových seznamech obsaženy všechny položky.
 	
@@ -41,13 +56,37 @@ Ze scénářů i~z~přiloženého zdrojového kódu je patrné, že přístup k~
 	Během testování aplikace bylo zjištěno několik chyb. Jak již bylo řečeno dříve, tyto chyby jsou v~aplikaci zaneseny záměrně.
 	
 		\subsection{Chybné převody z~(na) decimetry}
-		Pokud provádíme převod z~(případně na) decimetry, dostaneme nesprávný výsledek. Chování odpovídá převodu z~(na) palce.
+		Pokud provádíme převod z~(případně na) decimetry, dostaneme nesprávný výsledek, viz \ref{ChybaDm}. Chování odpovídá převodu z~(na) palce.
+			\begin{figure}[ht!]
+				\centering
+				\caption{Chybný převod z decimetru na centimetr}
+				\label{ChybaDm}
+				\includegraphics[width=13.5cm]{img/Chyby/Dm.png}
+			\end{figure}
 		
 		\subsection{Chybné zaokrouhlení}
-		Dále u~jednotek decimetry i~palce v~situaci, kdy jsou použity jak na vstupu, tak na výstupu, je hodnota 3 převedena přibližně na 2.9999996.
+		Dále u~jednotek decimetry i~palce v~situaci, kdy jsou použity jak na vstupu, tak na výstupu, je hodnota 3 převedena přibližně na 2.9999996, viz \ref{Zaokrouhleni}.
+			\begin{figure}[ht!]
+				\centering
+				\caption{Chybné zaokrouhlení při převodu mezi decimetry}
+				\label{Zaokrouhleni}
+				\includegraphics[width=13.5cm]{img/Chyby/Zaokrouhleni.png}
+			\end{figure}
 		
 		\subsection{Převod záporné hodnoty}
-		Při zadání záporné hodnoty pro převod se zobrazí chybová hláška o~záporném čísle, avšak převod se i~tak provede.
+		Při zadání záporné hodnoty pro převod se zobrazí chybová hláška o~záporném čísle, avšak převod se i~tak provede, viz \ref{ZapornaHodnota}.
+			\begin{figure}[ht!]
+				\centering
+				\caption{Převod záporné hodnoty}
+				\label{ZapornaHodnota}
+				\includegraphics[width=13.5cm]{img/Chyby/ZapornaHodnota.png}
+			\end{figure}
 		
 		\subsection{Tlačítko Vymaž}
-		Tlačítko \textit{Vymaž} nenastaví všem komponentám výchozí hodnoty. Pouze vymaže obsah vstupního pole. Výstupní pole a~výběrové seznamy nadále obsahují hodnoty z~posledního převodu.
+		Tlačítko \emph{Vymaž} nenastaví všem komponentám výchozí hodnoty. Pouze vymaže obsah vstupního pole. Výstupní pole a~výběrové seznamy nadále obsahují hodnoty z~posledního převodu, viz \ref{Vymazani}.
+			\begin{figure}[ht!]
+				\centering
+				\caption{Použití tlačítka Vymaž}
+				\label{Vymazani}
+				\includegraphics[width=13.5cm]{img/Chyby/Vymazani.png}
+			\end{figure}

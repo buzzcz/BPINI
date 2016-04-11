@@ -1,0 +1,38 @@
+\begin{lstpython}{caption={První skript}, label={PrvniSkript}}
+prohlizec = App("google-chrome")
+prohlizec.open()	#otevre aplikaci definovanou
+				#vyse
+prohlizec.focus()	#vybere do popredi jeji okno
+#ceka, dokud na obrazovce nenajde obrazek
+wait("obr1.png")
+#najde na obrazovce obrazek a vlozi do neho text
+paste("obr2.png", "http://oks.kiv.zcu.cz/Prevodnik")
+type(Key.ENTER)	#simuluje stisk klavesy ENTER
+#najde na obrazovce obrazek a klikne na nej
+click("obr3.png")
+wait("obr4.png")
+paste("obr5.png", "1")
+#klikne o 27px vyse a 18px vlevo od nalezeneho
+#obrazku
+click(Pattern("obr6.png").targetOffset(-27,-18))
+click("obr7.png")
+click("obr4.png")
+#precte text z casti, ktera je 100px vpravo od
+#nalezeneho obrazku
+vystup = find("obr8.png").right(100).text()
+if vystup == "2.54":
+	#pokud rozpoznany text souhlasi se zadanym,
+	#otevre se vyskakovaci okno
+    popup("Ok textove")
+else:
+    popError("Chyba")    #jinak se zobrazi chybove
+    			 #okno
+
+if exists("obr9.png"):
+	#pokud na obrazovce existuje obrazek, otevre
+	#se vyskakovaci okno
+    popup("Ok obrazove")
+else:
+    popError("Chyba")
+prohlizec.close()    #ukonci aplikaci
+\end{lstpython}

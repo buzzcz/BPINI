@@ -1,8 +1,6 @@
 Rozšířit abstrakt
-Srovnání testů pro web a JavaFX - stejné testy, jiné screenshoty
 Monkey testy (nezávisle na SikuliX) jsou závislé na platformě
 Napsat rychlostní rozdíl mezi SikuliX a Seleniem
-V aplikaci jsou záměrně zanesené chyby - do úvodu - odkaz na chyby
 8.1 přidat to, že se doporučuje 100% velikost stránky
 8.5.3 jedná se o spuštění z programově spouštěného testu, místo příkazu vložit 3 řádky kódu
 Do úvodu psát o monkey testech
@@ -14,3 +12,4 @@ Tlačítka apod. bezpatkovým písmem (tučně), v seznamech
 
 Moje otázky:
 Ft to In jak převádí??
+První skript - krok po kroku co dělá, nebo jak se tvoří??

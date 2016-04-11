@@ -18,6 +18,10 @@
 	\section{Tvorba testů}
 	Pro tvorbu testů pomocí SikuliX jsou nejdůležitější snímky (screenshoty) řídících prvků, které bude SikuliX hledat a~případně používat k~některým akcím. Je tedy vhodné si nejprve aplikaci spustit, vybrat příslušné prvky a~vytvořit jejich snímky. Při jejich tvorbě se doporučuje preciznost a~přesnost, neboť v~jistých situacích mohou nastat problémy, které budou zmíněny později.
 	
+	Pokud je snímků více, je vhodné je třídit do adresářů. To není nutné, ale zlepšuje to čitelnost kódu a~usnadňuje práci s~nástrojem. Adresáře mohou např. sdružovat snímky prvků, které jsou si nějakým způsobem podobné (tlačítka, textová pole, výběrové seznamy, chybové hlášky, apod.). Stejně tak je vhodné snímky pojmenovávat na základě toho, co obsahují (vstupní textové pole, label Vstup, apod.).
+	
+	Dle \citep{SikuliXImgs} SikuliX interně používá třídu ImageIO z~Javy. Podporované formáty jsou tedy bmp, wbmp, jpg, jpeg, png a gif.
+	
 	Pokud je vytvářený test jednoduchý a~není potřeba většího množství testů, je jednodušší vytvořit jej pomocí SikuliX-IDE. Pokud však chceme aplikaci testovat podrobněji a~psát velké množství testovacích případů, je vhodnější použít některý z~podporovaných programovacích jazyků a~využít tak jeho možnosti jako nadstavbu nad SikuliX.
 	
 	\section{SikuliX-IDE}
@@ -28,12 +32,12 @@
 		\item z~příkazové řádky příkazem\\
 		\texttt{java -jar cesta/k/sikulix.jar [volitelne parametry]}
 	\end{enumerate}
-	Po spuštění vypadá IDE jako na obrázku \ref{SikuliXIDE}. Jako parametry se v~metodách, ve kterých je to možné, ukazují obrázky vzorů, podle kterých se na obrazovce nástroj orientuje.
+	Po spuštění vypadá IDE jako na obrázku \ref{SikuliXIDE}. Jako parametry se v~metodách, ve kterých je to možné, ukazují obrázky vzorů, podle kterých se na obrazovce nástroj orientuje, případně cesta k~nim.
 	\begin{figure}[ht!]
 		\centering
 		\caption{SikuliX-IDE}
 		\label{SikuliXIDE}
-		\includegraphics[width=13.5cm]{img/IDE/SikuliXIDE.png}
+		\includegraphics[width=13.5cm]{img/SikuliXIDE.png}
 	\end{figure}
 	
 		\subsection{První skript}
@@ -41,44 +45,7 @@
 		
 		Skript pracuje tak, že se otevře prohlížeč, který přejde na adresu \url{http://oks.kiv.zcu.cz/Prevodnik}. Klikne na odkaz \emph{Převodník}, do vstupního pole vloží \emph{1} a~stiskne \emph{Převeď}. Z~pole s~výsledkem přečte text a~porovná jej s~předpokládanou hodnotou \emph{2,54}. Pokud si odpovídají, objeví se dialogové okno s~potvrzením, jestliže ne, zobrazí se chybová hláška. Obdobně je tomu v~následující části, kde se pouze kontroluje existence obrázku.
 		
-			\begin{lstpython}{caption={První skript}, label={PrvniSkript}}
-prohlizec = App("google-chrome")
-prohlizec.open()	#otevre aplikaci definovanou
-				#vyse
-prohlizec.focus()	#vybere do popredi jeji okno
-#ceka, dokud na obrazovce nenajde obrazek
-wait("obr1.png")
-#najde na obrazovce obrazek a vlozi do neho text
-paste("obr2.png", "http://oks.kiv.zcu.cz/Prevodnik")
-type(Key.ENTER)	#simuluje stisk klavesy ENTER
-#najde na obrazovce obrazek a klikne na nej
-click("obr3.png")
-wait("obr4.png")
-paste("obr5.png", "1")
-#klikne o 27px vyse a 18px vlevo od nalezeneho
-#obrazku
-click(Pattern("obr6.png").targetOffset(-27,-18))
-click("obr7.png")
-click("obr4.png")
-#precte text z casti, ktera je 100px vpravo od
-#nalezeneho obrazku
-T = find("obr8.png").right(100).text()
-if T == "2.54":
-	#pokud rozpoznany text souhlasi se zadanym,
-	#otevre se vyskakovaci okno
-    popup("Ok textove")
-else:
-    popError("Chyba")    #jinak se zobrazi chybove
-    			 #okno
-
-if exists("obr9.png"):
-	#pokud na obrazovce existuje obrazek, otevre
-	#se vyskakovaci okno
-    popup("Ok obrazove")
-else:
-    popError("Chyba")
-prohlizec.close()    #ukonci aplikaci
-		\end{lstpython}
+			\input{sikulixPrvniSkript}
 		
 	\section{Java API}
 	Dále bylo zkoumáno Java API, které SikuliX poskytuje. Pro jeho použití je potřeba mít při překladu a~spuštění nastavený v~classpath \emph{sikulixapi.jar}. Toho docílíme např. tak, že použijeme v~příkazové řádce dvou příkazů\\\texttt{javac -cp sikulixapi.jar:. Test01.java}\\\texttt{java -cp sikulixapi.jar:. Test01}\\ Syntaxe, kterou SikuliX v~Java API využívá, je velmi podobná té v~SikuliX-IDE.
@@ -86,57 +53,11 @@ prohlizec.close()    #ukonci aplikaci
 		\subsection{První test}
 		První test s~použitím Java API, viz kód \ref{PrvniJavaAPI}, je téměř identický s~tím, který byl vytvořen pomocí SikuliX-IDE.
 		
-			\begin{lstjava}{caption={První test Java API}, label={PrvniJavaAPI}}
-import org.sikuli.basics.Settings;
-import org.sikuli.script.*;
-import javax.swing.*;
-
-public class Test01 {
-
-  static Screen s;
-  static App prohlizec;
-  
-  public static void main(String [] args) {
-    Settings.OcrTextSearch = true;
-    Settings.OcrTextRead = true;
-
-    s= new Screen();
-    prohlizec = new App("google-chrome");
-    prohlizec.open();
-    prohlizec.focus();
-    
-    try {
-      s.wait("obr1.png");
-      s.paste("obr2.png");
-      s.type(Key.ENTER);
-      s.click("obr3.png");
-      s.wait("obr4.png");
-      s.paste("obr5.png", "1");
-      s.click(new Pattern("obr6.png").targetOffset(
-        -27,-18));
-      s.click("obr7.png");
-      s.click("obr4.png");
-      String t = s.find("obr8.png").right(
-        100).text();
-      if (Double.parseDouble(t) == 2.54) {
-        JOptionPane.showMessageDialog(null, "Ok" +
-          " textove");
-      } else {
-        JOptionPane.showMessageDialog(null, "Chyba");
-      }
-      if (s.exists("obr9.png") != null) {
-        JOptionPane.showMessageDialog(null, "Ok" +
-          " obrazove");
-      } else {
-        JOptionPane.showMessageDialog(null, "Chyba");
-      }
-      prohlizec.close();
-    } catch (Exception e) {
-      e.printStackTrace();
-    }
-  }
-}
-			\end{lstjava}
+			\input{javaPrvniSkript}
 	
 		\subsection{Sofistikovanější testy}
 		S~využitím knihoven \emph{JUnit} a~\emph{Log4j} (ani jedna z~těchto knihoven není pro běh SikuliX bezprostředně nutná) byly vytvořeny čtyři testy, viz kód \ref{DalsiJavaAPI}. První test skončí negativně, druhý pozitivně, třetí pozitivně a~čtvrtý negativně.
+		
+		Knihovna \emph{JUnit} byla použita z~toho důvodu, že nám pomůže jednak s~organizací testů a~jejich spouštěním, a~jednak s~jejich vyhodnocováním. Dále obsahuje metody pro vyhodnocování a~porovnávání hodnot, tzv. \emph{asserty}.
+		
+		\emph{Log4J} je knihovna, která slouží k~logování informací do souborů. Umožňuje vlastní konfiguraci výstupních souborů a~spoustu dalších funkcí. Použita byla z~toho důvodu, že během testování je vhodné zaznamenávat prováděné činnosti z důvodu jednoduššího zjištění selhání testu. SikuliX poskytuje informace o~tom, kam klikal či psal. Ty vypisuje na standardní výstup, avšak poskytuje metodu, které se přidá instance \emph{Loggeru}, který poté SikuliX použije pro logování.
