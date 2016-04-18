@@ -48,8 +48,10 @@ Během tvorby testů je možné narazit na různé problémy. Ty, které byly zj
 		\subsection{Pozice a~velikost okna}		
 		Konkrétním příkladem je např. to, pokud bychom chtěli testování omezit pouze na okno aplikace. SikuliX je schopno okno s~aplikací najít podle (části) jejího titulku a~přenést jej do popředí. Už ale není schopno získat rozměry a~pozici tohoto okna, ačkoli metody pro tyto funkce existují.
 	
-		Postup, kterým se dá tato funkcionalita nahradit, je následující. Aplikaci najdeme podle jejího titulku a~necháme ji přenést do popředí. Poté je SikuliX schopné získat pozici a~rozměry okna, které je v~popředí (má tzv. focus), jak je ukázáno v~kódu \ref{pozice}.
-		\input{pozice}
+		Postup, kterým se dá tato funkcionalita nahradit, je následující. Aplikaci najdeme podle jejího titulku a~necháme ji přenést do popředí. Poté je SikuliX schopné získat pozici a~rozměry okna, které je v~popředí (má tzv. focus), jak je ukázáno v~následujícím kódu.\\[0.2cm]
+		\texttt{Region window = App.focusedWindow();\\
+		Location minCoord = window.getTopLeft();\\
+		Location maxCoord = window.getBottomRight();}
 		
 		\subsection{Stav aplikace}
 		Dále nedokázalo indikovat, že aplikace skončila svůj běh. Pokud jsme tedy použili cyklus \uv{testuj, dokud aplikace běží}, testování pokračovalo i~v~případě, že byla aplikace již ukončena.

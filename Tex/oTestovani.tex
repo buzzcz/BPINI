@@ -92,6 +92,12 @@ Na začátek je potřeba vysvětlit některé pojmy z~oblasti testování. Budem
 				\item Je užitečné -- přispívají dané funkce zvýšení užitné hodnoty aplikace? Pomůže uživateli v~jeho práci s~aplikací? Nepodstatné funkce znamenají zbytečné testování navíc a~pro zákazníka mohou být špatné.
 			\end{itemize}
 		
-		\section{Automatizace těmito nástroji}
-		Funkcionální testování UI je jednou z~částí testování UI, která se nechá automatizovat. Existuje celá řada nástrojů, které umožňují simulování klikání a~psaní na klávesnici. Další částí vhodnou pro automatizaci je kontrola, zda GUI obsahuje všechny prvky, a~jestli je chování prvků stejné, jako požadované. V~obou těchto disciplínách je pro nástroj důležité, aby zvládal klikat a~psát do aplikace, ale zároveň vyhodnocoval její stav (vstup je možné zadávat až tehdy, když je na to aplikace připravená, apod.).
-		\\\dots
+		\section{Automatizace testování}
+		Důvodem automatizace testování je zvýšení jeho efektivity. Manuální návrh, provedení a~analýza testů je časově náročná a~často velice monotónní práce. Testeři mohou jednak ušetřit čas, a~jednak se sníží pravděpodobnost chybného vykonání testu z~důvodu ztráty koncentrace testera v~důsledku jednotvárné činnosti. Dalším přínosem je průběžně se stále zvětšující sada regresních testů. Ty slouží k~otestování, zda nově přidaná funkcionalita či úprava aplikace nezpůsobuje chyby v~již funkčních částech.
+		
+		Funkcionální testování UI je jednou z~částí testování UI, která se nechá automatizovat. Existuje celá řada nástrojů, které umožňují simulování klikání a~psaní na klávesnici. Další částí vhodnou pro automatizaci je kontrola, zda GUI obsahuje všechny prvky, a~jestli je chování prvků konzistentní a~stejné, jako požadované. V~obou těchto disciplínách je pro nástroj důležité, aby zvládal klikat a~psát do aplikace, ale zároveň vyhodnocoval její stav (vstup je možné zadávat až tehdy, když je na to aplikace připravená, apod.).
+		
+			\subsection{Monkey testování}\label{MonkeyTestovani}
+			Specifickou oblastí testování GUI a~automatického testování je tzv. monkey testování (testování za pomoci \emph{cvičené opice}). To vychází z~\uv{Nekonečného opičího teorému}, \citep{Patton}, \citep{Teorem}, který říká: \uv{Pokud by měli po nekonečnou dobu k~dispozici nekonečně mnoho opic, které by neustále náhodně psaly na nekonečně mnoho klávesnic, statisticky vzato by mohly nakonec napsat všechny Shakespearovy hry.}
+			
+			Nejde o~automatizaci za účelem usnadnění práce a~zvýšení efektivity, ale za účelem napodobit možné chování potenciálního uživatele. Přes všechno naše snažení a~testování určitě v~aplikaci zůstaly chyby, které by odhalil případný uživatel podobným nezasvěceným klikáním a~psaním. Tomu je však možné alespoň částečně předejít pomocí monkey testování.

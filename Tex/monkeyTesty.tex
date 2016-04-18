@@ -1,2 +1,33 @@
 \chapter{Monkey testy}
-\dots
+Monkey testování již bylo zmíněno v~kapitole \ref{MonkeyTestovani}. Nyní o~něm zjistíme něco více a~ukážeme si jeden konkrétní monkey test vytvořený pomocí SikuliX.
+
+Dle \citep{Patton} existují tři druhy cvičených opic lišících se svou inteligencí -- co umí, jaké mají povědomí o~aplikace apod. Jejich vlastnosti a~rozdíly jsou popsány v~následujících částech.
+
+	\section{Hloupá opice}
+	Nejjednodušším případem cvičené opice je \emph{hloupá opice}. Ta neví vůbec nic o~testované aplikace, jen náhodně kliká a~píše na klávesnici. Software, který na počítači běží, není schopný rozlišit cvičnou opici od skutečného člověka, snad jen že opice by měla akce vykonávat rychleji.
+	
+	Na první pohled se zdá, že takovýto přístup nemůže najít žádné chyby. Opak je ale pravdou, neboť jak se ukazuje, pokud máme dostatek času a~pokusů, opice vytvoří jakousi posloupnost akcí, která povede k~havárii aplikace. Na tuto posloupnost nejspíše programátoři ani testeři vůbec nepomysleli, proto nebyla tato chyba nalezena dříve.
+	
+	Další možnou chybou, kterou může i~hloupá opice zjistit, jsou úniky paměti. Pokud totiž necháme opici pracovat přes noc, poběží software několik hodin (případně můžeme nechat běžet i~několik dní) a~případné problémy se tak mohou projevit.
+	
+	\section{Zpola inteligentní opice}
+	Pokud hloupou opici doplníme o~několik funkcí navíc, zvýšíme její inteligenční kvocient na zpola inteligentní opici. Jednou z~těchto funkcí je zaznamenávání prováděných činností do souboru -- logu. Díky tomu jsme poté schopni přesněji identifikovat, co se dělo těsně před selháním aplikace.
+	
+	Další takovou funkcí je, aby opice pracovala pouze s~testovanou aplikací. Pokud kliká a~píše kamkoli na obrazovce, jednou by zvolila i~možnost vypnutí počítače, čímž bychom ztratili drahý čas na testování. V~jiném případě by zvolila možnost ukončit aplikaci, ale jelikož by si toho nebyla vědoma, pokračovala by v~klikání a psaní na vše možné, co se vyskytuje na obrazovce. Zjištění, zda je ještě aplikace spuštěná, se řadí k~těmto funkcím také.
+	
+	Vhodná je i~ta možnost, která dovolí opici aplikaci po selhání znovu spustit a~pokračovat tak v~testování.
+	
+	\section{Inteligentní opice}
+	Dalším evolučním krok je inteligentní opice. Ta do klávesnice \uv{nebuší} zcela náhodně, ale uvědomuje si následující věci:
+		\begin{itemize}
+			\item Kde se nachází.
+			\item Co na tomto místě může dělat.
+			\item Kam může přejít.
+			\item Kde již byla.
+			\item Jestli je to, co vidí, opravdu správné.
+		\end{itemize}
+	Opice si je tedy vědoma všech stavů aplikace a~přechodů mezi nimi. Díky tomu dokáže s~programem pracovat přibližně stejně, jako případný uživatel, jen o~něco rychleji.
+	
+	Inteligentní opice se však nemusí omezovat jen na hledání chyb, ale mohou také kontrolovat výsledky činností aplikace, správnost výstupů apod. Pokud je navíc schopna vykonávat konkrétní testovací případy, může nalézat poměrně velké množství chyb.
+	
+	\dots
