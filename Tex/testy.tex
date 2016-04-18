@@ -1,5 +1,5 @@
 \chapter{Sada ukázkových testů a~jejich scénářů}
-Existuje webová aplikace \emph{Převodík} dostupná z~url \url{http://oks.kiv.zcu.cz/Prevodnik/Prevodnik} se záměrnými chybami. Pro potřeby práce a~pro názornou ukázku odlišnosti přístupu k~testování webové a~desktopové aplikace byla vytvořena téměř identická aplikace Převodník pomocí technologie JavaFX, jejích kód se nachází na přiloženém CD. Následující sada testů a~jejich scénářů se vztahuje k~těmto aplikacím, jejichž vzhled je ukázán na obrázcích \ref{PrevodnikWeb} a~\ref{PrevodnikJavaFX}.
+Existuje webová aplikace \emph{Převodník} dostupná z~url \url{http://oks.kiv.zcu.cz/Prevodnik/Prevodnik} se záměrnými chybami. Pro potřeby práce a~pro názornou ukázku odlišnosti přístupu k~testování webové a~desktopové aplikace byla vytvořena téměř identická aplikace Převodník pomocí technologie JavaFX, jejíž kód se nachází na přiloženém CD. Následující sada testů a~jejich scénářů se vztahuje k~těmto aplikacím, jejichž vzhled je ukázán na obrázcích \ref{PrevodnikWeb} a~\ref{PrevodnikJavaFX}.
 
 	\begin{figure}[ht!]
 		\centering
@@ -17,7 +17,7 @@ Existuje webová aplikace \emph{Převodík} dostupná z~url \url{http://oks.kiv.
 Ze scénářů i~z~přiloženého zdrojového kódu je patrné, že přístup k~testování obou aplikací je totožný. Testy vypadají stejně jak pro desktopovou aplikaci, tak pro webovou. Jediné rozdíly nastávají ve způsobu spouštění aplikací, zacházení s~nimi a~v~cestě k~použitým řídícím screenshotům. Příčinou je to, že se jedná o~téměř identicky vypadající a~chovající se aplikace. Dále budou uvedeny vždy jen stručné ukázky testů s~vyznačenými případnými odlišnostmi.
 
 	\section{Rozdělení testů}
-	Scénáře byly rozděleny do tří částí a~každá část poté může obsahovat další skupiny, které sjednocují tematicky si blízké testy. Struktura tedy vypadá přibližně takto:
+	Scénáře byly rozděleny do tří částí a~každá část poté může obsahovat další skupiny, které sjednocují tematicky si blízké testy. Struktura scénářů tedy vypadá přibližně takto:
 		{\renewcommand{\labelenumii}{\theenumii}
 		\renewcommand{\theenumii}{\theenumi.\arabic{enumii}.}
 		\begin{enumerate}
@@ -46,11 +46,20 @@ Ze scénářů i~z~přiloženého zdrojového kódu je patrné, že přístup k~
 	\section{Statické prvky}
 	Scénáře v~této části pouze zkontrolují, zda testovaná aplikace obsahuje všechny prvky, jako např. tlačítka či vstupní pole. Dále se zkoumá, zda je vstupní pole editovatelné a~výstupní pole nikoli. Poté se zjistí, zda jsou ve výběrových seznamech obsaženy všechny položky.
 	
+	Následující úsek kódu \ref{statickePrvky} demonstruje, v~jakém duchu se testují statické prvky aplikace.
+	\input{statickePrvky}
+	
 	\section{Převody}
 	V~této části jsou zpracované funkční testy konkrétních převodů. Nejprve se provedou testy Happy Day Scenario -- scénář, kdy vše dopadne podle očekávání. Poté se zkontrolují převody mezi stejnými jednotkami, převody s~možnými korektními i~nekorektními vstupy, převody mezi všemi jednotkami a~nakonec převody s~hraničními hodnotami.
 	
+	Část kódu v~\ref{prevody} ukazuje, jak se mohou tvořit testy převodů.
+	\input{prevody}
+	
 	\section{Vymazání}
 	V~této části se testuje funkčnosti tlačítka Vymazat. Otestuje se případ, kdy se nevyskytla chybová hláška, i~ten, kdy se vyskytla.
+	
+	Kód \ref{vymazani} je jednou z~možností, jak testovat správnou funkčnost tlačítka \emph{Vymazat}.
+	\input{vymazani}
 	
 	\section{Zjištěné chyby}
 	Během testování aplikace bylo zjištěno několik chyb. Jak již bylo řečeno dříve, tyto chyby jsou v~aplikaci zaneseny záměrně.
@@ -63,6 +72,7 @@ Ze scénářů i~z~přiloženého zdrojového kódu je patrné, že přístup k~
 				\label{ChybaDm}
 				\includegraphics[width=13.5cm]{img/Chyby/Dm.png}
 			\end{figure}
+			\FloatBarrier
 		
 		\subsection{Chybné zaokrouhlení}
 		Dále u~jednotek decimetry i~palce v~situaci, kdy jsou použity jak na vstupu, tak na výstupu, je hodnota 3 převedena přibližně na 2.9999996, viz \ref{Zaokrouhleni}.
@@ -72,6 +82,7 @@ Ze scénářů i~z~přiloženého zdrojového kódu je patrné, že přístup k~
 				\label{Zaokrouhleni}
 				\includegraphics[width=13.5cm]{img/Chyby/Zaokrouhleni.png}
 			\end{figure}
+			\FloatBarrier
 		
 		\subsection{Převod záporné hodnoty}
 		Při zadání záporné hodnoty pro převod se zobrazí chybová hláška o~záporném čísle, avšak převod se i~tak provede, viz \ref{ZapornaHodnota}.
@@ -81,6 +92,7 @@ Ze scénářů i~z~přiloženého zdrojového kódu je patrné, že přístup k~
 				\label{ZapornaHodnota}
 				\includegraphics[width=13.5cm]{img/Chyby/ZapornaHodnota.png}
 			\end{figure}
+			\FloatBarrier
 		
 		\subsection{Tlačítko Vymaž}
 		Tlačítko \emph{Vymaž} nenastaví všem komponentám výchozí hodnoty. Pouze vymaže obsah vstupního pole. Výstupní pole a~výběrové seznamy nadále obsahují hodnoty z~posledního převodu, viz \ref{Vymazani}.

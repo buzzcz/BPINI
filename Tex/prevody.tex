@@ -1,0 +1,41 @@
+\begin{lstjava}{caption={Test převodu}, label={prevody}}
+@Test
+public void TC02_04_01PrevodCmNaM() {
+  if (run) {
+    try {
+      s.find(pngs + "labely/vstupLabel.png").right().
+        grow(0, 20).click(pngs + "textovaPole/" +
+        "vstupniTextovePole.png");
+      s.paste("1");
+      Match hledani = s.find(pngs + "labely/" +
+        "vstupLabel.png").right().grow(0, 20).find(
+        pngs + "vyberoveSeznamy/vstupniVyberovy" +
+        "Seznam.png");
+      hledani.click();
+      hledani.below().click(pngs + "vyberove" +
+        "Seznamy/vstupModryCm.png");
+      hledani = s.find(pngs + "labely/vystupLabel" +
+        ".png").right().grow(0, 20).find(pngs +
+        "vyberoveSeznamy/vystupniVyberovySeznam" +
+        ".png");
+      hledani.click();
+      hledani.below().click(pngs + "vyberove" +
+        "Seznamy/vystupM.png");
+      s.click(pngs + "tlacitka/tlacitkoPreved.png");
+      s.wait(pngs + "tlacitka/tlacitkoPreved.png",
+        5);
+      assertTrue("Ocekavano: 0.01, zjisteno neco " +
+        "jineho", s.find(pngs + "labely/vystup" +
+        "Label.png").right(200).grow(0, 10).exists(
+        pngs + "vystupy/vystup0_01.png") != null);
+    } catch (FindFailed | AssertionError e) {
+      s.capture().save("errors", screenshotName());
+      logger.error(e.getMessage());
+      fail(e.getMessage());
+    }
+  } else {
+    logger.error("Setup failed");
+    fail("Setup failed");
+  }
+}
+\end{lstjava}

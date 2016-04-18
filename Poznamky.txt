@@ -5,11 +5,12 @@ Napsat rychlostní rozdíl mezi SikuliX a Seleniem
 8.5.3 jedná se o spuštění z programově spouštěného testu, místo příkazu vložit 3 řádky kódu
 Do úvodu psát o monkey testech
 Popsat sadu testů - organizace
+Popsat detailně, že TS se dají spouštět samy, jak jsou organizované
+V Latexu nastavit overrule - přetečení slov
+První skript - jak se tvoří
 
 Ukazku pouziti ne testovani ale na automatizaci cinnosti např. spusteni TestLinku
 
 Tlačítka apod. bezpatkovým písmem (tučně), v seznamech
 
 Moje otázky:
-Ft to In jak převádí??
-První skript - krok po kroku co dělá, nebo jak se tvoří??

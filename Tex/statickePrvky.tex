@@ -1,0 +1,21 @@
+\begin{lstjava}{caption={Test přítomnosti statického prvku}, label={statickePrvky}}
+@Test
+public void TC01_01_02VstupniTextovePole() {
+  if (run) {
+    try {
+      assertTrue("Vstupni textove pole neexistuje",
+        s.find(pngs + "labely/vstupLabel.png").
+        right().grow(0, 20).exists(pngs +
+        "textovaPole/vstupniTextovePole.png") !=
+        null);
+    } catch (FindFailed | AssertionError e) {
+      s.capture().save("errors", screenshotName());
+      logger.error(e.getMessage());
+      fail(e.getMessage());
+    }
+  } else {
+    logger.error("Setup failed");
+    fail("Setup failed");
+  }
+}
+\end{lstjava}

@@ -1,12 +1,5 @@
 \chapter{Testování softwaru}
-%SMAZAT!!
-%Testování aplikací je nedílnou součástí jejich vývoje a~v~dnešní době se tomuto oddílu tvorby aplikací věnuje čím dál více pozornosti. Dá se rozdělit do různých skupin, např. podle toho, kdy se testování provádí, jakým způsobem se provádí, jak se k~testované aplikaci přistupuje, či jaká část aplikace se podrobuje testům.
-
-%Jednou z~důležitých součástí je testování grafického uživatelského rozhraní. Zde se testeři soustředí na to, zda daná aplikace vypadá tak, jak to požadují vývojáři a~návrh, a~zda grafické prvky správně fungují. Dále se zaměřuje na to, zda je aplikace přívětivá k~uživateli a~práce s~ní není příliš komplikovaná.
-
-%Při testování grafického uživatelského rozhraní se může spousta testů mnohokrát opakovat, a~proto je snaha tyto testy nějak automatizovat. K~tomu se může využít některý z~nástrojů k~tomu určený. Cílem této práce je seznámit se s~některými z~těchto nástrojů, jeden z~nich vybrat a~pomocí něj vytvořit sadu ukázkových testů svou filosofií zapadajících do předmětu KIV/OKS.
-
-Na začátek je potřeba vysvětlit některé pojmy z~oblasti testování. Budeme vycházet hlavně z~\citep{RizeniKvalitySW} a~\citep{Patton}.
+Na začátek je potřeba vysvětlit některé pojmy z~oblasti testování. Budeme vycházet hlavně z~\citep{RizeniKvalitySW}, \citep{Patton} a~\citep{Herout}.
 
 	\section{Požadavky}
 	Požadavky zachycují přání zákazníka na funkcionalitu softwaru. Dělí se na dvě skupiny:
@@ -83,8 +76,22 @@ Na začátek je potřeba vysvětlit některé pojmy z~oblasti testování. Budem
 				\item Akceptační testování (User Acceptance Testing, UAT) -- zde provádí testování sám zákazník a~neomezuje se pouze na testování jako takové, ale na splnění před dohodnutých kritérii (dokumentace, manuály apod.).
 			\end{itemize}
 			
-		\section{Testování grafického uživatelského rozhraní}
-		\dots
+		\section{Testování uživatelského rozhraní}
+		Podle \citep{Patton} má každá aplikace uživatelské rozhraní (UI - user interface). V~dnešní době je dělíme do dvou skupin, grafické (GUI - graphical user interface) a~z~příkazové řádky (CLI - command line interface). V~obou případech UI slouží pro interakci a~komunikaci s~uživatelem. Je to prostředek pro zadavání vstupních data a~získávání výstupů.
+		
+		Použitelnost UI znamená, nakolik funkční a~efektivní je práce uživatele s~programem. K~tomu se vztahuje pojem ergonomika -- zabývá se návrhem a~konstrukcí předmětů s~ohledem na to, aby se s~nimi pracovalo jednoduše. Vzhledem k~použitelnosti se tedy bude testovat, zda je aplikace těžko srozumitelná, obtížně se s~ní pracuje, je pomalá, nebo ji zákazník nebude považovat za vyhovující.
+		
+		Dobré uživatelské rozhraní by mělo mít následující vlastnosti:
+			\begin{itemize}
+				\item Dodržuje standardy nebo zásady -- pokud aplikace poběží na specifické platformě, je možné, že pro tuto platformu existují předepsané standardy a~normy na vzhled a~chování aplikací (tzv. look and feel), které je vhodné dodržovat.
+				\item Je intuitivní -- míry intuitivnosti softwaru jsou např.: Je UI zřetelné, vhodně rozložené? Nepřekáží vám v tom, co s ním hodláte dělat? Nachází se funkce a~odpovědi tam, kde je očekáváte? Je jasné, co bude další akce v~pořadí? Není příliš komplikované (neobsahuje moc funkcí)?
+				\item Je konzistentní -- uživatelé si zvyknou na určitý způsob ovládání a~očekávají, že provedou stejnou akci velmi podobně i~v~jiném programu. Proto je důležité věnovat pozornost nejen konzistenci v~rámci naší aplikace, ale i~vůči ostatním. Pozor bychom si měli dávat na klávesové zkratky, výběry z~nabídek, umístění tlačítek, výstupy aplikace apod.
+				\item Je flexibilní -- uživatelé mají rádi možnost volby. I~v~jednoduchých programech typu kalkulačka bývá na výběr alespoň ze dvou rozložení -- standardního a~věděckého. To ovšem znesnadňuje testování, proto by voleb nemělo být příliš mnoho.
+				\item Je pohodlné -- software by neměl uživateli práci s~ním nijak znepříjemňovat. Je vhodné zaměřit se na náležitost (měl by působit dojmem, který odpovídá jeho záměru), ošetření chyb (upozornění před kritickou operací, návrat o~krok zpět aj.), rychlost zpracování (chybové hlášky zobrazovat dostatečně dlouho, uvést odhadovaný čas do dokončení).
+				\item Je správné -- ověřuje se to, zda UI dělá to, co má. Pozornost by se měla věnovat marketingovým rozdílům (v~aplikaci nejsou oproti marketingovým dokumentům funkce navíc, nebo chybějící funkce), jazyku a~pravopisu, nesprávným médiím (různorodé ikony, zvuky a~jiné části UI).
+				\item Je užitečné -- přispívají dané funkce zvýšení užitné hodnoty aplikace? Pomůže uživateli v~jeho práci s~aplikací? Nepodstatné funkce znamenají zbytečné testování navíc a~pro zákazníka mohou být špatné.
+			\end{itemize}
 		
 		\section{Automatizace těmito nástroji}
-		\dots
+		Funkcionální testování UI je jednou z~částí testování UI, která se nechá automatizovat. Existuje celá řada nástrojů, které umožňují simulování klikání a~psaní na klávesnici. Další částí vhodnou pro automatizaci je kontrola, zda GUI obsahuje všechny prvky, a~jestli je chování prvků stejné, jako požadované. V~obou těchto disciplínách je pro nástroj důležité, aby zvládal klikat a~psát do aplikace, ale zároveň vyhodnocoval její stav (vstup je možné zadávat až tehdy, když je na to aplikace připravená, apod.).
+		\\\dots

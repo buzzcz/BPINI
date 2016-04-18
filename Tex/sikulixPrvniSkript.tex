@@ -1,4 +1,5 @@
 \begin{lstpython}{caption={První skript}, label={PrvniSkript}}
+#prohlizec je promenna
 prohlizec = App("google-chrome")
 prohlizec.open()	#otevre aplikaci definovanou
 				#vyse
@@ -17,8 +18,8 @@ paste("obr5.png", "1")
 click(Pattern("obr6.png").targetOffset(-27,-18))
 click("obr7.png")
 click("obr4.png")
-#precte text z casti, ktera je 100px vpravo od
-#nalezeneho obrazku
+#precte text z casti, ktera je vpravo od nalezeneho
+#obrazku 100px siroka, do promenne vystup
 vystup = find("obr8.png").right(100).text()
 if vystup == "2.54":
 	#pokud rozpoznany text souhlasi se zadanym,

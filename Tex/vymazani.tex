@@ -1,0 +1,65 @@
+\begin{lstjava}{caption={Test funkčnosti tlačítka \emph{Vymazat}}, label={vymazani}}
+@Test
+public void TC03_01_02PrevodChyba() {
+  if (run) {
+    try {
+      s.find(pngs + "labely/vstupLabel.png").right().
+        grow(0, 20).click(pngs + "textovaPole/" +
+        "vstupniTextovePole.png");
+      s.paste("abc");
+      Match hledani = s.find(pngs + "labely/" +
+        "vstupLabel.png").right().grow(0, 20).
+        find(pngs + "vyberoveSeznamy/vstupni" +
+        "VyberovySeznam.png");
+      hledani.click();
+      hledani.below().click(pngs + "vyberove" +
+        "Seznamy/vstupM.png");
+      hledani = s.find(pngs + "labely/vystupLabel" +
+        ".png").right().grow(0, 20).find(pngs +
+        "vyberoveSeznamy/vystupniVyberovySeznam" +
+        ".png");
+      hledani.click();
+      hledani.below().click(pngs + "vyberove" +
+        "Seznamy/vystupM.png");
+      s.click(pngs + "tlacitka/tlacitkoPreved.png");
+      s.wait(pngs + "tlacitka/tlacitkoPreved.png",
+        5);
+      assertTrue("Nenalezeno upozorneni o chybe", s.
+        exists(pngs + "chyby/chybaNeplatneCislo") !=
+        null);
+      s.click(pngs + "tlacitka/tlacitkoVymaz.png");
+      s.wait(pngs + "tlacitka/tlacitkoPreved.png",
+        5);
+      assertTrue("Vstupni pole neni prazdne", s.
+        find(pngs + "labely/vstupLabel.png").right().
+        grow(0, 20).exists(pngs + "textovaPole" +
+        "/vstupniTextovePole.png") != null);
+      assertTrue("Vystupni pole neni prazdne", s.
+        find(pngs + "labely/vystupLabel.png").
+        right().grow(0, 20).exists(pngs +
+        "textovaPole/vystupniTextovePole.png") !=
+        null);
+      assertTrue("Vstupni vyberovy seznam nema" +
+        "defaultni hodnotu", s.find(pngs +
+        "labely/vstupLabel.png").right().grow(0, 20).
+        exists(pngs + "vyberoveSeznamy/vstupni" +
+        "VyberovySeznam.png") != null);
+      assertTrue("Vystupni vyberovy seznam nema" +
+        "defaultni hodnotu", s.find(pngs +
+        "labely/vystupLabel.png").right().grow(0,
+        20).exists(pngs + "vyberoveSeznamy/" +
+        "vystupniVyberovySeznam.png") != null);
+      assertTrue("Nalezeno upozorneni o chybe", s.
+        exists(pngs + "chyby/chybaNeplatneCislo") ==
+        null);
+    } catch (FindFailed | AssertionError e) {
+      s.capture().save("errors", screenshotName());
+      logger.error(e.getMessage());
+      fail(e.getMessage());
+    }
+  } else {
+    logger.error("Setup failed");
+    fail("Setup failed");
+  }
+}
+\end{lstjava}
