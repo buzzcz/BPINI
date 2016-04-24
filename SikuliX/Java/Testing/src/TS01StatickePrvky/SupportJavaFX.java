@@ -38,8 +38,6 @@ public class SupportJavaFX {
 	public static void setUpBeforeClass() {
 		logger = LogManager.getLogger();
 
-		Settings.OcrTextSearch = true;
-		Settings.OcrTextRead = true;
 		Settings.MoveMouseDelay = 0;
 		Debug.setLogger(logger);
 		Debug.setLoggerAll("info");
