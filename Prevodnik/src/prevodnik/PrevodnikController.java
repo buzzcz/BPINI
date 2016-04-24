@@ -15,6 +15,9 @@ import java.util.ResourceBundle;
 
 public class PrevodnikController implements Initializable {
 
+	/**
+	 * Grafické prvky formuláře
+	 */
 	@FXML
 	private VBox chybyVBox;
 	@FXML
@@ -36,6 +39,12 @@ public class PrevodnikController implements Initializable {
 	@FXML
 	private Button vymazButton;
 
+	/**
+	 * Inicializační metoda formuláře. Nastaví akce tlačítek při spuštění aplikace
+	 *
+	 * @param location  location
+	 * @param resources resources
+	 */
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		prevedButton.setOnAction(e -> {
@@ -57,6 +66,11 @@ public class PrevodnikController implements Initializable {
 		});
 	}
 
+	/**
+	 * Provádí kontrolu vstupu
+	 *
+	 * @return <code>true</code> pokud je vstup vpořádku; <code>false</code> pokud není
+	 */
 	private boolean kontrolaVstupu() {
 		String s = vstupTextField.getText();
 		s = s.replaceAll(",", ".");
@@ -93,6 +107,9 @@ public class PrevodnikController implements Initializable {
 		}
 	}
 
+	/**
+	 * Metoda, která provede převod hodnot
+	 */
 	private void preved() {
 		double vysledek = Double.parseDouble(vstupTextField.getText().replaceAll(",", "."));
 		if (vysledek == 1.7e308) {
@@ -124,6 +141,12 @@ public class PrevodnikController implements Initializable {
 		vystupTextField.setText(vysledek + "");
 	}
 
+	/**
+	 * Metoda, která provádí převod centimetrů na ostatní jednotky
+	 *
+	 * @param vysledek hodnota, která má být převedena
+	 * @return hodnota převedená v závislosti na vybrané výstupní jednotce
+	 */
 	private double prevedCm(double vysledek) {
 		switch (vystupComboBox.getSelectionModel().getSelectedIndex()) {
 			case 0:
@@ -144,6 +167,12 @@ public class PrevodnikController implements Initializable {
 		}
 	}
 
+	/**
+	 * Metoda, která provádí převod palců na ostatní jednotky
+	 *
+	 * @param vysledek hodnota, která má být převedena
+	 * @return hodnota převedená v závislosti na vybrané výstupní jednotce
+	 */
 	private double prevedIn(double vysledek) {
 		switch (vystupComboBox.getSelectionModel().getSelectedIndex()) {
 			case 0:
@@ -165,6 +194,12 @@ public class PrevodnikController implements Initializable {
 		}
 	}
 
+	/**
+	 * Metoda, která provádí převod stop na ostatní jednotky
+	 *
+	 * @param vysledek hodnota, která má být převedena
+	 * @return hodnota převedená v závislosti na vybrané výstupní jednotce
+	 */
 	private double prevedFt(double vysledek) {
 		switch (vystupComboBox.getSelectionModel().getSelectedIndex()) {
 			case 0:
@@ -185,6 +220,12 @@ public class PrevodnikController implements Initializable {
 		}
 	}
 
+	/**
+	 * Metoda, která provádí převod metrů na ostatní jednotky
+	 *
+	 * @param vysledek hodnota, která má být převedena
+	 * @return hodnota převedená v závislosti na vybrané výstupní jednotce
+	 */
 	private double prevedM(double vysledek) {
 		switch (vystupComboBox.getSelectionModel().getSelectedIndex()) {
 			case 0:
@@ -205,6 +246,12 @@ public class PrevodnikController implements Initializable {
 		}
 	}
 
+	/**
+	 * Metoda, která provádí převod milimetrů na ostatní jednotky
+	 *
+	 * @param vysledek hodnota, která má být převedena
+	 * @return hodnota převedená v závislosti na vybrané výstupní jednotce
+	 */
 	private double prevedMm(double vysledek) {
 		switch (vystupComboBox.getSelectionModel().getSelectedIndex()) {
 			case 0:
@@ -225,6 +272,12 @@ public class PrevodnikController implements Initializable {
 		}
 	}
 
+	/**
+	 * Metoda, která provádí převod yardů na ostatní jednotky
+	 *
+	 * @param vysledek hodnota, která má být převedena
+	 * @return hodnota převedená v závislosti na vybrané výstupní jednotce
+	 */
 	private double prevedYd(double vysledek) {
 		switch (vystupComboBox.getSelectionModel().getSelectedIndex()) {
 			case 0:
