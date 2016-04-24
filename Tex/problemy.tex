@@ -18,6 +18,8 @@ Během tvorby testů je možné narazit na různé problémy. Ty, které byly zj
 	\section{Rozměry screenshotů}
 	Pokud se v~testu hledá prvek v~závislosti na pozici jiného, je možné, že nebude nalezen. Důvodem mohou být rozdílné rozměry screenshotů v~kombinaci s~použitými metodami hledání -- první prvek nalezneme, ale screenshot druhého je větší, než prohledávaná oblast vymezená rozměry prvního, tudíž nemůže být nalezen. Obrázek \ref{rozmery} demonstruje problém. Pokud budeme hledat červeně vyznačený obrázek, který je vyšší než snímek, ve kterém hledáme, nebude nalezen.
 	
+	Na snímku je situace, kdy se někde v~záložce \emph{Reklama} nalézá ikona \emph{KIV}. První snímek obrazovky ukazuje výřez záložky \emph{Reklama}. Tento snímek je vysoký x, y pixelů. Druhý, červeně orámovaný snímek již ukazuje hledané logo \emph{KIV} (ve stejném měřítku), ale výška tohoto snímku je (chybně / zbytečně) o~10 pixelů na každou stranu větší, než první snímek.
+	
 	\begin{figure}[ht!]
 		\centering
 		\caption{Nesprávné rozměry screenshotů}
@@ -32,9 +34,9 @@ Během tvorby testů je možné narazit na různé problémy. Ty, které byly zj
 	
 	\begin{figure}[ht!]
 		\centering
-		\caption{Screenshot s ukazatelem myši}
+		\caption{Screenshot s~ukazatelem myši}
 		\label{mys}
-		\includegraphics[width=10cm]{img/Chyby/mys.png}
+		\includegraphics[width=6cm]{img/Chyby/mys.png}
 	\end{figure}
 	
 	\section{Nespolehlivé OCR}
@@ -42,7 +44,7 @@ Během tvorby testů je možné narazit na různé problémy. Ty, které byly zj
 	
 	Možným řešením je tedy nasimulovat korektní výstup, provést screenshot a~ten použít pro obrazové rozpoznání správného výsledku.
 	
-	\section{Nefunkčnost některých metod, tříd}
+	\section{Nefunkčnost některých metod, tříd}\label{Problemy}
 	Java API SikuliX poskytuje třídy a~metody pro práci s~aplikacemi a~jejich okny. Tyto metody a~třídy mají však občas jiné než očekávané chování. Vzhledem k~téměř nulové dokumentaci je toto celkem velký problém.
 
 		\subsection{Pozice a~velikost okna}		
@@ -59,11 +61,11 @@ Během tvorby testů je možné narazit na různé problémy. Ty, které byly zj
 		Náhradním řešením tedy bylo vytvořit screenshot některé části aplikace, která se nemění a~je vždy v~aplikaci přítomna. Cyklus poté vypadá takto: \uv{testuj, dokud najdeš tuto část aplikace}. To však není řešení absolutní, protože nebude funkční v~případech, kdy se objeví např. dialogové okno, které tuto části zakryje, nebo pokud taková část vůbec neexistuje.
 		
 		\subsection{Spuštění aplikace}
-		Metody pro spuštění aplikace \texttt{App.open("aplikace")}, \texttt{new App(\\"aplikace").open()} a~\texttt{App.run("příkaz")}, které SikuliX poskytuje, fungovaly bez problémů v~OS Linux, avšak v~OS Windows nastal problém. SikuliX nebylo schopné otevřít aplikaci pomocí žádného z~příkazů\\[0.2cm]
+		Metody pro spuštění aplikace \texttt{App.open("aplikace")}, \texttt{new App(\\"aplikace").open()} a~\texttt{App.run("příkaz")}, které SikuliX poskytuje, fungovaly bez problémů v~OS Linux, avšak v~OS Windows nastal problém. SikuliX nebylo schopné otevřít aplikaci pomocí ani jednoho z~příkazů\\[0.2cm]
 		\texttt{App.open("java -jar cesta/k/aplikaci.jar");\\
 		new App("java -jar cesta/k/aplikaci.jar").open();\\
 		App.run("java -jar cesta/k/aplikaci.jar");}\\[0.2cm]
-		Týká se to pouze spouštění aplikace pomocí daného příkazu. Pokud byla zadána cesta ke spustitelnému souboru, vše proběhlo bez problémů i~za použití těchto metod.
+		Týká se to pouze spouštění aplikace pomocí daného příkazu. Pokud by byla zadána cesta ke spustitelnému souboru (např.: \texttt{cesta/ke/spustitelnemu/\\souboru.exe}), vše proběhlo bez problémů i~za použití těchto metod.
 		
 		Problém jsem nebyl schopen za pomoci SikuliX vyřešit. Použil jsem proto metodu poskytovanou programovacím jazykem Java, konkrétně\\[0.2cm]
 		\texttt{Runtime.getRuntime().exec("java -jar cesta/k/aplikaci.jar");\\

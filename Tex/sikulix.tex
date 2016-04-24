@@ -16,11 +16,13 @@
 	\end{figure}
 	
 	\section{Tvorba testů}
+	Budeme pracovat s~webovou aplikací \emph{Převodník} dostupné z~url \url{http://oks.kiv.zcu.cz/Prevodnik/Prevodnik}. V~té se vyskytují záměrné chyby a~bude sloužit jako cvičná aplikace pro tuto práci.
+	
 	Pro tvorbu testů pomocí SikuliX jsou nejdůležitější snímky (screenshoty) řídících prvků, které bude SikuliX hledat a~případně používat k~některým akcím. Je tedy vhodné si nejprve aplikaci spustit, vybrat příslušné prvky a~vytvořit jejich snímky. Při jejich tvorbě se doporučuje preciznost a~přesnost, neboť v~jistých situacích mohou nastat problémy, které budou zmíněny později.
 	
 	Pokud je snímků více, je vhodné je třídit do adresářů. To není nutné, ale zlepšuje to čitelnost kódu a~usnadňuje práci s~nástrojem. Adresáře mohou např. sdružovat snímky prvků, které jsou si nějakým způsobem podobné (tlačítka, textová pole, výběrové seznamy, chybové hlášky, apod.). Stejně tak je vhodné snímky pojmenovávat na základě toho, co obsahují (vstupní textové pole, label Vstup, apod.).
 	
-	Dle \citep{SikuliXImgs} SikuliX interně používá třídu ImageIO z~Javy. Podporované formáty jsou tedy bmp, wbmp, jpg, jpeg, png a gif. Vzhledem k~vlastnostem se doporučuje používat formát png.
+	Dle \citep{SikuliXImgs} SikuliX interně používá třídu ImageIO z~Javy. Podporované formáty jsou tedy bmp, wbmp, jpg, jpeg, png a~gif. Vzhledem k~vlastnostem se doporučuje používat formát png.
 	
 	Pokud je vytvářený test jednoduchý a~není potřeba většího množství testů, je jednodušší vytvořit jej pomocí SikuliX-IDE. Pokud však chceme aplikaci testovat podrobněji a~psát velké množství testovacích případů, je vhodnější použít některý z~podporovaných programovacích jazyků a~využít tak jeho možnosti jako nadstavbu nad SikuliX.
 	
@@ -65,7 +67,7 @@
 					\end{figure}
 					\FloatBarrier
 				\item Na další řádku zadáme příkaz pro stisknutí klávesy Enter:\\\texttt{type(Key.ENTER)}
-				\item V~prohlížeči otevřeme webovou stránku s~aplikací Převodník. V~SikuliX-IDE klikneme v~lévém menu na \includegraphics[scale=0.7]{img/PrvniSkript/click.png} a~provedeme screenshot záložky, která odkazuje na Převodník.
+				\item V~prohlížeči otevřeme webovou stránku s~aplikací Převodník. V~SikuliX-IDE klikneme v~levém menu na \includegraphics[scale=0.7]{img/PrvniSkript/click.png} a~provedeme screenshot záložky, která odkazuje na Převodník.
 					\begin{figure}[ht!]
 						\centering
 						\includegraphics[width=12.5cm]{img/PrvniSkript/krok7.png}
@@ -86,7 +88,7 @@
 					\end{figure}
 					\FloatBarrier
 					Zde buď zadáme příslušné hodnoty do vstupních políček, nebo jen vybereme v~obrázku požadované místo. To nám zajistí, že SikuliX neklikne do středu obrázku, ale na zvolené místo v~něm. Potvrdíme tlačítkem \emph{OK} a~pokračujeme v~tvorbě skriptu.
-				\item Nyní nastává problém. Potřebujeme vytvořit screenshot jedné položky ve výběrovém seznamu, ale SikuliX-IDE nám k tomu nedává možnost. Řešením je např. v~prohlížeči výběrový seznam rozbalit, provést screenshot celé obrazovky pomocí tlačítka \emph{PrintScreen} a~v~nějakém grafickém editoru vyříznout pouze tu část, kterou chceme (\includegraphics[scale=0.8]{img/PrvniSkript/inch.png}). Tu poté uložíme do složky s~vytvářeným skriptem a~pouze doplníme následující kód: \texttt{click("nazev-snimku.png")}
+				\item Nyní nastává problém. Potřebujeme vytvořit screenshot jedné položky ve výběrovém seznamu, ale SikuliX-IDE nám k~tomu nedává možnost. Řešením je např. v~prohlížeči výběrový seznam rozbalit, provést screenshot celé obrazovky pomocí tlačítka \emph{PrintScreen} a~v~nějakém grafickém editoru vyříznout pouze tu část, kterou chceme (\includegraphics[scale=0.8]{img/PrvniSkript/inch.png}). Tu poté uložíme do složky s~vytvářeným skriptem a~pouze doplníme následující kód: \texttt{click("nazev-snimku.png")}
 				\item Na novou řádku napíšeme kód \texttt{click()} a~do závorek zkopírujeme výše použitý obrázek tlačítka \emph{Převeď}.
 				\item Na další řádce si vytvoříme proměnnou \emph{vystup} a~přiřadíme do ní text z~výstupního textového pole. To se provede následujícím způsobem:\\\texttt{vystup = find("label-vystup.png").right(100).text()}\\
 				Funkce \emph{right()} říká, že pracujeme s~oblastí širokou 100 pixelů napravo od nalezeného obrázku (popisku \emph{Výstup:}). Funkce \emph{text()} provede OCR\footnote{Optical Character Recognition -- optické rozpoznání znaků} a~vrátí zjištěný text.
@@ -124,5 +126,5 @@
 		
 		Knihovna \emph{JUnit} byla použita z~toho důvodu, že nám pomůže jednak s~organizací testů a~jejich spouštěním, a~jednak s~jejich vyhodnocováním. Dále obsahuje metody pro vyhodnocování a~porovnávání hodnot, tzv. \emph{asserty}.
 		
-		\emph{Log4J} je knihovna, která slouží k~logování informací do souborů. Umožňuje vlastní konfiguraci výstupních souborů a~spoustu dalších funkcí. Použita byla z~toho důvodu, že během testování je vhodné zaznamenávat prováděné činnosti z důvodu jednoduššího zjištění případného selhání testu. SikuliX poskytuje informace o~tom, kam klikal či psal. Ty vypisuje na standardní výstup, avšak poskytuje metodu, které se předá instance \emph{Logger}, který poté SikuliX použije pro logování. Následuje ukázka zapisovaných informací, formátovaných vlastní konfigurací logeru, viz \ref{konfigurace}.
+		\emph{Log4J} je knihovna, která slouží k~logování informací do souborů. Umožňuje vlastní konfiguraci výstupních souborů a~spoustu dalších funkcí. Použita byla z~toho důvodu, že během testování je vhodné zaznamenávat prováděné činnosti z~důvodu jednoduššího zjištění případného selhání testu. SikuliX poskytuje informace o~tom, kam klikal či psal. Ty vypisuje na standardní výstup, avšak poskytuje metodu, které se předá instance \emph{Logger}, který poté SikuliX použije pro logování. Následuje ukázka zapisovaných informací, formátovaných vlastní konfigurací logeru, viz \ref{konfigurace}.
 		\input{log}
