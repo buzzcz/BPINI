@@ -11,8 +11,8 @@
 		\centering
 		\caption{Test instalace}
 		\label{InstalOK}
-		\includegraphics[width=9cm]{img/Instalace/InstalaceOK.png}\\[0.3cm]
-		\includegraphics[width=9cm]{img/Instalace/InstalaceOK1.png}
+		\includegraphics[width=8cm]{img/Instalace/InstalaceOK.png}\\[0.3cm]
+		\includegraphics[width=8cm]{img/Instalace/InstalaceOK1.png}
 	\end{figure}
 	
 	\section{Tvorba testů}
@@ -29,8 +29,8 @@
 	\section{SikuliX-IDE}
 	Dle \citep{SikuliX} je možné SikuliX-IDE spustit různými způsoby:
 	\begin{enumerate}
-		\item Spuštěním souboru SikuliX.app (Mac) nebo SikuliX.exe (Windows),
-		\item dvojklikem na soubor runsikulix (Linux) nebo runsikulix.cmd (Windows),
+		\item Spuštěním souboru \emph{SikuliX.app} (Mac) nebo \emph{SikuliX.exe} (Windows),
+		\item dvojklikem na soubor \emph{runsikulix} (Linux) nebo \emph{runsikulix.cmd} (Windows),
 		\item z~příkazové řádky příkazem\\
 		\texttt{java -jar cesta/k/sikulix.jar [volitelne parametry]}
 	\end{enumerate}
@@ -60,20 +60,20 @@
 						\includegraphics[width=12.5cm]{img/PrvniSkript/krok4.png}
 					\end{figure}
 					\FloatBarrier
-				\item V~levém menu otevřeme podmenu \emph{Keyboard Actions} a~vybereme\\\includegraphics[scale=0.7]{img/PrvniSkript/paste.png}. Nyní provedeme screenshot políčka pro URL adresu a~jako druhý parametr funkce zadáme URL adresu aplikace Převodník (\url{"http://oks.kiv.zcu.cz/Prevodnik"}). Přidaná část tedy vypadá přibližně takto:
+				\item V~levém menu otevřeme podmenu \emph{Keyboard Actions} a~vybereme\\\includegraphics[scale=0.7]{img/PrvniSkript/paste.png}. Nyní provedeme screenshot políčka pro URL adresu a~jako druhý parametr funkce zadáme URL adresu aplikace \emph{Převodník} (\url{"http://oks.kiv.zcu.cz/Prevodnik"}). Přidaná část tedy vypadá přibližně takto:
 					\begin{figure}[ht!]
 						\centering
 						\includegraphics[width=12.5cm]{img/PrvniSkript/krok5.png}
 					\end{figure}
 					\FloatBarrier
 				\item Na další řádku zadáme příkaz pro stisknutí klávesy Enter:\\\texttt{type(Key.ENTER)}
-				\item V~prohlížeči otevřeme webovou stránku s~aplikací Převodník. V~SikuliX-IDE klikneme v~levém menu na \includegraphics[scale=0.7]{img/PrvniSkript/click.png} a~provedeme screenshot záložky, která odkazuje na Převodník.
+				\item V~prohlížeči otevřeme webovou stránku s~aplikací \emph{Převodník}. V~SikuliX-IDE klikneme v~levém menu na \includegraphics[scale=0.7]{img/PrvniSkript/click.png} a~provedeme screenshot záložky, která odkazuje na \emph{Převodník}.
 					\begin{figure}[ht!]
 						\centering
 						\includegraphics[width=12.5cm]{img/PrvniSkript/krok7.png}
 					\end{figure}
 					\FloatBarrier
-				\item Klikneme na záložku aplikace Převodník. V~SikuliX-IDE opět vybereme \includegraphics[scale=0.7]{img/PrvniSkript/wait.png} a~uděláme snímek tlačítka \emph{Převeď}.
+				\item Klikneme na záložku aplikace \emph{Převodník}. V~SikuliX-IDE opět vybereme \includegraphics[scale=0.7]{img/PrvniSkript/wait.png} a~uděláme snímek tlačítka \emph{Převeď}.
 				\item Dále vybereme \includegraphics[scale=0.7]{img/PrvniSkript/paste.png} a~vytvoříme snímek vstupního pole. Snímek musí obsahovat popisek \emph{Vstup:}, aby byl jednoznačně identifikovatelný. Také musí obsahovat část vstupního pole dost velkou na to, aby ve středu snímku bylo toto pole, nikoli jeho okolí. Vložení hodnoty se provádí do středu snímku, což se ovšem dá upravit, jak si ukážeme v~dalším kroku. Jako druhý parametr zadáme hodnotu \texttt{"1"}.
 				\item Vybereme možnost \includegraphics[scale=0.7]{img/PrvniSkript/click.png} a~vytvoříme screenshot obou výběrových seznamů. Nyní klikneme na obrázek seznamů v~SikuliX-IDE a~otevře se okno:
 					\begin{figure}[ht!]

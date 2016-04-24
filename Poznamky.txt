@@ -5,8 +5,4 @@ Do úvodu psát o monkey testech
 Popsat sadu testů - organizace
 Popsat detailně, že TS se dají spouštět samy, jak jsou organizované
 
-Ukazku pouziti ne testovani ale na automatizaci cinnosti např. spusteni TestLinku
-
-Tlačítka apod. bezpatkovým písmem (tučně), v seznamech
-
 Moje otázky:

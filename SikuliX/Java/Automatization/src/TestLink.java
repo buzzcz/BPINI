@@ -25,15 +25,13 @@ public class TestLink {
 	public static void main(String[] args) {
 		Logger logger = LogManager.getLogger();
 
-		Settings.OcrTextSearch = true;
-		Settings.OcrTextRead = true;
 		Settings.MoveMouseDelay = 0;
 		Debug.setLogger(logger);
 		Debug.setLoggerAll("info");
 
 		Screen s = new Screen();
 		try {
-			Runtime.getRuntime().exec("/media/GamesEtc/Apps/TestLink/manager-linux-x64.run");
+			Runtime.getRuntime().exec("cesta/k/TestLink/manager/tool");
 			App application = new App("TestLink");
 			application.focus();
 			s.wait("png/goToApp.png", 5);

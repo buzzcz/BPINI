@@ -1,2 +1,8 @@
-\chapter{Automatizace}
-\dots
+\chapter{Automatizace nástrojem}
+Podle \citep{SikuliX} je SikuliX primárně nástroj pro automatizaci činností. Je vhodný pro kohokoli, kdo provádí opakovaně některé monotónní činnosti jako denní práce s~aplikacemi nebo webovými stránkami, hraní her, administrace IT systémů a~sítí apod.
+
+Zde ukážeme možnost automatizace takového procesu na konkrétním příkladu, viz kód \ref{automatizace}. Jedná se o~zapnutí a~případné přihlášení (pokud jsme se během sezení již nepřihlašovali) do aplikace \emph{TestLink} instalované podle postupu v~podkladech k~přednáškám KIV/OKS, viz \citep{Herout}.
+
+Postup je ve své podstatě identický jako při vytváření testovacích případů. Jediným rozdílem je, že nebudeme používat knihovnu \emph{JUnit}, ale skript vytvoříme jako samostatný program v~Javě. Každý si ve skriptu musí upravit cestu k~\emph{Bitnami TestLink Stack Manager Tool}, login a~heslo.
+
+\input{testlink}
