@@ -40,13 +40,15 @@ Ze scénářů i~z~přiloženého zdrojového kódu je patrné, že přístup k~
 			\end{enumerate}
 		\item Vymazání
 		\end{enumerate}}
+	
+	Test Suite slouží pro seskupení podobně zaměřených testovacích případů. Jejich použití v~této práci je shodné s~výčtem výše. Například název části, ve které testujeme úplnost výběrových seznamů aplikace, má předponu \emph{TS} (Test Suite) za níž následuje pořadové číslo a~popis dané části (1.3. Úplnost výběrových seznamů). Název Test Suite tedy vypadá takto: \emph{TS01\_03UplnostVyberovychSeznamu}. Je možné spouštět celé Test Suite, v~případě použití IDE či některých dalších nástrojů i~jednotlivé testovací případy.
 		
-	Testovací případy mají předponu \emph{TC} za níž nasleduje číslo testovacího případu a~jeho název. Pokud tedy např. testujeme úplnost výstupního výběrového seznamu, název bude \emph{TC01\_03\_02VystupniVyberovySeznam}. Číslo testovacího případu se tvoří dle jeho příslušnosti do části (TestSuite) ve výčtu výše. Patří do \emph{Úplnost výběrových seznamů} a~tomu odpovídá první část čísla, \emph{01\_03}. Označení \emph{02} je pořadové číslo testu v~rámci dané kategorie.
+	Testovací případy mají předponu \emph{TC} (Test Case) za níž nasleduje číslo testovacího případu a~jeho název. Pokud tedy např. testujeme úplnost výstupního výběrového seznamu, název bude \emph{TC01\_03\_02VystupniVyberovy-\\Seznam}. Číslo testovacího případu se tvoří dle jeho příslušnosti do části ve výčtu výše (Test Suite). Patří do \emph{Úplnost výběrových seznamů} a~tomu odpovídá první část čísla, \emph{01\_03}. Označení \emph{02} je pořadové číslo testu v~rámci dané kategorie.
 		
 	\section{Statické prvky}
-	Scénáře v~této části pouze zkontrolují, zda testovaná aplikace obsahuje všechny prvky, jako např. tlačítka či vstupní pole. Dále se zkoumá, zda je vstupní pole editovatelné a~výstupní pole nikoli. Poté se zjistí, zda jsou ve výběrových seznamech obsaženy všechny položky.
+	Scénáře v~této části pouze zkontrolují, zda testovaná aplikace obsahuje vše-\\chny prvky, jako např. tlačítka či vstupní pole. Dále se zkoumá, zda je vstupní pole editovatelné a~výstupní pole nikoli. Poté se zjistí, zda jsou ve výběrových seznamech obsaženy všechny položky.
 	
-	Následující úsek kódu \ref{statickePrvky} demonstruje, v~jakém duchu se testují statické prvky aplikace.
+	Následující úsek kódu \ref{statickePrvky} demonstruje, jakým způsobem se testují statické prvky aplikace.
 	\input{statickePrvky}
 	
 	\section{Převody}

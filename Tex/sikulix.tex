@@ -1,6 +1,6 @@
 \chapter{SikuliX}
 	\section{Instalace}
-	Po stažení balíčku započne instalace jeho spuštěním\footnote{Je potřeba instalace JRE nebo JDK 6 a~vyšší, v~linuxové distribuci balíky \emph{libopencv-core2.4, libopencv-imgproc2.4, libopencv-highgui2.4, libtesseract3} a~\emph{wmctrl} \citep{SikuliX}}. Je ukázána instalace v~Linuxu, avšak instalace ve Windows je obdobná. V~průběhu máme na výběr různé možnosti, jak chceme nástroj používat, viz obrázek \ref{Instal}. Např. zda chceme používat SikuliX-IDE a~Python nebo Ruby, jestli budeme používat jiné IDE a~Javu a~zda chceme používat OCR funkce. Zaškrtneme všechna políčka kromě \emph{Ruby (JRuby)} a~klikneme na \emph{Setup Now}. Jsme dotázáni, zda chceme balíčky stáhnout, nebo ukončit instalaci. Zvolíme \emph{Yes}. Další dotaz je na verzi Jythonu, kterou chceme použít, s~upozorněním, že může nastat problém se znaky v~kódování UTF-8. Opět zvolíme \emph{Yes}. Začne vytváření souborů a~měla by se otevřít dvě okna jako na obrázu \ref{InstalOK}, obě potvrdíme tlačítkem \emph{OK}. Pokud vše proběhne v~pořádku, vzniknou v~adresáři soubory podobné těmto\footnote{Může se lišit na různých OS} \emph{runsikulix, SetupStuff, SikuliX-1.1.0-SetupLog.txt, sikulixapi.jar, sikulix.jar}.
+	Po stažení balíčku započne instalace jeho spuštěním\footnote{Je potřeba instalace JRE nebo JDK 6 a~vyšší, v~linuxové distribuci balíky \emph{libopencv-core2.4, libopencv-imgproc2.4, libopencv-highgui2.4, libtesseract3} a~\emph{wmctrl} \citep{SikuliX}}. Je ukázána instalace v~Linuxu, avšak instalace ve Windows je obdobná. V~průběhu máme na výběr různé možnosti, jak chceme nástroj používat, viz obrázek \ref{Instal}. Např. zda chceme používat SikuliX-IDE a~Python nebo Ruby, jestli budeme používat jiné IDE a~Javu a~zda chceme používat OCR\footnote{Optical Character Recognition -- optické rozpoznání znaků} funkce. Zaškrtneme všechna políčka kromě \emph{Ruby (JRuby)} a~klikneme na \emph{Setup Now}. Jsme dotázáni, zda chceme balíčky stáhnout, nebo ukončit instalaci. Zvolíme \emph{Yes}. Další dotaz je na verzi Jythonu, kterou chceme použít, s~upozorněním, že může nastat problém se znaky v~kódování UTF-8. Opět zvolíme \emph{Yes}. Začne vytváření souborů a~měla by se otevřít dvě okna jako na obrázu \ref{InstalOK}, obě potvrdíme tlačítkem \emph{OK}. Pokud vše proběhne v~pořádku, vzniknou v~adresáři soubory podobné těmto\footnote{Může se lišit na různých OS} \emph{runsikulix, SetupStuff, SikuliX-1.1.0-SetupLog.txt, sikulixapi.jar, sikulix.jar}.
 	\begin{figure}[ht!]
 		\centering
 		\caption{Instalace SikuliX}
@@ -82,7 +82,7 @@
 					\end{figure}
 					\FloatBarrier
 					Klikneme na \emph{Target Offset}, které vypadá následovně:
-						\begin{figure}[ht!]
+					\begin{figure}[ht!]
 						\centering
 						\includegraphics[width=10.5cm]{img/PrvniSkript/offset.png}
 					\end{figure}
@@ -91,7 +91,7 @@
 				\item Nyní nastává problém. Potřebujeme vytvořit screenshot jedné položky ve výběrovém seznamu, ale SikuliX-IDE nám k~tomu nedává možnost. Řešením je např. v~prohlížeči výběrový seznam rozbalit, provést screenshot celé obrazovky pomocí tlačítka \emph{PrintScreen} a~v~nějakém grafickém editoru vyříznout pouze tu část, kterou chceme (\includegraphics[scale=0.8]{img/PrvniSkript/inch.png}). Tu poté uložíme do složky s~vytvářeným skriptem a~pouze doplníme následující kód: \texttt{click("nazev-snimku.png")}
 				\item Na novou řádku napíšeme kód \texttt{click()} a~do závorek zkopírujeme výše použitý obrázek tlačítka \emph{Převeď}.
 				\item Na další řádce si vytvoříme proměnnou \emph{vystup} a~přiřadíme do ní text z~výstupního textového pole. To se provede následujícím způsobem:\\\texttt{vystup = find("label-vystup.png").right(100).text()}\\
-				Funkce \emph{right()} říká, že pracujeme s~oblastí širokou 100 pixelů napravo od nalezeného obrázku (popisku \emph{Výstup:}). Funkce \emph{text()} provede OCR\footnote{Optical Character Recognition -- optické rozpoznání znaků} a~vrátí zjištěný text.
+				Funkce \emph{right()} říká, že pracujeme s~oblastí širokou 100 pixelů napravo od nalezeného obrázku (popisku \emph{Výstup:}). Funkce \emph{text()} provede OCR a~vrátí zjištěný text.
 					\begin{figure}[ht!]
 						\centering
 						\includegraphics[width=12.5cm]{img/PrvniSkript/krok13.png}

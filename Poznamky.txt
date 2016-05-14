@@ -1,8 +1,0 @@
-Rozšířit abstrakt
-Monkey testy (nezávisle na SikuliX) jsou závislé na platformě
-Napsat rychlostní rozdíl mezi SikuliX a Seleniem
-Do úvodu psát o monkey testech
-Popsat sadu testů - organizace
-Popsat detailně, že TS se dají spouštět samy, jak jsou organizované
-
-Moje otázky:

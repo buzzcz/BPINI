@@ -71,3 +71,24 @@ Během tvorby testů je možné narazit na různé problémy. Ty, které byly zj
 		\texttt{Runtime.getRuntime().exec("java -jar cesta/k/aplikaci.jar");\\
 		App application = new App("Titulek aplikace");\\
 		application.focus();}
+		
+		\subsection{Rychlost vykonávaných testů}
+		Bylo provedeno srovnání časové náročnosti testů vytvořených pomocí SikuliX a~Selenia pro zjištění přítomnosti statických prvků v~aplikaci. Výsledky jsou uvedeny v~tabulce \ref{casovaNarocnost}, ze které je patrné, že Selenium je rychlejší. Důvodem je nejspíše fakt, že SikuliX obrazově vyhledávalo prvky, kdežto Selenium pouze přistupovalo k~HTML kódu aplikace.
+		
+		\begin{table}
+			\centering
+			\caption{Srovnání časové náročnosti testů v~ms}
+			\label{casovaNarocnost}
+			\begin{tabular}{|l||c|c|c|}
+			\hline
+			&SikuliX&\shortstack{\\Selenium --\\headless browser}&\shortstack{Selenium --\\Firefox}\\\hline\hline
+			Label \emph{Vstup:}&125&122&114\\\hline
+			Vstupní textové pole&415&0&105\\\hline
+			Vstupní výběrový seznam&165&0&117\\\hline
+			Label \emph{Výstup:}&128&66&113\\\hline
+			Výstupní textové pole&152&0&117\\\hline
+			Výstupní výběrový seznam&449&0&101\\\hline
+			Tlačítko \emph{Převeď}&144&1&145\\\hline
+			Tlačítko \emph{Vymaž}&332&0&130\\\hline
+			\end{tabular}
+		\end{table}

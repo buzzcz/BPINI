@@ -30,9 +30,9 @@
 % 
 % Texty abstraktů (anglicky, česky)
 %
-\abstracttexten{This paper deals with the use of software tools for testing graphical user interface. It compares some of the tools and describes the use of one of them in a~way that fits into the subject KIV/OKS.}
+\abstracttexten{This paper deals with the use of software tools for testing graphical user interface. The main objective was to compare several tools and to choose one of them. The fact that creating tests by them fits into the subject KIV/OKS taught at the University of West Bohemia was one of the crucial demands. A~tool called SikuliX was chosen with regard to that continuity and a~set of test cases was created over a~given practice application.}
 
-\abstracttextcz{Tato práce se zabývá využitím nástrojů k~testování grafického uživatelského rozhraní aplikací. Srovnává některé nástroje k~tomu určené a~popisuje použití jednoho z~nich tak, aby svou filosofií zapadal do předmětu KIV/OKS.}
+\abstracttextcz{Tato práce se zabývá využitím nástrojů k~testování grafického uživatelského rozhraní aplikací. Hlavním cílem bylo porovnat několik nástrojů k~tomu určených a~vybrat jeden z~nich. Jedním z~kritérií výběru bylo, aby tvorba testů pomocí něj svou filosofií zapadala do předmětu KIV/OKS vyučovaného na Západočeské Univerzitě v~Plzni. S~ohledem na tuto návaznost byl vybrán nástroj \emph{SikuliX}. V~tomto nástroji  byly prozkoumány základní režimy jeho práce a~následně byla vytvořena sada testovacích případů nad danou cvičnou aplikací.}
 
 % Na titulní stranu a do textu prohlášení se automaticky vkládá 
 % aktuální rok, resp. datum. Můžete je změnit:
@@ -101,6 +101,21 @@
 	stringstyle=\color{red}
 }}{}
 
+\usepackage{datatool}
+\newcommand{\sortitem}[1]{
+  \DTLnewrow{list}
+  \DTLnewdbentry{list}{description}{#1}
+}
+\newenvironment{sortedlist}{
+  \DTLifdbexists{list}{\DTLcleardb{list}}{\DTLnewdb{list}}
+}{
+  \DTLsort{description}{list}
+  \begin{itemize}
+    \DTLforeach*{list}{\theDesc=description}{
+      \item \theDesc}
+  \end{itemize}
+}
+
 % Zařadit literaturu do obsahu
 \usepackage[nottoc,notlot,notlof]{tocbibind}
 
@@ -129,16 +144,12 @@
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\overfullrule=3mm
+%\overfullrule=3mm
 
 \begin{document}
 %
 \maketitle
-\cleardoublepage
-\pagenumbering{gobble}
 \tableofcontents
-\cleardoublepage
-\pagenumbering{arabic}
 
 \include{uvod}
 
@@ -161,6 +172,8 @@
 \include{automatizace}
 		
 \include{zaver}
+
+\include{zkratky}
  
 % 
 % PRO ANGLICKOU SAZBU JE NUTNÉ ZMĚNIT
@@ -171,5 +184,8 @@
 \bibliography{literatura}
 }
 
+\chapter*{Přílohy}
+\addcontentsline{toc}{chapter}{Přílohy}
 \include{prilohaA}
+\include{prilohaB}
 \end{document}

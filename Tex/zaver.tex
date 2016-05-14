@@ -1,11 +1,16 @@
 \chapter{Závěr}
-Seznámil jsem se s~některými metodami testování grafického uživatelského rozhraní a~zjistil jsem některé důvody používání těchto metod. Dále jsem prozkoumal, které nástroje je k~testování možné využít.
+V~práci jsou popsány některé metody testování grafického uživatelského rozhraní a~také základní důvody používání těchto metod. V~první části práce je proveden kvalifikovaný průzkum existujících a~dostupných nástrojů, které je možné k~testování GUI využít.
 
-Vybral jsem tři programy, které jsem stručně popsal. Navrhl jsem multikriteriální hodnocení a~provedl jejich podrobné porovnání. Výsledkem byl výběr jednoho programu, který použiji jako hlavní nástroj v~této práci.
+Byly vybrány tři nástroje, jejichž stručná charakteristika je uvedena v~teoretické části práce. Dále bylo navrženo multikriteriální hodnocení a~provedeno podrobné porovnání zvolených nástrojů. Multikriteriální hodnocení má sedm kritérií. Jejich váhy si může zájemce určit sám, viz tabulkový soubor na CD. Podle vah diskutovaných s~vedoucím práce byl vybrán nástroj SikuliX, který byl dále detailně zkoumán.
 
-S~aplikací SikuliX, kterou jsem zvolil předchozí činností, jsem se zběžně seznámil a~vytvořil jeden test v~prostředí SikuliX-IDE za použití vlastního jazyka SikuliX. Další čtyři testy jsem zhotovil pomocí Java API, které SikuliX nabízí a~které budu využívat z~důvodu vazby na předmět KIV/OKS.
+Možnosti nástroje SikuliX byly okamžitě ověřovány v~připravovaných praktických testech. Aby bylo možné demonstrovat, že SikuliX má širší možnosti pro testování než nástroj pro testování webových aplikaci Selenium, bylo nutné nejdříve připravit identickou desktopovou aplikaci k~již existující webové aplikaci. Podle již existujícího vzoru byly připraveny v~SikuliX dvě kompletní sady testů jak pro desktopovou, tak pro webovou aplikaci. Tento přístup dovoluje porovnat oba dva způsoby testování a~poukázat na případné drobné rozdíly mezi nimi.
 
-Dále se hodlám zaměřit na podrobnější zkoumání používání nástroje. Také připravím sadu ukázkových testů a~funkční scénáře.
+Při testování byly využity možnosti frameworku JUnit a~rovněž předpřipravené možnosti SikuliX pro logování, které nebývá v~testování tak běžné. Zde se ale ukazuje, že je výhodné.
 
-\section{Statistika}
-V~této práci bylo vytvořeno 103 testů (každý pro webovou a~JavaFX aplikaci, dohromady tedy 206 testů). Počet snímků potřebných pro vytvoření testů byl 74 (každý pro webovou a~JavaFX aplikaci jak na Linux, tak na Windows, celkem tedy 296 snímků). Dále byl vytvořen jeden monkey test a~jeden skript pro ukázku automatizace činnosti. Dohromady bylo vytvořeno více než 330 souborů a~napsáno více než 7350 řádek zdrojového kódu.
+Pozornost byla v~práci věnována i~monkey testům a~automatizaci činností, přičemž bylo zjištěno, že obě dvě aktivity se nijak výrazně neodlišují od psaní běžných testů.
+
+V~práci je též stručně porovnána časová náročnost nástrojů, ale je třeba říci, že toto není podstatné kritérium výběru nástroje.
+
+V~této práci bylo vytvořeno dvakrát 103 testů (každý pro webovou a~JavaFX aplikaci, dohromady tedy 206 testů). Počet snímků potřebných pro vytvoření testů byl čtyřikrát 74 (každý pro webovou a~JavaFX aplikaci jak na Linux, tak na Windows, celkem tedy 296 snímků). Dále byl vytvořen jeden monkey test a~jeden skript pro ukázku automatizace činnosti. Dohromady bylo vytvořeno více než 330 souborů a~napsáno více než 7350 řádek zdrojového kódu.
+
+Výsledky práce budou přímo použity pro přípravu jedné z~přednášek předmětu Ověřování kvality softwaru vyučovaného na KIV.

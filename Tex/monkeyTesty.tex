@@ -1,10 +1,10 @@
 \chapter{Monkey testy}
-Princip monkey testování byl již zmíněn v~kapitole \ref{MonkeyTestovani}. Nyní o~něm zjistíme něco více a~ukážeme si jeden konkrétní monkey test vytvořený pomocí SikuliX.
+Princip monkey testování byl již zmíněn v~kapitole \ref{MonkeyTestovani}. Zde bude problematika popsána podrobněji a~bude ukázán jeden konkrétní monkey test vytvořený pomocí SikuliX.
 
 Dle \citep{Patton} existují tři druhy monkey testů (\uv{cvičených opic}) lišících se svou inteligencí -- co umí, jaké mají povědomí o~aplikace apod. Jejich vlastnosti a~rozdíly jsou popsány v~následujících částech.
 
 	\section{Hloupá opice}
-	Nejjednodušším případem cvičené opice je hloupá opice. Ta neví vůbec nic o~testované aplikace, jen náhodně kliká a~píše na klávesnici. Software, který na počítači běží, není schopný rozlišit cvičnou opici od skutečného člověka, snad jen že opice by měla akce vykonávat rychleji.
+	Nejjednodušším případem cvičené opice je hloupá opice. Ta neví vůbec nic o~testované aplikace, jen náhodně kliká a~píše na klávesnici. Software, který na počítači běží, není schopný rozlišit cvičenou opici od skutečného člověka, snad jen, že opice by měla akce vykonávat rychleji.
 	
 	Na první pohled se zdá, že takovýto přístup nemůže najít žádné chyby. Opak je ale pravdou, neboť jak se ukazuje, pokud máme dostatek času a~pokusů, opice až překvapivě často vytvoří jakousi posloupnost akcí, která povede k~havárii aplikace. Na tuto posloupnost nejspíše programátoři ani testeři vůbec nepomysleli, proto nebyla tato chyba nalezena dříve.
 	
@@ -18,7 +18,7 @@ Dle \citep{Patton} existují tři druhy monkey testů (\uv{cvičených opic}) li
 	Vhodná je i~ta možnost, která dovolí opici aplikaci po selhání znovu spustit a~pokračovat tak v~testování.
 	
 	\section{Inteligentní opice}
-	Dalším evolučním krok je inteligentní opice. Ta do klávesnice \uv{nebuší} zcela náhodně, ale uvědomuje si následující věci:
+	Dalším evolučním krokem je inteligentní opice. Ta do klávesnice \uv{nebuší} zcela náhodně, ale uvědomuje si následující věci:
 		\begin{itemize}
 			\item kde se nachází,
 			\item co na tomto místě může dělat,
@@ -26,14 +26,14 @@ Dle \citep{Patton} existují tři druhy monkey testů (\uv{cvičených opic}) li
 			\item kde již byla,
 			\item jestli je to, co vidí, opravdu správné.
 		\end{itemize}
-	Opice si je tedy vědoma všech stavů aplikace a~přechodů mezi nimi. Díky tomu dokáže s~programem pracovat přibližně stejně, jako případný uživatel, jen o~něco rychleji.
+	Opice si je tedy vědoma všech (minimálně některých) stavů aplikace a~přechodů mezi nimi. Díky tomu dokáže s~programem pracovat přibližně stejně, jako případný uživatel, jen mnohem rychleji.
 	
 	Inteligentní opice se však nemusí omezovat jen na hledání chyb, ale mohou také kontrolovat výsledky činností aplikace, správnost výstupů apod. Pokud je navíc schopna vykonávat konkrétní testovací případy, může nalézat poměrně velké množství chyb.
 	
 	\section{Monkey test pomocí SikuliX}
 	Pro účely této práce byl vytvořen jeden monkey test prováděný nad aplikací \emph{Kalkulačka}. Cvičená opice, která jej provádí, je zpola inteligentní -- omezuje se na práci s~oknem aplikace, zapisuje akce do logu a~je si vědoma toho, zda je ještě aplikace spuštěná.
 	
-	Z~důvodů uvedených v~kapitole \ref{Problemy}, hlavně zhoršenou schopností SikuliX zjišťovat pozici a~velikost okna aplikace a~její stav, se nástroj jeví jako nevhodný pro tvorbu tohoto typu testů.
+	Z~důvodů uvedených v~kapitole \ref{Problemy}, hlavně zhoršenou schopností zjišťovat pozici a~velikost okna aplikace a~její stav, se SikuliX jeví jako nevhodný pro tvorbu tohoto typu testů.
 	
 	Konkrétní příklad v~kódu \ref{Monkey} běží tak dlouho, dokud existuje statická část aplikace. Ve smyčce poté získá pozici a~velikost jejího okna. Vygeneruje náhodná čísla pro souřadnice vykonávané akce a~další číslo pro určení konkrétní akce (kliknutí, dvojkliknutí, kliknutí pravým tlačítkem, vložení textu případně stisknutí kláves). 
 	

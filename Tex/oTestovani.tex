@@ -16,15 +16,15 @@ Na začátek je potřeba vysvětlit některé pojmy z~oblasti testování. Budem
 				\end{itemize}
 		\end{itemize}
 	
-	Je vhodné, aby se testeři zabývali i~požadavky, neboť mohou již v~rané fázi vývoje zachytit ty chybně formulované (nekonzistentní, neproveditelné, nekompletní, netestovatelné, nejednoznačné, více požadavků zapsaných jako jeden apod.).
+	Je vhodné, aby se testeři zabývali i~mimofunkčními požadavky, neboť mohou již v~rané fázi vývoje zachytit ty chybně formulované (nekonzistentní, neproveditelné, nekompletní, netestovatelné, nejednoznačné, více požadavků zapsaných jako jeden apod.).
 	
 	\section{Specifikace požadavků na software}
-	Funkční i~mimofunkční požadavky zákazníka, jejich analýza a~dokumentace a~všeobecný popis systému se zapisuje do dokumentu nazvaného specifikace požadavků na software. Na základě tohoto dokumentu probíhají následující fáze vývoje, proto je jeho správnost velmi podstatná.
+	Funkční i~mimofunkční požadavky zákazníka, jejich analýza a~dokumentace a~všeobecný popis systému se zapisuje do dokumentu nazvaného specifikace požadavků na software. Na základě tohoto dokumentu probíhají další fáze vývoje, proto je jeho správnost velmi podstatná.
 	
 	K~tomuto dokumentu se poté vztahuje i~testování, konkrétně funkční testování, které kontroluje, zda software vyhovuje a~splňuje požadavky zákazníka.
 	
 	\section{Kvalita softwaru}
-	Kvalita softwaru je velmi obtížně definovatelný pojem. Pro její definici vzniklo několik norem. Ty jsou dnes zastaralé či nekonzistentní, proto jsou nahrazovány jednotným systémem norem ISO/IEC 25000-25099 v~rámci projektu SQuaRe (Software Quality Requirements and Evaluation).
+	Kvalita softwaru je velmi obtížně definovatelný pojem. Pro její definici vzniklo několik norem. Mnohé z~nich jsou dnes zastaralé či nekonzistentní, proto jsou nahrazovány jednotným systémem norem ISO/IEC 25000-25099 v~rámci projektu SQuaRE (Software Quality Requirements and Evaluation).
 	
 	Např. norma ISO/IEC 25010 říká, že kvalita softwaru je míra, do jaké softwarový produkt splňuje stanovené a~implicitní potřeby, je-li používán za stanovených podmínek.
 	
@@ -35,7 +35,7 @@ Na začátek je potřeba vysvětlit některé pojmy z~oblasti testování. Budem
 				\item \textbf{Usability} (Použitelnost) -- snadnost použití, konzistence, estetika, dokumentace apod.
 				\item \textbf{Reliability} (Spolehlivost) -- četnost a~závažnost selhání, doba bezporuchového běhu, správnost výstupů, zotavení atd.
 				\item \textbf{Performance} (Výkonnost) -- odezva systému, výkon za různých podmínek, požadavky na systémové prostředí.
-				\item \textbf{Supportability} (rozšiřitelnost/podporovatelnost) -- škálovatelnost, udržovatelnost, testovatelnost, snadnost konfigurace.
+				\item \textbf{Supportability} (rozšiřitelnost/podporovatelnost) -- škálovatelnost,\\udržovatelnost, testovatelnost, snadnost konfigurace.
 			\end{itemize}
 		Většinou se setkáme s~modelem FURPS+, který navíc přidává kategorie jako omezení návrhu, požadavky na implementaci, požadavky na rozhraní a~požadavky na fyzické vlastnosti.
 			
@@ -57,14 +57,14 @@ Na začátek je potřeba vysvětlit některé pojmy z~oblasti testování. Budem
 	\section{Testování softwaru}
 	Definice pojmu testování softwaru se více či méně liší téměř v~každé publikaci. V~knize \citep{RizeniKvalitySW} je testování definováno jako proces řízeného spouštění softwarového produktu s~cílem zjistit, zda splňuje specifikované či implicitní potřeby uživatelů. Je zde důležité slovo spouštění, které z~testování vyřazuje metody statické analýzy. Obecněji se však i~tyto metody do testovaní řadí a~jejich použití bývá ve vývoji softwaru vhodné.
 	
-	Záměrem testování již není nalézat defekty, jak tomu bylo dříve. Nyní je jím získat informaci o~kvalitě softwaru a~o~tom, jak moc splňuje požadavky zákazníka.
+	Záměrem testování již není pouze nalézat defekty, jak tomu bylo dříve. Nyní je jím získat také informaci o~kvalitě softwaru a~o~tom, jak dobře splňuje požadavky zákazníka.
 	
 	\citep{Patton} uvádí řadu axiomů (obecně přijímaných pravd, které se nemusejí dokazovat) o~testování. Čtyři nejdůležitější z~nich jsou:
 		\begin{itemize}
-			\item \textbf{Žádný program není možné otestovat kompletně} -- počet vstupů, výstupů a~cest, které vedou skrze software je příliš velký.
+			\item \textbf{Žádný program není možné otestovat kompletně} -- počet vstupů, výstupů a~cest, které vedou skrze software, je příliš velký.
 			\item \textbf{Testování softwaru je postavené na riziku} -- nemožnost otestování všech případů vede k~tomu, že je možné nezachytit defekt ve scénáři, který se netestoval. Je proto důležité správně odhadnout možná rizika a~testováním je minimalizovat.
 			\item \textbf{Testování nikdy nemůže prokázat, že chyby neexistují} -- testováním pouze můžeme dokázat, že chyby existují, ale jelikož není možné software kompletně otestovat, existenci chyb vyloučit nelze.
-			\item \textbf{Čím více chyb najdeme, tím více jich v~softwaru je} -- kvůli tomu, že programátoři mívají špatné dny nebo dělají často stejné chyby, se chyby vyskytují ve skupinách. To znamená, že objevení jedné chyby zvyšuje pravděpodobnost dalších takových podobných chyb.
+			\item \textbf{Čím více chyb najdeme, tím více jich v~softwaru je} -- kvůli tomu, že programátoři mívají špatné dny nebo dělají často stejné chyby, se chyby vyskytují ve skupinách. To znamená, že objevení jedné chyby zvyšuje pravděpodobnost dalších podobných chyb.
 		\end{itemize}
 		
 		\section{Úrovně testování}
@@ -73,15 +73,15 @@ Na začátek je potřeba vysvětlit některé pojmy z~oblasti testování. Budem
 				\item \textbf{Testování jednotek} (Unit Testing) -- testování provádí obvykle sám programátor, který se snaží prokázat správnost fungování jednotlivých jednotek (nejmenších testovatelných součástí aplikace).
 				\item \textbf{Integrační testování} (Integration Testing) -- testuje se zapojení výše uvedených jednotek do aplikace. Správná funkčnost jednotek nezaručuje správnou funkčnost výsledné aplikace.
 				\item \textbf{Systémové testování} (System Testing) -- testuje se, zda aplikace splňuje požadavky zákazníka. Patří sem nejen funkční testování, ale i~mimofunkční.
-				\item \textbf{Akceptační testování} (User Acceptance Testing, UAT) -- zde provádí testování sám zákazník a~neomezuje se pouze na testování jako takové, ale na splnění před dohodnutých kritérii (dokumentace, manuály apod.).
+				\item \textbf{Akceptační testování} (User Acceptance Testing, UAT) -- zde provádí testování sám zákazník a~neomezuje se pouze na testování jako takové, ale na splnění předem dohodnutých kritérii (dokumentace, manuály apod.).
 			\end{itemize}
 			
 		\section{Testování uživatelského rozhraní}
-		Podle \citep{Patton} má každá aplikace uživatelské rozhraní (UI -- user interface). V~dnešní době je dělíme do dvou skupin, grafické (GUI -- graphical user interface) a~z~příkazové řádky (CLI -- command line interface). V~obou případech UI slouží pro interakci a~komunikaci s~uživatelem. Je to prostředek pro zadávání vstupních data a~získávání výstupů.
+		Podle \citep{Patton} má každá aplikace uživatelské rozhraní (UI -- User Interface). V~dnešní době je dělíme do dvou základních skupin, grafické (GUI -- Graphical User Interface) a~z~příkazové řádky (CLI -- Command Line Interface). V~obou případech UI slouží pro interakci a~komunikaci s~uživatelem. Je to prostředek pro zadávání vstupních dat a~získávání výstupů.
 		
-		Použitelnost UI znamená, nakolik funkční a~efektivní je práce uživatele s~programem. K~tomu se vztahuje pojem ergonomika -- zabývá se návrhem a~konstrukcí předmětů s~ohledem na to, aby se s~nimi pracovalo jednoduše. Vzhledem k~použitelnosti se tedy bude testovat, zda je aplikace těžko srozumitelná, obtížně se s~ní pracuje, je pomalá, nebo ji zákazník nebude považovat za vyhovující.
-		
-		Dobré uživatelské rozhraní by mělo mít následující vlastnosti:
+		Použitelnost UI znamená, nakolik funkční a~efektivní je práce uživatele s~programem. K~tomu se vztahuje pojem ergonomika -- zabývá se návrhem a~konstrukcí předmětů s~ohledem na to, aby se s~nimi pracovalo bezproblémově. Vzhledem k~použitelnosti se tedy bude testovat, zda je aplikace těžko srozumitelná, obtížně se s~ní pracuje, je pomalá, nebo ji zákazník nebude považovat za vyhovující.
+		\\[\topsep]Dobré uživatelské rozhraní by mělo mít následující vlastnosti:
+		\vspace{-\topsep}
 			\begin{itemize}
 				\item \textbf{Dodržuje standardy nebo zásady} -- pokud aplikace poběží na specifické platformě, je možné, že pro tuto platformu existují předepsané standardy a~normy na vzhled a~chování aplikací (tzv. look and feel), které je vhodné dodržovat.
 				\item \textbf{Je intuitivní} -- míry intuitivnosti softwaru jsou např.: Je UI zřetelné, vhodně rozložené? Nepřekáží vám v~tom, co s~ním hodláte dělat? Nachází se funkce a~odpovědi tam, kde je očekáváte? Je jasné, co bude další akce v~pořadí? Není příliš komplikované (neobsahuje moc funkcí)?
@@ -89,7 +89,7 @@ Na začátek je potřeba vysvětlit některé pojmy z~oblasti testování. Budem
 				\item \textbf{Je flexibilní} -- uživatelé mají rádi možnost volby. I~v~jednoduchých programech typu kalkulačka bývá na výběr alespoň ze dvou rozložení -- standardního a~vědeckého. To ovšem znesnadňuje testování, proto by voleb nemělo být příliš mnoho.
 				\item \textbf{Je pohodlné} -- software by neměl uživateli práci s~ním nijak znepříjemňovat. Je vhodné zaměřit se na náležitost (měl by působit dojmem, který odpovídá jeho záměru), ošetření chyb (upozornění před kritickou operací, návrat o~krok zpět aj.), rychlost zpracování (chybové hlášky zobrazovat dostatečně dlouho, uvést odhadovaný čas do dokončení).
 				\item \textbf{Je správné} -- ověřuje se to, zda UI dělá to, co má. Pozornost by se měla věnovat marketingovým rozdílům (v~aplikaci nejsou oproti marketingovým dokumentům funkce navíc, nebo chybějící funkce), jazyku a~pravopisu, nesprávným médiím (různorodé ikony, zvuky a~jiné části UI).
-				\item \textbf{Je užitečné} -- přispívají dané funkce zvýšení užitné hodnoty aplikace? Pomůže uživateli v~jeho práci s~aplikací? Nepodstatné funkce znamenají zbytečné testování navíc a~pro zákazníka mohou být špatné.
+				\item \textbf{Je užitečné} -- přispívají dané funkce zvýšení užitné hodnoty aplikace? Pomůže uživateli v~jeho práci s~aplikací? Nepodstatné funkce znamenají zbytečné testování navíc a~pro zákazníka nemusí být vhodné.
 			\end{itemize}
 		
 		\section{Automatizace testování}
@@ -100,4 +100,4 @@ Na začátek je potřeba vysvětlit některé pojmy z~oblasti testování. Budem
 			\subsection{Monkey testování}\label{MonkeyTestovani}
 			Specifickou oblastí testování GUI a~automatického testování je tzv. monkey testování (testování za pomoci \uv{cvičené opice}). To vychází z~\uv{Nekonečného opičího teorému}, \citep{Patton}, \citep{Teorem}, který říká: \uv{Pokud bychom měli po nekonečnou dobu k~dispozici nekonečně mnoho opic, které by neustále náhodně psaly na nekonečně mnoho klávesnic, statisticky vzato by mohly nakonec napsat všechny Shakespearovy hry.}
 			
-			Nejde o~automatizaci za účelem usnadnění práce a~zvýšení efektivity, ale za účelem napodobit možné chování potenciálního uživatele. Přes všechno naše snažení a~testování určitě v~aplikaci zůstaly chyby, které by odhalil případný uživatel podobným nezasvěceným klikáním a~psaním. Tomu je však možné alespoň částečně předejít pomocí monkey testování.
+			Nejde o~automatizaci za účelem usnadnění práce a~zvýšení efektivity, ale za účelem napodobit možné chování potenciálního uživatele. Přes všechno naše snažení a~testování určitě v~aplikaci zůstaly chyby, které by možná odhalil případný uživatel podobným nezasvěceným klikáním a~psaním. Tomu je však možné alespoň částečně předejít pomocí monkey testování.
